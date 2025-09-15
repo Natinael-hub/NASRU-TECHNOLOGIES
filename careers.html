@@ -225,6 +225,24 @@
     statusEl.style.color = '#94a3b8';
   });
 </script>
+<script>
+  (function(){
+    const params = new URLSearchParams(location.search);
+    const role = params.get('role');
+    if (role) {
+      const sel = document.querySelector('select[name="role"]');
+      if (sel) {
+        // If role exists in options, select it; otherwise append it
+        const opt = Array.from(sel.options).find(o => o.text.trim().toLowerCase() === role.trim().toLowerCase());
+        if (opt) sel.value = opt.value; else {
+          const o = document.createElement('option');
+          o.textContent = role; o.value = role;
+          sel.appendChild(o); sel.value = role;
+        }
+      }
+    }
+  })();
+</script>
 
 </body>
 </html>
