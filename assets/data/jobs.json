@@ -1,0 +1,59 @@
+[
+  {
+    "id": "security-systems-engineer",
+    "title": "Security Systems Engineer",
+    "location": "Addis Ababa, Ethiopia (Hybrid)",
+    "department": "Engineering",
+    "type": "Full-time",
+    "posted": "2025-09-01",
+    "summary": "Design & deploy CCTV, access control, and VMS solutions.",
+    "responsibilities": [
+      "Design integrated CCTV, access control, and VMS architectures",
+      "Deploy, configure, and test systems on site",
+      "Document setups and train customer teams"
+    ],
+    "requirements": [
+      "2+ years with CCTV/VMS and access control (Axis/Genetec/Milestone a plus)",
+      "Networking basics (VLANs, PoE, NAT, VPN)",
+      "Strong troubleshooting and customer communication"
+    ]
+  },
+  {
+    "id": "iot-automation-specialist",
+    "title": "IoT/Automation Specialist",
+    "location": "Remote / Flexible",
+    "department": "Solutions",
+    "type": "Full-time",
+    "posted": "2025-08-20",
+    "summary": "Integrate sensors and smart building systems at scale.",
+    "responsibilities": [
+      "Integrate IoT sensors and gateways",
+      "Automate data pipelines and dashboards",
+      "Collaborate with partners on smart building projects"
+    ],
+    "requirements": [
+      "Experience with common IoT protocols (MQTT/Modbus/BACnet)",
+      "Cloud basics (AWS/Azure or similar)",
+      "Comfort with scripting (Python/Node) is a plus"
+    ]
+  },
+  {
+    "id": "full-stack-developer",
+    "title": "Full-Stack Developer",
+    "location": "Remote",
+    "department": "Software",
+    "type": "Contract-to-hire",
+    "posted": "2025-08-10",
+    "summary": "Help build FacilityFuz & Meet-Vendors platforms.",
+    "responsibilities": [
+      "Develop features across frontend and backend",
+      "Write clean, testable code and docs",
+      "Collaborate with product and design"
+    ],
+    "requirements": [
+      "Experience with modern JS (React/Node) or Python",
+      "REST/GraphQL, databases (Postgres/SQL)",
+      "Git, code reviews, CI basics"
+    ]
+  }
+]
