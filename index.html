@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru Technologies</title>
-  <meta name="description" content="Nasru Technologies — secure, smart, and scalable technology solutions: security, IoT, software, and global distribution." />
+  <title>Partners — Nasru Technologies</title>
+  <meta name="description" content="Technology partners working with Nasru Technologies." />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -18,9 +18,6 @@
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
     .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
-    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
   </style>
 </head>
 <body class="text-slate-100 antialiased">
@@ -33,30 +30,10 @@
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
-
-        <!-- FIXED DROPDOWN -->
-        <div class="relative" id="divisionsMenu">
-          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
-          </button>
-          <div id="divisionsPanel"
-               class="absolute top-full left-0 mt-0 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl
-                      invisible opacity-0 pointer-events-none transition-opacity duration-150"
-               role="menu" aria-labelledby="divisionsBtn">
-            <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-            <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-            <a href="global.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-          </div>
-        </div>
-
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
+        <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
         <a href="contact.html" class="hover:text-brand">Contact</a>
@@ -66,27 +43,17 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
-      <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru Secure</a>
-          <a href="smart.html" class="block py-2">Nasru Smart</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-        </div>
-      </details>
       <a href="solutions.html" class="block py-2">Solutions</a>
+      <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
@@ -95,26 +62,39 @@
   </div>
 </header>
 
-<section class="hero relative h-[86vh] min-h-[520px] flex items-center justify-center text-center text-white overflow-hidden">
-  <video id="heroVideo" autoplay loop muted playsinline preload="auto" poster="assets/img/hero_poster.png" class="absolute inset-0 w-full h-full object-cover">
-    <source src="assets/video/hero.mp4" type="video/mp4" />
-  </video>
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/35 to-slate-900/55"></div>
-  <div class="relative z-10 max-w-3xl px-4">
-    <h1 class="heading text-4xl md:text-6xl font-bold neon-text">Secure. Smart. Scalable.</h1>
-    <p class="mt-4 text-lg text-slate-100/90">Nasru Technologies builds and integrates technology across security, IoT, software, and distribution.</p>
-    <div class="mt-6 flex flex-wrap gap-3 justify-center">
-      <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900">Get a Quote</a>
-      <a href="solutions.html" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3">Explore Solutions</a>
-    </div>
-  </div>
-</section>
+<section class="relative py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="heading text-3xl md:text-5xl font-semibold">Our Partners</h1>
+    <p class="mt-3 text-slate-300">We work with leading technology vendors to deliver secure, smart, and scalable solutions.</p>
 
-<section class="py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-3">
-    <div class="card p-6"><h4 class="font-semibold mb-2">End-to-End Security</h4><p class="text-slate-300/80 text-sm">Design, integration, and 24/7 monitoring.</p></div>
-    <div class="card p-6"><h4 class="font-semibold mb-2">Smart Integrations</h4><p class="text-slate-300/80 text-sm">IoT, automation, and AI analytics.</p></div>
-    <div class="card p-6"><h4 class="font-semibold mb-2">Cloud + Managed</h4><p class="text-slate-300/80 text-sm">SaaS and managed services at scale.</p></div>
+    <div class="grid gap-6 md:grid-cols-3 mt-10">
+      <!-- Example partner cards; link out or to detail pages -->
+      <a href="https://www.axis.com/" target="_blank" rel="noopener" class="card p-6 block">
+        <h3 class="heading text-xl font-semibold">Axis</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Network cameras, access control, and video management.</p>
+      </a>
+
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">Cyber-Zeb</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Cybersecurity solutions and services.</p>
+      </div>
+
+      <!-- Add more partners as needed -->
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">Fortinet</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Enterprise security and firewalls.</p>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">Genetec</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Unified security platforms (VMS, access, ALPR).</p>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">Milestone</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Open-platform VMS and analytics.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -122,47 +102,14 @@
   © <span id="year"></span> Nasru Technologies. All rights reserved.
 </footer>
 
-<!-- JS for dropdown hover & mobile menu -->
 <script>
-(() => {
-  const wrap  = document.getElementById('divisionsMenu');
-  const btn   = document.getElementById('divisionsBtn');
-  const panel = document.getElementById('divisionsPanel');
-  let hideTimer;
-
-  const openPanel = () => {
-    clearTimeout(hideTimer);
-    panel.classList.remove('invisible','opacity-0','pointer-events-none');
-  };
-  const scheduleClose = () => {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      panel.classList.add('invisible','opacity-0','pointer-events-none');
-    }, 150);
-  };
-
-  btn.addEventListener('mouseenter', openPanel);
-  panel.addEventListener('mouseenter', openPanel);
-  btn.addEventListener('mouseleave', scheduleClose);
-  panel.addEventListener('mouseleave', scheduleClose);
-
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (panel.classList.contains('invisible')) openPanel();
-    else scheduleClose();
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!wrap.contains(e.target)) scheduleClose();
-  });
-
-  // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (menuBtn && mobileMenu){
     menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
   }
-})();
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.appendChild(document.createTextNode(new Date().getFullYear()));
 </script>
 
 </body>
