@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nasru Technologies</title>
   <meta name="description" content="Nasru Technologies — secure, smart, and scalable technology solutions: security, IoT, software, and global distribution." />
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
@@ -13,9 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     :root{ color-scheme: dark; }
-    
-    <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
-
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
@@ -23,11 +20,11 @@
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    /* Hero fallback class if video fails */
-    .hero-fallback { background-image: url('hero_poster.png'); background-size: cover; background-position: center; }
+    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
   </style>
 </head>
 <body class="text-slate-100 antialiased">
+
 <header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -40,28 +37,25 @@
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (gap-proof) -->
+        <!-- FIXED DROPDOWN -->
         <div class="relative" id="divisionsMenu">
-         <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
-           Divisions
-           <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-             <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-           </svg>
-        </button>
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
+            Divisions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
+          </button>
+          <div id="divisionsPanel"
+               class="absolute top-full left-0 mt-0 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl
+                      invisible opacity-0 pointer-events-none transition-opacity duration-150"
+               role="menu" aria-labelledby="divisionsBtn">
+            <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
+            <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
+            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+            <a href="global.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+          </div>
+        </div>
 
-  <!-- Keep the panel glued to the button: top-full, left-0, no gap -->
-       <div id="divisionsPanel"
-            class="absolute top-full left-0 mt-0 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl
-              invisible opacity-0 pointer-events-none transition-opacity duration-150"
-            role="menu" aria-labelledby="divisionsBtn">
-         <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-         <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-         <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-         <a href="global.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-       </div>
-     </div>
-        
-     </div>
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
@@ -123,8 +117,54 @@
     <div class="card p-6"><h4 class="font-semibold mb-2">Cloud + Managed</h4><p class="text-slate-300/80 text-sm">SaaS and managed services at scale.</p></div>
   </div>
 </section>
+
 <footer class="mt-24 border-t border-slate-700/60 text-center py-6 text-slate-400 text-sm">
   © <span id="year"></span> Nasru Technologies. All rights reserved.
 </footer>
-<script src="assets/site.js"></script>
-</body></html>
+
+<!-- JS for dropdown hover & mobile menu -->
+<script>
+(() => {
+  const wrap  = document.getElementById('divisionsMenu');
+  const btn   = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
+  let hideTimer;
+
+  const openPanel = () => {
+    clearTimeout(hideTimer);
+    panel.classList.remove('invisible','opacity-0','pointer-events-none');
+  };
+  const scheduleClose = () => {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      panel.classList.add('invisible','opacity-0','pointer-events-none');
+    }, 150);
+  };
+
+  btn.addEventListener('mouseenter', openPanel);
+  panel.addEventListener('mouseenter', openPanel);
+  btn.addEventListener('mouseleave', scheduleClose);
+  panel.addEventListener('mouseleave', scheduleClose);
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (panel.classList.contains('invisible')) openPanel();
+    else scheduleClose();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!wrap.contains(e.target)) scheduleClose();
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+  }
+})();
+</script>
+
+</body>
+</html>
+
