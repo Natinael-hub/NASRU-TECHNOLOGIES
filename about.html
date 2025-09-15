@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru Technologies</title>
-  <meta name="description" content="Nasru Technologies — secure, smart, and scalable technology solutions: security, IoT, software, and global distribution." />
+  <title>About — Nasru Technologies</title>
+  <meta name="description" content="About Nasru Technologies: company vision, leadership, services, and partnerships." />
   <link rel="icon" href="assets/img/logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -18,13 +18,10 @@
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
     .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
-    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    /* Hero fallback class if video fails */
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
   </style>
 </head>
 <body class="text-slate-100 antialiased">
+
 <header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -32,55 +29,27 @@
         <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
-
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
-
-        <div class="relative group" id="divisionsMenu">
-          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
-          </button>
-          <div class="absolute hidden group-hover:block mt-3 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
-            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-            <a href="smart.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-            <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-          </div>
-        </div>
-
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
+        <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
         <a href="contact.html" class="hover:text-brand">Contact</a>
       </nav>
-
       <div class="hidden md:block">
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
-
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
       </button>
     </div>
   </div>
-
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
-      <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru Secure</a>
-          <a href="smart.html" class="block py-2">Nasru Smart</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-        </div>
-      </details>
       <a href="solutions.html" class="block py-2">Solutions</a>
+      <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
@@ -89,14 +58,101 @@
   </div>
 </header>
 
-<section class="relative py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="heading text-3xl md:text-5xl font-semibold neon-text">About Nasru Technologies</h1>
-    <p class='mt-3 text-slate-300'>Building across security, IoT, software, and distribution.</p>
+<!-- Hero -->
+<section class="relative py-20 text-center">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="heading text-4xl md:text-6xl font-bold neon-text">About Nasru Technologies</h1>
+    <p class="mt-4 text-lg text-slate-300">Building secure, smart, and scalable technology solutions worldwide.</p>
   </div>
 </section>
+
+<!-- Company -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-2 items-center">
+    <div>
+      <h2 class="heading text-2xl font-semibold mb-4">Our Company</h2>
+      <p class="text-slate-300/90 leading-relaxed">
+        Nasru Technologies is a forward-thinking technology provider specializing in security, IoT, software development, and integrated solutions. 
+        We help organizations adopt smart systems, streamline operations, and scale securely across industries.
+      </p>
+    </div>
+    <div class="card p-6">
+      <h3 class="heading text-xl font-semibold mb-2">Vision & Mission</h3>
+      <p class="text-slate-300/90">To empower businesses and communities with innovative technology solutions that are secure, reliable, and future-ready.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership -->
+<section class="py-16 bg-slate-900/40">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="heading text-2xl font-semibold mb-10 text-center">Leadership</h2>
+    <div class="grid gap-8 md:grid-cols-2 items-center">
+      <div>
+        <img src="assets/img/ceo.jpg" alt="Natinael Bekele" class="rounded-2xl shadow-lg border border-slate-700">
+      </div>
+      <div>
+        <h3 class="heading text-xl font-semibold">Natinael Bekele</h3>
+        <p class="text-brand text-sm font-medium mb-3">Founder & CEO</p>
+        <p class="text-slate-300/90">
+          With years of experience in the security industry and a strong background in technology, Natinael founded Nasru Technologies to deliver 
+          integrated solutions that bridge physical and digital security. His leadership focuses on innovation, service excellence, and building trust with clients.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="heading text-2xl font-semibold mb-10 text-center">Our Services</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="card p-6">
+        <h4 class="font-semibold mb-2">Security Technologies</h4>
+        <p class="text-slate-300/80 text-sm">Integrated surveillance, access control, and monitoring solutions.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold mb-2">Smart Systems</h4>
+        <p class="text-slate-300/80 text-sm">IoT, automation, and smart building integrations.</p>
+      </div>
+      <div class="card p-6">
+        <h4 class="font-semibold mb-2">Software Development</h4>
+        <p class="text-slate-300/80 text-sm">Custom platforms such as FacilityFuz and Meet-Vendors, tailored to business needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partnerships -->
+<section class="py-16 bg-slate-900/40">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="heading text-2xl font-semibold mb-6">Partnerships</h2>
+    <p class="text-slate-300/90 max-w-2xl mx-auto">
+      Nasru Technologies partners with leading vendors and solution providers like Axis, Cyber-Zeb, Fortinet, and Genetec to ensure our clients 
+      have access to world-class tools and expertise.
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-8">
+      <img src="assets/img/partners/axis.png" class="h-10 opacity-80" alt="Axis">
+      <img src="assets/img/partners/cyberzeb.png" class="h-10 opacity-80" alt="Cyber-Zeb">
+      <img src="assets/img/partners/fortinet.png" class="h-10 opacity-80" alt="Fortinet">
+      <img src="assets/img/partners/genetec.png" class="h-10 opacity-80" alt="Genetec">
+    </div>
+  </div>
+</section>
+
 <footer class="mt-24 border-t border-slate-700/60 text-center py-6 text-slate-400 text-sm">
   © <span id="year"></span> Nasru Technologies. All rights reserved.
 </footer>
-<script src="assets/site.js"></script>
-</body></html>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu){ menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden')); }
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.appendChild(document.createTextNode(new Date().getFullYear()));
+</script>
+
+</body>
+</html>
+
