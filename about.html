@@ -252,12 +252,47 @@
   </div>
 </footer>
 
+<!-- JS for dropdown hover & mobile menu (unchanged) -->
 <script>
+(() => {
+  const wrap  = document.getElementById('divisionsMenu');
+  const btn   = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
+  let hideTimer;
+
+  const openPanel = () => {
+    clearTimeout(hideTimer);
+    panel.classList.remove('invisible','opacity-0','pointer-events-none');
+  };
+  const scheduleClose = () => {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      panel.classList.add('invisible','opacity-0','pointer-events-none');
+    }, 150);
+  };
+
+  btn.addEventListener('mouseenter', openPanel);
+  panel.addEventListener('mouseenter', openPanel);
+  btn.addEventListener('mouseleave', scheduleClose);
+  panel.addEventListener('mouseleave', scheduleClose);
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (panel.classList.contains('invisible')) openPanel();
+    else scheduleClose();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!wrap.contains(e.target)) scheduleClose();
+  });
+
+  // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu){ menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden')); }
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.appendChild(document.createTextNode(new Date().getFullYear()));
+  if (menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+  }
+})();
 </script>
 
 </body>
