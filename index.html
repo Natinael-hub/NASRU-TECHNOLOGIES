@@ -4,13 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nasru Technologies</title>
-  <meta name="description" content="Nasru Technologies — secure, smart, and scalable technology solutions: security, IoT, software, and global distribution." />
+  <link rel="canonical" href="https://nasrutechnologies.com/">
+
+  <!-- Primary description (keep one concise meta description) -->
+  <meta name="description" content="Nasru Technologies — devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
+
+  <!-- Favicon(s) -->
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
   </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
   <style>
     :root{ color-scheme: dark; }
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
@@ -22,45 +34,49 @@
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
     .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
   </style>
-  <!-- SEO META TAGS -->
-<meta name="title" content="Nasru Technologies — Secure, Smart & Scalable IT and Security Solutions">
-<meta name="description" content="Nasru Technologies delivers trusted IT and security solutions: reselling devices, custom software, installations, IT services, and advanced cybersecurity.">
-<meta name="keywords" content="Nasru Technologies, security technologies, IT services, cybersecurity, smart technology, software development, FacilityFuz, Meet-Vendors, system installations, device reseller">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
-<meta property="og:description" content="Reselling top-tier devices, building custom software, providing installations, IT services, and cybersecurity.">
-<meta property="og:url" content="https://nasrutechnologies.com">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
+  <meta property="og:description" content="Devices, software, installations, IT services, and cybersecurity.">
+  <meta property="og:url" content="https://nasrutechnologies.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nasru Technologies — Secure. Smart. Scalable.">
-<meta name="twitter:description" content="IT, Security, Software, Cybersecurity, Devices & Installations.">
-<meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nasru Technologies — Secure. Smart. Scalable.">
+  <meta name="twitter:description" content="Devices, software, installations, IT services, and cybersecurity.">
+  <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-<!-- Schema.org JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Nasru Technologies",
-  "url": "https://nasrutechnologies.com",
-  "logo": "https://nasrutechnologies.com/assets/img/logo.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/nasrutechnologies",
-    "https://twitter.com/nasrutechnologies"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-555-555-5555",
-    "contactType": "customer service",
-    "areaServed": "US"
+  <!-- Schema.org JSON-LD: Organization (helps Google show your logo) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nasru Technologies",
+    "url": "https://nasrutechnologies.com",
+    "logo": "https://nasrutechnologies.com/assets/img/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/nasru-technologies"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-555-5555",
+      "contactType": "customer service",
+      "areaServed": "US"
+    }
   }
-}
-</script>
+  </script>
 
+  <!-- Schema.org JSON-LD: WebSite (optional nice-to-have) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Nasru Technologies",
+    "url":"https://nasrutechnologies.com/"
+  }
+  </script>
 </head>
 <body class="text-slate-100 antialiased">
 
@@ -76,7 +92,7 @@
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (kept as-is) -->
+        <!-- Divisions dropdown -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
             Divisions
@@ -96,7 +112,6 @@
         </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
-        <!-- NEW: simple Partners link (no dropdown) -->
         <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
@@ -107,9 +122,11 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+      <!-- Mobile menu button (white icon) -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
       </button>
     </div>
   </div>
@@ -128,7 +145,6 @@
         </div>
       </details>
       <a href="solutions.html" class="block py-2">Solutions</a>
-      <!-- NEW: simple Partners link -->
       <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
@@ -152,6 +168,7 @@
     </div>
   </div>
 </section>
+
 <!-- WHAT WE DO -->
 <section class="py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,7 +198,7 @@
   </div>
 </section>
 
-<!-- FEATURED DIVISIONS (optional) -->
+<!-- FEATURED DIVISIONS -->
 <section class="py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="heading text-2xl md:text-4xl font-semibold text-center">Divisions</h2>
@@ -277,17 +294,15 @@
     <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
-        <!-- Social placeholders -->
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
-  <a href="#" class="hover:text-brand">Twitter</a>
-  <a href="#" class="hover:text-brand">YouTube</a>
-</div
+        <a href="#" class="hover:text-brand">Twitter</a>
+        <a href="#" class="hover:text-brand">YouTube</a>
+      </div>
     </div>
   </div>
 </footer>
 
-
-<!-- JS for dropdown hover & mobile menu (unchanged) -->
+<!-- JS for dropdown hover & mobile menu -->
 <script>
 (() => {
   const wrap  = document.getElementById('divisionsMenu');
@@ -327,9 +342,14 @@
   if (menuBtn && mobileMenu){
     menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
   }
+
+  // Footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 })();
 </script>
 
 </body>
 </html>
+
 
