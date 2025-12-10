@@ -29,9 +29,29 @@
         <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
-
+       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
+
+        <!-- Divisions dropdown -->
+        <div class="relative" id="divisionsMenu">
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
+            Divisions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
+          </button>
+          <div id="divisionsPanel"
+               class="absolute top-full left-0 mt-0 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl
+                      invisible opacity-0 pointer-events-none transition-opacity duration-150"
+               role="menu" aria-labelledby="divisionsBtn">
+            <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
+            <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
+            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+            <a href="global.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+          </div>
+        </div>
+
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
@@ -43,15 +63,28 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+      <!-- Mobile menu button (white icon) -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
       </button>
     </div>
   </div>
 
+  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
+      <details class="group">
+        <summary class="py-2 cursor-pointer">Divisions</summary>
+        <div class="ml-3 space-y-1">
+          <a href="secure.html" class="block py-2">Nasru Secure</a>
+          <a href="smart.html" class="block py-2">Nasru Smart</a>
+          <a href="software.html" class="block py-2">Nasru Software</a>
+          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+        </div>
+      </details>
       <a href="solutions.html" class="block py-2">Solutions</a>
       <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
