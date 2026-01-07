@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html, body { height: 100%; }
+
+body {
+  background: #0e1526;
+}
+
+.heading {
+  font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
+}
+
+.glass {
+  background: rgba(20,28,48,0.45);
+  backdrop-filter: blur(12px);
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(103,232,249,0.14);
+  border-radius: 16px;
+  transition: box-shadow 150ms ease, transform 150ms ease, opacity 150ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25);
+}
+
+.border-neon {
+  border-color: rgba(103,232,249,0.45) !important;
+}
