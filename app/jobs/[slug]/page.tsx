@@ -11,7 +11,6 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
   // ... your existing code that uses slug
-}
 
 }
 
