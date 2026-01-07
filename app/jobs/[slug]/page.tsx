@@ -5,14 +5,14 @@ import { PageHero } from "@/components/site/Section";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const sp = searchParams ? await searchParams : undefined;
 
-  // ... your existing code
+  // ... your existing code that uses slug
+}
+
 }
 
 export default function JobDetailPage({ params }: Props) {
