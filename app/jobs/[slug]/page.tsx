@@ -12,6 +12,7 @@ export default async function Page({ params }: PageProps) {
 
   // ... your existing code that uses slug
 
+
 }
 
 export default function JobDetailPage({ params }: Props) {
