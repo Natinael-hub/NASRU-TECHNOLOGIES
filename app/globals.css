@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 248 250 252;      /* slate-50 */
+  --card: 255 255 255;    /* white */
+  --fg: 15 23 42;         /* slate-900 */
+  --muted: 71 85 105;     /* slate-600 */
+  --border: 226 232 240;  /* slate-200 */
+  color-scheme: light;
+}
+
+.dark {
+  --bg: 14 21 38;         /* custom deep */
+  --card: 20 28 48;       /* custom */
+  --fg: 241 245 249;      /* slate-100 */
+  --muted: 148 163 184;   /* slate-400 */
+  --border: 51 65 85;     /* slate-700 */
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-fg antialiased;
+}
+
+/* “glass” header like your current site */
+.glass {
+  background: rgba(20, 28, 48, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+/* cards like your current site, but work in both themes */
+.card {
+  @apply rounded-2xl border border-border bg-card/70 shadow-soft;
+}
+
+.card-hover {
+  @apply transition;
+}
+
+.card-hover:hover {
+  box-shadow:
+    0 0 0 1px rgba(103, 232, 249, 0.22),
+    0 10px 40px -10px rgba(103, 232, 249, 0.22);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.35), 0 0 30px rgba(103, 232, 249, 0.20);
+}
+
+.border-neon {
+  border-color: rgba(103, 232, 249, 0.45) !important;
+}
