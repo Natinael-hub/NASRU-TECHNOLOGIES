@@ -35,6 +35,10 @@
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
     .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
+    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
+    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+</style>
+
   </style>
 
   <!-- Open Graph / Facebook -->
@@ -91,28 +95,38 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
-        <a href="index.html" class="hover:text-brand">Home</a>
+      <nav class="hidden md:flex items-center flex-wrap gap-x-6 gap-y-2 text-slate-100/90">
+  <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown -->
-        <div class="relative" id="divisionsMenu">
-          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
-          </button>
-          <div id="divisionsPanel"
-               class="absolute top-full left-0 mt-0 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl
-                      invisible opacity-0 pointer-events-none transition-opacity duration-150"
-               role="menu" aria-labelledby="divisionsBtn">
-            <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-            <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-            <a href="multimedia.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Multimedia</a>
-            <a href="lab.html"  class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Lab</a>
-          </div>
-        </div>
+  <div class="relative group" id="divisionsMenu">
+    <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
+      Divisions
+      <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+      </svg>
+    </button>
+
+    <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
+      <a href="secure.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+        <span>Nasru Secure</span><span class="chip chip-soon">Coming Soon</span>
+      </a>
+      <a href="smart.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+        <span>Nasru Smart</span><span class="chip chip-soon">Coming Soon</span>
+      </a>
+      <a href="software.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+        <span>Nasru Software</span><span class="chip chip-soon">Coming Soon</span>
+      </a>
+      <a href="global.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+        <span>Nasru Global Solutions</span><span class="chip chip-soon">Coming Soon</span>
+      </a>
+      <a href="multimedia.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+        <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+      </a>
+      <a href="lab.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+        <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+      </a>
+    </div>
+  </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="partners.html" class="hover:text-brand">Partners</a>
@@ -140,13 +154,14 @@
       <a href="index.html" class="block py-2">Home</a>
       <details class="group">
         <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru Secure</a>
-          <a href="smart.html" class="block py-2">Nasru Smart</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="multimedia.html" class="block py-2">Nasru Multimedia</a>
-          <a href="lab.html" class="block py-2">Nasru Lab</a>
-        </div>
+       <div class="ml-3 space-y-1">
+         <a href="secure.html" class="flex items-center justify-between py-2"><span>Nasru Secure</span><span class="chip chip-soon">Coming Soon</span></a>
+         <a href="smart.html" class="flex items-center justify-between py-2"><span>Nasru Smart</span><span class="chip chip-soon">Coming Soon</span></a>
+         <a href="software.html" class="flex items-center justify-between py-2"><span>Nasru Software</span><span class="chip chip-soon">Coming Soon</span></a>
+         <a href="global.html" class="flex items-center justify-between py-2"><span>Nasru Global Solutions</span><span class="chip chip-soon">Coming Soon</span></a>
+         <a href="multimedia.html" class="flex items-center justify-between py-2"><span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span></a>
+         <a href="lab.html" class="flex items-center justify-between py-2"><span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span></a>
+       </div>
       </details>
       <a href="solutions.html" class="block py-2">Solutions</a>
       <a href="partners.html" class="block py-2">Partners</a>
