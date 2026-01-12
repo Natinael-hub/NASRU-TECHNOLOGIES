@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nasru Multimedia — Nasru Technologies</title>
+  <meta name="description" content="Nasru Multimedia — branding, design, media production, and digital storytelling within Nasru Technologies." />
+  <link rel="canonical" href="https://nasrutechnologies.com/multimedia.html" />
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{ color-scheme: dark; }
+    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
+    .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
+    .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
+    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
+    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
+    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
+    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
+    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+  </style>
+</head>
+
+<body class="text-slate-100 antialiased">
+
+<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+        <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
+      </a>
+
+      <!-- Desktop Nav (spacing improved: wraps cleanly if needed) -->
+      <nav class="hidden md:flex items-center flex-wrap gap-x-6 gap-y-2 text-slate-100/90">
+        <a href="index.html" class="hover:text-brand">Home</a>
+
+        <div class="relative group" id="divisionsMenu">
+          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
+            Divisions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+          </button>
+
+          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
+            <a href="secure.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+              <span>Nasru Secure</span><span class="chip chip-soon">Coming Soon</span>
+            </a>
+            <a href="smart.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+              <span>Nasru Smart</span><span class="chip chip-soon">Coming Soon</span>
+            </a>
+            <a href="software.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+              <span>Nasru Software</span><span class="chip chip-soon">Coming Soon</span>
+            </a>
+            <a href="global.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+              <span>Nasru Global Solutions</span><span class="chip chip-soon">Coming Soon</span>
+            </a>
+            <a href="multimedia.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+              <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+            </a>
+            <a href="lab.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
+              <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="solutions.html" class="hover:text-brand">Solutions</a>
+        <a href="about.html" class="hover:text-brand">About</a>
+        <a href="careers.html" class="hover:text-brand">Careers</a>
+        <a href="contact.html" class="hover:text-brand">Contact</a>
+      </nav>
+
+      <div class="hidden md:block">
+        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
+    <div class="px-4 py-3 space-y-2">
+      <a href="index.html" class="block py-2">Home</a>
+
+      <details class="group">
+        <summary class="py-2 cursor-pointer">Divisions</summary>
+        <div class="ml-3 space-y-1">
+          <a href="secure.html" class="flex items-center justify-between py-2">
+            <span>Nasru Secure</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="smart.html" class="flex items-center justify-between py-2">
+            <span>Nasru Smart</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="software.html" class="flex items-center justify-between py-2">
+            <span>Nasru Software</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="global.html" class="flex items-center justify-between py-2">
+            <span>Nasru Global Solutions</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="multimedia.html" class="flex items-center justify-between py-2">
+            <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="lab.html" class="flex items-center justify-between py-2">
+            <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+        </div>
+      </details>
+
+      <a href="solutions.html" class="block py-2">Solutions</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="careers.html" class="block py-2">Careers</a>
+      <a href="contact.html" class="block py-2">Contact</a>
+      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-center">
+      <span class="chip chip-soon">Coming Soon</span>
+    </div>
+    <h1 class="mt-4 heading text-3xl md:text-5xl font-semibold neon-text text-center">Nasru Multimedia</h1>
+    <p class="mt-3 text-slate-300 text-center max-w-3xl mx-auto">
+      A creative division focused on brand identity, digital media, content production, and visual storytelling —
+      built to support Nasru Technologies and our partners.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-3">
+    <div class="card p-6">
+      <h2 class="heading text-lg font-semibold">Brand & Design</h2>
+      <p class="mt-2 text-slate-300/85 text-sm">
+        Brand identity, logos, pitch decks, UI/UX, and design systems for products and corporate teams.
+      </p>
+    </div>
+    <div class="card p-6">
+      <h2 class="heading text-lg font-semibold">Content Production</h2>
+      <p class="mt-2 text-slate-300/85 text-sm">
+        Photo/video content, product showcases, training clips, and event coverage—optimized for web and social.
+      </p>
+    </div>
+    <div class="card p-6">
+      <h2 class="heading text-lg font-semibold">Digital Marketing Assets</h2>
+      <p class="mt-2 text-slate-300/85 text-sm">
+        Campaign visuals, landing-page media, partner co-branding kits, and ongoing content calendars.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+    <div class="card p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="heading text-xl font-semibold">Want to collaborate?</h3>
+        <p class="text-slate-300/80 text-sm mt-1">Tell us what you’re building, and we’ll align branding + media to your goals.</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Contact Us</a>
+        <a href="about.html" class="rounded-xl border border-neon px-5 py-3">About Nasru</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-slate-700/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 md:grid-cols-4">
+      <div>
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+          <span class="heading text-lg font-semibold">Nasru Technologies</span>
+        </a>
+        <p class="mt-3 text-slate-400 text-sm">
+          Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="heading font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-slate-300/90 text-sm">
+          <li><a class="hover:text-brand" href="about.html">About</a></li>
+          <li><a class="hover:text-brand" href="careers.html">Careers</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Partners</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="heading font-semibold mb-3">Services</h4>
+        <ul class="space-y-2 text-slate-300/90 text-sm">
+          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
+          <li><a class="hover:text-brand" href="smart.html">Smart Integrations</a></li>
+          <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
+          <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="heading font-semibold mb-3">Resources</h4>
+        <ul class="space-y-2 text-slate-300/90 text-sm">
+          <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+      <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
+      <div class="flex gap-4">
+        <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
+        <a href="#" class="hover:text-brand">Twitter</a>
+        <a href="#" class="hover:text-brand">YouTube</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+  }
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
