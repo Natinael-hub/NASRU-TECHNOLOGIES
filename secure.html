@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru Technologies</title>
-  <meta name="description" content="Nasru Technologies — secure, smart, and scalable technology solutions: security, IoT, software, and global distribution." />
+  <title>Nasru IT &amp; Cybersecurity — Nasru Technologies</title>
+  <meta name="description" content="Nasru IT & Cybersecurity — managed IT, co-managed IT, cloud, networking, and cybersecurity consulting, risk, compliance, and protection services." />
+  <link rel="canonical" href="https://nasrutechnologies.com/secure.html" />
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
   </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
   <style>
     :root{ color-scheme: dark; }
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
@@ -20,11 +24,12 @@
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    /* Hero fallback class if video fails */
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
+    .pill { display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .7rem; border-radius:999px; font-size:.8rem; border: 1px solid rgba(103,232,249,0.22); background: rgba(103,232,249,0.08); color: rgba(224,251,255,0.95); }
   </style>
 </head>
+
 <body class="text-slate-100 antialiased">
+
 <header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -33,20 +38,25 @@
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Nav (uses site.js if present) -->
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
         <div class="relative group" id="divisionsMenu">
-          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
+          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
             <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
           </button>
-          <div class="absolute hidden group-hover:block mt-3 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
-            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
+
+          <!-- Keep simple dropdown here (your index/multimedia page has the 2-column version).
+               If you want, paste the same 2-column dropdown markup from multimedia.html into this file too. -->
+          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
+            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
             <a href="smart.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
             <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
             <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+            <a href="multimedia.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Multimedia</a>
+            <a href="lab.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Lab</a>
           </div>
         </div>
 
@@ -74,10 +84,12 @@
       <details class="group">
         <summary class="py-2 cursor-pointer">Divisions</summary>
         <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru Secure</a>
+          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
           <a href="smart.html" class="block py-2">Nasru Smart</a>
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+          <a href="multimedia.html" class="block py-2">Nasru Multimedia</a>
+          <a href="lab.html" class="block py-2">Nasru Lab</a>
         </div>
       </details>
       <a href="solutions.html" class="block py-2">Solutions</a>
@@ -89,12 +101,241 @@
   </div>
 </header>
 
-<section class="relative py-16">
+<!-- HERO -->
+<section class="relative py-14 md:py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="heading text-3xl md:text-5xl font-semibold neon-text">Nasru Secure</h1>
-    <p class='mt-3 text-slate-300'>Security technologies: CCTV, access control, VMS, and managed monitoring.</p>
+    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+      <span class="pill">Managed IT</span>
+      <span class="pill">Co-Managed IT</span>
+      <span class="pill">Cybersecurity</span>
+      <span class="pill">GRC</span>
+      <span class="pill">Cloud &amp; Network</span>
+    </div>
+
+    <h1 class="mt-5 heading text-3xl md:text-5xl font-semibold neon-text">Nasru IT &amp; Cybersecurity</h1>
+    <p class="mt-3 text-slate-300 max-w-3xl">
+      Modern IT operations and cybersecurity services for growing teams — from help desk and cloud management
+      to risk assessments, compliance (GRC), and security programs that scale with your business.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Request a Consultation</a>
+      <a href="#packages" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3">View Packages</a>
+    </div>
   </div>
 </section>
+
+<!-- IT SERVICES -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between gap-4 flex-wrap">
+      <div>
+        <h2 class="heading text-2xl md:text-3xl font-semibold">IT Services</h2>
+        <p class="mt-2 text-slate-300 max-w-2xl">Operational coverage for endpoints, networks, cloud, and users — delivered as managed or co-managed.</p>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-8">
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Managed IT</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Full-service IT operations: proactive monitoring, patching, support, and vendor coordination.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Help desk (remote/on-site options)</li>
+          <li>• Endpoint management &amp; patching</li>
+          <li>• Asset inventory &amp; lifecycle</li>
+          <li>• Backups &amp; recovery coordination</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Co-Managed IT</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">We strengthen your internal IT team with tooling, escalation coverage, and specialized expertise.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Escalation + overflow help desk</li>
+          <li>• Monitoring + alert response</li>
+          <li>• Project support (migrations, rollouts)</li>
+          <li>• Documentation + standardization</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Cloud &amp; Infrastructure</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Secure cloud and infrastructure operations across Microsoft 365, Google Workspace, and hybrid environments.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Microsoft 365 / Google Workspace admin</li>
+          <li>• Identity, SSO/MFA, access policies</li>
+          <li>• Network design &amp; segmentation</li>
+          <li>• VPN / remote access configuration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-6">
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Networking</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Reliable, secure networking built for performance and visibility.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Firewall &amp; router configuration</li>
+          <li>• VLANs, segmentation, Wi-Fi</li>
+          <li>• Switch configuration &amp; hardening</li>
+          <li>• Monitoring + baselining</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Endpoint &amp; Device Security</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Operational security for laptops, servers, and mobile devices.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• EDR onboarding &amp; tuning</li>
+          <li>• Device encryption policies</li>
+          <li>• Hardening baselines</li>
+          <li>• Patch compliance reporting</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Projects &amp; Modernization</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Planned upgrades and migrations with clear timelines and documentation.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Cloud migrations</li>
+          <li>• Email/domain transitions</li>
+          <li>• Device rollouts</li>
+          <li>• SOPs + runbooks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CYBERSECURITY SERVICES -->
+<section class="py-12 bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="heading text-2xl md:text-3xl font-semibold">Cybersecurity Services</h2>
+    <p class="mt-2 text-slate-300 max-w-3xl">
+      Practical security built around risk reduction, compliance, and operational resilience — aligned to your industry and maturity.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-8">
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Risk Assessments</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Understand your exposure and prioritize fixes with an actionable roadmap.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Business risk + threat modeling</li>
+          <li>• Asset &amp; data classification review</li>
+          <li>• Vulnerability review (tool-assisted)</li>
+          <li>• Remediation plan &amp; timeline</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">GRC &amp; Compliance</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Build governance and audit readiness using frameworks and GRC tooling.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Policies, standards, and procedures</li>
+          <li>• Framework alignment (NIST/ISO/CIS)</li>
+          <li>• Risk register + controls mapping</li>
+          <li>• Vendor/security questionnaires</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Security Program Buildout</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Set up the core security program functions that scale with your team.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Security strategy &amp; roadmap</li>
+          <li>• Metrics (KPIs) + reporting</li>
+          <li>• Incident response plan &amp; playbooks</li>
+          <li>• Awareness &amp; training guidance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-6">
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Security Hardening</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Close common gaps across identity, endpoints, and network controls.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• MFA/SSO and conditional access</li>
+          <li>• Least privilege &amp; access reviews</li>
+          <li>• Baselines for endpoints/servers</li>
+          <li>• Email security improvements</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Monitoring &amp; Response Support</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Help setting up alerting, triage workflows, and response readiness.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Logging strategy (SIEM-ready)</li>
+          <li>• Alert triage + escalation</li>
+          <li>• Incident tabletop exercises</li>
+          <li>• Post-incident improvements</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Cybersecurity Consulting</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Advisory support for leadership, IT teams, and security decision-making.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Fractional security leadership support</li>
+          <li>• Architecture/security reviews</li>
+          <li>• Project security guidance</li>
+          <li>• Executive-ready reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="heading text-2xl md:text-3xl font-semibold text-center">Service Packages</h2>
+    <p class="mt-2 text-slate-300 text-center max-w-3xl mx-auto">
+      Choose a starting point and we’ll tailor it to your environment. These packages can stand alone or bundle together.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-8">
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Foundation</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">Best for small teams getting organized and secured.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• IT baseline review + documentation</li>
+          <li>• Risk assessment (light) + priorities</li>
+          <li>• Core policies starter set</li>
+          <li>• Security quick wins checklist</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Growth</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">For growing organizations needing structure and repeatable controls.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Co-managed IT + monitoring</li>
+          <li>• GRC tools setup (risk register + controls)</li>
+          <li>• Incident response plan + playbooks</li>
+          <li>• Quarterly security reporting</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Advanced</h3>
+        <p class="mt-2 text-slate-300/85 text-sm">For mature environments requiring deeper security operations and readiness.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li>• Program roadmap + metrics</li>
+          <li>• Hardening + identity improvements</li>
+          <li>• Vendor risk reviews</li>
+          <li>• Incident response exercises</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-90">Talk to Nasru IT &amp; Cybersecurity</a>
+    </div>
+  </div>
+</section>
+
 <footer class="mt-24 border-t border-slate-700/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
@@ -121,7 +362,7 @@
       <div>
         <h4 class="heading font-semibold mb-3">Services</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
+          <li><a class="hover:text-brand" href="secure.html">IT &amp; Cybersecurity</a></li>
           <li><a class="hover:text-brand" href="smart.html">Smart Integrations</a></li>
           <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
           <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
@@ -131,9 +372,7 @@
       <div>
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
-          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Vendors &amp; Alliances</a></li>
           <li><a class="hover:text-brand" href="contact.html">Support</a></li>
         </ul>
       </div>
@@ -142,13 +381,14 @@
     <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
-        <!-- Social placeholders -->
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
-  <a href="#" class="hover:text-brand">Twitter</a>
-  <a href="#" class="hover:text-brand">YouTube</a>
-</div
+        <a href="#" class="hover:text-brand">Twitter</a>
+        <a href="#" class="hover:text-brand">YouTube</a>
+      </div>
     </div>
   </div>
 </footer>
+
 <script src="assets/site.js"></script>
-</body></html>
+</body>
+</html>
