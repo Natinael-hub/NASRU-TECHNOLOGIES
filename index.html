@@ -96,39 +96,34 @@
         <a href="index.html" class="hover:text-brand">Home</a>
 
         <!-- ✅ Divisions dropdown (2-column + sticky hover) -->
-       <!-- Replace ONLY your current Divisions dropdown block with this one (desktop). -->
-<div class="relative" id="divisionsMenu">
-  <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
-    Divisions
-    <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-    </svg>
-  </button>
+        <div class="relative dropdown-hitbox" id="divisionsMenu">
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
+            Divisions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
+          </button>
 
-  <!-- Panel: uses visibility/opacity so you can "travel" into it without it vanishing -->
-  <div id="divisionsPanel"
-       class="absolute left-0 top-full pt-3 w-[520px] transition-opacity duration-150
-              invisible opacity-0 pointer-events-none"
-       role="menu" aria-labelledby="divisionsBtn">
-    <div class="rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden">
-      <div class="grid grid-cols-2">
-        <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-        <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
+          <!-- NOTE: kept "hidden" default; JS will control open/close with a small delay -->
+          <div id="divisionsPanel"
+               class="dropdown-panel absolute left-0 mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden hidden"
+               role="menu" aria-labelledby="divisionsBtn">
+            <div class="grid grid-cols-2">
+              <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
+              <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
 
-        <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-        <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+              <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+              <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
 
-        <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-          <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-        </a>
-        <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-          <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
+              <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+              </a>
+              <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="partners.html" class="hover:text-brand">Partners</a>
@@ -344,47 +339,50 @@
   if (y) y.textContent = new Date().getFullYear();
 
   // ✅ Make dropdown easy to hover/click (small close delay + buffer)
-<!-- Add this JS INSIDE your existing <script> (() => { ... })(); block (near the top is fine). -->
-const wrap  = document.getElementById('divisionsMenu');
-const btn   = document.getElementById('divisionsBtn');
-const panel = document.getElementById('divisionsPanel');
+  const wrap = document.getElementById('divisionsMenu');
+  const btn = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
 
-if (wrap && btn && panel) {
-  let hideTimer;
+  if (wrap && btn && panel) {
+    let closeTimer;
 
-  const openPanel = () => {
-    clearTimeout(hideTimer);
-    panel.classList.remove('invisible','opacity-0','pointer-events-none');
-    btn.setAttribute('aria-expanded', 'true');
-  };
+    const open = () => {
+      clearTimeout(closeTimer);
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    };
 
-  const scheduleClose = () => {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      panel.classList.add('invisible','opacity-0','pointer-events-none');
-      btn.setAttribute('aria-expanded', 'false');
-    }, 180); // small delay prevents "vanish while moving cursor"
-  };
+    const close = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }, 220); // <- enough time to move cursor into menu
+    };
 
-  // Keep it open while hovering either button OR panel
-  btn.addEventListener('mouseenter', openPanel);
-  panel.addEventListener('mouseenter', openPanel);
-  btn.addEventListener('mouseleave', scheduleClose);
-  panel.addEventListener('mouseleave', scheduleClose);
+    // Open on hover
+    wrap.addEventListener('mouseenter', open);
+    wrap.addEventListener('mouseleave', close);
 
-  // Click to toggle (nice on touchpads)
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (panel.classList.contains('invisible')) openPanel();
-    else scheduleClose();
-  });
+    // Open/close on click (desktop)
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = !panel.classList.contains('hidden');
+      if (isOpen) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        open();
+      }
+    });
 
-  // Click outside closes
-  document.addEventListener('click', (e) => {
-    if (!wrap.contains(e.target)) scheduleClose();
-  });
-}
-
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
