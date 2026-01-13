@@ -24,7 +24,16 @@
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    .pill { display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .7rem; border-radius:999px; font-size:.8rem; border: 1px solid rgba(103,232,249,0.22); background: rgba(103,232,249,0.08); color: rgba(224,251,255,0.95); }
+    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
+
+    /* Badge (ONLY used for the two new divisions) */
+    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
+    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+
+    /* ✅ Hover reliability helpers */
+    .dropdown-hitbox { padding-bottom: 14px; } /* invisible buffer so cursor can move down */
+    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
   </style>
 </head>
 
