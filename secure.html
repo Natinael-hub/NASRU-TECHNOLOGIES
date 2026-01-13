@@ -42,36 +42,23 @@
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <div class="relative" id="divisionsMenu">
-          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
+        <div class="relative group" id="divisionsMenu">
+          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
           </button>
 
-          <div id="divisionsPanel"
-               class="absolute left-0 top-full pt-3 w-[520px] transition-opacity duration-150
-                      invisible opacity-0 pointer-events-none"
-               role="menu" aria-labelledby="divisionsBtn">
-            <div class="rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden">
-              <div class="grid grid-cols-2">
-                <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT & Cybersecurity</a>
-                <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-
-                <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-                <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-
-                <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-                  <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-                </a>
-                <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-                  <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-                </a>
-              </div>
-            </div>
+          <!-- Keep simple dropdown here (your index/multimedia page has the 2-column version).
+               If you want, paste the same 2-column dropdown markup from multimedia.html into this file too. -->
+          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
+            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
+            <a href="smart.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
+            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+            <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+            <a href="multimedia.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Multimedia</a>
+            <a href="lab.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Lab</a>
           </div>
-        </div>>
+        </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="about.html" class="hover:text-brand">About</a>
