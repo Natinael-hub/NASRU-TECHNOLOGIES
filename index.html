@@ -35,10 +35,10 @@
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
     .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
+
+    /* Badge (ONLY used for the two new divisions) */
     .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
-</style>
-
   </style>
 
   <!-- Open Graph / Facebook -->
@@ -95,30 +95,38 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center flex-wrap gap-x-6 gap-y-2 text-slate-100/90">
-  <a href="index.html" class="hover:text-brand">Home</a>
+      <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
+        <a href="index.html" class="hover:text-brand">Home</a>
 
-  <div class="relative group" id="divisionsMenu">
-    <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
-      Divisions
-      <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-      </svg>
-    </button>
+        <!-- Divisions dropdown (2-column) -->
+        <div class="relative group" id="divisionsMenu">
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
+            Divisions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
+          </button>
 
-    <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
-  <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-  <a href="smart.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-  <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-  <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+          <div id="divisionsPanel"
+               class="absolute left-0 hidden group-hover:block mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden"
+               role="menu" aria-labelledby="divisionsBtn">
+            <div class="grid grid-cols-2">
+              <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
+              <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
 
-  <a href="multimedia.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-    <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-  </a>
-  <a href="lab.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-    <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-  </a>
-</div>
+              <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+              <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+
+              <!-- ONLY these two have badges -->
+              <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+              </a>
+              <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="partners.html" class="hover:text-brand">Partners</a>
@@ -132,7 +140,7 @@
       </div>
 
       <!-- Mobile menu button (white icon) -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
         </svg>
@@ -144,23 +152,25 @@
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
+
       <details class="group">
         <summary class="py-2 cursor-pointer">Divisions</summary>
-       <div class="ml-3 space-y-1">
-  <a href="secure.html" class="block py-2">Nasru Secure</a>
-  <a href="smart.html" class="block py-2">Nasru Smart</a>
-  <a href="software.html" class="block py-2">Nasru Software</a>
-  <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+        <div class="ml-3 mt-1 space-y-1">
+          <a href="secure.html" class="block py-2">Nasru Secure</a>
+          <a href="smart.html" class="block py-2">Nasru Smart</a>
+          <a href="software.html" class="block py-2">Nasru Software</a>
+          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
 
-  <a href="multimedia.html" class="flex items-center justify-between py-2">
-    <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-  </a>
-  <a href="lab.html" class="flex items-center justify-between py-2">
-    <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-  </a>
-</div>
-
+          <!-- ONLY these two have badges -->
+          <a href="multimedia.html" class="flex items-center justify-between py-2">
+            <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="lab.html" class="flex items-center justify-between py-2">
+            <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+        </div>
       </details>
+
       <a href="solutions.html" class="block py-2">Solutions</a>
       <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
@@ -322,37 +332,6 @@
 <!-- JS for dropdown hover & mobile menu -->
 <script>
 (() => {
-  const wrap  = document.getElementById('divisionsMenu');
-  const btn   = document.getElementById('divisionsBtn');
-  const panel = document.getElementById('divisionsPanel');
-  let hideTimer;
-
-  const openPanel = () => {
-    clearTimeout(hideTimer);
-    panel.classList.remove('invisible','opacity-0','pointer-events-none');
-  };
-  const scheduleClose = () => {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      panel.classList.add('invisible','opacity-0','pointer-events-none');
-    }, 150);
-  };
-
-  btn.addEventListener('mouseenter', openPanel);
-  panel.addEventListener('mouseenter', openPanel);
-  btn.addEventListener('mouseleave', scheduleClose);
-  panel.addEventListener('mouseleave', scheduleClose);
-
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (panel.classList.contains('invisible')) openPanel();
-    else scheduleClose();
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!wrap.contains(e.target)) scheduleClose();
-  });
-
   // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -368,5 +347,4 @@
 
 </body>
 </html>
-
 
