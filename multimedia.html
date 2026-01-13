@@ -24,6 +24,8 @@
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
+
+    /* Badge (ONLY use on Multimedia + Lab items) */
     .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
   </style>
@@ -39,35 +41,39 @@
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav (spacing improved: wraps cleanly if needed) -->
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center flex-wrap gap-x-6 gap-y-2 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <div class="relative group" id="divisionsMenu">
-          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
+        <!-- Divisions dropdown (2-column + stable hover) -->
+        <div class="relative" id="divisionsMenu">
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
           </button>
 
-          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
-            <a href="secure.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-              <span>Nasru Secure</span><span class="chip chip-soon">Coming Soon</span>
-            </a>
-            <a href="smart.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-              <span>Nasru Smart</span><span class="chip chip-soon">Coming Soon</span>
-            </a>
-            <a href="software.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-              <span>Nasru Software</span><span class="chip chip-soon">Coming Soon</span>
-            </a>
-            <a href="global.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-              <span>Nasru Global Solutions</span><span class="chip chip-soon">Coming Soon</span>
-            </a>
-            <a href="multimedia.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-              <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-            </a>
-            <a href="lab.html" class="flex items-center justify-between px-4 py-3 hover:bg-slate-800/60" role="menuitem">
-              <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-            </a>
+          <div id="divisionsPanel"
+               class="absolute left-0 top-full pt-3 w-[520px] transition-opacity duration-150
+                      invisible opacity-0 pointer-events-none"
+               role="menu" aria-labelledby="divisionsBtn">
+            <div class="rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden">
+              <div class="grid grid-cols-2">
+                <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
+                <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
+
+                <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+                <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+
+                <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                  <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+                </a>
+                <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                  <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -95,18 +101,11 @@
       <details class="group">
         <summary class="py-2 cursor-pointer">Divisions</summary>
         <div class="ml-3 space-y-1">
-          <a href="secure.html" class="flex items-center justify-between py-2">
-            <span>Nasru Secure</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-          <a href="smart.html" class="flex items-center justify-between py-2">
-            <span>Nasru Smart</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-          <a href="software.html" class="flex items-center justify-between py-2">
-            <span>Nasru Software</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-          <a href="global.html" class="flex items-center justify-between py-2">
-            <span>Nasru Global Solutions</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
+          <a href="secure.html" class="block py-2">Nasru Secure</a>
+          <a href="smart.html" class="block py-2">Nasru Smart</a>
+          <a href="software.html" class="block py-2">Nasru Software</a>
+          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+
           <a href="multimedia.html" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
           </a>
@@ -126,8 +125,22 @@
 </header>
 
 <!-- HERO -->
-<section class="relative py-16">
+<section class="relative py-14 md:py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Landscape logo (PUT YOUR IMAGE FILE HERE) -->
+    <!-- Save your uploaded image as: assets/img/nasru-multimedia.png (recommended) -->
+    <div class="max-w-4xl mx-auto mb-8">
+      <div class="card p-4 md:p-5">
+        <img
+          src="assets/img/nasru-multimedia.png"
+          alt="Nasru Multimedia"
+          class="w-full h-auto object-contain rounded-xl"
+          loading="eager"
+        >
+      </div>
+    </div>
+
     <div class="flex items-center justify-center">
       <span class="chip chip-soon">Coming Soon</span>
     </div>
@@ -231,11 +244,52 @@
 
 <script>
 (() => {
+  // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (menuBtn && mobileMenu){
     menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
   }
+
+  // Desktop divisions dropdown: stable hover + click toggle
+  const wrap  = document.getElementById('divisionsMenu');
+  const btn   = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
+
+  if (wrap && btn && panel) {
+    let hideTimer;
+
+    const openPanel = () => {
+      clearTimeout(hideTimer);
+      panel.classList.remove('invisible','opacity-0','pointer-events-none');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+
+    const scheduleClose = () => {
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        panel.classList.add('invisible','opacity-0','pointer-events-none');
+        btn.setAttribute('aria-expanded', 'false');
+      }, 180);
+    };
+
+    btn.addEventListener('mouseenter', openPanel);
+    panel.addEventListener('mouseenter', openPanel);
+    btn.addEventListener('mouseleave', scheduleClose);
+    panel.addEventListener('mouseleave', scheduleClose);
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (panel.classList.contains('invisible')) openPanel();
+      else scheduleClose();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) scheduleClose();
+    });
+  }
+
+  // Footer year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
@@ -243,3 +297,4 @@
 
 </body>
 </html>
+
