@@ -8,19 +8,15 @@
   <title>Nasru Technologies</title>
   <link rel="canonical" href="https://nasrutechnologies.com/">
 
-  <!-- Primary description (keep one concise meta description) -->
   <meta name="description" content="Nasru Technologies — devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
 
-  <!-- Favicon(s) -->
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -39,22 +35,24 @@
     /* Badge (ONLY used for the two new divisions) */
     .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+
+    /* ✅ Hover reliability helpers */
+    .dropdown-hitbox { padding-bottom: 14px; } /* invisible buffer so cursor can move down */
+    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
   </style>
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
   <meta property="og:description" content="Devices, software, installations, IT services, and cybersecurity.">
   <meta property="og:url" content="https://nasrutechnologies.com">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nasru Technologies — Secure. Smart. Scalable.">
   <meta name="twitter:description" content="Devices, software, installations, IT services, and cybersecurity.">
   <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-  <!-- Schema.org JSON-LD: Organization (helps Google show your logo) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,7 +72,6 @@
   }
   </script>
 
-  <!-- Schema.org JSON-LD: WebSite (optional nice-to-have) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -98,8 +95,8 @@
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (2-column) -->
-        <div class="relative group" id="divisionsMenu">
+        <!-- ✅ Divisions dropdown (2-column + sticky hover) -->
+        <div class="relative dropdown-hitbox" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
             <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
@@ -107,8 +104,9 @@
             </svg>
           </button>
 
+          <!-- NOTE: kept "hidden" default; JS will control open/close with a small delay -->
           <div id="divisionsPanel"
-               class="absolute left-0 hidden group-hover:block mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden"
+               class="dropdown-panel absolute left-0 mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden hidden"
                role="menu" aria-labelledby="divisionsBtn">
             <div class="grid grid-cols-2">
               <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
@@ -117,7 +115,6 @@
               <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
               <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
 
-              <!-- ONLY these two have badges -->
               <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
                 <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
               </a>
@@ -139,7 +136,7 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button (white icon) -->
+      <!-- Mobile menu button -->
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -161,7 +158,6 @@
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
 
-          <!-- ONLY these two have badges -->
           <a href="multimedia.html" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
           </a>
@@ -329,7 +325,6 @@
   </div>
 </footer>
 
-<!-- JS for dropdown hover & mobile menu -->
 <script>
 (() => {
   // Mobile menu toggle
@@ -342,9 +337,63 @@
   // Footer year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
+
+  // ✅ Make dropdown easy to hover/click (small close delay + buffer)
+  const wrap = document.getElementById('divisionsMenu');
+  const btn = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
+
+  if (wrap && btn && panel) {
+    let closeTimer;
+
+    const open = () => {
+      clearTimeout(closeTimer);
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+
+    const close = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }, 220); // <- enough time to move cursor into menu
+    };
+
+    // Open on hover
+    wrap.addEventListener('mouseenter', open);
+    wrap.addEventListener('mouseleave', close);
+
+    // Open/close on click (desktop)
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = !panel.classList.contains('hidden');
+      if (isOpen) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        open();
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 })();
 </script>
 
 </body>
 </html>
-
