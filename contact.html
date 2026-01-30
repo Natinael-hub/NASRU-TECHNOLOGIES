@@ -93,8 +93,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="heading text-3xl md:text-5xl font-semibold neon-text">Contact Nasru Technologies</h1>
     <p class='mt-3 text-slate-300'>Tell us about your needs — security, IoT, software, or distribution.</p>
-    
-  <!-- Contact Info -->
+
+<!-- Contact Info -->
 <section class="py-10">
   <div class="max-w-3xl mx-auto px-4 text-center">
     <div class="card p-8">
@@ -105,12 +105,22 @@
 
       <div class="space-y-4 text-slate-100 text-sm md:text-base">
         <p><strong>Email:</strong> <a href="mailto:info@nasrutechnologies.com" class="text-brand hover:underline">info@nasrutechnologies.com</a></p>
-        
-        <p><strong>Location:</strong> Serving clients across the U.S. and internationally</p>
+
+        <!-- ✅ Added business address here -->
+        <p><strong>Business Address:</strong> 1101 Wilson Boulevard, 6th Floor, Arlington, VA 22209</p>
+
+        <p><strong>Service Area:</strong> Serving clients across the U.S. and internationally</p>
       </div>
 
-      <div class="mt-8">
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="mailto:info@nasrutechnologies.com" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Send an Email</a>
+
+        <!-- Optional: Google Maps link -->
+        <a href="https://www.google.com/maps?q=1101+Wilson+Boulevard,+6th+Floor,+Arlington,+VA+22209"
+           target="_blank" rel="noopener"
+           class="rounded-xl border border-neon px-5 py-3 hover:bg-white/5">
+          View on Map
+        </a>
       </div>
     </div>
   </div>
@@ -163,13 +173,20 @@
     <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
-        <!-- Social placeholders -->
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
-  <a href="#" class="hover:text-brand">Twitter</a>
-  <a href="#" class="hover:text-brand">YouTube</a>
-</div
+        <a href="#" class="hover:text-brand">Twitter</a>
+        <a href="#" class="hover:text-brand">YouTube</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<script>
+(() => {
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
 <script src="assets/site.js"></script>
-</body></html>
+</body>
+</html>
