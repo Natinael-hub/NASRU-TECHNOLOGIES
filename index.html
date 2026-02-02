@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <link rel="canonical" href="https://nasrutechnologies.com/" />
-
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nasru Technologies</title>
 
-  <!-- Google tag (gtag.js) -->
+  <meta name="description" content="Nasru Technologies — devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
+
+  <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBFMRBC00"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,14 +19,7 @@
     gtag('config', 'G-9GBFMRBC00');
   </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru Technologies</title>
-  <link rel="canonical" href="https://nasrutechnologies.com/">
-
-  <meta name="description" content="Nasru Technologies — devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
-
-  <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
-
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -36,10 +34,12 @@
     }
   </script>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <style>
     :root{ color-scheme: dark; }
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
@@ -49,106 +49,138 @@
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
-
-    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
+    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; font-weight:600; }
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
-
-    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
-    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
   </style>
-
-  <meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
-  <meta property="og:description" content="Devices, software, installations, IT services, and cybersecurity.">
-  <meta property="og:url" content="https://nasrutechnologies.com">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nasru Technologies — Secure. Smart. Scalable.">
-  <meta name="twitter:description" content="Devices, software, installations, IT services, and cybersecurity.">
-  <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 </head>
 
 <body class="text-slate-100 antialiased">
 
+<!-- HEADER -->
 <header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
-        <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
-      </a>
+  <div class="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+      <span class="heading text-lg font-semibold">Nasru Technologies</span>
+    </a>
 
-      <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
-        <a href="index.html" class="hover:text-brand">Home</a>
+    <nav class="hidden md:flex gap-8">
+      <a href="index.html" class="hover:text-brand">Home</a>
+      <a href="solutions.html" class="hover:text-brand">Solutions</a>
+      <a href="partners.html" class="hover:text-brand">Partners</a>
+      <a href="about.html" class="hover:text-brand">About</a>
+      <a href="careers.html" class="hover:text-brand">Careers</a>
+      <a href="contact.html" class="hover:text-brand">Contact</a>
+    </nav>
 
-        <div class="relative" id="divisionsMenu">
-          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
-          </button>
-
-          <div id="divisionsPanel" class="dropdown-panel absolute left-0 mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl hidden">
-            <div class="grid grid-cols-2">
-              <a href="secure.html" class="px-5 py-3 hover:bg-slate-800/60">Nasru IT & Cybersecurity</a>
-              <a href="smart.html" class="px-5 py-3 hover:bg-slate-800/60">Nasru Smart</a>
-              <a href="software.html" class="px-5 py-3 hover:bg-slate-800/60">Nasru Software</a>
-              <a href="global.html" class="px-5 py-3 hover:bg-slate-800/60">Nasru Global Solutions</a>
-              <a href="multimedia.html" class="flex justify-between px-5 py-3 hover:bg-slate-800/60">
-                <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-              </a>
-              <a href="lab.html" class="flex justify-between px-5 py-3 hover:bg-slate-800/60">
-                <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <a href="solutions.html" class="hover:text-brand">Solutions</a>
-        <a href="partners.html" class="hover:text-brand">Partners</a>
-        <a href="about.html" class="hover:text-brand">About</a>
-        <a href="careers.html" class="hover:text-brand">Careers</a>
-        <a href="contact.html" class="hover:text-brand">Contact</a>
-      </nav>
-
-      <a href="contact.html" class="hidden md:block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
-    </div>
+    <a href="contact.html" class="hidden md:block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="relative h-[86vh] min-h-[520px] flex items-center justify-center text-center overflow-hidden">
-  <video autoplay loop muted playsinline poster="assets/img/hero_poster.png" class="absolute inset-0 w-full h-full object-cover">
+  <video autoplay loop muted playsinline poster="assets/img/hero_poster.png"
+    class="absolute inset-0 w-full h-full object-cover">
     <source src="assets/video/hero.mp4" type="video/mp4" />
   </video>
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/35 to-slate-900/55"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-slate-900/70"></div>
+
   <div class="relative z-10 max-w-3xl px-4">
     <h1 class="heading text-4xl md:text-6xl font-bold neon-text">Secure. Smart. Scalable.</h1>
-    <p class="mt-4 text-lg text-slate-100/90">
-      Delivering trusted technology solutions — from reselling top-tier devices and building custom software to system installations, IT services, and advanced cybersecurity.
+    <p class="mt-4 text-lg text-slate-200">
+      Devices, software, installations, IT services, and advanced cybersecurity solutions.
     </p>
+    <div class="mt-6 flex gap-4 justify-center">
+      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900">Get a Quote</a>
+      <a href="solutions.html" class="rounded-xl border border-neon px-6 py-3">Explore Solutions</a>
+    </div>
   </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-700/60">
-  <div class="max-w-7xl mx-auto px-4 py-10 text-center text-slate-400 text-sm">
-    © <span id="year"></span> Nasru Technologies. All rights reserved.
+<!-- WHAT WE DO -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="heading text-3xl font-semibold text-center">What We Do</h2>
+
+    <div class="grid gap-6 md:grid-cols-4 mt-10">
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Device Distribution</h3>
+        <p class="mt-2 text-sm text-slate-300">CCTV, access control, POS, ATM, networking.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Software Development</h3>
+        <p class="mt-2 text-sm text-slate-300">SaaS, platforms, and custom tools.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Installations</h3>
+        <p class="mt-2 text-sm text-slate-300">Design, deployment, and integration.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Cybersecurity & IT</h3>
+        <p class="mt-2 text-sm text-slate-300">Assessments, hardening, managed services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISIONS -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="heading text-3xl font-semibold text-center">Divisions</h2>
+
+    <div class="grid gap-6 md:grid-cols-4 mt-8">
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Nasru IT & Cybersecurity</h3>
+        <p class="text-sm text-slate-300 mt-2">Security systems & assessments.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Nasru Smart</h3>
+        <p class="text-sm text-slate-300 mt-2">IoT & automation.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Nasru Software</h3>
+        <p class="text-sm text-slate-300 mt-2">Platforms & products.</p>
+      </div>
+      <div class="card p-6">
+        <h3 class="heading font-semibold">Global Solutions</h3>
+        <p class="text-sm text-slate-300 mt-2">Sourcing & logistics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="card p-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h3 class="heading text-xl font-semibold">Ready to get started?</h3>
+        <p class="text-sm text-slate-300 mt-1">Talk to our team today.</p>
+      </div>
+      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-700/60 py-10 mt-16">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between text-sm text-slate-400">
+    <div>© <span id="year"></span> Nasru Technologies</div>
+    <div class="flex gap-4">
+      <a href="https://linkedin.com/company/nasru-technologies" class="hover:text-brand">LinkedIn</a>
+      <a href="#" class="hover:text-brand">Twitter</a>
+      <a href="#" class="hover:text-brand">YouTube</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const wrap = document.getElementById('divisionsMenu');
-  const panel = document.getElementById('divisionsPanel');
-  if (wrap && panel) {
-    wrap.addEventListener('mouseenter', () => panel.classList.remove('hidden'));
-    wrap.addEventListener('mouseleave', () => panel.classList.add('hidden'));
-  }
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
 
