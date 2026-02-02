@@ -5,7 +5,7 @@
 
   <meta charset="utf-8" />
 
-  <!-- ✅ Google tag (gtag.js) — GA4 -->
+  <!-- ✅ Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBFMRBC00"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,7 +17,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nasru Technologies</title>
-  <link rel="canonical" href="https://nasrutechnologies.com/">
 
   <meta name="description" content="Nasru Technologies — devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
 
@@ -25,7 +24,16 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#22D3EE',
+            neon: '#67e8f9'
+          }
+        }
+      }
+    }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -33,9 +41,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    :root{ color-scheme: dark; }
-    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
-    .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
+    :root { color-scheme: dark; }
+    body { font-family: Inter, system-ui, sans-serif; background:#0e1526; }
+    .heading { font-family: Poppins, Inter, system-ui, sans-serif; }
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
     .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
@@ -43,56 +51,82 @@
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
     .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
 
-    /* Badge (ONLY used for the two new divisions) */
-    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
+    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; font-weight:600; }
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
 
-    /* ✅ Hover reliability helpers */
-    .dropdown-hitbox { padding-bottom: 14px; } /* invisible buffer so cursor can move down */
-    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
+    .dropdown-panel { animation: fadeIn .12s ease-out; }
     @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
   </style>
 
+  <!-- OpenGraph -->
   <meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
   <meta property="og:description" content="Devices, software, installations, IT services, and cybersecurity.">
   <meta property="og:url" content="https://nasrutechnologies.com">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nasru Technologies — Secure. Smart. Scalable.">
   <meta name="twitter:description" content="Devices, software, installations, IT services, and cybersecurity.">
   <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nasru Technologies",
-    "url": "https://nasrutechnologies.com",
-    "logo": "https://nasrutechnologies.com/assets/img/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/nasru-technologies"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-555-555-5555",
-      "contactType": "customer service",
-      "areaServed": "US"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Nasru Technologies",
-    "url":"https://nasrutechnologies.com/"
-  }
-  </script>
 </head>
+
 <body class="text-slate-100 antialiased">
-  <!-- ...rest of your page stays exactly the same... -->
+
+<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+  <div class="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+      <span class="heading text-lg font-semibold">Nasru Technologies</span>
+    </a>
+    <nav class="hidden md:flex gap-8">
+      <a href="index.html" class="hover:text-brand">Home</a>
+      <a href="solutions.html" class="hover:text-brand">Solutions</a>
+      <a href="partners.html" class="hover:text-brand">Partners</a>
+      <a href="about.html" class="hover:text-brand">About</a>
+      <a href="contact.html" class="hover:text-brand">Contact</a>
+    </nav>
+    <a href="contact.html" class="hidden md:inline rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">
+      Get a Quote
+    </a>
+  </div>
+</header>
+
+<section class="relative h-[86vh] flex items-center justify-center text-center overflow-hidden">
+  <video autoplay loop muted playsinline poster="assets/img/hero_poster.png"
+         class="absolute inset-0 w-full h-full object-cover">
+    <source src="assets/video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-slate-900/70"></div>
+  <div class="relative z-10 max-w-3xl px-4">
+    <h1 class="heading text-4xl md:text-6xl font-bold neon-text">
+      Secure. Smart. Scalable.
+    </h1>
+    <p class="mt-4 text-lg text-slate-200">
+      Devices, software, installations, IT services, and advanced cybersecurity.
+    </p>
+    <div class="mt-6 flex justify-center gap-4">
+      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900">
+        Get a Quote
+      </a>
+      <a href="solutions.html" class="rounded-xl border border-neon px-6 py-3">
+        Explore Solutions
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-slate-700/60">
+  <div class="max-w-7xl mx-auto px-4 py-10 text-sm text-slate-400 flex justify-between">
+    <span>© <span id="year"></span> Nasru Technologies</span>
+    <a href="https://linkedin.com/company/nasru-technologies" class="hover:text-brand">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
