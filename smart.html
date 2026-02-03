@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru Technologies</title>
-  <meta name="description" content="Nasru Technologies — secure, smart, and scalable technology solutions: security, IoT, software, and global distribution." />
+  <title>Nasru Hardware | Nasru Technologies</title>
+  <meta name="description" content="Nasru Hardware — ATM & POS devices, peripherals, networking, wiring, and enterprise hardware sourced directly from trusted partners. Quotes and sourcing support available." />
+
   <link rel="icon" href="assets/img/logo.png" type="image/png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
   </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
   <style>
     :root{ color-scheme: dark; }
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
@@ -20,11 +24,20 @@
     .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    /* Hero fallback class if video fails */
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
+
+    /* Optional image frame look (works even if you haven’t added images yet) */
+    .thumb {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(103,232,249,0.14);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .thumb img { width: 100%; height: 170px; object-fit: cover; display:block; opacity: 0.95; }
   </style>
 </head>
+
 <body class="text-slate-100 antialiased">
+
 <header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -38,13 +51,16 @@
         <a href="index.html" class="hover:text-brand">Home</a>
 
         <div class="relative group" id="divisionsMenu">
-          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false">
+          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
           </button>
-          <div class="absolute hidden group-hover:block mt-3 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
-            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-            <a href="smart.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
+
+          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden" role="menu">
+            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
+            <a href="hardware.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Hardware</a>
             <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
             <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
           </div>
@@ -61,7 +77,7 @@
       </div>
 
       <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
       </button>
     </div>
@@ -71,15 +87,17 @@
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
+
       <details class="group">
         <summary class="py-2 cursor-pointer">Divisions</summary>
         <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru Secure</a>
-          <a href="smart.html" class="block py-2">Nasru Smart</a>
+          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
+          <a href="hardware.html" class="block py-2">Nasru Hardware</a>
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
         </div>
       </details>
+
       <a href="solutions.html" class="block py-2">Solutions</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
@@ -89,12 +107,235 @@
   </div>
 </header>
 
-<section class="relative py-16">
+<!-- HERO -->
+<section class="relative py-16 border-b border-slate-700/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="heading text-3xl md:text-5xl font-semibold neon-text">Nasru Smart</h1>
-    <p class='mt-3 text-slate-300'>IoT & smart integrated systems for modern buildings.</p>
+    <h1 class="heading text-3xl md:text-5xl font-semibold neon-text">Nasru Hardware</h1>
+    <p class="mt-3 text-slate-300 max-w-3xl">
+      ATM &amp; POS devices, peripherals, enterprise hardware, networking, and wiring categories — sourced directly from our trusted partners.
+      We help you select, procure, and deliver the right equipment, plus provide guidance for installation and support.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="#catalog" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Browse categories</a>
+      <a href="#quote" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:bg-white/10">Request a quote</a>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="card p-5">
+        <div class="font-semibold">Trusted sourcing</div>
+        <div class="mt-1 text-sm text-slate-300/80">We source devices and components through vetted distributors and partner networks.</div>
+      </div>
+      <div class="card p-5">
+        <div class="font-semibold">Enterprise-ready</div>
+        <div class="mt-1 text-sm text-slate-300/80">Banking-grade, retail-ready, and commercial-grade options available.</div>
+      </div>
+      <div class="card p-5">
+        <div class="font-semibold">Quotes &amp; logistics</div>
+        <div class="mt-1 text-sm text-slate-300/80">Fast quotes, configuration guidance, and delivery coordination.</div>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- CATEGORY CARDS -->
+<section id="catalog" class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="heading text-2xl md:text-4xl font-semibold">Hardware Categories</h2>
+        <p class="mt-3 text-slate-300 max-w-3xl">
+          Click a category to view examples, options, and how to request a quote.
+        </p>
+      </div>
+      <a href="#quote" class="hidden md:inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a quote</a>
+    </div>
+
+    <div class="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- ATM -->
+      <a href="#atm" class="card p-6 block hover:opacity-95">
+        <div class="thumb mb-4">
+          <!-- Replace image path when ready -->
+          <img src="assets/img/hardware-atm.jpg" alt="ATM devices (placeholder)" onerror="this.style.display='none'">
+          <div class="p-4 text-sm text-slate-300/80" style="display:none;"></div>
+        </div>
+        <h3 class="heading text-lg font-semibold">ATM Devices</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">New / refurbished units, components, and deployment-ready options.</p>
+      </a>
+
+      <!-- POS -->
+      <a href="#pos" class="card p-6 block hover:opacity-95">
+        <div class="thumb mb-4">
+          <img src="assets/img/hardware-pos.jpg" alt="POS devices (placeholder)" onerror="this.style.display='none'">
+        </div>
+        <h3 class="heading text-lg font-semibold">POS Systems</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Terminals, receipt printers, scanners, accessories, and bundles.</p>
+      </a>
+
+      <!-- Peripherals -->
+      <a href="#peripherals" class="card p-6 block hover:opacity-95">
+        <div class="thumb mb-4">
+          <img src="assets/img/hardware-peripherals.jpg" alt="Peripherals (placeholder)" onerror="this.style.display='none'">
+        </div>
+        <h3 class="heading text-lg font-semibold">Peripherals &amp; Accessories</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Scanners, card readers, PIN pads, printers, UPS, and more.</p>
+      </a>
+
+      <!-- Networking -->
+      <a href="#networking" class="card p-6 block hover:opacity-95">
+        <div class="thumb mb-4">
+          <img src="assets/img/hardware-networking.jpg" alt="Networking (placeholder)" onerror="this.style.display='none'">
+        </div>
+        <h3 class="heading text-lg font-semibold">Networking Hardware</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Switches, routers, firewalls, Wi-Fi, racks, patch panels.</p>
+      </a>
+
+      <!-- Wiring -->
+      <a href="#wiring" class="card p-6 block hover:opacity-95">
+        <div class="thumb mb-4">
+          <img src="assets/img/hardware-wiring.jpg" alt="Cabling & wiring (placeholder)" onerror="this.style.display='none'">
+        </div>
+        <h3 class="heading text-lg font-semibold">Wiring &amp; Cabling</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">CAT5e/CAT6/CAT6A, fiber, connectors, keystones, tools, labeling.</p>
+      </a>
+
+      <!-- Enterprise Devices -->
+      <a href="#enterprise" class="card p-6 block hover:opacity-95">
+        <div class="thumb mb-4">
+          <img src="assets/img/hardware-enterprise.jpg" alt="Enterprise devices (placeholder)" onerror="this.style.display='none'">
+        </div>
+        <h3 class="heading text-lg font-semibold">Enterprise Devices</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Desktops, laptops, servers, storage, monitors, docking stations.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS SECTIONS -->
+<section class="py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+    <div id="atm" class="card p-7 scroll-mt-24">
+      <h3 class="heading text-xl font-semibold">ATM Devices</h3>
+      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
+        We source ATM devices and supporting components through trusted suppliers. Tell us your required deployment environment, volume, and timeline, and we’ll provide options and pricing.
+      </p>
+      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
+        <li>• New / refurbished ATM units (subject to availability)</li>
+        <li>• Components &amp; replacement parts</li>
+        <li>• Deployment guidance &amp; logistics support</li>
+        <li>• Warranty / vendor support options (when applicable)</li>
+      </ul>
+      <div class="mt-5">
+        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request ATM quote</a>
+      </div>
+    </div>
+
+    <div id="pos" class="card p-7 scroll-mt-24">
+      <h3 class="heading text-xl font-semibold">POS Systems</h3>
+      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
+        POS bundles, terminals, and retail hardware. We help match your needs (store type, volume, peripherals) to the right options.
+      </p>
+      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
+        <li>• POS terminals &amp; stands</li>
+        <li>• Receipt printers &amp; label printers</li>
+        <li>• Barcode scanners</li>
+        <li>• Accessories &amp; cables</li>
+      </ul>
+      <div class="mt-5">
+        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request POS quote</a>
+      </div>
+    </div>
+
+    <div id="peripherals" class="card p-7 scroll-mt-24">
+      <h3 class="heading text-xl font-semibold">Peripherals &amp; Accessories</h3>
+      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
+        We supply supporting accessories for deployments: printers, scanners, power, mounting, and other essentials.
+      </p>
+      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
+        <li>• Printers, scanners, card readers</li>
+        <li>• PIN pads &amp; payment accessories</li>
+        <li>• UPS / power protection</li>
+        <li>• Mounts, enclosures, stands</li>
+      </ul>
+      <div class="mt-5">
+        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request quote</a>
+      </div>
+    </div>
+
+    <div id="networking" class="card p-7 scroll-mt-24">
+      <h3 class="heading text-xl font-semibold">Networking Hardware</h3>
+      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
+        Switches, routers, wireless, security appliances, and infrastructure accessories—sourced through trusted partners.
+      </p>
+      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
+        <li>• Switches, routers, Wi-Fi APs</li>
+        <li>• Firewalls &amp; security appliances</li>
+        <li>• Racks, patch panels, UPS</li>
+        <li>• Deployment kits &amp; accessories</li>
+      </ul>
+      <div class="mt-5">
+        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request networking quote</a>
+      </div>
+    </div>
+
+    <div id="wiring" class="card p-7 scroll-mt-24">
+      <h3 class="heading text-xl font-semibold">Wiring &amp; Cabling</h3>
+      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
+        Structured cabling categories for commercial deployments, including copper and fiber options.
+      </p>
+      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
+        <li>• CAT5e / CAT6 / CAT6A</li>
+        <li>• Fiber cables &amp; modules</li>
+        <li>• Patch cords, connectors, keystones</li>
+        <li>• Tools, testers, labeling</li>
+      </ul>
+      <div class="mt-5">
+        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request cabling quote</a>
+      </div>
+    </div>
+
+    <div id="enterprise" class="card p-7 scroll-mt-24">
+      <h3 class="heading text-xl font-semibold">Enterprise Devices</h3>
+      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
+        Business desktops, laptops, servers, and related equipment—configured and quoted based on your needs.
+      </p>
+      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
+        <li>• Laptops, desktops, monitors</li>
+        <li>• Servers, storage, accessories</li>
+        <li>• Imaging / provisioning guidance</li>
+        <li>• Delivery coordination</li>
+      </ul>
+      <div class="mt-5">
+        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request enterprise quote</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE / CONTACT -->
+<section id="quote" class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-8 md:p-10">
+      <h2 class="heading text-2xl md:text-4xl font-semibold">Request a Quote</h2>
+      <p class="mt-3 text-slate-300 max-w-3xl">
+        Tell us what you need (category, quantity, preferred brands/models if any, location, and timeline). We’ll respond with options and pricing.
+      </p>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90 text-center">Contact Nasru</a>
+        <a href="mailto:info@nasrutechnologies.com" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:bg-white/10 text-center">Email: info@nasrutechnologies.com</a>
+        <a href="contact.html" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:bg-white/10 text-center">Get device recommendations</a>
+      </div>
+
+      <div class="mt-6 text-sm text-slate-300/80">
+        Tip: If you share your use-case and budget range, we can recommend the best-fit options faster.
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="mt-24 border-t border-slate-700/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
@@ -122,7 +363,7 @@
         <h4 class="heading font-semibold mb-3">Services</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
           <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Smart Integrations</a></li>
+          <li><a class="hover:text-brand" href="hardware.html">Nasru Hardware</a></li>
           <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
           <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
         </ul>
@@ -131,7 +372,7 @@
       <div>
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Vendors &amp; Alliances</a></li>
           <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
           <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
           <li><a class="hover:text-brand" href="contact.html">Support</a></li>
@@ -142,13 +383,28 @@
     <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
-        <!-- Social placeholders -->
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
-  <a href="#" class="hover:text-brand">Twitter</a>
-  <a href="#" class="hover:text-brand">YouTube</a>
-</div
+        <a href="#" class="hover:text-brand">Twitter</a>
+        <a href="#" class="hover:text-brand">YouTube</a>
+      </div>
     </div>
   </div>
 </footer>
-<script src="assets/site.js"></script>
-</body></html>
+
+<script>
+(() => {
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+  }
+
+  // Footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
