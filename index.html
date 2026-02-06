@@ -2,14 +2,10 @@
 <html lang="en">
 <head>
   <link rel="canonical" href="https://nasrutechnologies.com/" />
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nasru Technologies</title>
-  <link rel="canonical" href="https://nasrutechnologies.com/">
-
-  <meta name="description" content="Nasru Technologies — devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
-
+  <meta name="description" content="Nasru Technologies — enterprise technology delivery: devices, software, installations, IT services, and cybersecurity. Secure. Smart. Scalable." />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
   <!-- Google tag (gtag.js) -->
@@ -21,50 +17,99 @@
     gtag('config', 'G-9GBFMRBC00');
   </script>
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#22D3EE',
+            neon: '#67e8f9'
+          }
+        }
+      }
+    }
   </script>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
   <style>
     :root{ color-scheme: dark; }
-    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
+    body{ font-family: Inter, system-ui, sans-serif; background:#0b1222; }
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
-    .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
+
+    /* Premium glass */
+    .glass { background: rgba(10,18,35,0.62); backdrop-filter: blur(14px); }
+    .hairline { border-color: rgba(148,163,184,0.18); }
+
+    /* Cards */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(103,232,249,0.12);
+      border-radius: 18px;
+    }
+    .card:hover {
+      box-shadow:
+        0 0 0 1px rgba(103,232,249,0.18),
+        0 18px 60px rgba(0,0,0,0.55),
+        0 0 38px rgba(103,232,249,0.10);
+      transform: translateY(-1px);
+      transition: .18s ease;
+    }
+
+    /* Subtle neon headline */
+    .neon-text {
+      text-shadow: 0 0 10px rgba(103,232,249,0.22), 0 0 28px rgba(103,232,249,0.14);
+    }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
 
-    /* Badge (ONLY used for the two new divisions) */
-    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
-    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+    /* Hero */
+    .hero-scrim {
+      background:
+        radial-gradient(900px 420px at 35% 10%, rgba(103,232,249,0.18), transparent 60%),
+        radial-gradient(700px 420px at 85% 25%, rgba(34,211,238,0.12), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.20), rgba(2,6,23,0.70));
+    }
 
-    /* ✅ Hover reliability helpers */
+    /* Chips */
+    .chip {
+      display:inline-flex; align-items:center; gap:.35rem;
+      padding:.14rem .6rem; border-radius:999px;
+      font-size:.72rem; line-height:1.2; font-weight:600;
+      border: 1px solid rgba(103,232,249,0.22);
+      background: rgba(103,232,249,0.10);
+      color: rgba(224,251,255,0.95);
+    }
+    .chip-soon {
+      background: rgba(103,232,249,0.10);
+      border: 1px solid rgba(103,232,249,0.22);
+      color: rgba(224,251,255,0.92);
+    }
+
+    /* Dropdown animation */
     .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
-    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(6px);} to { opacity:1; transform: translateY(0);} }
 
-    /* ✅ Futuristic dropdown styling */
+    /* Futuristic mega menu */
     .divisions-shell{
       background:
-        radial-gradient(800px 240px at 20% 0%, rgba(103,232,249,0.18), transparent 55%),
-        radial-gradient(700px 240px at 85% 15%, rgba(34,211,238,0.14), transparent 60%),
-        linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.75));
-      border: 1px solid rgba(103,232,249,0.22);
+        radial-gradient(800px 240px at 18% 0%, rgba(103,232,249,0.18), transparent 55%),
+        radial-gradient(700px 240px at 86% 18%, rgba(34,211,238,0.14), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.74));
+      border: 1px solid rgba(103,232,249,0.20);
       box-shadow:
-        0 0 0 1px rgba(103,232,249,0.10) inset,
-        0 18px 60px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(103,232,249,0.08) inset,
+        0 18px 60px rgba(0,0,0,0.60),
         0 0 40px rgba(103,232,249,0.08);
       backdrop-filter: blur(14px);
     }
     .divisions-item{
       position: relative;
-      border-bottom: 1px solid rgba(148,163,184,0.08);
+      border-bottom: 1px solid rgba(148,163,184,0.09);
     }
     .divisions-item:hover{
       background: linear-gradient(90deg, rgba(103,232,249,0.12), rgba(103,232,249,0.02));
@@ -85,19 +130,36 @@
       font-size: .72rem;
       color: rgba(148,163,184,0.92);
     }
+
+    /* Section background accents */
+    .section-glow{
+      background:
+        radial-gradient(700px 240px at 15% 0%, rgba(103,232,249,0.10), transparent 60%),
+        radial-gradient(700px 240px at 85% 20%, rgba(34,211,238,0.08), transparent 60%);
+    }
+
+    /* Small trust logos */
+    .trust-logo{
+      opacity: .9;
+      filter: grayscale(10%) contrast(105%);
+    }
+    .trust-logo:hover{ opacity: 1; }
+
   </style>
 
+  <!-- Social -->
   <meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
-  <meta property="og:description" content="Devices, software, installations, IT services, and cybersecurity.">
+  <meta property="og:description" content="Enterprise technology delivery: devices, software, installations, IT services, and cybersecurity.">
   <meta property="og:url" content="https://nasrutechnologies.com">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nasru Technologies — Secure. Smart. Scalable.">
-  <meta name="twitter:description" content="Devices, software, installations, IT services, and cybersecurity.">
+  <meta name="twitter:description" content="Enterprise technology delivery: devices, software, installations, IT services, and cybersecurity.">
   <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -105,18 +167,9 @@
     "name": "Nasru Technologies",
     "url": "https://nasrutechnologies.com",
     "logo": "https://nasrutechnologies.com/assets/img/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/nasru-technologies"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-555-555-5555",
-      "contactType": "customer service",
-      "areaServed": "US"
-    }
+    "sameAs": ["https://www.linkedin.com/company/nasru-technologies"]
   }
   </script>
-
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -126,9 +179,10 @@
   }
   </script>
 </head>
+
 <body class="text-slate-100 antialiased">
 
-<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+<header class="sticky top-0 z-50 border-b hairline glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href="index.html" class="flex items-center gap-2">
@@ -140,7 +194,7 @@
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- ✅ Divisions dropdown (futuristic, 2-column, sticky hover) -->
+        <!-- Divisions dropdown (futuristic mega menu) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -150,15 +204,15 @@
           </button>
 
           <div id="divisionsPanel"
-               class="dropdown-panel absolute left-0 mt-3 w-[640px] rounded-2xl overflow-hidden hidden divisions-shell"
+               class="dropdown-panel absolute left-0 mt-3 w-[680px] rounded-2xl overflow-hidden hidden divisions-shell"
                role="menu" aria-labelledby="divisionsBtn">
             <div class="px-5 py-4 border-b border-white/10">
               <div class="flex items-center justify-between gap-4">
                 <div>
                   <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
-                  <div class="divisions-kicker mt-1">Explore our capabilities — built for secure, smart, scalable delivery.</div>
+                  <div class="divisions-kicker mt-1">Built for enterprise delivery — secure, smart, scalable.</div>
                 </div>
-                <span class="chip chip-soon">More coming soon</span>
+                <span class="chip chip-soon">Roadmap active</span>
               </div>
             </div>
 
@@ -170,7 +224,7 @@
 
               <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Hardware</div>
-                <div class="divisions-kicker mt-1">Devices, POS/ATM, networking, cabling — sourced via trusted partners.</div>
+                <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
               </a>
 
               <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
@@ -183,7 +237,6 @@
                 <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
               </a>
 
-              <!-- ✅ NEW DIVISION -->
               <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Training &amp; Certification</div>
                 <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
@@ -205,13 +258,12 @@
                 <span class="chip chip-soon">Coming Soon</span>
               </a>
 
-              <!-- Empty spacer to keep 2-column symmetry if needed -->
               <div class="hidden md:block"></div>
             </div>
 
             <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
               <div class="text-xs text-slate-300/80">
-                Need help choosing? <a href="contact.html" class="text-[rgb(var(--brand))] hover:underline">Contact us</a> for guidance.
+                Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
               </div>
               <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
             </div>
@@ -239,7 +291,7 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
+  <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
 
@@ -251,7 +303,6 @@
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
           <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
-
           <a href="multimedia.html" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
           </a>
@@ -271,108 +322,208 @@
   </div>
 </header>
 
-<section class="hero relative h-[86vh] min-h-[520px] flex items-center justify-center text-center text-white overflow-hidden">
-  <video id="heroVideo" autoplay loop muted playsinline preload="auto" poster="assets/img/hero_poster.png" class="absolute inset-0 w-full h-full object-cover">
+<!-- HERO -->
+<section class="relative h-[88vh] min-h-[560px] flex items-center justify-center text-center text-white overflow-hidden">
+  <video autoplay loop muted playsinline preload="auto" poster="assets/img/hero_poster.png" class="absolute inset-0 w-full h-full object-cover">
     <source src="assets/video/hero.mp4" type="video/mp4" />
   </video>
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/35 to-slate-900/55"></div>
-  <div class="relative z-10 max-w-3xl px-4">
-    <h1 class="heading text-4xl md:text-6xl font-bold neon-text">Secure. Smart. Scalable.</h1>
-    <p class="mt-4 text-lg text-slate-100/90">Delivering trusted technology solutions — from reselling top-tier devices and building custom software to system installations, IT services, and advanced cybersecurity.</p>
-    <div class="mt-6 flex flex-wrap gap-3 justify-center">
-      <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900">Get a Quote</a>
-      <a href="solutions.html" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3">Explore Solutions</a>
-    </div>
-  </div>
-</section>
 
-<!-- WHAT WE DO -->
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="heading text-2xl md:text-4xl font-semibold text-center">What We Do</h2>
-    <p class="mt-3 text-center text-slate-300 max-w-3xl mx-auto">
-      Delivering trusted technology solutions — from reselling top-tier devices and building custom software to system installations, IT services, and advanced cybersecurity.
+  <div class="absolute inset-0 hero-scrim"></div>
+
+  <div class="relative z-10 max-w-4xl px-4">
+    <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-100/90">
+      <span class="h-2 w-2 rounded-full bg-brand"></span>
+      Enterprise delivery • Cybersecurity • Hardware • Software • Training
+    </div>
+
+    <h1 class="heading mt-6 text-4xl md:text-6xl font-bold neon-text">
+      Secure. Smart. Scalable.
+    </h1>
+    <p class="mt-4 text-lg md:text-xl text-slate-100/90 max-w-3xl mx-auto">
+      Nasru Technologies delivers enterprise-grade technology solutions — from trusted device sourcing and deployments
+      to software engineering, managed IT, and advanced cybersecurity.
     </p>
 
-    <div class="grid gap-6 md:grid-cols-4 mt-10">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Device Distribution</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Sourcing and supplying cameras, access control, networking, and smart devices.</p>
+    <div class="mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Get a Quote</a>
+      <a href="#capabilities" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-6 py-3 hover:opacity-95">Explore Capabilities</a>
+      <a href="training.html" class="rounded-xl border border-white/15 bg-white/5 px-6 py-3 hover:opacity-95">Training &amp; Certification</a>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-3 text-left">
+      <div class="card p-5">
+        <div class="text-sm font-semibold">Secure delivery</div>
+        <div class="mt-1 text-sm text-slate-300/90">Security-first architecture and implementation.</div>
       </div>
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Software Development</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Platforms like FacilityFuz & Meet-Vendors, plus custom apps and integrations.</p>
+      <div class="card p-5">
+        <div class="text-sm font-semibold">Trusted sourcing</div>
+        <div class="mt-1 text-sm text-slate-300/90">Hardware and devices through vetted partners.</div>
       </div>
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Installations & Integration</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">End-to-end deployment: design, install, configure, and train your team.</p>
-      </div>
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Cybersecurity & IT</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Hardening, monitoring, and managed IT services for secure, reliable ops.</p>
+      <div class="card p-5">
+        <div class="text-sm font-semibold">Operational excellence</div>
+        <div class="mt-1 text-sm text-slate-300/90">Deployment, support, training, and lifecycle management.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED DIVISIONS -->
-<section class="py-12">
+<!-- TRUST STRIP -->
+<section class="section-glow border-y hairline">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-sm text-slate-300/90">
+        <span class="font-semibold text-slate-100">Built on partnerships.</span> Vendor ecosystems and delivery alliances power our solutions.
+      </div>
+
+      <div class="flex items-center gap-6 opacity-90">
+        <!-- Use your existing logos if available -->
+        <img src="assets/img/partners/axis.png" class="h-6 w-auto trust-logo" alt="Axis">
+        <img src="assets/img/partners/cyberzeb.png" class="h-6 w-auto trust-logo" alt="Cyber-Zeb">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="py-16 section-glow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="heading text-2xl md:text-4xl font-semibold text-center">Divisions</h2>
-    <div class="grid gap-6 md:grid-cols-4 mt-8">
-      <a href="secure.html" class="card p-6 block hover:opacity-95">
-        <h3 class="heading text-lg font-semibold">Nasru IT &amp; Cybersecurity</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">CCTV, access control, VMS.</p>
-      </a>
-      <a href="smart.html" class="card p-6 block hover:opacity-95">
-        <h3 class="heading text-lg font-semibold">Nasru Hardware</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">POS/ATM, devices, networking, cabling — sourced via trusted partners.</p>
-      </a>
-      <a href="software.html" class="card p-6 block hover:opacity-95">
-        <h3 class="heading text-lg font-semibold">Nasru Software</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">FacilityFuz, Meet-Vendors.</p>
-      </a>
-      <a href="global.html" class="card p-6 block hover:opacity-95">
-        <h3 class="heading text-lg font-semibold">Global Solutions</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Sourcing, logistics, support.</p>
-      </a>
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="heading text-2xl md:text-4xl font-semibold">Enterprise capabilities</h2>
+      <p class="mt-3 text-slate-300/90">
+        From strategy to implementation — Nasru helps organizations modernize securely.
+      </p>
     </div>
 
-    <!-- Optional second row for the new division (keeps the 4-col layout clean) -->
-    <div class="grid gap-6 md:grid-cols-4 mt-6">
-      <a href="training.html" class="card p-6 block hover:opacity-95 md:col-span-2">
-        <h3 class="heading text-lg font-semibold">Nasru Training &amp; Certification</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Corporate cybersecurity training, instructor-led sessions, and exam voucher support.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-4">
+      <a href="smart.html" class="card p-6 block">
+        <div class="text-sm text-slate-300/90">Devices &amp; Hardware</div>
+        <h3 class="heading mt-2 text-lg font-semibold">Nasru Hardware</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">POS/ATM, endpoints, networking, cabling, accessories — sourced via trusted partners.</p>
+      </a>
+
+      <a href="secure.html" class="card p-6 block">
+        <div class="text-sm text-slate-300/90">Security &amp; IT</div>
+        <h3 class="heading mt-2 text-lg font-semibold">Nasru IT &amp; Cybersecurity</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Security engineering, managed IT, assessments, hardening, monitoring.</p>
+      </a>
+
+      <a href="software.html" class="card p-6 block">
+        <div class="text-sm text-slate-300/90">Engineering</div>
+        <h3 class="heading mt-2 text-lg font-semibold">Nasru Software</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Custom applications, portals, automation, integrations and workflows.</p>
+      </a>
+
+      <a href="training.html" class="card p-6 block">
+        <div class="text-sm text-slate-300/90">Learning</div>
+        <h3 class="heading mt-2 text-lg font-semibold">Training &amp; Certification</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Corporate training programs, instructor-led sessions, and exam voucher support.</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section class="py-10">
+<!-- DELIVERY MODEL -->
+<section class="py-14">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="card p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="grid gap-10 lg:grid-cols-2 items-start">
       <div>
-        <h3 class="heading text-xl font-semibold">Ready to get started?</h3>
-        <p class="text-slate-300/80 text-sm mt-1">Talk to our team about devices, installs, software, or managed IT & security.</p>
+        <h2 class="heading text-2xl md:text-4xl font-semibold">How we deliver</h2>
+        <p class="mt-3 text-slate-300/90">
+          A structured, corporate delivery approach designed for speed, security, and measurable outcomes.
+        </p>
+
+        <div class="mt-6 space-y-4">
+          <div class="card p-5">
+            <div class="font-semibold">1) Discover</div>
+            <div class="mt-1 text-sm text-slate-300/90">Requirements, scope, environment review, success criteria.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold">2) Design</div>
+            <div class="mt-1 text-sm text-slate-300/90">Architecture, bill of materials, delivery plan, risk controls.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold">3) Deploy</div>
+            <div class="mt-1 text-sm text-slate-300/90">Installation, configuration, integration, and validation.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold">4) Support</div>
+            <div class="mt-1 text-sm text-slate-300/90">Handover, training, documentation, lifecycle and enhancements.</div>
+          </div>
+        </div>
       </div>
-      <div class="flex gap-3">
-        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900">Get a Quote</a>
-        <a href="partners.html" class="rounded-xl border border-neon px-5 py-3">Our Partners</a>
+
+      <div class="card p-8">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="heading text-xl font-semibold">Request a corporate proposal</h3>
+          <span class="chip">24–48h response goal</span>
+        </div>
+        <p class="mt-2 text-sm text-slate-300/90">
+          Tell us what you need and we’ll respond with scope options, timelines, and pricing guidance.
+        </p>
+
+        <div class="mt-6 grid gap-3">
+          <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 text-center hover:opacity-95">Get a Quote</a>
+          <a href="partners.html" class="rounded-xl border border-neon bg-white/5 px-5 py-3 font-semibold text-center hover:opacity-95">Work with our partners</a>
+          <a href="training.html" class="rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-center hover:opacity-95">Explore training programs</a>
+        </div>
+
+        <div class="mt-6 text-xs text-slate-400">
+          For urgent requests, include your timeline and delivery location.
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-3">
-    <div class="card p-6"><h4 class="font-semibold mb-2">End-to-End Security</h4><p class="text-slate-300/80 text-sm">Design, integration, and 24/7 monitoring.</p></div>
-    <div class="card p-6"><h4 class="font-semibold mb-2">Smart Integrations</h4><p class="text-slate-300/80 text-sm">IoT, automation, and AI analytics.</p></div>
-    <div class="card p-6"><h4 class="font-semibold mb-2">Cloud + Managed</h4><p class="text-slate-300/80 text-sm">SaaS and managed services at scale.</p></div>
+<!-- INDUSTRIES -->
+<section class="py-14 section-glow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="heading text-2xl md:text-4xl font-semibold">Industries we support</h2>
+      <p class="mt-3 text-slate-300/90">Solutions aligned to operations, compliance, and security needs.</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-4">
+      <div class="card p-6">
+        <div class="font-semibold">Financial services</div>
+        <div class="mt-2 text-sm text-slate-300/90">POS/ATM deployments, secure networking, endpoint controls.</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-semibold">Real estate &amp; facilities</div>
+        <div class="mt-2 text-sm text-slate-300/90">Installations, device rollout, managed IT and security hardening.</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-semibold">SMB &amp; enterprise IT</div>
+        <div class="mt-2 text-sm text-slate-300/90">Security posture uplift, support models, modernization.</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-semibold">Training &amp; workforce</div>
+        <div class="mt-2 text-sm text-slate-300/90">Corporate upskilling, instructor-led programs, exam readiness.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-700/60">
+<!-- CTA -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="heading text-2xl font-semibold">Build with Nasru</h3>
+        <p class="mt-2 text-slate-300/90 text-sm max-w-2xl">
+          Whether you need devices, deployments, software, managed IT, or cybersecurity training — we’ll help you deliver confidently.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Get a Quote</a>
+        <a href="solutions.html" class="rounded-xl border border-neon bg-white/5 px-6 py-3 font-semibold hover:opacity-95">Explore Solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mt-20 border-t hairline">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
       <div>
@@ -396,27 +547,27 @@
       </div>
 
       <div>
-        <h4 class="heading font-semibold mb-3">Services</h4>
+        <h4 class="heading font-semibold mb-3">Capabilities</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Hardware & Devices</a></li>
-          <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
-          <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
+          <li><a class="hover:text-brand" href="secure.html">Cybersecurity &amp; IT</a></li>
+          <li><a class="hover:text-brand" href="smart.html">Hardware &amp; Devices</a></li>
+          <li><a class="hover:text-brand" href="software.html">Software Engineering</a></li>
+          <li><a class="hover:text-brand" href="training.html">Training &amp; Certification</a></li>
+          <li><a class="hover:text-brand" href="global.html">Global Solutions</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
-          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Vendors &amp; Alliances</a></li>
+          <li><a class="hover:text-brand" href="careers.html">Open Roles</a></li>
           <li><a class="hover:text-brand" href="contact.html">Support</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+    <div class="mt-10 pt-6 border-t hairline flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
@@ -440,7 +591,7 @@
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // ✅ Dropdown open/close with close delay
+  // Dropdown open/close with close delay
   const wrap = document.getElementById('divisionsMenu');
   const btn = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
@@ -462,11 +613,9 @@
       }, 220);
     };
 
-    // Open on hover
     wrap.addEventListener('mouseenter', open);
     wrap.addEventListener('mouseleave', close);
 
-    // Open/close on click (desktop)
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const isOpen = !panel.classList.contains('hidden');
@@ -478,7 +627,6 @@
       }
     });
 
-    // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!wrap.contains(e.target)) {
         panel.classList.add('hidden');
@@ -486,7 +634,6 @@
       }
     });
 
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         panel.classList.add('hidden');
@@ -499,6 +646,7 @@
 
 </body>
 </html>
+
 
 
 
