@@ -5,9 +5,10 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Training & Certification — Nasru Technologies</title>
+  <title>Nasru Training & Certification — Nasru Technologies</title>
 
-  <meta name="description" content="Nasru Technologies Training & Certification — instructor-led and virtual cybersecurity training, exam vouchers, and certification pathways." />
+  <meta name="description" content="Corporate cybersecurity training and certification pathways by Nasru Technologies: instructor-led sessions, virtual delivery, exam readiness, and voucher support." />
+
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
   <!-- Google tag (gtag.js) -->
@@ -19,13 +20,11 @@
     gtag('config', 'G-9GBFMRBC00');
   </script>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -40,12 +39,70 @@
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
 
+    /* Badge */
     .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
 
+    /* Dropdown */
     .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
     @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
+
+    /* Futuristic dropdown styling */
+    .divisions-shell{
+      background:
+        radial-gradient(800px 240px at 20% 0%, rgba(103,232,249,0.18), transparent 55%),
+        radial-gradient(700px 240px at 85% 15%, rgba(34,211,238,0.14), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.75));
+      border: 1px solid rgba(103,232,249,0.22);
+      box-shadow:
+        0 0 0 1px rgba(103,232,249,0.10) inset,
+        0 18px 60px rgba(0,0,0,0.55),
+        0 0 40px rgba(103,232,249,0.08);
+      backdrop-filter: blur(14px);
+    }
+    .divisions-item{
+      position: relative;
+      border-bottom: 1px solid rgba(148,163,184,0.08);
+    }
+    .divisions-item:hover{
+      background: linear-gradient(90deg, rgba(103,232,249,0.12), rgba(103,232,249,0.02));
+    }
+    .divisions-item::before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width:2px;
+      background: rgba(34,211,238,0.0);
+      transition: background .15s ease;
+    }
+    .divisions-item:hover::before{
+      background: rgba(34,211,238,0.85);
+      box-shadow: 0 0 16px rgba(34,211,238,0.55);
+    }
+    .divisions-kicker{
+      font-size: .72rem;
+      color: rgba(148,163,184,0.92);
+    }
+
+    /* Page hero */
+    .hero-grad {
+      background:
+        radial-gradient(1000px 520px at 20% 0%, rgba(103,232,249,0.16), transparent 55%),
+        radial-gradient(900px 520px at 85% 10%, rgba(34,211,238,0.12), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.65), rgba(14,21,38,0.95));
+    }
   </style>
+
+  <meta property="og:title" content="Nasru Training & Certification — Nasru Technologies">
+  <meta property="og:description" content="Corporate cybersecurity training, instructor-led sessions, and certification pathways.">
+  <meta property="og:url" content="https://nasrutechnologies.com/training.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nasru Training & Certification — Nasru Technologies">
+  <meta name="twitter:description" content="Corporate cybersecurity training, instructor-led sessions, and certification pathways.">
+  <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 </head>
 
 <body class="text-slate-100 antialiased">
@@ -72,38 +129,81 @@
           </button>
 
           <div id="divisionsPanel"
-               class="dropdown-panel absolute left-0 mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden hidden"
+               class="dropdown-panel absolute left-0 mt-3 w-[640px] rounded-2xl overflow-hidden hidden divisions-shell"
                role="menu" aria-labelledby="divisionsBtn">
+            <div class="px-5 py-4 border-b border-white/10">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
+                  <div class="divisions-kicker mt-1">Explore our capabilities — built for secure, smart, scalable delivery.</div>
+                </div>
+                <span class="chip chip-soon">More coming soon</span>
+              </div>
+            </div>
+
             <div class="grid grid-cols-2">
-              <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
-              <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Hardware</a>
-
-              <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-              <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-
-              <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-                <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+              <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
+                <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
               </a>
-              <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-                <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+
+              <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Hardware</div>
+                <div class="divisions-kicker mt-1">Devices, POS/ATM, networking, cabling — sourced via trusted partners.</div>
               </a>
+
+              <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Software</div>
+                <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
+              </a>
+
+              <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Global Solutions</div>
+                <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
+              </a>
+
+              <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Training &amp; Certification</div>
+                <div class="divisions-kicker mt-1">Instructor-led corporate training, workshops, voucher support.</div>
+              </a>
+
+              <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+                <div>
+                  <div class="font-semibold">Nasru Multimedia</div>
+                  <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
+                </div>
+                <span class="chip chip-soon">Coming Soon</span>
+              </a>
+
+              <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+                <div>
+                  <div class="font-semibold">Nasru Lab</div>
+                  <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
+                </div>
+                <span class="chip chip-soon">Coming Soon</span>
+              </a>
+
+              <div class="hidden md:block"></div>
+            </div>
+
+            <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
+              <div class="text-xs text-slate-300/80">
+                Need guidance? <a href="contact.html" class="hover:text-brand underline underline-offset-4">Contact us</a>.
+              </div>
+              <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
             </div>
           </div>
         </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
         <a href="partners.html" class="hover:text-brand">Partners</a>
-
-        <!-- ✅ NEW NAV ITEM -->
-        <a href="training.html" class="hover:text-brand">Training &amp; Certification</a>
-
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
         <a href="contact.html" class="hover:text-brand">Contact</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Request Training</a>
       </div>
 
       <!-- Mobile menu button -->
@@ -127,110 +227,312 @@
           <a href="smart.html" class="block py-2">Nasru Hardware</a>
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+          <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
 
-          <a href="multimedia.html" class="flex items-center justify-between py-2"><span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span></a>
-          <a href="lab.html" class="flex items-center justify-between py-2"><span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span></a>
+          <a href="multimedia.html" class="flex items-center justify-between py-2">
+            <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
+          <a href="lab.html" class="flex items-center justify-between py-2">
+            <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+          </a>
         </div>
       </details>
 
       <a href="solutions.html" class="block py-2">Solutions</a>
       <a href="partners.html" class="block py-2">Partners</a>
-      <a href="training.html" class="block py-2">Training &amp; Certification</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
-
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Request Training</a>
     </div>
   </div>
 </header>
 
-<!-- PAGE HERO -->
-<section class="relative py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 text-sm text-slate-300">
-        <span class="h-2 w-2 rounded-full bg-brand"></span>
-        Training &amp; Certification
-      </div>
-      <h1 class="heading mt-3 text-3xl md:text-5xl font-semibold neon-text">Cybersecurity Training &amp; Exam Support</h1>
-      <p class="mt-3 text-slate-300">
-        Virtual and instructor-led training for teams and individuals — with certification pathways and exam voucher support through partner programs.
-      </p>
+<!-- HERO -->
+<section class="hero-grad border-b border-slate-700/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200/90">
+          <span class="h-2 w-2 rounded-full bg-brand"></span>
+          Corporate Training • Virtual & Instructor-Led
+        </div>
+        <h1 class="heading mt-4 text-3xl md:text-5xl font-semibold neon-text">Nasru Training &amp; Certification</h1>
+        <p class="mt-4 text-slate-200/90 text-lg">
+          Structured cybersecurity training programs designed for teams — practical, exam-aligned, and built for measurable outcomes.
+        </p>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Request Training</a>
-        <a href="#catalog" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:opacity-95">View Offerings</a>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#request" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Request a Training Plan</a>
+          <a href="#catalog" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:opacity-95">Browse Programs</a>
+        </div>
 
-<!-- OFFERINGS -->
-<section id="catalog" class="py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="heading text-2xl md:text-4xl font-semibold text-center">What We Offer</h2>
-    <p class="mt-3 text-center text-slate-300 max-w-3xl mx-auto">
-      Built for organizations and professionals — structured, practical, and aligned to real-world outcomes.
-    </p>
-
-    <div class="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card p-6">
-        <div class="heading text-lg font-semibold">Corporate Training Programs</div>
-        <p class="mt-2 text-sm text-slate-300/80">Custom delivery for teams (live virtual or on-site where available). Role-based tracks and reporting.</p>
-      </div>
-
-      <div class="card p-6">
-        <div class="heading text-lg font-semibold">Instructor-Led Bootcamps</div>
-        <p class="mt-2 text-sm text-slate-300/80">Intensive sessions for certification readiness with labs, quizzes, and practice tests.</p>
-      </div>
-
-      <div class="card p-6">
-        <div class="heading text-lg font-semibold">Exam Voucher Support</div>
-        <p class="mt-2 text-sm text-slate-300/80">Guidance on selecting exam vouchers and scheduling — plus partner-based pathways.</p>
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div class="card p-4">
+            <div class="text-slate-200 font-semibold">Delivery</div>
+            <div class="text-slate-300/80 mt-1">Virtual / On-site</div>
+          </div>
+          <div class="card p-4">
+            <div class="text-slate-200 font-semibold">Formats</div>
+            <div class="text-slate-300/80 mt-1">Bootcamps / Workshops</div>
+          </div>
+          <div class="card p-4">
+            <div class="text-slate-200 font-semibold">Audience</div>
+            <div class="text-slate-300/80 mt-1">Beginners → Advanced</div>
+          </div>
+          <div class="card p-4">
+            <div class="text-slate-200 font-semibold">Outcomes</div>
+            <div class="text-slate-300/80 mt-1">Skills + Readiness</div>
+          </div>
+        </div>
       </div>
 
-      <div class="card p-6">
-        <div class="heading text-lg font-semibold">Security Awareness Training</div>
-        <p class="mt-2 text-sm text-slate-300/80">Phishing, password hygiene, data handling, and executive briefings.</p>
-      </div>
-
-      <div class="card p-6">
-        <div class="heading text-lg font-semibold">Technical Workshops</div>
-        <p class="mt-2 text-sm text-slate-300/80">Hands-on workshops (SOC fundamentals, SIEM basics, incident response, cloud security basics).</p>
-      </div>
-
-      <div class="card p-6">
-        <div class="heading text-lg font-semibold">Training Roadmaps</div>
-        <p class="mt-2 text-sm text-slate-300/80">Role-based plans: IT, SOC analyst, GRC, cloud, security engineer, leadership.</p>
+      <div class="w-full md:w-[420px]">
+        <div class="card p-6">
+          <div class="heading text-lg font-semibold">At-a-Glance</div>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300/90">
+            <li class="flex gap-2"><span class="text-brand">•</span> Role-based training tracks for IT, security, and leadership</li>
+            <li class="flex gap-2"><span class="text-brand">•</span> Hands-on labs and practical scenarios</li>
+            <li class="flex gap-2"><span class="text-brand">•</span> Executive summaries + completion reports</li>
+            <li class="flex gap-2"><span class="text-brand">•</span> Certification planning + voucher guidance</li>
+          </ul>
+          <a href="#catalog" class="mt-5 inline-flex w-full justify-center rounded-xl border border-neon bg-white/5 px-4 py-2 font-semibold hover:opacity-95">View Training Catalog</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- TRUST STRIP -->
 <section class="py-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <div class="heading text-xl font-semibold">Built for corporate teams</div>
+        <p class="mt-2 text-slate-300/90 text-sm max-w-2xl">
+          Whether you need baseline security awareness, technical upskilling, or certification readiness, Nasru builds a plan aligned to your goals and timelines.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Instructor-led</div>
+        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Virtual delivery</div>
+        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Hands-on labs</div>
+        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Reporting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog" class="py-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div>
+        <h2 class="heading text-2xl md:text-4xl font-semibold">Training Catalog</h2>
+        <p class="mt-3 text-slate-300/90 max-w-2xl">
+          Modular programs. Combine tracks, adjust duration, and tailor depth based on your team’s roles.
+        </p>
+      </div>
+      <div class="text-sm text-slate-300/80">
+        Want a custom plan? <a href="#request" class="hover:text-brand underline underline-offset-4">Request it here</a>.
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-10">
+      <div class="card p-6">
+        <div class="flex items-center justify-between">
+          <h3 class="heading text-lg font-semibold">Security Foundations</h3>
+          <span class="chip chip-soon">Core</span>
+        </div>
+        <p class="mt-2 text-slate-300/90 text-sm">Baseline security awareness + practical fundamentals for all staff.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/80">
+          <li>• Phishing & social engineering</li>
+          <li>• Passwords, MFA, safe browsing</li>
+          <li>• Data handling & incident reporting</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex items-center justify-between">
+          <h3 class="heading text-lg font-semibold">IT & Security Operations</h3>
+          <span class="chip chip-soon">Technical</span>
+        </div>
+        <p class="mt-2 text-slate-300/90 text-sm">Practical training for admins and analysts supporting secure operations.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/80">
+          <li>• Logging & alert triage</li>
+          <li>• Hardening & patching</li>
+          <li>• Access control & identity basics</li>
+        </ul>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex items-center justify-between">
+          <h3 class="heading text-lg font-semibold">Certification Readiness</h3>
+          <span class="chip chip-soon">Exam</span>
+        </div>
+        <p class="mt-2 text-slate-300/90 text-sm">Structured prep with labs, review sessions, and exam planning.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/80">
+          <li>• Study plan & checkpoints</li>
+          <li>• Practice exams & review</li>
+          <li>• Voucher guidance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-6">
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Secure Cloud Basics</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Shared responsibility, identity, logging, and common cloud risks.</p>
+        <div class="mt-4 text-sm text-slate-300/80">Format: Workshop (2–6 hrs) or Bootcamp (1–2 days)</div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Leadership Briefings</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Cyber risk, governance, and practical decision-making for leaders.</p>
+        <div class="mt-4 text-sm text-slate-300/80">Format: Executive session (60–120 mins)</div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-lg font-semibold">Custom Curriculum</h3>
+        <p class="mt-2 text-slate-300/90 text-sm">Tailored training based on your stack, policies, and threat profile.</p>
+        <div class="mt-4 text-sm text-slate-300/80">Format: Built-to-fit (virtual or on-site)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="card p-6 md:p-8">
-      <h3 class="heading text-xl font-semibold">How it works</h3>
-      <div class="mt-4 grid gap-4 md:grid-cols-3">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <div class="font-semibold">1) Tell us your goal</div>
-          <p class="mt-1 text-sm text-slate-300/80">Team training, certification, or exam support.</p>
+          <h2 class="heading text-2xl md:text-3xl font-semibold">How engagement works</h2>
+          <p class="mt-2 text-slate-300/90 text-sm max-w-2xl">
+            Corporate-style delivery with clear planning, execution, and reporting.
+          </p>
         </div>
-        <div>
-          <div class="font-semibold">2) We propose a plan</div>
-          <p class="mt-1 text-sm text-slate-300/80">Schedule, delivery format, and course outline.</p>
+        <a href="#request" class="rounded-xl border border-neon bg-white/5 px-5 py-3 font-semibold hover:opacity-95">Start a Request →</a>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-4 mt-8">
+        <div class="card p-5">
+          <div class="text-brand font-semibold">01</div>
+          <div class="mt-1 font-semibold">Discovery</div>
+          <div class="mt-2 text-sm text-slate-300/80">Audience, goals, timeline, delivery format.</div>
         </div>
-        <div>
-          <div class="font-semibold">3) Deliver + report</div>
-          <p class="mt-1 text-sm text-slate-300/80">Sessions, materials, attendance, and next steps.</p>
+        <div class="card p-5">
+          <div class="text-brand font-semibold">02</div>
+          <div class="mt-1 font-semibold">Plan</div>
+          <div class="mt-2 text-sm text-slate-300/80">Curriculum outline, schedule, expectations.</div>
+        </div>
+        <div class="card p-5">
+          <div class="text-brand font-semibold">03</div>
+          <div class="mt-1 font-semibold">Deliver</div>
+          <div class="mt-2 text-sm text-slate-300/80">Instructor-led sessions + labs + Q&amp;A.</div>
+        </div>
+        <div class="card p-5">
+          <div class="text-brand font-semibold">04</div>
+          <div class="mt-1 font-semibold">Report</div>
+          <div class="mt-2 text-sm text-slate-300/80">Completion summary + recommendations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST FORM (STATIC) -->
+<section id="request" class="py-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="heading text-2xl md:text-4xl font-semibold">Request a training plan</h2>
+        <p class="mt-3 text-slate-300/90">
+          Share your goals and audience size. We’ll respond with a recommended format and next steps.
+        </p>
+
+        <div class="mt-6 space-y-4 text-sm text-slate-300/80">
+          <div class="card p-5">
+            <div class="font-semibold text-slate-200">Fast response</div>
+            <div class="mt-1">We typically respond within 1–2 business days.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold text-slate-200">Delivery options</div>
+            <div class="mt-1">Virtual sessions, instructor-led workshops, and custom programs.</div>
+          </div>
         </div>
       </div>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Contact for Pricing</a>
-        <a href="partners.html" class="rounded-xl border border-neon px-5 py-3 hover:opacity-95">See Partners</a>
+      <div class="card p-6 md:p-8">
+        <div class="heading text-xl font-semibold">Training Request Form</div>
+        <p class="mt-2 text-slate-300/90 text-sm">
+          This page is static. If you want submissions to email automatically, we’ll connect this form to a Vercel serverless function next.
+          For now it uses a safe placeholder action.
+        </p>
+
+        <form class="mt-6 space-y-4" action="#" method="post">
+          <div>
+            <label class="block text-sm font-medium text-slate-200">Full name</label>
+            <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
+                   type="text" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-slate-200">Company</label>
+              <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
+                     type="text" name="company" placeholder="Company name" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-200">Email</label>
+              <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
+                     type="email" name="email" placeholder="name@company.com" required>
+            </div>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-slate-200">Team size</label>
+              <select class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon" name="team_size" required>
+                <option value="">Select</option>
+                <option>1–5</option>
+                <option>6–20</option>
+                <option>21–50</option>
+                <option>51–100</option>
+                <option>100+</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-200">Preferred delivery</label>
+              <select class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon" name="delivery" required>
+                <option value="">Select</option>
+                <option>Virtual</option>
+                <option>On-site</option>
+                <option>Hybrid</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-200">Training focus</label>
+            <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
+                   type="text" name="focus" placeholder="e.g., Security fundamentals, SOC basics, certification readiness" required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-200">Message</label>
+            <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
+                      name="message" rows="5" placeholder="Share goals, timeline, and any requirements…" required></textarea>
+          </div>
+
+          <button type="submit" class="w-full rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">
+            Submit Request
+          </button>
+
+          <p class="text-xs text-slate-400">
+            Prefer email? Reach us at <a class="hover:text-brand underline underline-offset-4" href="mailto:info@nasrutechnologies.com">info@nasrutechnologies.com</a>.
+          </p>
+        </form>
       </div>
     </div>
   </div>
@@ -244,7 +546,9 @@
           <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
           <span class="heading text-lg font-semibold">Nasru Technologies</span>
         </a>
-        <p class="mt-3 text-slate-400 text-sm">Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.</p>
+        <p class="mt-3 text-slate-400 text-sm">
+          Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.
+        </p>
       </div>
 
       <div>
@@ -261,7 +565,7 @@
         <h4 class="heading font-semibold mb-3">Services</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
           <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Hardware & Distribution</a></li>
+          <li><a class="hover:text-brand" href="smart.html">Hardware & Devices</a></li>
           <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
           <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
         </ul>
@@ -270,8 +574,8 @@
       <div>
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="training.html">Training &amp; Certification</a></li>
           <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
+          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
           <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
           <li><a class="hover:text-brand" href="contact.html">Support</a></li>
         </ul>
@@ -302,7 +606,7 @@
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Dropdown open/close with delay
+  // Dropdown open/close with close delay
   const wrap = document.getElementById('divisionsMenu');
   const btn = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
