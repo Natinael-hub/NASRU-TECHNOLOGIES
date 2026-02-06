@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="canonical" href="https://nasrutechnologies.com/training.html" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Training & Certification — Nasru Technologies</title>
+
+  <meta name="description" content="Nasru Technologies Training & Certification — instructor-led and virtual cybersecurity training, exam vouchers, and certification pathways." />
+  <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBFMRBC00"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9GBFMRBC00');
+  </script>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{ color-scheme: dark; }
+    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
+    .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
+    .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
+    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
+    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
+    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
+
+    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
+    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+
+    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
+  </style>
+</head>
+
+<body class="text-slate-100 antialiased">
+
+<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+        <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
+        <a href="index.html" class="hover:text-brand">Home</a>
+
+        <!-- Divisions dropdown -->
+        <div class="relative" id="divisionsMenu">
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
+            Divisions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
+          </button>
+
+          <div id="divisionsPanel"
+               class="dropdown-panel absolute left-0 mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden hidden"
+               role="menu" aria-labelledby="divisionsBtn">
+            <div class="grid grid-cols-2">
+              <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
+              <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Hardware</a>
+
+              <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
+              <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+
+              <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+              </a>
+              <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
+                <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="solutions.html" class="hover:text-brand">Solutions</a>
+        <a href="partners.html" class="hover:text-brand">Partners</a>
+
+        <!-- ✅ NEW NAV ITEM -->
+        <a href="training.html" class="hover:text-brand">Training &amp; Certification</a>
+
+        <a href="about.html" class="hover:text-brand">About</a>
+        <a href="careers.html" class="hover:text-brand">Careers</a>
+        <a href="contact.html" class="hover:text-brand">Contact</a>
+      </nav>
+
+      <div class="hidden md:block">
+        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
+    <div class="px-4 py-3 space-y-2">
+      <a href="index.html" class="block py-2">Home</a>
+
+      <details class="group">
+        <summary class="py-2 cursor-pointer">Divisions</summary>
+        <div class="ml-3 mt-1 space-y-1">
+          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
+          <a href="smart.html" class="block py-2">Nasru Hardware</a>
+          <a href="software.html" class="block py-2">Nasru Software</a>
+          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+
+          <a href="multimedia.html" class="flex items-center justify-between py-2"><span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span></a>
+          <a href="lab.html" class="flex items-center justify-between py-2"><span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span></a>
+        </div>
+      </details>
+
+      <a href="solutions.html" class="block py-2">Solutions</a>
+      <a href="partners.html" class="block py-2">Partners</a>
+      <a href="training.html" class="block py-2">Training &amp; Certification</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="careers.html" class="block py-2">Careers</a>
+      <a href="contact.html" class="block py-2">Contact</a>
+
+      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="relative py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 text-sm text-slate-300">
+        <span class="h-2 w-2 rounded-full bg-brand"></span>
+        Training &amp; Certification
+      </div>
+      <h1 class="heading mt-3 text-3xl md:text-5xl font-semibold neon-text">Cybersecurity Training &amp; Exam Support</h1>
+      <p class="mt-3 text-slate-300">
+        Virtual and instructor-led training for teams and individuals — with certification pathways and exam voucher support through partner programs.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Request Training</a>
+        <a href="#catalog" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:opacity-95">View Offerings</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERINGS -->
+<section id="catalog" class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="heading text-2xl md:text-4xl font-semibold text-center">What We Offer</h2>
+    <p class="mt-3 text-center text-slate-300 max-w-3xl mx-auto">
+      Built for organizations and professionals — structured, practical, and aligned to real-world outcomes.
+    </p>
+
+    <div class="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card p-6">
+        <div class="heading text-lg font-semibold">Corporate Training Programs</div>
+        <p class="mt-2 text-sm text-slate-300/80">Custom delivery for teams (live virtual or on-site where available). Role-based tracks and reporting.</p>
+      </div>
+
+      <div class="card p-6">
+        <div class="heading text-lg font-semibold">Instructor-Led Bootcamps</div>
+        <p class="mt-2 text-sm text-slate-300/80">Intensive sessions for certification readiness with labs, quizzes, and practice tests.</p>
+      </div>
+
+      <div class="card p-6">
+        <div class="heading text-lg font-semibold">Exam Voucher Support</div>
+        <p class="mt-2 text-sm text-slate-300/80">Guidance on selecting exam vouchers and scheduling — plus partner-based pathways.</p>
+      </div>
+
+      <div class="card p-6">
+        <div class="heading text-lg font-semibold">Security Awareness Training</div>
+        <p class="mt-2 text-sm text-slate-300/80">Phishing, password hygiene, data handling, and executive briefings.</p>
+      </div>
+
+      <div class="card p-6">
+        <div class="heading text-lg font-semibold">Technical Workshops</div>
+        <p class="mt-2 text-sm text-slate-300/80">Hands-on workshops (SOC fundamentals, SIEM basics, incident response, cloud security basics).</p>
+      </div>
+
+      <div class="card p-6">
+        <div class="heading text-lg font-semibold">Training Roadmaps</div>
+        <p class="mt-2 text-sm text-slate-300/80">Role-based plans: IT, SOC analyst, GRC, cloud, security engineer, leadership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-6 md:p-8">
+      <h3 class="heading text-xl font-semibold">How it works</h3>
+      <div class="mt-4 grid gap-4 md:grid-cols-3">
+        <div>
+          <div class="font-semibold">1) Tell us your goal</div>
+          <p class="mt-1 text-sm text-slate-300/80">Team training, certification, or exam support.</p>
+        </div>
+        <div>
+          <div class="font-semibold">2) We propose a plan</div>
+          <p class="mt-1 text-sm text-slate-300/80">Schedule, delivery format, and course outline.</p>
+        </div>
+        <div>
+          <div class="font-semibold">3) Deliver + report</div>
+          <p class="mt-1 text-sm text-slate-300/80">Sessions, materials, attendance, and next steps.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Contact for Pricing</a>
+        <a href="partners.html" class="rounded-xl border border-neon px-5 py-3 hover:opacity-95">See Partners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-slate-700/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 md:grid-cols-4">
+      <div>
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+          <span class="heading text-lg font-semibold">Nasru Technologies</span>
+        </a>
+        <p class="mt-3 text-slate-400 text-sm">Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.</p>
+      </div>
+
+      <div>
+        <h4 class="heading font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-slate-300/90 text-sm">
+          <li><a class="hover:text-brand" href="about.html">About</a></li>
+          <li><a class="hover:text-brand" href="careers.html">Careers</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Partners</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="heading font-semibold mb-3">Services</h4>
+        <ul class="space-y-2 text-slate-300/90 text-sm">
+          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
+          <li><a class="hover:text-brand" href="smart.html">Hardware & Distribution</a></li>
+          <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
+          <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="heading font-semibold mb-3">Resources</h4>
+        <ul class="space-y-2 text-slate-300/90 text-sm">
+          <li><a class="hover:text-brand" href="training.html">Training &amp; Certification</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
+          <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+      <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
+      <div class="flex gap-4">
+        <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
+        <a href="#" class="hover:text-brand">Twitter</a>
+        <a href="#" class="hover:text-brand">YouTube</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+  }
+
+  // Footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Dropdown open/close with delay
+  const wrap = document.getElementById('divisionsMenu');
+  const btn = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
+
+  if (wrap && btn && panel) {
+    let closeTimer;
+
+    const open = () => {
+      clearTimeout(closeTimer);
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+
+    const close = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }, 220);
+    };
+
+    wrap.addEventListener('mouseenter', open);
+    wrap.addEventListener('mouseleave', close);
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = !panel.classList.contains('hidden');
+      if (isOpen) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        open();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
