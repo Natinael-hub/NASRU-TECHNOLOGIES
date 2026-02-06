@@ -46,9 +46,45 @@
     .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
 
     /* ✅ Hover reliability helpers */
-    .dropdown-hitbox { padding-bottom: 14px; } /* invisible buffer so cursor can move down */
     .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
     @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
+
+    /* ✅ Futuristic dropdown styling */
+    .divisions-shell{
+      background:
+        radial-gradient(800px 240px at 20% 0%, rgba(103,232,249,0.18), transparent 55%),
+        radial-gradient(700px 240px at 85% 15%, rgba(34,211,238,0.14), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.75));
+      border: 1px solid rgba(103,232,249,0.22);
+      box-shadow:
+        0 0 0 1px rgba(103,232,249,0.10) inset,
+        0 18px 60px rgba(0,0,0,0.55),
+        0 0 40px rgba(103,232,249,0.08);
+      backdrop-filter: blur(14px);
+    }
+    .divisions-item{
+      position: relative;
+      border-bottom: 1px solid rgba(148,163,184,0.08);
+    }
+    .divisions-item:hover{
+      background: linear-gradient(90deg, rgba(103,232,249,0.12), rgba(103,232,249,0.02));
+    }
+    .divisions-item::before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width:2px;
+      background: rgba(34,211,238,0.0);
+      transition: background .15s ease;
+    }
+    .divisions-item:hover::before{
+      background: rgba(34,211,238,0.85);
+      box-shadow: 0 0 16px rgba(34,211,238,0.55);
+    }
+    .divisions-kicker{
+      font-size: .72rem;
+      color: rgba(148,163,184,0.92);
+    }
   </style>
 
   <meta property="og:title" content="Nasru Technologies — Secure. Smart. Scalable.">
@@ -104,7 +140,7 @@
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- ✅ Divisions dropdown (2-column + sticky hover) -->
+        <!-- ✅ Divisions dropdown (futuristic, 2-column, sticky hover) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -113,23 +149,71 @@
             </svg>
           </button>
 
-          <!-- NOTE: kept "hidden" default; JS will control open/close with a small delay -->
           <div id="divisionsPanel"
-               class="dropdown-panel absolute left-0 mt-3 w-[520px] rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden hidden"
+               class="dropdown-panel absolute left-0 mt-3 w-[640px] rounded-2xl overflow-hidden hidden divisions-shell"
                role="menu" aria-labelledby="divisionsBtn">
+            <div class="px-5 py-4 border-b border-white/10">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
+                  <div class="divisions-kicker mt-1">Explore our capabilities — built for secure, smart, scalable delivery.</div>
+                </div>
+                <span class="chip chip-soon">More coming soon</span>
+              </div>
+            </div>
+
             <div class="grid grid-cols-2">
-              <a href="secure.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
-              <a href="smart.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Hardware</a>
-
-              <a href="software.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-              <a href="global.html" class="block px-5 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-
-              <a href="multimedia.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-                <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
+              <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
+                <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
               </a>
-              <a href="lab.html" class="flex items-center justify-between gap-3 px-5 py-3 hover:bg-slate-800/60" role="menuitem">
-                <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
+
+              <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Hardware</div>
+                <div class="divisions-kicker mt-1">Devices, POS/ATM, networking, cabling — sourced via trusted partners.</div>
               </a>
+
+              <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Software</div>
+                <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
+              </a>
+
+              <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Global Solutions</div>
+                <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
+              </a>
+
+              <!-- ✅ NEW DIVISION -->
+              <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold">Nasru Training &amp; Certification</div>
+                <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
+              </a>
+
+              <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+                <div>
+                  <div class="font-semibold">Nasru Multimedia</div>
+                  <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
+                </div>
+                <span class="chip chip-soon">Coming Soon</span>
+              </a>
+
+              <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+                <div>
+                  <div class="font-semibold">Nasru Lab</div>
+                  <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
+                </div>
+                <span class="chip chip-soon">Coming Soon</span>
+              </a>
+
+              <!-- Empty spacer to keep 2-column symmetry if needed -->
+              <div class="hidden md:block"></div>
+            </div>
+
+            <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
+              <div class="text-xs text-slate-300/80">
+                Need help choosing? <a href="contact.html" class="text-[rgb(var(--brand))] hover:underline">Contact us</a> for guidance.
+              </div>
+              <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
             </div>
           </div>
         </div>
@@ -166,7 +250,7 @@
           <a href="smart.html" class="block py-2">Nasru Hardware</a>
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-          <a href="training.html" class="block py-2">Training &amp; Certification</a>
+          <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
 
           <a href="multimedia.html" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
@@ -242,7 +326,7 @@
       </a>
       <a href="smart.html" class="card p-6 block hover:opacity-95">
         <h3 class="heading text-lg font-semibold">Nasru Hardware</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">IoT & building automation.</p>
+        <p class="mt-2 text-slate-300/80 text-sm">POS/ATM, devices, networking, cabling — sourced via trusted partners.</p>
       </a>
       <a href="software.html" class="card p-6 block hover:opacity-95">
         <h3 class="heading text-lg font-semibold">Nasru Software</h3>
@@ -251,6 +335,14 @@
       <a href="global.html" class="card p-6 block hover:opacity-95">
         <h3 class="heading text-lg font-semibold">Global Solutions</h3>
         <p class="mt-2 text-slate-300/80 text-sm">Sourcing, logistics, support.</p>
+      </a>
+    </div>
+
+    <!-- Optional second row for the new division (keeps the 4-col layout clean) -->
+    <div class="grid gap-6 md:grid-cols-4 mt-6">
+      <a href="training.html" class="card p-6 block hover:opacity-95 md:col-span-2">
+        <h3 class="heading text-lg font-semibold">Nasru Training &amp; Certification</h3>
+        <p class="mt-2 text-slate-300/80 text-sm">Corporate cybersecurity training, instructor-led sessions, and exam voucher support.</p>
       </a>
     </div>
   </div>
@@ -307,7 +399,7 @@
         <h4 class="heading font-semibold mb-3">Services</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
           <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Smart Integrations</a></li>
+          <li><a class="hover:text-brand" href="smart.html">Hardware & Devices</a></li>
           <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
           <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
         </ul>
@@ -348,7 +440,7 @@
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // ✅ Make dropdown easy to hover/click (small close delay + buffer)
+  // ✅ Dropdown open/close with close delay
   const wrap = document.getElementById('divisionsMenu');
   const btn = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
@@ -367,7 +459,7 @@
       closeTimer = setTimeout(() => {
         panel.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
-      }, 220); // <- enough time to move cursor into menu
+      }, 220);
     };
 
     // Open on hover
@@ -407,5 +499,6 @@
 
 </body>
 </html>
+
 
 
