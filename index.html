@@ -145,6 +145,33 @@
     }
     .trust-logo:hover{ opacity: 1; }
 
+    /* Partner circle strip */
+    .partner-dot{
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(103,232,249,0.16);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
+      transition: .18s ease;
+    }
+    .partner-dot:hover{
+      transform: translateY(-1px);
+      border-color: rgba(103,232,249,0.30);
+      box-shadow:
+        0 0 0 1px rgba(103,232,249,0.10) inset,
+        0 18px 40px rgba(0,0,0,0.45);
+    }
+    .partner-dot img{
+      max-height: 22px;
+      max-width: 34px;
+      width: auto;
+      height: auto;
+      opacity: .95;
+    }
   </style>
 
   <!-- Social -->
@@ -367,21 +394,43 @@
   </div>
 </section>
 
-<!-- TRUST STRIP -->
+<!-- TRUST STRIP (updated to include PECB) -->
 <section class="section-glow border-y hairline">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="text-sm text-slate-300/90">
-  <span class="font-semibold text-slate-100">Built on partnerships.</span>
-  Our vendor ecosystem and training alliances strengthen delivery across cybersecurity, infrastructure, and workforce development.
-</div>
+        <span class="font-semibold text-slate-100">Built on partnerships.</span>
+        Our vendor ecosystem and training alliances strengthen delivery across cybersecurity, infrastructure, and workforce development.
+      </div>
 
-<div class="flex flex-wrap items-center gap-6 opacity-90 justify-center md:justify-end">
-  <img src="assets/img/partners/pecb.png" class="h-6 w-auto trust-logo" alt="PECB">
-  <img src="assets/img/partners/axis.png" class="h-6 w-auto trust-logo" alt="Axis">
-  <img src="assets/img/partners/cyberzeb.png" class="h-6 w-auto trust-logo" alt="Cyber-Zeb">
-</div>
+      <div class="flex flex-wrap items-center gap-6 opacity-90 justify-center md:justify-end">
+        <img src="assets/img/partners/pecb.png" class="h-6 w-auto trust-logo" alt="PECB">
+        <img src="assets/img/partners/axis.png" class="h-6 w-auto trust-logo" alt="Axis">
+        <img src="assets/img/partners/cyberzeb.png" class="h-6 w-auto trust-logo" alt="Cyber-Zeb">
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- NEW: PARTNER LOGO STRIP (circles only) -->
+<section class="border-b hairline bg-slate-950/35">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-wrap items-center justify-center gap-4 md:gap-5">
+      <a href="https://pecb.com/" target="_blank" rel="noopener" class="partner-dot" aria-label="PECB">
+        <img src="assets/img/partners/pecb.png" alt="PECB">
+      </a>
+
+      <a href="https://www.axis.com/" target="_blank" rel="noopener" class="partner-dot" aria-label="Axis">
+        <img src="assets/img/partners/axis.png" alt="Axis">
+      </a>
+
+      <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="partner-dot" aria-label="Cyber-Zeb">
+        <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb">
+      </a>
+
+      <a href="partners.html" class="partner-dot" aria-label="View all partners">
+        <span class="text-slate-200/90 text-xs font-semibold">+</span>
+      </a>
     </div>
   </div>
 </section>
