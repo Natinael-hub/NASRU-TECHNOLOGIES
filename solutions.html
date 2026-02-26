@@ -7,7 +7,7 @@
   <title>Solutions - Nasru Technologies</title>
   <link rel="canonical" href="https://nasrutechnologies.com/solutions.html">
 
-  <meta name="description" content="Explore Nasru Technologies solutions: device distribution, security technologies, smart building integrations, custom software, installations, and managed IT & cybersecurity." />
+  <meta name="description" content="Explore Nasru Technologies solutions: device distribution, software platforms, training & certification, smart building integrations, and managed IT & cybersecurity." />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
   <!-- Tailwind -->
@@ -26,14 +26,14 @@
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; transition: box-shadow .2s ease, transform .2s ease; }
+    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); transform: translateY(-1px); }
     .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Solutions — Nasru Technologies">
-  <meta property="og:description" content="Secure, smart, and scalable solutions for security, IoT, software, installations, and managed IT & cybersecurity.">
+  <meta property="og:description" content="Secure, smart, and scalable solutions: devices, software, training, and managed IT & cybersecurity.">
   <meta property="og:url" content="https://nasrutechnologies.com/solutions.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
@@ -44,6 +44,7 @@
   <meta name="twitter:description" content="End-to-end technology solutions from Nasru Technologies.">
   <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 </head>
+
 <body class="text-slate-100 antialiased">
 
 <!-- HEADER -->
@@ -59,22 +60,32 @@
       <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown -->
+        <!-- Divisions dropdown (FIXED) -->
         <div class="relative" id="divisionsMenu">
-          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand">
+          <button
+            id="divisionsBtn"
+            class="inline-flex items-center gap-1 hover:text-brand"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="divisionsPanel"
+            type="button"
+          >
             Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
             </svg>
           </button>
-          <div id="divisionsPanel"
-               class="absolute top-full left-0 mt-0 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl
-                      invisible opacity-0 pointer-events-none transition-opacity duration-150"
-               role="menu" aria-labelledby="divisionsBtn">
-            <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Secure</a>
-            <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-            <a href="global.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+
+          <div
+            id="divisionsPanel"
+            class="absolute top-full left-0 mt-2 w-64 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl hidden"
+            role="menu"
+            aria-labelledby="divisionsBtn"
+          >
+            <a href="secure.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem" tabindex="-1">Nasru Secure</a>
+            <a href="smart.html"    class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem" tabindex="-1">Nasru Smart</a>
+            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem" tabindex="-1">Nasru Software</a>
+            <a href="global.html"   class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem" tabindex="-1">Nasru Global Solutions</a>
           </div>
         </div>
 
@@ -89,7 +100,7 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button (white icon) -->
+      <!-- Mobile menu button -->
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -127,7 +138,7 @@
     <div class="max-w-3xl">
       <h1 class="heading text-4xl md:text-5xl font-bold neon-text">Solutions That Connect Devices, Software & Security</h1>
       <p class="mt-4 text-lg text-slate-300">
-        Nasru Technologies brings together hardware, software, installations, IT, and cybersecurity into one
+        Nasru Technologies brings together hardware, software, training, IT, and cybersecurity into one
         connected ecosystem — secure, smart, and ready to scale with your growth.
       </p>
     </div>
@@ -139,52 +150,61 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="heading text-2xl md:text-3xl font-semibold text-center">Core Solution Areas</h2>
     <p class="mt-3 text-center text-slate-300 max-w-3xl mx-auto">
-      Whether you need reliable devices, custom software, full system deployments, or managed IT & cybersecurity,
+      Whether you need reliable devices, custom software, accredited training, or managed IT & cybersecurity,
       Nasru Technologies is built to support your entire lifecycle.
     </p>
 
     <div class="grid gap-6 md:grid-cols-3 mt-10">
-      <!-- Device Distribution -->
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Device Distribution</h3>
+      <!-- Device Distribution -> Nasru Hardware -->
+      <a href="hardware.html" class="card p-6 block focus:outline-none focus:ring-2 focus:ring-neon/60">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="heading text-lg font-semibold">Device Distribution</h3>
+          <span class="text-brand text-sm font-semibold">Explore →</span>
+        </div>
         <p class="mt-2 text-slate-300/85 text-sm">
           We source and supply cameras, access control hardware, networking gear, and smart devices
-          from trusted vendors - matched to your environment, budget, and growth plans.
+          from trusted vendors — matched to your environment, budget, and growth plans.
         </p>
         <ul class="mt-3 text-slate-400 text-xs space-y-1">
           <li>• CCTV cameras, NVRs, and video appliances</li>
           <li>• Access control panels, readers, and credentials</li>
           <li>• Switches, routers, wireless, and edge devices</li>
         </ul>
-      </div>
+      </a>
 
-      <!-- Installations & Integration -->
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Installations & Integration</h3>
+      <!-- Training & Certification -> Nasru Training & Certification -->
+      <a href="training.html" class="card p-6 block focus:outline-none focus:ring-2 focus:ring-neon/60">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="heading text-lg font-semibold">Training & Certification</h3>
+          <span class="text-brand text-sm font-semibold">Explore →</span>
+        </div>
         <p class="mt-2 text-slate-300/85 text-sm">
-          From design to go-live, we handle complete system deployments: wiring, mounting, configuration,
-          testing, and user onboarding.
+          Accelerate capability with accredited training programs and professional certification paths —
+          built for teams and organizations pursuing compliance and measurable security maturity.
         </p>
         <ul class="mt-3 text-slate-400 text-xs space-y-1">
-          <li>• Site surveys and solution design</li>
-          <li>• Multi-vendor system integration</li>
-          <li>• Training and documentation for your team</li>
+          <li>• PECB accredited course delivery</li>
+          <li>• Instructor-led virtual or onsite sessions</li>
+          <li>• Exam preparation and certification guidance</li>
         </ul>
-      </div>
+      </a>
 
-      <!-- Software Platforms -->
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Software & Platforms</h3>
+      <!-- Software & Platforms -> Nasru Software -->
+      <a href="software.html" class="card p-6 block focus:outline-none focus:ring-2 focus:ring-neon/60">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="heading text-lg font-semibold">Software & Platforms</h3>
+          <span class="text-brand text-sm font-semibold">Explore →</span>
+        </div>
         <p class="mt-2 text-slate-300/85 text-sm">
-          We build and integrate software that ties everything together - from FacilityFuz-style operations
-          platforms to custom portals and dashboards.
+          We build and integrate software that ties everything together — from operations platforms
+          to custom portals, automations, and dashboards.
         </p>
         <ul class="mt-3 text-slate-400 text-xs space-y-1">
           <li>• Custom web and mobile apps</li>
           <li>• Integrations with your existing systems</li>
           <li>• Reporting and analytics tailored to your operations</li>
         </ul>
-      </div>
+      </a>
     </div>
 
     <div class="grid gap-6 md:grid-cols-3 mt-6">
@@ -202,18 +222,22 @@
         </ul>
       </div>
 
-      <!-- Managed IT & Cybersecurity -->
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">IT & Cybersecurity</h3>
+      <!-- IT & Cybersecurity -> Nasru IT & Cybersecurity -->
+      <a href="it-cybersecurity.html" class="card p-6 block focus:outline-none focus:ring-2 focus:ring-neon/60">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="heading text-lg font-semibold">IT & Cybersecurity</h3>
+          <span class="text-brand text-sm font-semibold">Explore →</span>
+        </div>
         <p class="mt-2 text-slate-300/85 text-sm">
-          We secure the backbone that everything runs on — your network, endpoints, cloud, and remote access.
+          We secure the backbone that everything runs on — your network, endpoints, cloud, and identity —
+          with modern controls and clear operational visibility.
         </p>
         <ul class="mt-3 text-slate-400 text-xs space-y-1">
           <li>• Network design, segmentation, and hardening</li>
           <li>• Endpoint protection and monitoring</li>
-          <li>• Secure VPN and identity controls for remote teams</li>
+          <li>• Secure VPN, MFA, and identity controls</li>
         </ul>
-      </div>
+      </a>
 
       <!-- Global Sourcing & Support -->
       <div class="card p-6">
@@ -277,20 +301,21 @@
         <h2 class="heading text-2xl md:text-3xl font-semibold mb-4">How We Deliver</h2>
         <p class="text-slate-300/90 text-sm md:text-base">
           No copy-paste packages. Nasru Technologies starts with your environment, your risks,
-          and your growth plans - then designs a solution that fits.
+          and your growth plans — then designs a solution that fits.
         </p>
         <ul class="mt-5 space-y-3 text-slate-300/90 text-sm">
           <li><span class="text-brand font-semibold">1. Discover</span> — We learn your sites, pain points, and priorities.</li>
           <li><span class="text-brand font-semibold">2. Design</span> — We propose devices, software, and architecture that work together.</li>
-          <li><span class="text-brand font-semibold">3. Deploy</span> — We support installs, integrations, and cutover.</li>
+          <li><span class="text-brand font-semibold">3. Deliver</span> — We support installs, training, integrations, and go-live.</li>
           <li><span class="text-brand font-semibold">4. Support</span> — We stay with you for tuning, scaling, and new use cases.</li>
         </ul>
       </div>
+
       <div class="card p-6">
         <h3 class="heading text-lg font-semibold mb-3">Ready to Plan Your Solution?</h3>
         <p class="text-slate-300/85 text-sm">
-          Share a bit about your building, sites, or operations and we’ll map your needs
-          into clear options — devices, installs, software, and IT/cybersecurity.
+          Share a bit about your needs and we’ll map them into clear options — devices, software,
+          training & certification, and IT/cybersecurity.
         </p>
         <div class="mt-5 flex flex-wrap gap-3">
           <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900">
@@ -315,7 +340,7 @@
           <span class="heading text-lg font-semibold">Nasru Technologies</span>
         </a>
         <p class="mt-3 text-slate-400 text-sm">
-          Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.
+          Secure. Smart. Scalable. Devices, software, training, and cybersecurity/IT services.
         </p>
       </div>
 
@@ -332,10 +357,10 @@
       <div>
         <h4 class="heading font-semibold mb-3">Services</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Smart Integrations</a></li>
+          <li><a class="hover:text-brand" href="hardware.html">Device Distribution</a></li>
+          <li><a class="hover:text-brand" href="training.html">Training & Certification</a></li>
           <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
-          <li><a class="hover:text-brand" href="solutions.html">Solutions Overview</a></li>
+          <li><a class="hover:text-brand" href="it-cybersecurity.html">IT & Cybersecurity</a></li>
         </ul>
       </div>
 
@@ -343,7 +368,7 @@
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
           <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
-          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
+          <li><a class="hover:text-brand" href="careers.html">Open Roles</a></li>
           <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
           <li><a class="hover:text-brand" href="contact.html">Support</a></li>
         </ul>
@@ -363,48 +388,73 @@
 
 <script>
 (() => {
-  // Divisions hover dropdown
+  // ===== Divisions dropdown (fixed: stable toggle + hover on desktop + close on outside/esc) =====
   const wrap  = document.getElementById('divisionsMenu');
   const btn   = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
-  let hideTimer;
+
+  const isDesktop = () => window.matchMedia('(min-width: 768px)').matches;
 
   const openPanel = () => {
-    clearTimeout(hideTimer);
-    panel.classList.remove('invisible','opacity-0','pointer-events-none');
-  };
-  const scheduleClose = () => {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      panel.classList.add('invisible','opacity-0','pointer-events-none');
-    }, 150);
+    if (!panel || !btn) return;
+    panel.classList.remove('hidden');
+    btn.setAttribute('aria-expanded', 'true');
   };
 
-  if (btn && panel && wrap) {
-    btn.addEventListener('mouseenter', openPanel);
-    panel.addEventListener('mouseenter', openPanel);
-    btn.addEventListener('mouseleave', scheduleClose);
-    panel.addEventListener('mouseleave', scheduleClose);
+  const closePanel = () => {
+    if (!panel || !btn) return;
+    panel.classList.add('hidden');
+    btn.setAttribute('aria-expanded', 'false');
+  };
 
+  const togglePanel = () => {
+    if (!panel || !btn) return;
+    panel.classList.contains('hidden') ? openPanel() : closePanel();
+  };
+
+  if (wrap && btn && panel) {
+    // Click toggle (works for keyboard + mouse)
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (panel.classList.contains('invisible')) openPanel();
-      else scheduleClose();
+      togglePanel();
     });
 
+    // Hover open/close on desktop only (no flicker timers)
+    wrap.addEventListener('mouseenter', () => { if (isDesktop()) openPanel(); });
+    wrap.addEventListener('mouseleave', () => { if (isDesktop()) closePanel(); });
+
+    // Close on outside click
     document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target)) scheduleClose();
+      if (!wrap.contains(e.target)) closePanel();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    // Basic keyboard support: open on ArrowDown when focused
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        openPanel();
+        const first = panel.querySelector('a');
+        if (first) first.focus();
+      }
     });
   }
 
-  // Mobile menu toggle
+  // ===== Mobile menu toggle =====
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (menuBtn && mobileMenu){
-    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+    menuBtn.addEventListener('click', ()=> {
+      mobileMenu.classList.toggle('hidden');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+    });
   }
 
-  // Footer year
+  // ===== Footer year =====
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
