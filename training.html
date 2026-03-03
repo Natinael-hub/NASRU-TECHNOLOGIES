@@ -115,11 +115,11 @@
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav -->
+       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown -->
+        <!-- Divisions dropdown (futuristic mega menu) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -129,15 +129,15 @@
           </button>
 
           <div id="divisionsPanel"
-               class="dropdown-panel absolute left-0 mt-3 w-[640px] rounded-2xl overflow-hidden hidden divisions-shell"
+               class="dropdown-panel absolute left-0 mt-3 w-[680px] rounded-2xl overflow-hidden hidden divisions-shell"
                role="menu" aria-labelledby="divisionsBtn">
             <div class="px-5 py-4 border-b border-white/10">
               <div class="flex items-center justify-between gap-4">
                 <div>
                   <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
-                  <div class="divisions-kicker mt-1">Explore our capabilities — built for secure, smart, scalable delivery.</div>
+                  <div class="divisions-kicker mt-1">Built for enterprise delivery — secure, smart, scalable.</div>
                 </div>
-                <span class="chip chip-soon">More coming soon</span>
+                <span class="chip chip-soon">Roadmap active</span>
               </div>
             </div>
 
@@ -149,7 +149,7 @@
 
               <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Hardware</div>
-                <div class="divisions-kicker mt-1">Devices, POS/ATM, networking, cabling — sourced via trusted partners.</div>
+                <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
               </a>
 
               <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
@@ -164,7 +164,7 @@
 
               <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Training &amp; Certification</div>
-                <div class="divisions-kicker mt-1">Instructor-led corporate training, workshops, voucher support.</div>
+                <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
               </a>
 
               <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
@@ -188,7 +188,7 @@
 
             <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
               <div class="text-xs text-slate-300/80">
-                Need guidance? <a href="contact.html" class="hover:text-brand underline underline-offset-4">Contact us</a>.
+                Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
               </div>
               <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
             </div>
@@ -196,6 +196,10 @@
         </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
+
+        <!-- ✅ ADDED: Training nav item -->
+        <a href="training.html" class="hover:text-brand">Training</a>
+
         <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
@@ -203,7 +207,7 @@
       </nav>
 
       <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Request Training</a>
+        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
       <!-- Mobile menu button -->
@@ -216,7 +220,7 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
+  <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
 
@@ -228,7 +232,6 @@
           <a href="software.html" class="block py-2">Nasru Software</a>
           <a href="global.html" class="block py-2">Nasru Global Solutions</a>
           <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
-
           <a href="multimedia.html" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
           </a>
@@ -239,11 +242,15 @@
       </details>
 
       <a href="solutions.html" class="block py-2">Solutions</a>
+
+      <!-- ✅ ADDED: Training nav item (mobile) -->
+      <a href="training.html" class="block py-2">Training</a>
+
       <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Request Training</a>
+      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
     </div>
   </div>
 </header>
