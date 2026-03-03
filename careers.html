@@ -7,60 +7,62 @@
   <title>Careers - Nasru Technologies</title>
   <link rel="canonical" href="https://nasrutechnologies.com/careers.html">
 
-  <meta name="description" content="Apply to Nasru Technologies — submit your resume, cover letter, and contact information. Join a multi-division team building secure, smart, and scalable solutions." />
+  <meta name="description" content="Explore careers at Nasru Technologies. Submit a simple application and attach your resume. We review applications on a rolling basis." />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#22D3EE', neon: '#67e8f9' }
+        }
+      }
+    }
   </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{ color-scheme: dark; }
-    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
+    body{ font-family: Inter, system-ui, sans-serif; background:#0b1220; }
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .input { background: rgba(255,255,255,0.04); border: 1px solid rgba(148,163,184,0.25); }
-    .input:focus { outline: none; border-color: rgba(103,232,249,0.55); box-shadow: 0 0 0 3px rgba(103,232,249,0.15); }
-    .help { font-size: 12px; color: #94a3b8; }
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(148,163,184,0.16); border-radius: 18px; }
+    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.18), 0 18px 55px -18px rgba(103,232,249,0.22); }
+    .hairline { border-color: rgba(148,163,184,0.16); }
+    .input { background: rgba(255,255,255,0.03); border: 1px solid rgba(148,163,184,0.22); }
+    .input:focus { outline: none; border-color: rgba(103,232,249,0.55); box-shadow: 0 0 0 3px rgba(103,232,249,0.14); }
+    .muted { color: rgba(148,163,184,0.95); }
   </style>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Careers — Nasru Technologies">
-  <meta property="og:description" content="Apply to join a multi-division team building secure, smart, and scalable solutions.">
+  <meta property="og:description" content="Join a multi-division tech company building secure, smart, and scalable solutions.">
   <meta property="og:url" content="https://nasrutechnologies.com/careers.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Careers — Nasru Technologies">
-  <meta name="twitter:description" content="Apply to join a multi-division team building secure, smart, and scalable solutions.">
-  <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
-
-  <!-- Schema.org JSON-LD: Organization -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nasru Technologies",
-    "url": "https://nasrutechnologies.com",
-    "logo": "https://nasrutechnologies.com/assets/img/logo.png",
-    "sameAs": ["https://www.linkedin.com/company/nasru-technologies"]
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Nasru Technologies",
+    "url":"https://nasrutechnologies.com",
+    "logo":"https://nasrutechnologies.com/assets/img/logo.png",
+    "sameAs":["https://www.linkedin.com/company/nasru-technologies"]
   }
   </script>
 </head>
+
 <body class="text-slate-100 antialiased">
 
-<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+<header class="sticky top-0 z-50 border-b hairline glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href="index.html" class="flex items-center gap-2">
@@ -69,11 +71,10 @@
       </a>
 
       <!-- Desktop Nav -->
-       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (futuristic mega menu) -->
+        <!-- Divisions dropdown (kept as-is; relies on your existing divisionsPanel styles if you had them) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -82,81 +83,53 @@
             </svg>
           </button>
 
-          <div id="divisionsPanel"
-               class="dropdown-panel absolute left-0 mt-3 w-[680px] rounded-2xl overflow-hidden hidden divisions-shell"
+          <!-- SIMPLE panel (corporate) -->
+          <div id="divisionsPanel" class="absolute left-0 mt-3 w-[520px] rounded-2xl overflow-hidden hidden card"
                role="menu" aria-labelledby="divisionsBtn">
-            <div class="px-5 py-4 border-b border-white/10">
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
-                  <div class="divisions-kicker mt-1">Built for enterprise delivery — secure, smart, scalable.</div>
-                </div>
-                <span class="chip chip-soon">Roadmap active</span>
-              </div>
+            <div class="px-5 py-4 border-b hairline">
+              <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
+              <div class="mt-1 text-sm muted">Enterprise delivery — secure, smart, scalable.</div>
             </div>
 
             <div class="grid grid-cols-2">
-              <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
-                <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
+              <a href="secure.html" class="block px-5 py-4 hover:bg-white/5" role="menuitem">
+                <div class="font-semibold">IT &amp; Cybersecurity</div>
+                <div class="text-sm muted mt-1">Managed IT, assessments, hardening.</div>
               </a>
-
-              <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Hardware</div>
-                <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
+              <a href="smart.html" class="block px-5 py-4 hover:bg-white/5" role="menuitem">
+                <div class="font-semibold">Hardware</div>
+                <div class="text-sm muted mt-1">Devices, networking, cabling.</div>
               </a>
-
-              <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Software</div>
-                <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
+              <a href="software.html" class="block px-5 py-4 hover:bg-white/5" role="menuitem">
+                <div class="font-semibold">Software</div>
+                <div class="text-sm muted mt-1">Custom apps &amp; automation.</div>
               </a>
-
-              <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Global Solutions</div>
-                <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
+              <a href="global.html" class="block px-5 py-4 hover:bg-white/5" role="menuitem">
+                <div class="font-semibold">Global Solutions</div>
+                <div class="text-sm muted mt-1">Sourcing, logistics, support.</div>
               </a>
-
-              <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Training &amp; Certification</div>
-                <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
+              <a href="training.html" class="block px-5 py-4 hover:bg-white/5" role="menuitem">
+                <div class="font-semibold">Training &amp; Certification</div>
+                <div class="text-sm muted mt-1">Corporate training &amp; vouchers.</div>
               </a>
-
-              <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
-                <div>
-                  <div class="font-semibold">Nasru Multimedia</div>
-                  <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
-                </div>
-                <span class="chip chip-soon">Coming Soon</span>
+              <a href="multimedia.html" class="block px-5 py-4 hover:bg-white/5" role="menuitem">
+                <div class="font-semibold">Multimedia</div>
+                <div class="text-sm muted mt-1">Brand media &amp; production.</div>
               </a>
-
-              <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
-                <div>
-                  <div class="font-semibold">Nasru Lab</div>
-                  <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
-                </div>
-                <span class="chip chip-soon">Coming Soon</span>
-              </a>
-
-              <div class="hidden md:block"></div>
             </div>
 
-            <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
-              <div class="text-xs text-slate-300/80">
-                Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
-              </div>
+            <div class="px-5 py-4 border-t hairline flex items-center justify-between">
+              <div class="text-xs muted">Not sure where to start? <a href="contact.html" class="text-brand hover:underline">Talk to us</a>.</div>
               <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
             </div>
           </div>
         </div>
 
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
-
-        <!-- ✅ ADDED: Training nav item -->
         <a href="training.html" class="hover:text-brand">Training</a>
-
         <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
-        <a href="careers.html" class="hover:text-brand">Careers</a>
+        <a href="careers.html" class="text-brand">Careers</a>
         <a href="contact.html" class="hover:text-brand">Contact</a>
       </nav>
 
@@ -165,7 +138,8 @@
       </div>
 
       <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white"
+              aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
         </svg>
@@ -177,32 +151,11 @@
   <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
-
-      <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 mt-1 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
-          <a href="smart.html" class="block py-2">Nasru Hardware</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-          <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
-          <a href="multimedia.html" class="flex items-center justify-between py-2">
-            <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-          <a href="lab.html" class="flex items-center justify-between py-2">
-            <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-        </div>
-      </details>
-
       <a href="solutions.html" class="block py-2">Solutions</a>
-
-      <!-- ✅ ADDED: Training nav item (mobile) -->
       <a href="training.html" class="block py-2">Training</a>
-
       <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
-      <a href="careers.html" class="block py-2">Careers</a>
+      <a href="careers.html" class="block py-2 text-brand">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
       <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
     </div>
@@ -210,122 +163,194 @@
 </header>
 
 <!-- Hero -->
-<section class="relative py-16 text-center">
-  <div class="max-w-3xl mx-auto px-4">
-    <h1 class="heading text-4xl md:text-6xl font-bold neon-text">Careers at Nasru</h1>
-    <p class="mt-4 text-lg text-slate-300">Join a multi-division tech company building secure, smart, and scalable solutions.</p>
-  </div>
-</section>
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18">
+    <div class="grid gap-10 md:grid-cols-12 items-center">
+      <div class="md:col-span-7">
+        <div class="inline-flex items-center gap-2 rounded-full border hairline bg-white/5 px-3 py-1 text-xs text-slate-200/90">
+          <span class="h-2 w-2 rounded-full bg-brand"></span>
+          Hiring pipeline open — rolling review
+        </div>
+        <h1 class="heading mt-4 text-4xl md:text-6xl font-bold leading-tight">
+          Careers at <span class="text-brand">Nasru</span>
+        </h1>
+        <p class="mt-4 text-lg text-slate-300">
+          Join a multi-division team delivering secure technology, smart infrastructure, and scalable software.
+        </p>
 
-<!-- Open Roles (placeholder) -->
-<section class="py-6">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="grid gap-6 md:grid-cols-3">
-      <div class="card p-6">
-        <h3 class="heading text-xl font-semibold">Security Systems Engineer</h3>
-        <p class="text-slate-300/80 text-sm mt-2">Design & deploy CCTV, access control, and VMS solutions.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#apply" class="rounded-xl bg-brand px-5 py-2 font-semibold text-slate-900 hover:opacity-90">Apply Now</a>
+          <a href="#roles" class="rounded-xl border hairline bg-white/5 px-5 py-2 font-semibold hover:bg-white/10">View Roles</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-3 gap-4 text-sm text-slate-300/90">
+          <div class="card p-4">
+            <div class="heading font-semibold">Professional</div>
+            <div class="mt-1 muted">Clear process & expectations</div>
+          </div>
+          <div class="card p-4">
+            <div class="heading font-semibold">Secure</div>
+            <div class="mt-1 muted">Security-first delivery</div>
+          </div>
+          <div class="card p-4">
+            <div class="heading font-semibold">Global</div>
+            <div class="mt-1 muted">U.S. + Ethiopia + beyond</div>
+          </div>
+        </div>
       </div>
-      <div class="card p-6">
-        <h3 class="heading text-xl font-semibold">IoT/Automation Specialist</h3>
-        <p class="text-slate-300/80 text-sm mt-2">Integrate sensors and smart building systems at scale.</p>
-      </div>
-      <div class="card p-6">
-        <h3 class="heading text-xl font-semibold">Full-Stack Developer</h3>
-        <p class="text-slate-300/80 text-sm mt-2">Help build our platforms like FacilityFuz & Meet-Vendors.</p>
+
+      <div class="md:col-span-5">
+        <div class="card p-6">
+          <div class="heading text-xl font-semibold">What we look for</div>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-brand"></span>
+              Strong ownership and client-first communication
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-brand"></span>
+              Security mindset, documentation, and quality delivery
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-brand"></span>
+              Willingness to learn across divisions
+            </li>
+          </ul>
+
+          <div class="mt-5 rounded-xl border hairline bg-white/5 p-4 text-sm muted">
+            Tip: A short portfolio / LinkedIn helps us review faster.
+          </div>
+        </div>
       </div>
     </div>
-    <p class="help mt-3">Don’t see your role? Apply anyway — we review strong profiles continuously.</p>
   </div>
 </section>
 
-<!-- Application Form -->
-<section class="py-16">
-  <div class="max-w-3xl mx-auto px-4">
-    <div class="card p-6">
-      <h2 class="heading text-2xl font-semibold mb-4">Submit Your Application</h2>
-      <form id="applyForm" action="https://formspree.io/f/your-endpoint" method="POST" enctype="multipart/form-data" class="space-y-5" novalidate>
+<!-- Roles -->
+<section id="roles" class="py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <h2 class="heading text-2xl md:text-3xl font-semibold">Open roles</h2>
+        <p class="mt-2 muted">If you don’t see the exact role, apply anyway — we hire for capability.</p>
+      </div>
+      <a href="#apply" class="hidden sm:inline-flex rounded-xl border hairline bg-white/5 px-4 py-2 font-semibold hover:bg-white/10">Apply →</a>
+    </div>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">Security Systems Engineer</h3>
+        <p class="text-slate-300/90 text-sm mt-2">CCTV, access control, VMS design and deployment.</p>
+        <div class="mt-4 text-xs muted">Full-time / Contract • Field + Remote</div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">IoT / Automation Specialist</h3>
+        <p class="text-slate-300/90 text-sm mt-2">Integrate sensors, smart building systems, and automation.</p>
+        <div class="mt-4 text-xs muted">Full-time / Contract • Hybrid</div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="heading text-xl font-semibold">Full-Stack Developer</h3>
+        <p class="text-slate-300/90 text-sm mt-2">Build platforms, portals, and internal tools (Next.js stack).</p>
+        <div class="mt-4 text-xs muted">Full-time / Contract • Remote</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Simple Application -->
+<section id="apply" class="py-14">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-7 md:p-8">
+      <div class="flex items-start justify-between gap-6">
+        <div>
+          <h2 class="heading text-2xl font-semibold">Apply in one step</h2>
+          <p class="mt-2 muted text-sm">Your submission is emailed to <span class="text-slate-200">info@nasrutechnologies.com</span>.</p>
+        </div>
+        <div class="hidden sm:block rounded-xl border hairline bg-white/5 px-3 py-2 text-xs muted">
+          Resume: PDF/DOC/DOCX • Max 10MB
+        </div>
+      </div>
+
+      <!-- Replace with your real Formspree endpoint -->
+      <form id="applyForm"
+            action="https://formspree.io/f/xykdqqgn"
+            method="POST"
+            enctype="multipart/form-data"
+            class="mt-6 space-y-5"
+            novalidate>
+
         <!-- Anti-spam honeypot -->
         <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
 
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm mb-1">First Name *</label>
-            <input name="first_name" required class="input w-full rounded-lg px-3 py-2" placeholder="Jane">
-          </div>
-          <div>
-            <label class="block text-sm mb-1">Last Name *</label>
-            <input name="last_name" required class="input w-full rounded-lg px-3 py-2" placeholder="Doe">
-          </div>
+        <div>
+          <label class="block text-sm mb-1">Full name *</label>
+          <input name="full_name" required class="input w-full rounded-xl px-3 py-2" placeholder="First Last">
         </div>
 
         <div class="grid md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm mb-1">Email *</label>
-            <input type="email" name="email" required class="input w-full rounded-lg px-3 py-2" placeholder="you@company.com">
+            <input type="email" name="email" required class="input w-full rounded-xl px-3 py-2" placeholder="you@domain.com">
           </div>
           <div>
-            <label class="block text-sm mb-1">Phone *</label>
-            <input type="tel" name="phone" required class="input w-full rounded-lg px-3 py-2" placeholder="+1 555 000 0000">
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm mb-1">Applying For *</label>
-            <select name="role" required class="input w-full rounded-lg px-3 py-2">
+            <label class="block text-sm mb-1">Role *</label>
+            <select name="role" required class="input w-full rounded-xl px-3 py-2">
               <option value="">Select a role</option>
               <option>Security Systems Engineer</option>
-              <option>IoT/Automation Specialist</option>
+              <option>IoT / Automation Specialist</option>
               <option>Full-Stack Developer</option>
               <option>Other</option>
             </select>
           </div>
-          <div>
-            <label class="block text-sm mb-1">Location</label>
-            <input name="location" class="input w-full rounded-lg px-3 py-2" placeholder="City, Country">
-          </div>
         </div>
 
         <div>
-          <label class="block text-sm mb-1">LinkedIn or Portfolio</label>
-          <input type="url" name="profile_url" class="input w-full rounded-lg px-3 py-2" placeholder="https://linkedin.com/in/username">
+          <label class="block text-sm mb-1">LinkedIn / Portfolio (optional)</label>
+          <input type="url" name="profile" class="input w-full rounded-xl px-3 py-2" placeholder="https://linkedin.com/in/username">
         </div>
 
         <div>
-          <label class="block text-sm mb-1">Cover Letter (optional)</label>
-          <textarea name="cover_letter" rows="5" class="input w-full rounded-lg px-3 py-2" placeholder="Tell us a bit about your experience and motivation (optional)"></textarea>
+          <label class="block text-sm mb-1">Message (optional)</label>
+          <textarea name="message" rows="5" class="input w-full rounded-xl px-3 py-2"
+                    placeholder="A short note about your experience and what you’re applying for."></textarea>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm mb-1">Resume (PDF/DOC/DOCX, max 10MB) *</label>
-            <input type="file" name="resume" required accept=".pdf,.doc,.docx" class="input w-full rounded-lg px-3 py-2 file:mr-3 file:py-2 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-200">
-          </div>
-          <div>
-            <label class="block text-sm mb-1">Cover Letter File (optional, PDF/DOC/DOCX)</label>
-            <input type="file" name="cover_letter_file" accept=".pdf,.doc,.docx" class="input w-full rounded-lg px-3 py-2 file:mr-3 file:py-2 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-200">
-          </div>
+        <div>
+          <label class="block text-sm mb-1">Resume *</label>
+          <input type="file" name="resume" required accept=".pdf,.doc,.docx"
+                 class="input w-full rounded-xl px-3 py-2 file:mr-3 file:py-2 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-200">
+          <div class="mt-2 text-xs muted">Accepted: PDF, DOC, DOCX. Max 10MB.</div>
         </div>
+
+        <!-- Email metadata for form handlers that support these fields -->
+        <input type="hidden" name="_subject" value="New Career Application — Nasru Technologies">
+        <input type="hidden" name="_replyto" value="%email%">
 
         <div class="flex items-start gap-2">
-          <input id="consent" type="checkbox" required class="mt-1">
-          <label for="consent" class="text-sm text-slate-300/90">I consent to Nasru Technologies processing my application data for recruitment purposes.</label>
+          <input id="consent" name="consent" type="checkbox" required class="mt-1">
+          <label for="consent" class="text-sm text-slate-300/90">
+            I consent to Nasru Technologies processing my application data for recruitment purposes.
+          </label>
         </div>
-
-        <input type="hidden" name="_subject" value="New Career Application — Nasru Technologies">
-        <input type="hidden" name="_template" value="table">
 
         <div class="pt-2 flex items-center gap-3">
-          <button id="submitBtn" class="rounded-xl bg-brand px-5 py-2 font-semibold text-slate-900">Submit Application</button>
-          <span id="status" class="help"></span>
+          <button id="submitBtn" class="rounded-xl bg-brand px-5 py-2 font-semibold text-slate-900 hover:opacity-90">
+            Submit Application
+          </button>
+          <span id="status" class="text-xs muted"></span>
         </div>
       </form>
+
+      <div class="mt-6 rounded-xl border hairline bg-white/5 p-4 text-sm muted">
+        Prefer email? Send your resume to <a class="text-brand hover:underline" href="mailto:info@nasrutechnologies.com">info@nasrutechnologies.com</a>.
+      </div>
     </div>
-    <p class="help mt-3">Having trouble? Email us at <a href="mailto:careers@nasrutechnologies.com" class="underline">careers@nasrutechnologies.com</a>.</p>
   </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-700/60">
+<footer class="mt-16 border-t hairline">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
       <div>
@@ -362,14 +387,14 @@
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
           <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
-          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
+          <li><a class="hover:text-brand" href="careers.html#roles">Open Roles</a></li>
+          <li><a class="hover:text-brand" href="careers.html#apply">Apply Now</a></li>
           <li><a class="hover:text-brand" href="contact.html">Support</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+    <div class="mt-10 pt-6 border-t hairline flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
@@ -382,71 +407,60 @@
 
 <script>
 (() => {
-  // Dropdown hover (Divisions)
+  // Divisions dropdown
   const wrap  = document.getElementById('divisionsMenu');
   const btn   = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
   let hideTimer;
 
-  const openPanel = () => {
-    clearTimeout(hideTimer);
-    panel?.classList.remove('invisible','opacity-0','pointer-events-none');
-  };
-  const scheduleClose = () => {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      panel?.classList.add('invisible','opacity-0','pointer-events-none');
-    }, 150);
-  };
+  const show = () => { clearTimeout(hideTimer); panel && panel.classList.remove('hidden'); };
+  const hide = () => { clearTimeout(hideTimer); hideTimer = setTimeout(()=> panel && panel.classList.add('hidden'), 140); };
 
-  btn?.addEventListener('mouseenter', openPanel);
-  panel?.addEventListener('mouseenter', openPanel);
-  btn?.addEventListener('mouseleave', scheduleClose);
-  panel?.addEventListener('mouseleave', scheduleClose);
+  btn?.addEventListener('mouseenter', show);
+  panel?.addEventListener('mouseenter', show);
+  btn?.addEventListener('mouseleave', hide);
+  panel?.addEventListener('mouseleave', hide);
 
   btn?.addEventListener('click', (e) => {
     e.preventDefault();
-    if (panel?.classList.contains('invisible')) openPanel();
-    else scheduleClose();
+    panel?.classList.toggle('hidden');
   });
 
   document.addEventListener('click', (e) => {
-    if (wrap && !wrap.contains(e.target)) scheduleClose();
+    if (wrap && panel && !wrap.contains(e.target)) panel.classList.add('hidden');
   });
 
   // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu){
-    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-  }
+  menuBtn?.addEventListener('click', ()=> mobileMenu?.classList.toggle('hidden'));
 
   // Footer year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Form validation UX
+  // Simple file validation UX
   const form = document.getElementById('applyForm');
   const submitBtn = document.getElementById('submitBtn');
   const statusEl = document.getElementById('status');
 
-  function validateFiles() {
+  function validateResume() {
     const resume = form.querySelector('input[name="resume"]').files[0];
-    const cover = form.querySelector('input[name="cover_letter_file"]').files[0];
-    const allowed = ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const allowed = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
     const max = 10 * 1024 * 1024; // 10 MB
+
     if (!resume) return "Resume is required.";
     if (!allowed.includes(resume.type)) return "Resume must be PDF/DOC/DOCX.";
     if (resume.size > max) return "Resume must be under 10 MB.";
-    if (cover) {
-      if (!allowed.includes(cover.type)) return "Cover letter must be PDF/DOC/DOCX.";
-      if (cover.size > max) return "Cover letter must be under 10 MB.";
-    }
     return null;
   }
 
-  form.addEventListener('submit', function(e){
-    const err = validateFiles();
+  form?.addEventListener('submit', function(e){
+    const err = validateResume();
     if (err) {
       e.preventDefault();
       statusEl.textContent = err;
@@ -455,29 +469,10 @@
     }
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
-    statusEl.textContent = 'Uploading your application...';
+    statusEl.textContent = 'Submitting your application...';
     statusEl.style.color = '#94a3b8';
   });
 })();
-</script>
-
-<!-- Optional: preselect role from querystring ?role=Full-Stack%20Developer -->
-<script>
-  (function(){
-    const params = new URLSearchParams(location.search);
-    const role = params.get('role');
-    if (role) {
-      const sel = document.querySelector('select[name="role"]');
-      if (sel) {
-        const opt = Array.from(sel.options).find(o => o.text.trim().toLowerCase() === role.trim().toLowerCase());
-        if (opt) sel.value = opt.value; else {
-          const o = document.createElement('option');
-          o.textContent = role; o.value = role;
-          sel.appendChild(o); sel.value = role;
-        }
-      }
-    }
-  })();
 </script>
 
 </body>
