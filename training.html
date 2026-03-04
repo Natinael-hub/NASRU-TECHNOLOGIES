@@ -318,116 +318,401 @@
 </section>
 
 <!-- COURSES + STRIPE -->
+<!-- COURSES + STRIPE -->
 <section id="courses" class="py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-6">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
       <div>
-        <h2 class="heading text-2xl md:text-3xl font-semibold">Courses you can purchase</h2>
-        <p class="mt-2 muted">Secure payment via Stripe. Instant confirmation after checkout.</p>
+        <h2 class="heading text-2xl md:text-3xl font-semibold">Courses</h2>
+        <p class="mt-2 muted">Purchase via secure Stripe checkout. Course badges shown as placeholders (swap with official badges later).</p>
       </div>
-      <span class="chip">Stripe Checkout</span>
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="chip">Stripe Checkout</span>
+        <span class="chip">English</span>
+        <span class="chip">Self-Paced + Live Options</span>
+      </div>
     </div>
 
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      <!-- Course Card 1 -->
-      <div class="card p-6">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="heading text-xl font-semibold">ISO/IEC 42001 Lead Implementer</h3>
-            <p class="mt-2 text-sm muted">AI management system implementation (AIMS) — structured roadmap and controls.</p>
-          </div>
-          <img src="assets/img/badge-42001-li.png" alt="Course badge" class="h-14 w-14 object-contain">
+    <!-- Filters -->
+    <div class="mt-6 card p-4">
+      <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+        <div class="flex flex-wrap gap-2">
+          <button class="chip hover:bg-white/10" data-filter="all" type="button">All</button>
+          <button class="chip hover:bg-white/10" data-filter="privacy" type="button">Privacy &amp; Data Protection</button>
+          <button class="chip hover:bg-white/10" data-filter="grc" type="button">Governance, Risk &amp; Compliance</button>
+          <button class="chip hover:bg-white/10" data-filter="bcm" type="button">Continuity, Resilience &amp; Recovery</button>
+          <button class="chip hover:bg-white/10" data-filter="infosec" type="button">Information Security</button>
         </div>
 
-        <div class="mt-4 flex flex-wrap gap-2 text-xs">
-          <span class="chip">Instructor-led</span>
-          <span class="chip">Self-paced</span>
-          <span class="chip">Voucher optional</span>
-        </div>
-
-        <div class="mt-5 flex items-center justify-between">
-          <div class="text-sm">
-            <div class="muted">Price</div>
-            <div class="heading text-lg font-semibold">$TBD</div>
-          </div>
-
-          <!-- ✅ Replace with your Stripe Payment Link -->
-          <a href="https://buy.stripe.com/YOUR_42001_LINK" target="_blank" rel="noopener"
-             class="btn btn-primary">Buy Now</a>
-        </div>
-
-        <div class="mt-4 text-xs muted">
-          Badge placeholder included — replace per official course badge image.
-        </div>
-      </div>
-
-      <!-- Course Card 2 (Placeholder Badge) -->
-      <div class="card p-6">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="heading text-xl font-semibold">ISO/IEC 27001 Lead Implementer</h3>
-            <p class="mt-2 text-sm muted">Build and implement an ISMS aligned to ISO/IEC 27001.</p>
-          </div>
-          <!-- ✅ Placeholder badge (swap later) -->
-          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
-        </div>
-
-        <div class="mt-4 flex flex-wrap gap-2 text-xs">
-          <span class="chip">Instructor-led</span>
-          <span class="chip">Self-paced</span>
-          <span class="chip">Exam-ready</span>
-        </div>
-
-        <div class="mt-5 flex items-center justify-between">
-          <div class="text-sm">
-            <div class="muted">Price</div>
-            <div class="heading text-lg font-semibold">$TBD</div>
-          </div>
-
-          <a href="https://buy.stripe.com/YOUR_27001_LINK" target="_blank" rel="noopener"
-             class="btn btn-primary">Buy Now</a>
-        </div>
-      </div>
-
-      <!-- Course Card 3 -->
-      <div class="card p-6">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="heading text-xl font-semibold">ISO 19011 Lead Auditor (Alt)</h3>
-            <p class="mt-2 text-sm muted">Audit guidelines and practical audit execution skills (where available).</p>
-          </div>
-          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
-        </div>
-
-        <div class="mt-4 flex flex-wrap gap-2 text-xs">
-          <span class="chip">Auditing</span>
-          <span class="chip">Framework</span>
-          <span class="chip">Professional</span>
-        </div>
-
-        <div class="mt-5 flex items-center justify-between">
-          <div class="text-sm">
-            <div class="muted">Price</div>
-            <div class="heading text-lg font-semibold">$TBD</div>
-          </div>
-
-          <a href="https://buy.stripe.com/YOUR_19011_LINK" target="_blank" rel="noopener"
-             class="btn btn-primary">Buy Now</a>
+        <div class="w-full md:w-80">
+          <input id="courseSearch" class="input w-full rounded-xl px-3 py-2" placeholder="Search courses (e.g., 27001, 27701, Risk)..." />
         </div>
       </div>
     </div>
 
-    <div class="mt-6 card p-6">
-      <div class="heading text-lg font-semibold">Need corporate training for a team?</div>
-      <p class="mt-2 muted text-sm">
-        We provide group pricing, private cohorts, and tailored scheduling. Tell us your headcount and timeline.
-      </p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
-        <a href="mailto:info@nasrutechnologies.com" class="btn btn-ghost">Email Training Team</a>
+    <!-- Course Grid -->
+    <div id="courseGrid" class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Privacy & Data Protection -->
+      <article class="card p-6 course-card" data-cat="privacy" data-title="GDPR - Certified Data Protection Officer">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">Privacy</span>
+              <span class="chip">GDPR</span>
+              <span class="chip">English</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">GDPR — Certified Data Protection Officer</h3>
+            <p class="mt-2 text-sm muted">Build practical skills to manage GDPR compliance and privacy programs.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm">
+            <div class="muted">Category</div>
+            <div class="font-semibold">Privacy &amp; Data Protection</div>
+          </div>
+          <a href="https://buy.stripe.com/YOUR_GDPR_DPO_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="privacy" data-title="ISO/IEC 27701 Lead Auditor">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">Privacy</span><span class="chip">27701</span><span class="chip">Auditor</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27701 Lead Auditor</h3>
+            <p class="mt-2 text-sm muted">Lead audits of PIMS and assess privacy controls aligned to ISO/IEC 27701.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Privacy &amp; Data Protection</div></div>
+          <a href="https://buy.stripe.com/YOUR_27701_LA_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="privacy" data-title="ISO/IEC 27701 Lead Implementer">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">Privacy</span><span class="chip">27701</span><span class="chip">Implementer</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27701 Lead Implementer</h3>
+            <p class="mt-2 text-sm muted">Implement and operate a Privacy Information Management System (PIMS).</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Privacy &amp; Data Protection</div></div>
+          <a href="https://buy.stripe.com/YOUR_27701_LI_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="privacy" data-title="ISO/IEC 27701 Foundation">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">Privacy</span><span class="chip">27701</span><span class="chip">Foundation</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27701 Foundation</h3>
+            <p class="mt-2 text-sm muted">Understand fundamentals of privacy controls and PIMS concepts.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Privacy &amp; Data Protection</div></div>
+          <a href="https://buy.stripe.com/YOUR_27701_F_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <!-- Governance, Risk, and Compliance -->
+      <article class="card p-6 course-card" data-cat="grc" data-title="ISO 37001 Lead Implementer">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">GRC</span><span class="chip">37001</span><span class="chip">Implementer</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO 37001 Lead Implementer</h3>
+            <p class="mt-2 text-sm muted">Implement an Anti-Bribery Management System (ABMS) and supporting controls.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Governance, Risk &amp; Compliance</div></div>
+          <a href="https://buy.stripe.com/YOUR_37001_LI_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="grc" data-title="ISO 31000 Risk Manager">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">GRC</span><span class="chip">31000</span><span class="chip">Risk</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO 31000 Risk Manager</h3>
+            <p class="mt-2 text-sm muted">Develop, operate, and improve risk management aligned to ISO 31000.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Governance, Risk &amp; Compliance</div></div>
+          <a href="https://buy.stripe.com/YOUR_31000_RM_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="grc" data-title="ISO 31000 Foundation">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">GRC</span><span class="chip">31000</span><span class="chip">Foundation</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO 31000 Foundation</h3>
+            <p class="mt-2 text-sm muted">Learn key concepts, principles, and framework elements of ISO 31000.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Governance, Risk &amp; Compliance</div></div>
+          <a href="https://buy.stripe.com/YOUR_31000_F_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <!-- Continuity, Resilience and Recovery -->
+      <article class="card p-6 course-card" data-cat="bcm" data-title="ISO 22301 Lead Auditor">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">BCM</span><span class="chip">22301</span><span class="chip">Auditor</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO 22301 Lead Auditor</h3>
+            <p class="mt-2 text-sm muted">Lead audits of Business Continuity Management Systems (BCMS).</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Continuity, Resilience &amp; Recovery</div></div>
+          <a href="https://buy.stripe.com/YOUR_22301_LA_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="bcm" data-title="ISO 22301 Lead Implementer">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">BCM</span><span class="chip">22301</span><span class="chip">Implementer</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO 22301 Lead Implementer</h3>
+            <p class="mt-2 text-sm muted">Implement and manage a BCMS aligned to ISO 22301.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Continuity, Resilience &amp; Recovery</div></div>
+          <a href="https://buy.stripe.com/YOUR_22301_LI_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="bcm" data-title="ISO 22301 Foundation">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">BCM</span><span class="chip">22301</span><span class="chip">Foundation</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO 22301 Foundation</h3>
+            <p class="mt-2 text-sm muted">Understand fundamentals of business continuity and resilience requirements.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Continuity, Resilience &amp; Recovery</div></div>
+          <a href="https://buy.stripe.com/YOUR_22301_F_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <!-- Information Security -->
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27002 Lead Manager">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27002</span><span class="chip">Lead</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27002 Lead Manager</h3>
+            <p class="mt-2 text-sm muted">Lead implementation and management of controls aligned to ISO/IEC 27002.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27002_LM_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27035 Lead Incident Manager">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27035</span><span class="chip">Incident</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27035 Lead Incident Manager</h3>
+            <p class="mt-2 text-sm muted">Build incident management processes aligned to ISO/IEC 27035.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27035_LIM_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27005:2022 Risk Manager">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27005</span><span class="chip">Risk</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27005:2022 Risk Manager</h3>
+            <p class="mt-2 text-sm muted">Apply information security risk management aligned to ISO/IEC 27005:2022.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27005_RM_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27002 Manager">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27002</span><span class="chip">Manager</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27002 Manager</h3>
+            <p class="mt-2 text-sm muted">Implement and manage security controls and control objectives effectively.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27002_M_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27001 Lead Implementer">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27001</span><span class="chip">Implementer</span>
+              <span class="chip">2022</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27001 Lead Implementer</h3>
+            <p class="mt-2 text-sm muted">Implement and manage an ISMS aligned to ISO/IEC 27001:2022.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27001_LI_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27001 Lead Auditor">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27001</span><span class="chip">Auditor</span>
+              <span class="chip">2022</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27001 Lead Auditor</h3>
+            <p class="mt-2 text-sm muted">Lead audits and assess ISMS conformity against ISO/IEC 27001:2022.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27001_LA_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+      <article class="card p-6 course-card" data-cat="infosec" data-title="ISO/IEC 27001:2022 Foundation">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip">InfoSec</span><span class="chip">27001</span><span class="chip">Foundation</span>
+              <span class="chip">2022</span>
+            </div>
+            <h3 class="heading text-xl font-semibold mt-3">ISO/IEC 27001:2022 Foundation</h3>
+            <p class="mt-2 text-sm muted">Learn ISMS fundamentals and the core requirements of ISO/IEC 27001:2022.</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm"><div class="muted">Category</div><div class="font-semibold">Information Security</div></div>
+          <a href="https://buy.stripe.com/YOUR_27001_F_LINK" target="_blank" rel="noopener" class="btn btn-primary">Buy</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Corporate CTA -->
+    <div class="mt-8 card p-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="heading text-lg font-semibold">Corporate training packages</div>
+          <p class="mt-2 muted text-sm">Group pricing, private cohorts, and voucher bundles available.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="#events" class="btn btn-ghost">Register for Events</a>
+          <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Simple filtering + search -->
+  <script>
+  (function(){
+    const grid = document.getElementById('courseGrid');
+    const cards = Array.from(grid.querySelectorAll('.course-card'));
+    const buttons = Array.from(document.querySelectorAll('[data-filter]'));
+    const search = document.getElementById('courseSearch');
+
+    let activeCat = 'all';
+    let query = '';
+
+    function apply(){
+      const q = query.trim().toLowerCase();
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const matchesCat = (activeCat === 'all') || (cat === activeCat);
+        const matchesQuery = !q || title.includes(q);
+        card.style.display = (matchesCat && matchesQuery) ? '' : 'none';
+      });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCat = btn.getAttribute('data-filter');
+        buttons.forEach(b => b.classList.remove('ring-2','ring-brand'));
+        btn.classList.add('ring-2','ring-brand');
+        apply();
+      });
+    });
+
+    search?.addEventListener('input', (e) => {
+      query = e.target.value || '';
+      apply();
+    });
+
+    // default highlight "All"
+    const allBtn = buttons.find(b => b.getAttribute('data-filter') === 'all');
+    allBtn?.classList.add('ring-2','ring-brand');
+    apply();
+  })();
+  </script>
 </section>
 
 <!-- FAQ -->
