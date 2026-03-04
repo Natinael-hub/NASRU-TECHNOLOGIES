@@ -1,113 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://nasrutechnologies.com/training.html" />
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru Training & Certification - Nasru Technologies</title>
 
-  <meta name="description" content="Corporate cybersecurity training and certification pathways by Nasru Technologies: instructor-led sessions, virtual delivery, exam readiness, and voucher support." />
+  <title>Training & Certification - Nasru Technologies</title>
+  <link rel="canonical" href="https://nasrutechnologies.com/training.html">
 
+  <meta name="description" content="Nasru Technologies training & certification programs. Register for upcoming instructor-led events and purchase self-paced courses via secure Stripe checkout." />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBFMRBC00"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-9GBFMRBC00');
-  </script>
-
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+    tailwind.config = {
+      theme: {
+        extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } }
+      }
+    }
   </script>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{ color-scheme: dark; }
     body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
     .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
+    .hairline { border-color: rgba(148,163,184,0.16); }
     .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
-    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-
-    /* Badge */
-    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
-    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
-
-    /* Dropdown */
-    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
-    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
-
-    /* Futuristic dropdown styling */
-    .divisions-shell{
-      background:
-        radial-gradient(800px 240px at 20% 0%, rgba(103,232,249,0.18), transparent 55%),
-        radial-gradient(700px 240px at 85% 15%, rgba(34,211,238,0.14), transparent 60%),
-        linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.75));
-      border: 1px solid rgba(103,232,249,0.22);
-      box-shadow:
-        0 0 0 1px rgba(103,232,249,0.10) inset,
-        0 18px 60px rgba(0,0,0,0.55),
-        0 0 40px rgba(103,232,249,0.08);
-      backdrop-filter: blur(14px);
-    }
-    .divisions-item{
-      position: relative;
-      border-bottom: 1px solid rgba(148,163,184,0.08);
-    }
-    .divisions-item:hover{
-      background: linear-gradient(90deg, rgba(103,232,249,0.12), rgba(103,232,249,0.02));
-    }
-    .divisions-item::before{
-      content:"";
-      position:absolute;
-      left:0; top:0; bottom:0;
-      width:2px;
-      background: rgba(34,211,238,0.0);
-      transition: background .15s ease;
-    }
-    .divisions-item:hover::before{
-      background: rgba(34,211,238,0.85);
-      box-shadow: 0 0 16px rgba(34,211,238,0.55);
-    }
-    .divisions-kicker{
-      font-size: .72rem;
-      color: rgba(148,163,184,0.92);
-    }
-
-    /* Page hero */
-    .hero-grad {
-      background:
-        radial-gradient(1000px 520px at 20% 0%, rgba(103,232,249,0.16), transparent 55%),
-        radial-gradient(900px 520px at 85% 10%, rgba(34,211,238,0.12), transparent 60%),
-        linear-gradient(180deg, rgba(2,6,23,0.65), rgba(14,21,38,0.95));
-    }
+    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.25), 0 18px 55px -18px rgba(103,232,249,0.22); }
+    .input { background: rgba(255,255,255,0.04); border: 1px solid rgba(148,163,184,0.25); }
+    .input:focus { outline: none; border-color: rgba(103,232,249,0.55); box-shadow: 0 0 0 3px rgba(103,232,249,0.14); }
+    .muted { color: rgba(148,163,184,0.95); }
+    .chip { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(148,163,184,0.25); background: rgba(255,255,255,0.03); }
+    .btn { border-radius: 12px; padding: 10px 14px; font-weight: 700; }
+    .btn-primary { background: #22D3EE; color: #0b1220; }
+    .btn-primary:hover { opacity: .9; }
+    .btn-ghost { border: 1px solid rgba(148,163,184,0.25); background: rgba(255,255,255,0.03); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); }
   </style>
 
-  <meta property="og:title" content="Nasru Training & Certification — Nasru Technologies">
-  <meta property="og:description" content="Corporate cybersecurity training, instructor-led sessions, and certification pathways.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Training & Certification — Nasru Technologies">
+  <meta property="og:description" content="Register for upcoming instructor-led events and purchase courses via secure Stripe checkout.">
   <meta property="og:url" content="https://nasrutechnologies.com/training.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nasru Training & Certification — Nasru Technologies">
-  <meta name="twitter:description" content="Corporate cybersecurity training, instructor-led sessions, and certification pathways.">
-  <meta name="twitter:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 </head>
 
 <body class="text-slate-100 antialiased">
 
-<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+<header class="sticky top-0 z-50 border-b hairline glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href="index.html" class="flex items-center gap-2">
@@ -115,91 +63,10 @@
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
-
-        <!-- Divisions dropdown (futuristic mega menu) -->
-        <div class="relative" id="divisionsMenu">
-          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
-          </button>
-
-          <div id="divisionsPanel"
-               class="dropdown-panel absolute left-0 mt-3 w-[680px] rounded-2xl overflow-hidden hidden divisions-shell"
-               role="menu" aria-labelledby="divisionsBtn">
-            <div class="px-5 py-4 border-b border-white/10">
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
-                  <div class="divisions-kicker mt-1">Built for enterprise delivery — secure, smart, scalable.</div>
-                </div>
-                <span class="chip chip-soon">Roadmap active</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2">
-              <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
-                <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
-              </a>
-
-              <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Hardware</div>
-                <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
-              </a>
-
-              <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Software</div>
-                <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
-              </a>
-
-              <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Global Solutions</div>
-                <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
-              </a>
-
-              <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Training &amp; Certification</div>
-                <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
-              </a>
-
-              <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
-                <div>
-                  <div class="font-semibold">Nasru Multimedia</div>
-                  <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
-                </div>
-                <span class="chip chip-soon">Coming Soon</span>
-              </a>
-
-              <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
-                <div>
-                  <div class="font-semibold">Nasru Lab</div>
-                  <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
-                </div>
-                <span class="chip chip-soon">Coming Soon</span>
-              </a>
-
-              <div class="hidden md:block"></div>
-            </div>
-
-            <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
-              <div class="text-xs text-slate-300/80">
-                Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
-              </div>
-              <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
-            </div>
-          </div>
-        </div>
-
         <a href="solutions.html" class="hover:text-brand">Solutions</a>
-
-        <!-- ✅ ADDED: Training nav item -->
-        <a href="training.html" class="hover:text-brand">Training</a>
-
+        <a href="training.html" class="text-brand">Training</a>
         <a href="partners.html" class="hover:text-brand">Partners</a>
         <a href="about.html" class="hover:text-brand">About</a>
         <a href="careers.html" class="hover:text-brand">Careers</a>
@@ -207,11 +74,11 @@
       </nav>
 
       <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+        <a href="#events" class="btn btn-primary">Upcoming Events</a>
       </div>
 
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white"
+              aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
         </svg>
@@ -219,333 +86,376 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
-
-      <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 mt-1 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
-          <a href="smart.html" class="block py-2">Nasru Hardware</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-          <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
-          <a href="multimedia.html" class="flex items-center justify-between py-2">
-            <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-          <a href="lab.html" class="flex items-center justify-between py-2">
-            <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
-          </a>
-        </div>
-      </details>
-
       <a href="solutions.html" class="block py-2">Solutions</a>
-
-      <!-- ✅ ADDED: Training nav item (mobile) -->
-      <a href="training.html" class="block py-2">Training</a>
-
+      <a href="training.html" class="block py-2 text-brand">Training</a>
       <a href="partners.html" class="block py-2">Partners</a>
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+      <a href="#events" class="mt-2 inline-block btn btn-primary">Upcoming Events</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero-grad border-b border-slate-700/50">
+<section class="relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-      <div class="max-w-2xl">
-        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200/90">
-          <span class="h-2 w-2 rounded-full bg-brand"></span>
-          Corporate Training • Virtual & Instructor-Led
+    <div class="grid gap-10 md:grid-cols-12 items-center">
+      <div class="md:col-span-7">
+        <div class="flex flex-wrap gap-2 items-center">
+          <span class="chip">Corporate Training</span>
+          <span class="chip">Instructor-Led</span>
+          <span class="chip">Self-Paced</span>
+          <span class="chip">Exam Vouchers</span>
         </div>
-        <h1 class="heading mt-4 text-3xl md:text-5xl font-semibold neon-text">Nasru Training &amp; Certification</h1>
-        <p class="mt-4 text-slate-200/90 text-lg">
-          Structured cybersecurity training programs designed for teams — practical, exam-aligned, and built for measurable outcomes.
+
+        <h1 class="heading mt-5 text-4xl md:text-6xl font-bold leading-tight">
+          Training &amp; Certification
+        </h1>
+        <p class="mt-4 text-lg text-slate-300">
+          Build workforce capability with globally recognized programs. Register for live sessions and purchase courses through secure checkout.
         </p>
 
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#request" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Request a Training Plan</a>
-          <a href="#catalog" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:opacity-95">Browse Programs</a>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#events" class="btn btn-primary">Register for Events</a>
+          <a href="#courses" class="btn btn-ghost">Browse Courses</a>
         </div>
 
-        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div class="card p-4">
-            <div class="text-slate-200 font-semibold">Delivery</div>
-            <div class="text-slate-300/80 mt-1">Virtual / On-site</div>
-          </div>
-          <div class="card p-4">
-            <div class="text-slate-200 font-semibold">Formats</div>
-            <div class="text-slate-300/80 mt-1">Bootcamps / Workshops</div>
-          </div>
-          <div class="card p-4">
-            <div class="text-slate-200 font-semibold">Audience</div>
-            <div class="text-slate-300/80 mt-1">Beginners → Advanced</div>
-          </div>
-          <div class="card p-4">
-            <div class="text-slate-200 font-semibold">Outcomes</div>
-            <div class="text-slate-300/80 mt-1">Skills + Readiness</div>
-          </div>
+        <div class="mt-7 text-sm muted">
+          Need group training? <a href="contact.html" class="text-brand hover:underline">Request a corporate quote</a>.
         </div>
       </div>
 
-      <div class="w-full md:w-[420px]">
+      <!-- Trust / Badge -->
+      <div class="md:col-span-5">
         <div class="card p-6">
-          <div class="heading text-lg font-semibold">At-a-Glance</div>
-          <ul class="mt-3 space-y-2 text-sm text-slate-300/90">
-            <li class="flex gap-2"><span class="text-brand">•</span> Role-based training tracks for IT, security, and leadership</li>
-            <li class="flex gap-2"><span class="text-brand">•</span> Hands-on labs and practical scenarios</li>
-            <li class="flex gap-2"><span class="text-brand">•</span> Executive summaries + completion reports</li>
-            <li class="flex gap-2"><span class="text-brand">•</span> Certification planning + voucher guidance</li>
-          </ul>
-          <a href="#catalog" class="mt-5 inline-flex w-full justify-center rounded-xl border border-neon bg-white/5 px-4 py-2 font-semibold hover:opacity-95">View Training Catalog</a>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="heading text-xl font-semibold">Authorized Partner</div>
+              <p class="mt-2 muted text-sm">
+                Nasru Technologies delivers accredited training programs and supports your organization with structured learning outcomes.
+              </p>
+            </div>
+            <span class="chip">Verified</span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-center rounded-2xl border hairline bg-white/5 p-5">
+            <!-- ✅ Replace with your actual file path -->
+            <img src="assets/img/pecb-authorized-partner.png" alt="PECB Authorized Partner Badge" class="max-h-40 w-auto">
+          </div>
+
+          <div class="mt-5 grid grid-cols-3 gap-3 text-sm">
+            <div class="rounded-xl border hairline bg-white/5 p-3">
+              <div class="heading font-semibold">Live</div>
+              <div class="mt-1 muted text-xs">Instructor-led sessions</div>
+            </div>
+            <div class="rounded-xl border hairline bg-white/5 p-3">
+              <div class="heading font-semibold">Vouchers</div>
+              <div class="mt-1 muted text-xs">Exam-ready pathway</div>
+            </div>
+            <div class="rounded-xl border hairline bg-white/5 p-3">
+              <div class="heading font-semibold">Teams</div>
+              <div class="mt-1 muted text-xs">Group pricing</div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="py-10">
+<!-- UPCOMING EVENTS -->
+<section id="events" class="py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="flex items-end justify-between gap-6">
       <div>
-        <div class="heading text-xl font-semibold">Built for corporate teams</div>
-        <p class="mt-2 text-slate-300/90 text-sm max-w-2xl">
-          Whether you need baseline security awareness, technical upskilling, or certification readiness, Nasru builds a plan aligned to your goals and timelines.
-        </p>
+        <h2 class="heading text-2xl md:text-3xl font-semibold">Upcoming events</h2>
+        <p class="mt-2 muted">Register below — we’ll confirm seat availability and send details by email.</p>
       </div>
-      <div class="flex flex-wrap gap-3">
-        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Instructor-led</div>
-        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Virtual delivery</div>
-        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Hands-on labs</div>
-        <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200/90">Reporting</div>
+      <a href="#register" class="hidden sm:inline-flex btn btn-primary">Register Now</a>
+    </div>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      <!-- Event Card -->
+      <div class="card p-6">
+        <div class="flex items-center justify-between">
+          <div class="heading text-lg font-semibold">ISO/IEC 42001 Lead Implementer</div>
+          <span class="chip">Live (Zoom)</span>
+        </div>
+        <div class="mt-3 text-sm text-slate-300">
+          <div><span class="muted">Date:</span> TBD</div>
+          <div><span class="muted">Time:</span> 12:00 PM EST</div>
+          <div><span class="muted">Format:</span> Instructor-led + Q&amp;A</div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <a href="#register" class="text-brand font-semibold hover:underline">Register →</a>
+          <span class="text-xs muted">Seats limited</span>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex items-center justify-between">
+          <div class="heading text-lg font-semibold">ISO/IEC 27001 Lead Implementer</div>
+          <span class="chip">Live</span>
+        </div>
+        <div class="mt-3 text-sm text-slate-300">
+          <div><span class="muted">Date:</span> TBD</div>
+          <div><span class="muted">Time:</span> TBD</div>
+          <div><span class="muted">Format:</span> Instructor-led</div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <a href="#register" class="text-brand font-semibold hover:underline">Register →</a>
+          <span class="text-xs muted">Waitlist available</span>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <div class="flex items-center justify-between">
+          <div class="heading text-lg font-semibold">Security+ SY0-701 Bootcamp</div>
+          <span class="chip">Live</span>
+        </div>
+        <div class="mt-3 text-sm text-slate-300">
+          <div><span class="muted">Date:</span> TBD</div>
+          <div><span class="muted">Time:</span> TBD</div>
+          <div><span class="muted">Format:</span> Bootcamp</div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <a href="#register" class="text-brand font-semibold hover:underline">Register →</a>
+          <span class="text-xs muted">Corporate cohorts</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration -->
+    <div id="register" class="mt-10 max-w-3xl">
+      <div class="card p-7">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <h3 class="heading text-xl font-semibold">Event registration</h3>
+            <p class="mt-2 muted text-sm">Submit once. We’ll email confirmation and next steps.</p>
+          </div>
+          <span class="chip">Formspree</span>
+        </div>
+
+        <!-- ✅ Replace FORM ACTION with your upgraded Formspree endpoint -->
+        <form id="eventForm"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              class="mt-6 space-y-4"
+              novalidate>
+
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_subject" value="Training Event Registration — Nasru Technologies">
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-1">Full Name *</label>
+              <input name="full_name" required class="input w-full rounded-xl px-3 py-2" placeholder="First Last">
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Email *</label>
+              <input type="email" name="email" required class="input w-full rounded-xl px-3 py-2" placeholder="you@company.com">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-1">Phone (optional)</label>
+              <input type="tel" name="phone" class="input w-full rounded-xl px-3 py-2" placeholder="+1 555 000 0000">
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Organization (optional)</label>
+              <input name="organization" class="input w-full rounded-xl px-3 py-2" placeholder="Company / Agency">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-1">Select Event *</label>
+              <select name="event" required class="input w-full rounded-xl px-3 py-2">
+                <option value="">Choose an event</option>
+                <option>ISO/IEC 42001 Lead Implementer (Live - Zoom)</option>
+                <option>ISO/IEC 27001 Lead Implementer (Live)</option>
+                <option>Security+ SY0-701 Bootcamp (Live)</option>
+                <option>Other (Specify in notes)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Preferred Date (optional)</label>
+              <input name="preferred_date" class="input w-full rounded-xl px-3 py-2" placeholder="Example: March 15">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">Notes (optional)</label>
+            <textarea name="notes" rows="4" class="input w-full rounded-xl px-3 py-2"
+                      placeholder="Number of attendees, voucher request, preferred schedule, etc."></textarea>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <input id="consent" name="consent" type="checkbox" required class="mt-1">
+            <label for="consent" class="text-sm text-slate-300/90">
+              I consent to Nasru Technologies processing my registration data for training coordination.
+            </label>
+          </div>
+
+          <div class="pt-2 flex items-center gap-3">
+            <button id="eventSubmitBtn" class="btn btn-primary">Submit Registration</button>
+            <span id="eventStatus" class="text-xs muted"></span>
+          </div>
+        </form>
+
+        <div class="mt-5 text-xs muted">
+          Prefer email? Contact <a class="text-brand hover:underline" href="mailto:info@nasrutechnologies.com">info@nasrutechnologies.com</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CATALOG -->
-<section id="catalog" class="py-14">
+<!-- COURSES + STRIPE -->
+<section id="courses" class="py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div class="flex items-end justify-between gap-6">
       <div>
-        <h2 class="heading text-2xl md:text-4xl font-semibold">Training Catalog</h2>
-        <p class="mt-3 text-slate-300/90 max-w-2xl">
-          Modular programs. Combine tracks, adjust duration, and tailor depth based on your team’s roles.
-        </p>
+        <h2 class="heading text-2xl md:text-3xl font-semibold">Courses you can purchase</h2>
+        <p class="mt-2 muted">Secure payment via Stripe. Instant confirmation after checkout.</p>
       </div>
-      <div class="text-sm text-slate-300/80">
-        Want a custom plan? <a href="#request" class="hover:text-brand underline underline-offset-4">Request it here</a>.
+      <span class="chip">Stripe Checkout</span>
+    </div>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      <!-- Course Card 1 -->
+      <div class="card p-6">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="heading text-xl font-semibold">ISO/IEC 42001 Lead Implementer</h3>
+            <p class="mt-2 text-sm muted">AI management system implementation (AIMS) — structured roadmap and controls.</p>
+          </div>
+          <img src="assets/img/badge-42001-li.png" alt="Course badge" class="h-14 w-14 object-contain">
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-2 text-xs">
+          <span class="chip">Instructor-led</span>
+          <span class="chip">Self-paced</span>
+          <span class="chip">Voucher optional</span>
+        </div>
+
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm">
+            <div class="muted">Price</div>
+            <div class="heading text-lg font-semibold">$TBD</div>
+          </div>
+
+          <!-- ✅ Replace with your Stripe Payment Link -->
+          <a href="https://buy.stripe.com/YOUR_42001_LINK" target="_blank" rel="noopener"
+             class="btn btn-primary">Buy Now</a>
+        </div>
+
+        <div class="mt-4 text-xs muted">
+          Badge placeholder included — replace per official course badge image.
+        </div>
+      </div>
+
+      <!-- Course Card 2 (Placeholder Badge) -->
+      <div class="card p-6">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="heading text-xl font-semibold">ISO/IEC 27001 Lead Implementer</h3>
+            <p class="mt-2 text-sm muted">Build and implement an ISMS aligned to ISO/IEC 27001.</p>
+          </div>
+          <!-- ✅ Placeholder badge (swap later) -->
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-2 text-xs">
+          <span class="chip">Instructor-led</span>
+          <span class="chip">Self-paced</span>
+          <span class="chip">Exam-ready</span>
+        </div>
+
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm">
+            <div class="muted">Price</div>
+            <div class="heading text-lg font-semibold">$TBD</div>
+          </div>
+
+          <a href="https://buy.stripe.com/YOUR_27001_LINK" target="_blank" rel="noopener"
+             class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+
+      <!-- Course Card 3 -->
+      <div class="card p-6">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="heading text-xl font-semibold">ISO 19011 Lead Auditor (Alt)</h3>
+            <p class="mt-2 text-sm muted">Audit guidelines and practical audit execution skills (where available).</p>
+          </div>
+          <img src="assets/img/course-badge-placeholder.png" alt="Course badge placeholder" class="h-14 w-14 object-contain">
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-2 text-xs">
+          <span class="chip">Auditing</span>
+          <span class="chip">Framework</span>
+          <span class="chip">Professional</span>
+        </div>
+
+        <div class="mt-5 flex items-center justify-between">
+          <div class="text-sm">
+            <div class="muted">Price</div>
+            <div class="heading text-lg font-semibold">$TBD</div>
+          </div>
+
+          <a href="https://buy.stripe.com/YOUR_19011_LINK" target="_blank" rel="noopener"
+             class="btn btn-primary">Buy Now</a>
+        </div>
       </div>
     </div>
 
-    <div class="grid gap-6 md:grid-cols-3 mt-10">
-      <div class="card p-6">
-        <div class="flex items-center justify-between">
-          <h3 class="heading text-lg font-semibold">Security Foundations</h3>
-          <span class="chip chip-soon">Core</span>
-        </div>
-        <p class="mt-2 text-slate-300/90 text-sm">Baseline security awareness + practical fundamentals for all staff.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/80">
-          <li>• Phishing & social engineering</li>
-          <li>• Passwords, MFA, safe browsing</li>
-          <li>• Data handling & incident reporting</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <div class="flex items-center justify-between">
-          <h3 class="heading text-lg font-semibold">IT & Security Operations</h3>
-          <span class="chip chip-soon">Technical</span>
-        </div>
-        <p class="mt-2 text-slate-300/90 text-sm">Practical training for admins and analysts supporting secure operations.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/80">
-          <li>• Logging & alert triage</li>
-          <li>• Hardening & patching</li>
-          <li>• Access control & identity basics</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <div class="flex items-center justify-between">
-          <h3 class="heading text-lg font-semibold">Certification Readiness</h3>
-          <span class="chip chip-soon">Exam</span>
-        </div>
-        <p class="mt-2 text-slate-300/90 text-sm">Structured prep with labs, review sessions, and exam planning.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/80">
-          <li>• Study plan & checkpoints</li>
-          <li>• Practice exams & review</li>
-          <li>• Voucher guidance</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-3 mt-6">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Secure Cloud Basics</h3>
-        <p class="mt-2 text-slate-300/90 text-sm">Shared responsibility, identity, logging, and common cloud risks.</p>
-        <div class="mt-4 text-sm text-slate-300/80">Format: Workshop (2–6 hrs) or Bootcamp (1–2 days)</div>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Leadership Briefings</h3>
-        <p class="mt-2 text-slate-300/90 text-sm">Cyber risk, governance, and practical decision-making for leaders.</p>
-        <div class="mt-4 text-sm text-slate-300/80">Format: Executive session (60–120 mins)</div>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Custom Curriculum</h3>
-        <p class="mt-2 text-slate-300/90 text-sm">Tailored training based on your stack, policies, and threat profile.</p>
-        <div class="mt-4 text-sm text-slate-300/80">Format: Built-to-fit (virtual or on-site)</div>
+    <div class="mt-6 card p-6">
+      <div class="heading text-lg font-semibold">Need corporate training for a team?</div>
+      <p class="mt-2 muted text-sm">
+        We provide group pricing, private cohorts, and tailored scheduling. Tell us your headcount and timeline.
+      </p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        <a href="mailto:info@nasrutechnologies.com" class="btn btn-ghost">Email Training Team</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- FAQ -->
 <section class="py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="card p-6 md:p-8">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div>
-          <h2 class="heading text-2xl md:text-3xl font-semibold">How engagement works</h2>
-          <p class="mt-2 text-slate-300/90 text-sm max-w-2xl">
-            Corporate-style delivery with clear planning, execution, and reporting.
-          </p>
-        </div>
-        <a href="#request" class="rounded-xl border border-neon bg-white/5 px-5 py-3 font-semibold hover:opacity-95">Start a Request →</a>
+    <h2 class="heading text-2xl md:text-3xl font-semibold">FAQ</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+      <div class="card p-6">
+        <div class="heading font-semibold">How do I receive access after purchase?</div>
+        <p class="mt-2 muted text-sm">After Stripe checkout, you’ll receive a confirmation email. Our team will follow up with enrollment/access instructions.</p>
       </div>
-
-      <div class="grid gap-6 md:grid-cols-4 mt-8">
-        <div class="card p-5">
-          <div class="text-brand font-semibold">01</div>
-          <div class="mt-1 font-semibold">Discovery</div>
-          <div class="mt-2 text-sm text-slate-300/80">Audience, goals, timeline, delivery format.</div>
-        </div>
-        <div class="card p-5">
-          <div class="text-brand font-semibold">02</div>
-          <div class="mt-1 font-semibold">Plan</div>
-          <div class="mt-2 text-sm text-slate-300/80">Curriculum outline, schedule, expectations.</div>
-        </div>
-        <div class="card p-5">
-          <div class="text-brand font-semibold">03</div>
-          <div class="mt-1 font-semibold">Deliver</div>
-          <div class="mt-2 text-sm text-slate-300/80">Instructor-led sessions + labs + Q&amp;A.</div>
-        </div>
-        <div class="card p-5">
-          <div class="text-brand font-semibold">04</div>
-          <div class="mt-1 font-semibold">Report</div>
-          <div class="mt-2 text-sm text-slate-300/80">Completion summary + recommendations.</div>
-        </div>
+      <div class="card p-6">
+        <div class="heading font-semibold">Do you offer exam vouchers?</div>
+        <p class="mt-2 muted text-sm">Yes — vouchers can be bundled for select courses. Mention voucher needs in event registration or contact us for corporate packages.</p>
+      </div>
+      <div class="card p-6">
+        <div class="heading font-semibold">Can we schedule a private cohort?</div>
+        <p class="mt-2 muted text-sm">Yes. We can run private Zoom cohorts or on-site delivery depending on location, volume, and schedule.</p>
+      </div>
+      <div class="card p-6">
+        <div class="heading font-semibold">Refund policy?</div>
+        <p class="mt-2 muted text-sm">Refunds depend on course type and enrollment status. Contact us for details before purchase if you need flexibility.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REQUEST FORM (STATIC) -->
-<section id="request" class="py-14">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid gap-8 md:grid-cols-2">
-      <div>
-        <h2 class="heading text-2xl md:text-4xl font-semibold">Request a training plan</h2>
-        <p class="mt-3 text-slate-300/90">
-          Share your goals and audience size. We’ll respond with a recommended format and next steps.
-        </p>
-
-        <div class="mt-6 space-y-4 text-sm text-slate-300/80">
-          <div class="card p-5">
-            <div class="font-semibold text-slate-200">Fast response</div>
-            <div class="mt-1">We typically respond within 1–2 business days.</div>
-          </div>
-          <div class="card p-5">
-            <div class="font-semibold text-slate-200">Delivery options</div>
-            <div class="mt-1">Virtual sessions, instructor-led workshops, and custom programs.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card p-6 md:p-8">
-        <div class="heading text-xl font-semibold">Training Request Form</div>
-        <p class="mt-2 text-slate-300/90 text-sm">
-          This page is static. If you want submissions to email automatically, we’ll connect this form to a Vercel serverless function next.
-          For now it uses a safe placeholder action.
-        </p>
-
-        <form class="mt-6 space-y-4" action="#" method="post">
-          <div>
-            <label class="block text-sm font-medium text-slate-200">Full name</label>
-            <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
-                   type="text" name="name" placeholder="Your name" required>
-          </div>
-
-          <div class="grid gap-4 md:grid-cols-2">
-            <div>
-              <label class="block text-sm font-medium text-slate-200">Company</label>
-              <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
-                     type="text" name="company" placeholder="Company name" required>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-slate-200">Email</label>
-              <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
-                     type="email" name="email" placeholder="name@company.com" required>
-            </div>
-          </div>
-
-          <div class="grid gap-4 md:grid-cols-2">
-            <div>
-              <label class="block text-sm font-medium text-slate-200">Team size</label>
-              <select class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon" name="team_size" required>
-                <option value="">Select</option>
-                <option>1–5</option>
-                <option>6–20</option>
-                <option>21–50</option>
-                <option>51–100</option>
-                <option>100+</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-slate-200">Preferred delivery</label>
-              <select class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon" name="delivery" required>
-                <option value="">Select</option>
-                <option>Virtual</option>
-                <option>On-site</option>
-                <option>Hybrid</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-slate-200">Training focus</label>
-            <input class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
-                   type="text" name="focus" placeholder="e.g., Security fundamentals, SOC basics, certification readiness" required>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-slate-200">Message</label>
-            <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-slate-950/40 px-4 py-3 outline-none focus:border-neon"
-                      name="message" rows="5" placeholder="Share goals, timeline, and any requirements…" required></textarea>
-          </div>
-
-          <button type="submit" class="w-full rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">
-            Submit Request
-          </button>
-
-          <p class="text-xs text-slate-400">
-            Prefer email? Reach us at <a class="hover:text-brand underline underline-offset-4" href="mailto:info@nasrutechnologies.com">info@nasrutechnologies.com</a>.
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="mt-24 border-t border-slate-700/60">
+<footer class="mt-16 border-t hairline">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
       <div>
@@ -569,27 +479,26 @@
       </div>
 
       <div>
-        <h4 class="heading font-semibold mb-3">Services</h4>
+        <h4 class="heading font-semibold mb-3">Training</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Hardware & Devices</a></li>
-          <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
-          <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
+          <li><a class="hover:text-brand" href="#events">Upcoming Events</a></li>
+          <li><a class="hover:text-brand" href="#courses">Courses</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Corporate Packages</a></li>
+          <li><a class="hover:text-brand" href="partners.html">Accreditations</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="heading font-semibold mb-3">Resources</h4>
+        <h4 class="heading font-semibold mb-3">Support</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors & Alliances</a></li>
-          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Support</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Help Center</a></li>
+          <li><a class="hover:text-brand" href="mailto:info@nasrutechnologies.com">info@nasrutechnologies.com</a></li>
+          <li><a class="hover:text-brand" href="contact.html">Request a Quote</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+    <div class="mt-10 pt-6 border-t hairline flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
@@ -605,64 +514,22 @@
   // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu){
-    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-  }
+  menuBtn?.addEventListener('click', ()=> mobileMenu?.classList.toggle('hidden'));
 
   // Footer year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Dropdown open/close with close delay
-  const wrap = document.getElementById('divisionsMenu');
-  const btn = document.getElementById('divisionsBtn');
-  const panel = document.getElementById('divisionsPanel');
+  // Form UX
+  const form = document.getElementById('eventForm');
+  const btn = document.getElementById('eventSubmitBtn');
+  const status = document.getElementById('eventStatus');
 
-  if (wrap && btn && panel) {
-    let closeTimer;
-
-    const open = () => {
-      clearTimeout(closeTimer);
-      panel.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-    };
-
-    const close = () => {
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => {
-        panel.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      }, 220);
-    };
-
-    wrap.addEventListener('mouseenter', open);
-    wrap.addEventListener('mouseleave', close);
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isOpen = !panel.classList.contains('hidden');
-      if (isOpen) {
-        panel.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        open();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target)) {
-        panel.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        panel.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
+  form?.addEventListener('submit', () => {
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    status.textContent = 'Sending your registration...';
+  });
 })();
 </script>
 
