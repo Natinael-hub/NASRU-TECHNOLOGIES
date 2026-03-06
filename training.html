@@ -6,8 +6,7 @@
 
   <title>Training & Certification | Nasru Technologies</title>
   <meta name="description" content="Workforce-ready training for cybersecurity and compliance teams. Filter by type, vendor, role, category, and level." />
-  <link rel="canonical" href="https://nasrutechnologies.com/training.html">
-
+  <link rel="canonical" href="https://nasrutechnologies.com/training.html" />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png" />
 
   <!-- Tailwind -->
@@ -42,14 +41,12 @@
       font-family: Poppins, Inter, system-ui, sans-serif;
     }
 
-    /* Navbar glass style (same as solutions page) */
     .glass {
-      background: rgba(14, 21, 38, 0.85);
+      background: rgba(20, 28, 48, 0.45);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* dropdown styling */
     .divisions-shell {
       background: rgba(20,28,48,0.95);
       backdrop-filter: blur(16px);
@@ -76,28 +73,31 @@
       color: #67e8f9;
       border-color: rgba(103,232,249,0.4);
     }
-  </style>
 
+    .course {
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+
+    .course:hover {
+      box-shadow: 0 12px 36px rgba(15,23,42,.08);
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
 
 <body class="bg-white text-slate-900">
 
-<!-- HEADER (dark only) -->
-<!-- ✅ UPDATED HEADER (same as solutions.html) -->
 <header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href="index.html" class="flex items-center gap-2">
-  <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
-  <span class="heading text-lg font-semibold tracking-wide text-white">
-    Nasru Technologies
-  </span>
-</a>
-      <!-- Desktop Nav -->
+        <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
+        <span class="heading text-lg font-semibold tracking-wide text-white">Nasru Technologies</span>
+      </a>
+
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (futuristic mega menu) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -121,33 +121,33 @@
 
             <div class="grid grid-cols-2">
               <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
+                <div class="font-semibold text-white">Nasru IT &amp; Cybersecurity</div>
                 <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
               </a>
 
               <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Hardware</div>
+                <div class="font-semibold text-white">Nasru Hardware</div>
                 <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
               </a>
 
               <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Software</div>
+                <div class="font-semibold text-white">Nasru Software</div>
                 <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
               </a>
 
               <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Global Solutions</div>
+                <div class="font-semibold text-white">Nasru Global Solutions</div>
                 <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
               </a>
 
               <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
-                <div class="font-semibold">Nasru Training &amp; Certification</div>
+                <div class="font-semibold text-white">Nasru Training &amp; Certification</div>
                 <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
               </a>
 
               <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
                 <div>
-                  <div class="font-semibold">Nasru Multimedia</div>
+                  <div class="font-semibold text-white">Nasru Multimedia</div>
                   <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
                 </div>
                 <span class="chip chip-soon">Coming Soon</span>
@@ -155,7 +155,7 @@
 
               <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
                 <div>
-                  <div class="font-semibold">Nasru Lab</div>
+                  <div class="font-semibold text-white">Nasru Lab</div>
                   <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
                 </div>
                 <span class="chip chip-soon">Coming Soon</span>
@@ -168,7 +168,7 @@
               <div class="text-xs text-slate-300/80">
                 Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
               </div>
-              <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
+              <a href="solutions.html" class="text-sm text-white hover:text-brand">View Solutions →</a>
             </div>
           </div>
         </div>
@@ -185,7 +185,6 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -194,9 +193,8 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
-    <div class="px-4 py-3 space-y-2">
+  <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-slate-950/92">
+    <div class="px-4 py-3 space-y-2 text-white/90">
       <a href="index.html" class="block py-2">Home</a>
 
       <details class="group">
@@ -222,148 +220,108 @@
       <a href="about.html" class="block py-2">About</a>
       <a href="careers.html" class="block py-2">Careers</a>
       <a href="contact.html" class="block py-2">Contact</a>
-
       <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="relative h-[420px] flex items-center">
-  
-  <!-- Background Image -->
   <div class="absolute inset-0">
-    <img src="assets/img/training-hero.jpg" 
-         alt="Training session"
-         class="w-full h-full object-cover">
+    <img src="assets/img/training-hero.jpg" alt="Training session" class="w-full h-full object-cover">
   </div>
-
-  <!-- Dark Overlay (improves text readability) -->
   <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Content -->
   <div class="relative max-w-7xl mx-auto px-6 text-white">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-      Training & Certification
-    </h1>
-
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Training & Certification</h1>
     <p class="text-lg max-w-2xl">
-      Workforce-ready training built for real teams. 
-      Filter by delivery type, vendor, role, and level — then purchase securely.
+      Workforce-ready training built for real teams. Filter by delivery type, vendor, role, and level — then register and continue to secure payment.
     </p>
-
     <div class="flex gap-4 mt-6">
       <span class="px-4 py-2 bg-white/20 rounded-full">Live</span>
       <span class="px-4 py-2 bg-white/20 rounded-full">In-person</span>
       <span class="px-4 py-2 bg-white/20 rounded-full">Self-paced</span>
     </div>
-
-  </div>
-
-</section>
-
-      <div class="md:col-span-4">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div class="flex items-center justify-between">
-            <div class="heading font-semibold">Partners</div>
-            <span class="text-xs font-semibold text-slate-600">Authorized</span>
-          </div>
-          <div class="mt-4 rounded-xl border border-slate-200 bg-white p-4 flex justify-center"> 
-            <img src="assets/img/pecb-authorized-partner.png" alt="PECB Authorized Partner" class="max-h-24 w-auto"> 
-          </div>
-          <p class="mt-3 text-sm text-slate-600">
-            Official partner delivery. Additional vendors available based on offering.
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
-<!-- Upcoming Session -->
-<section class="py-8">
+
+<section class="py-10 border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
-            Upcoming Session
-          </div>
-
-          <h2 class="heading text-2xl font-semibold mt-4">ISO/IEC 27001 Lead Implementer</h2>
-
-          <p class="mt-3 text-slate-600">
-            Join our upcoming live instructor-led session designed for professionals looking to implement and manage an Information Security Management System aligned to ISO/IEC 27001.
-          </p>
-
-          <div class="mt-5 grid sm:grid-cols-3 gap-4 text-sm">
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div class="text-slate-500">Dates</div>
-              <div class="font-semibold text-slate-900">April 20 – 24</div>
-            </div>
-
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div class="text-slate-500">Time</div>
-              <div class="font-semibold text-slate-900">9:00 AM – 5:00 PM</div>
-            </div>
-
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div class="text-slate-500">Format</div>
-              <div class="font-semibold text-slate-900">Live Online</div>
-            </div>
-          </div>
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <div class="flex items-center justify-between">
+          <div class="heading font-semibold">Partners</div>
+          <span class="text-xs font-semibold text-slate-600">Authorized</span>
         </div>
+        <div class="mt-4 flex flex-wrap items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
+          <img src="assets/img/pecb-authorized-partner.png" alt="PECB Authorized Partner" class="max-h-20 w-auto">
+          <img src="assets/img/ec-council-partner.png" alt="EC-Council Partner" class="max-h-20 w-auto">
+        </div>
+        <p class="mt-3 text-sm text-slate-600">
+          Official partner delivery. Additional vendors available based on offering.
+        </p>
+      </div>
 
-        <div class="lg:min-w-[260px] rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div class="text-sm text-slate-500">Course</div>
-          <div class="heading text-lg font-semibold mt-1">ISO/IEC 27001 Lead Implementer</div>
+      <div class="lg:col-span-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
+              Upcoming Session
+            </div>
 
-          <div class="mt-4 text-sm text-slate-500">Price</div>
-          <div class="text-2xl font-bold text-slate-900">$1,899</div>
+            <h2 class="heading text-2xl font-semibold mt-4">ISO/IEC 27001 Lead Implementer</h2>
+            <p class="mt-3 text-slate-600">
+              Join our live instructor-led session for professionals looking to implement and manage an Information Security Management System aligned to ISO/IEC 27001.
+            </p>
 
-          <div class="mt-5 flex flex-col gap-3">
+            <div class="mt-5 grid sm:grid-cols-3 gap-4 text-sm">
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div class="text-slate-500">Dates</div>
+                <div class="font-semibold text-slate-900">April 20 – 24</div>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div class="text-slate-500">Time</div>
+                <div class="font-semibold text-slate-900">9:00 AM – 5:00 PM</div>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div class="text-slate-500">Format</div>
+                <div class="font-semibold text-slate-900">Live Online</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:min-w-[250px] rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="text-sm text-slate-500">Course Fee</div>
+            <div class="mt-1 text-3xl font-bold text-slate-900">$1,899</div>
+            <div class="mt-2 text-sm text-slate-600">Registration is submitted first. After successful submission, attendees are redirected to payment.</div>
+
             <button
               type="button"
-              class="js-open-registration rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90"
+              class="js-open-registration mt-5 w-full rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90"
               data-course="ISO/IEC 27001 Lead Implementer"
               data-dates="April 20 - 24"
               data-time="9:00 AM - 5:00 PM"
               data-format="Live Online"
+              data-payment="https://buy.stripe.com/YOUR_27001_LI_LINK"
             >
-              Register
+              Register Now
             </button>
-
-            <a
-              href="https://buy.stripe.com/YOUR_27001_LI_LINK"
-              target="_blank"
-              rel="noopener"
-              class="rounded-xl border border-slate-300 px-5 py-3 font-semibold text-slate-700 text-center hover:bg-slate-100"
-            >
-              Buy Course
-            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- MAIN -->
+
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
   <div class="grid gap-8 lg:grid-cols-12">
-
-    <!-- LEFT FILTERS -->
     <aside class="lg:col-span-3">
       <div class="sticky top-24 space-y-6">
-
-        <!-- Search -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Search</div>
-          <input id="leftSearch"
-                 class="mt-3 w-full rounded-xl px-3 py-2 border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand"
-                 placeholder="Search by name/code..." />
+          <input id="leftSearch" class="mt-3 w-full rounded-xl px-3 py-2 border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Search by name/code..." />
           <p class="mt-2 text-xs text-slate-500">Try “27001”, “27701”, “Risk”, “Auditor”.</p>
         </div>
 
-        <!-- Type -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Type</div>
           <div class="mt-3 space-y-2 text-sm">
@@ -373,7 +331,6 @@
           </div>
         </div>
 
-        <!-- Vendors -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Vendors</div>
           <div class="mt-3 space-y-2 text-sm">
@@ -385,7 +342,6 @@
           <p class="mt-2 text-xs text-slate-500">Only courses assigned/available will show.</p>
         </div>
 
-        <!-- Role-based -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Roles</div>
           <div class="mt-3 space-y-2 text-sm">
@@ -402,7 +358,6 @@
           </div>
         </div>
 
-        <!-- Category -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Category</div>
           <div class="mt-3 space-y-2 text-sm">
@@ -414,7 +369,6 @@
           </div>
         </div>
 
-        <!-- Level -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Level</div>
           <div class="mt-3 space-y-2 text-sm">
@@ -427,7 +381,6 @@
           </div>
         </div>
 
-        <!-- Max price -->
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
           <div class="heading font-semibold">Max price</div>
           <div class="mt-3">
@@ -436,7 +389,6 @@
           </div>
         </div>
 
-        <!-- Corporate -->
         <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <div class="heading font-semibold">Corporate</div>
           <p class="mt-2 text-sm text-slate-600">
@@ -455,7 +407,6 @@
       </div>
     </aside>
 
-    <!-- RIGHT COURSES -->
     <section class="lg:col-span-9">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
@@ -475,15 +426,8 @@
       </div>
 
       <div id="grid" class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-
-        <!-- CARD TEMPLATE NOTES:
-          data-type="Live|In-person|Self-paced"
-          data-vendor="PECB|EC-Council|CompTIA|ISACA"
-          data-roles="Comma,separated,roles"
-        -->
-
         <!-- PECB / Privacy -->
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="privacy" data-level="Officer" data-title="GDPR — Certified Data Protection Officer"
           data-price="1499" data-type="Live" data-vendor="PECB"
           data-roles="Privacy Manager,GRC Analyst,Auditor/Compliance"
@@ -502,12 +446,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,499</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_GDPR_DPO_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_GDPR_DPO_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="privacy" data-level="Auditor" data-title="ISO/IEC 27701 Lead Auditor"
           data-price="1899" data-type="Live" data-vendor="PECB"
           data-roles="Privacy Manager,Auditor/Compliance,GRC Analyst"
@@ -526,12 +469,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27701_LA_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27701_LA_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="privacy" data-level="Implementer" data-title="ISO/IEC 27701 Lead Implementer"
           data-price="1899" data-type="Live" data-vendor="PECB"
           data-roles="Privacy Manager,GRC Analyst,Security Manager"
@@ -550,12 +492,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27701_LI_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27701_LI_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="privacy" data-level="Foundation" data-title="ISO/IEC 27701 Foundation"
           data-price="699" data-type="Self-paced" data-vendor="PECB"
           data-roles="Privacy Manager,Cybersecurity Beginner,GRC Analyst"
@@ -574,13 +515,12 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$699</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27701_F_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27701_F_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
         <!-- GRC -->
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="grc" data-level="Implementer" data-title="ISO 37001 Lead Implementer"
           data-price="1899" data-type="Live" data-vendor="PECB"
           data-roles="GRC Analyst,Auditor/Compliance,Security Manager"
@@ -599,12 +539,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_37001_LI_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_37001_LI_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="grc" data-level="Risk Manager" data-title="ISO 31000 Risk Manager"
           data-price="1499" data-type="Live" data-vendor="PECB"
           data-roles="Risk Manager,GRC Analyst,Security Manager"
@@ -623,12 +562,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,499</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_31000_RM_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_31000_RM_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="grc" data-level="Foundation" data-title="ISO 31000 Foundation"
           data-price="699" data-type="Self-paced" data-vendor="PECB"
           data-roles="Risk Manager,GRC Analyst,Cybersecurity Beginner"
@@ -647,13 +585,12 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$699</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_31000_F_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_31000_F_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
         <!-- BCM -->
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="bcm" data-level="Auditor" data-title="ISO 22301 Lead Auditor"
           data-price="1899" data-type="Live" data-vendor="PECB"
           data-roles="BC/DR Manager,Auditor/Compliance,GRC Analyst"
@@ -672,12 +609,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_22301_LA_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_22301_LA_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="bcm" data-level="Implementer" data-title="ISO 22301 Lead Implementer"
           data-price="1899" data-type="In-person" data-vendor="PECB"
           data-roles="BC/DR Manager,GRC Analyst,Security Manager"
@@ -696,12 +632,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_22301_LI_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_22301_LI_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="bcm" data-level="Foundation" data-title="ISO 22301 Foundation"
           data-price="699" data-type="Self-paced" data-vendor="PECB"
           data-roles="BC/DR Manager,Cybersecurity Beginner,GRC Analyst"
@@ -720,13 +655,12 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$699</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_22301_F_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_22301_F_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
         <!-- InfoSec -->
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Manager" data-title="ISO/IEC 27002 Lead Manager"
           data-price="1899" data-type="Live" data-vendor="PECB"
           data-roles="Security Manager,Security Engineer,GRC Analyst"
@@ -745,12 +679,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27002_LM_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27002_LM_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Manager" data-title="ISO/IEC 27002 Manager"
           data-price="1499" data-type="Self-paced" data-vendor="PECB"
           data-roles="Security Engineer,Security Manager,GRC Analyst"
@@ -769,12 +702,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,499</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27002_M_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27002_M_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Manager" data-title="ISO/IEC 27035 Lead Incident Manager"
           data-price="1499" data-type="Live" data-vendor="PECB"
           data-roles="SOC Analyst,Security Engineer,Security Manager"
@@ -793,12 +725,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,499</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27035_LIM_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27035_LIM_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Risk Manager" data-title="ISO/IEC 27005:2022 Risk Manager"
           data-price="1499" data-type="Live" data-vendor="PECB"
           data-roles="Risk Manager,GRC Analyst,Security Manager"
@@ -817,12 +748,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,499</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27005_RM_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27005_RM_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Implementer" data-title="ISO/IEC 27001 Lead Implementer"
           data-price="1899" data-type="In-person" data-vendor="PECB"
           data-roles="Security Engineer,Security Manager,GRC Analyst"
@@ -841,12 +771,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27001_LI_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27001_LI_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Auditor" data-title="ISO/IEC 27001 Lead Auditor"
           data-price="1899" data-type="Live" data-vendor="PECB"
           data-roles="Auditor/Compliance,GRC Analyst,Security Manager"
@@ -865,12 +794,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$1,899</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27001_LA_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27001_LA_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Foundation" data-title="ISO/IEC 27001:2022 Foundation"
           data-price="699" data-type="Self-paced" data-vendor="PECB"
           data-roles="Cybersecurity Beginner,Security Engineer,GRC Analyst"
@@ -889,13 +817,11 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">$699</div></div>
-            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90"
-               href="https://buy.stripe.com/YOUR_27001_F_LINK" target="_blank" rel="noopener">Buy</a>
+            <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90" href="https://buy.stripe.com/YOUR_27001_F_LINK" target="_blank" rel="noopener">Buy</a>
           </div>
         </article>
 
-        <!-- Placeholders for future vendors (EC-Council / CompTIA / ISACA) -->
-        <article class="course rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-md transition"
+        <article class="course rounded-2xl border border-slate-200 bg-white p-5"
           data-cat="infosec" data-level="Foundation" data-title="CompTIA Security+ (SY0-701) — Coming Soon"
           data-price="0" data-type="Live" data-vendor="CompTIA"
           data-roles="Cybersecurity Beginner,SOC Analyst,Security Engineer"
@@ -914,17 +840,79 @@
           </div>
           <div class="mt-5 flex items-center justify-between">
             <div><div class="text-xs text-slate-500">Price</div><div class="font-semibold">TBD</div></div>
-            <a class="rounded-xl border border-slate-200 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-50"
-               href="mailto:info@nasrutechnologies.com?subject=Training%20Inquiry%20-%20CompTIA%20Security%2B">
+            <a class="rounded-xl border border-slate-200 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-50" href="mailto:info@nasrutechnologies.com?subject=Training%20Inquiry%20-%20CompTIA%20Security%2B">
               Contact
             </a>
           </div>
         </article>
-
       </div>
     </section>
   </div>
 </main>
+
+<!-- Registration Modal -->
+<div id="registrationModal" class="fixed inset-0 z-[999] hidden">
+  <div id="registrationBackdrop" class="absolute inset-0 bg-slate-950/70"></div>
+
+  <div class="relative z-10 flex min-h-full items-center justify-center p-4">
+    <div class="w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="heading text-2xl font-semibold text-slate-900">Register for Session</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Complete the form below. After successful submission, you’ll be redirected to payment.
+          </p>
+        </div>
+
+        <button type="button" id="closeRegistrationModal" class="rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
+          Close
+        </button>
+      </div>
+
+      <div class="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <div class="text-sm text-slate-500">Selected Session</div>
+        <div id="selectedCourse" class="mt-1 font-semibold text-slate-900">ISO/IEC 27001 Lead Implementer</div>
+        <div id="selectedDetails" class="mt-1 text-sm text-slate-600">April 20 - 24 • 9:00 AM - 5:00 PM • Live Online</div>
+      </div>
+
+      <form id="trainingRegistrationForm" class="mt-6 space-y-4" novalidate>
+        <input type="hidden" id="formPaymentLink" />
+        <input type="hidden" id="formCourse" />
+        <input type="hidden" id="formSessionDetails" />
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="full_name" class="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
+            <input id="full_name" name="full_name" type="text" required class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Your full name">
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email *</label>
+            <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" required class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="+1 000 000 0000">
+          </div>
+
+          <div>
+            <label for="organization" class="block text-sm font-medium text-slate-700 mb-1">Organization / Other</label>
+            <input id="organization" name="organization" type="text" class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Company, agency, or other">
+          </div>
+        </div>
+
+        <p id="formStatus" class="hidden text-sm"></p>
+
+        <button id="submitRegistrationBtn" type="submit" class="w-full rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">
+          Submit Registration & Continue to Payment
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <footer class="bg-navy text-white border-t border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -953,8 +941,7 @@
         <h4 class="heading font-semibold mb-3">Training</h4>
         <ul class="space-y-2 text-sm text-white/80">
           <li><a class="hover:text-brand" href="training.html">Course Catalog</a></li>
-          <li><a class="hover:text-brand" href="training.html#vendors">Vendors</a></li>
-          <li><a class="hover:text-brand" href="training.html#corporate">Corporate Training</a></li>
+          <li><a class="hover:text-brand" href="training.html">Vendors</a></li>
           <li><a class="hover:text-brand" href="mailto:info@nasrutechnologies.com">Email Us</a></li>
         </ul>
       </div>
@@ -981,179 +968,7 @@
 
 <script>
 (() => {
-  // mobile menu
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
-
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const grid = document.getElementById('grid');
-  const cards = Array.from(document.querySelectorAll('.course'));
-
-  const leftSearch = document.getElementById('leftSearch');
-  const topSearch = document.getElementById('topSearch');
-  const topSearchMobile = document.getElementById('topSearchMobile');
-
-  const priceRange = document.getElementById('priceRange');
-  const priceLabel = document.getElementById('priceLabel');
-
-  const sortSelect = document.getElementById('sortSelect');
-  const countEl = document.getElementById('count');
-  const clearBtn = document.getElementById('clearBtn');
-
-  const catOrder = { privacy: 1, grc: 2, bcm: 3, infosec: 4 };
-  const levelOrder = { Foundation: 1, Officer: 2, Implementer: 3, Auditor: 4, Manager: 5, "Risk Manager": 6 };
-
-  function sortDefault() {
-    cards.sort((a, b) => {
-      const ca = a.dataset.cat, cb = b.dataset.cat;
-      const la = a.dataset.level, lb = b.dataset.level;
-      const ta = (a.dataset.title || '').toLowerCase();
-      const tb = (b.dataset.title || '').toLowerCase();
-
-      const c = (catOrder[ca] || 99) - (catOrder[cb] || 99);
-      if (c !== 0) return c;
-
-      const l = (levelOrder[la] || 99) - (levelOrder[lb] || 99);
-      if (l !== 0) return l;
-
-      return ta.localeCompare(tb);
-    });
-    cards.forEach(c => grid.appendChild(c));
-  }
-  sortDefault();
-
-  function selectedRadio(name) {
-    const checked = document.querySelector(`input[name="${name}"]:checked`);
-    return checked ? checked.value : 'all';
-  }
-  function selectedChecks(name) {
-    return new Set(Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value));
-  }
-  function queryText() {
-    return (leftSearch.value || topSearch?.value || topSearchMobile?.value || '').trim().toLowerCase();
-  }
-  function maxPrice() {
-    return Number(priceRange.value || 2500);
-  }
-
-  function roleMatch(cardRolesCSV, selectedRolesSet){
-    if (!cardRolesCSV) return false;
-    const cardRoles = cardRolesCSV.split(',').map(s => s.trim());
-    return cardRoles.some(r => selectedRolesSet.has(r));
-  }
-
-  function applyFilters() {
-    const cat = selectedRadio('cat');
-    const lvls = selectedChecks('lvl');
-    const types = selectedChecks('type');
-    const vendors = selectedChecks('vendor');
-    const roles = selectedChecks('role');
-    const q = queryText();
-    const mp = maxPrice();
-
-    let shown = 0;
-
-    cards.forEach(card => {
-      const c = card.dataset.cat;
-      const lvl = card.dataset.level;
-      const title = (card.dataset.title || '').toLowerCase();
-      const price = Number(card.dataset.price || 0);
-      const type = card.dataset.type || '';
-      const vendor = card.dataset.vendor || '';
-      const cardRoles = card.dataset.roles || '';
-
-      const okCat = (cat === 'all') || (c === cat);
-      const okLvl = lvls.has(lvl);
-      const okType = types.has(type);
-      const okVendor = vendors.has(vendor);
-      const okRole = roleMatch(cardRoles, roles);
-      const okPrice = (price === 0) ? true : (price <= mp); // allow TBD cards
-      const okQuery = !q || title.includes(q);
-
-      const show = okCat && okLvl && okType && okVendor && okRole && okPrice && okQuery;
-      card.style.display = show ? '' : 'none';
-      if (show) shown++;
-    });
-
-    countEl.textContent = `${shown}`;
-  }
-
-  // sync searches
-  function syncSearch(val) {
-    leftSearch.value = val;
-    if (topSearch) topSearch.value = val;
-    if (topSearchMobile) topSearchMobile.value = val;
-    applyFilters();
-  }
-
-  leftSearch.addEventListener('input', e => syncSearch(e.target.value));
-  topSearch?.addEventListener('input', e => syncSearch(e.target.value));
-  topSearchMobile?.addEventListener('input', e => syncSearch(e.target.value));
-
-  // inputs change
-  document.querySelectorAll('input[name="cat"]').forEach(r => r.addEventListener('change', applyFilters));
-  document.querySelectorAll('input[name="lvl"]').forEach(c => c.addEventListener('change', applyFilters));
-  document.querySelectorAll('input[name="type"]').forEach(c => c.addEventListener('change', applyFilters));
-  document.querySelectorAll('input[name="vendor"]').forEach(c => c.addEventListener('change', applyFilters));
-  document.querySelectorAll('input[name="role"]').forEach(c => c.addEventListener('change', applyFilters));
-
-  // price slider
-  priceRange.addEventListener('input', () => {
-    priceLabel.textContent = `$${Number(priceRange.value).toLocaleString()}`;
-    applyFilters();
-  });
-
-  // sorting options
-  sortSelect.addEventListener('change', () => {
-    const v = sortSelect.value;
-
-    if (v === 'default') sortDefault();
-
-    if (v === 'priceAsc') {
-      cards.sort((a,b) => Number(a.dataset.price||0) - Number(b.dataset.price||0));
-      cards.forEach(c => grid.appendChild(c));
-    }
-
-    if (v === 'priceDesc') {
-      cards.sort((a,b) => Number(b.dataset.price||0) - Number(a.dataset.price||0));
-      cards.forEach(c => grid.appendChild(c));
-    }
-
-    if (v === 'nameAsc') {
-      cards.sort((a,b) => (a.dataset.title||'').localeCompare(b.dataset.title||''));
-      cards.forEach(c => grid.appendChild(c));
-    }
-
-    applyFilters();
-  });
-
-  clearBtn.addEventListener('click', () => {
-    document.querySelector('input[name="cat"][value="all"]').checked = true;
-    document.querySelectorAll('input[name="lvl"]').forEach(i => i.checked = true);
-    document.querySelectorAll('input[name="type"]').forEach(i => i.checked = true);
-    document.querySelectorAll('input[name="vendor"]').forEach(i => i.checked = true);
-    document.querySelectorAll('input[name="role"]').forEach(i => i.checked = true);
-
-    syncSearch('');
-
-    priceRange.value = 2500;
-    priceLabel.textContent = '$2,500';
-
-    sortSelect.value = 'default';
-    sortDefault();
-
-    applyFilters();
-  });
-
-  applyFilters();
-})();
-  <!-- ✅ UPDATED NAV SCRIPT (same behavior as solutions.html) -->
-
-(() => {
-  // Dropdown hover/click (Divisions)
+  // ===== Header / Nav =====
   const wrap  = document.getElementById('divisionsMenu');
   const btn   = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
@@ -1188,16 +1003,257 @@
     if (wrap && !wrap.contains(e.target)) scheduleClose();
   });
 
-  // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu){
-    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-  }
+  menuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
 
-  // Footer year (if you have #year)
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
+
+  // ===== Filters =====
+  const grid = document.getElementById('grid');
+  const cards = Array.from(document.querySelectorAll('.course'));
+  const leftSearch = document.getElementById('leftSearch');
+  const priceRange = document.getElementById('priceRange');
+  const priceLabel = document.getElementById('priceLabel');
+  const sortSelect = document.getElementById('sortSelect');
+  const countEl = document.getElementById('count');
+  const clearBtn = document.getElementById('clearBtn');
+
+  const catOrder = { privacy: 1, grc: 2, bcm: 3, infosec: 4 };
+  const levelOrder = { Foundation: 1, Officer: 2, Implementer: 3, Auditor: 4, Manager: 5, "Risk Manager": 6 };
+
+  function sortDefault() {
+    cards.sort((a, b) => {
+      const ca = a.dataset.cat, cb = b.dataset.cat;
+      const la = a.dataset.level, lb = b.dataset.level;
+      const ta = (a.dataset.title || '').toLowerCase();
+      const tb = (b.dataset.title || '').toLowerCase();
+      const c = (catOrder[ca] || 99) - (catOrder[cb] || 99);
+      if (c !== 0) return c;
+      const l = (levelOrder[la] || 99) - (levelOrder[lb] || 99);
+      if (l !== 0) return l;
+      return ta.localeCompare(tb);
+    });
+    cards.forEach(c => grid.appendChild(c));
+  }
+  sortDefault();
+
+  function selectedRadio(name) {
+    const checked = document.querySelector(`input[name="${name}"]:checked`);
+    return checked ? checked.value : 'all';
+  }
+
+  function selectedChecks(name) {
+    return new Set(Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value));
+  }
+
+  function maxPrice() {
+    return Number(priceRange.value || 2500);
+  }
+
+  function roleMatch(cardRolesCSV, selectedRolesSet){
+    if (!cardRolesCSV) return false;
+    const cardRoles = cardRolesCSV.split(',').map(s => s.trim());
+    return cardRoles.some(r => selectedRolesSet.has(r));
+  }
+
+  function applyFilters() {
+    const cat = selectedRadio('cat');
+    const lvls = selectedChecks('lvl');
+    const types = selectedChecks('type');
+    const vendors = selectedChecks('vendor');
+    const roles = selectedChecks('role');
+    const q = (leftSearch.value || '').trim().toLowerCase();
+    const mp = maxPrice();
+
+    let shown = 0;
+
+    cards.forEach(card => {
+      const c = card.dataset.cat;
+      const lvl = card.dataset.level;
+      const title = (card.dataset.title || '').toLowerCase();
+      const price = Number(card.dataset.price || 0);
+      const type = card.dataset.type || '';
+      const vendor = card.dataset.vendor || '';
+      const cardRoles = card.dataset.roles || '';
+
+      const okCat = (cat === 'all') || (c === cat);
+      const okLvl = lvls.has(lvl);
+      const okType = types.has(type);
+      const okVendor = vendors.has(vendor);
+      const okRole = roleMatch(cardRoles, roles);
+      const okPrice = (price === 0) ? true : (price <= mp);
+      const okQuery = !q || title.includes(q);
+
+      const show = okCat && okLvl && okType && okVendor && okRole && okPrice && okQuery;
+      card.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+
+    countEl.textContent = `${shown}`;
+  }
+
+  leftSearch?.addEventListener('input', applyFilters);
+  document.querySelectorAll('input[name="cat"]').forEach(r => r.addEventListener('change', applyFilters));
+  document.querySelectorAll('input[name="lvl"]').forEach(c => c.addEventListener('change', applyFilters));
+  document.querySelectorAll('input[name="type"]').forEach(c => c.addEventListener('change', applyFilters));
+  document.querySelectorAll('input[name="vendor"]').forEach(c => c.addEventListener('change', applyFilters));
+  document.querySelectorAll('input[name="role"]').forEach(c => c.addEventListener('change', applyFilters));
+
+  priceRange?.addEventListener('input', () => {
+    priceLabel.textContent = `$${Number(priceRange.value).toLocaleString()}`;
+    applyFilters();
+  });
+
+  sortSelect?.addEventListener('change', () => {
+    const v = sortSelect.value;
+
+    if (v === 'default') sortDefault();
+    if (v === 'priceAsc') {
+      cards.sort((a,b) => Number(a.dataset.price||0) - Number(b.dataset.price||0));
+      cards.forEach(c => grid.appendChild(c));
+    }
+    if (v === 'priceDesc') {
+      cards.sort((a,b) => Number(b.dataset.price||0) - Number(a.dataset.price||0));
+      cards.forEach(c => grid.appendChild(c));
+    }
+    if (v === 'nameAsc') {
+      cards.sort((a,b) => (a.dataset.title||'').localeCompare(b.dataset.title||''));
+      cards.forEach(c => grid.appendChild(c));
+    }
+
+    applyFilters();
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    document.querySelector('input[name="cat"][value="all"]').checked = true;
+    document.querySelectorAll('input[name="lvl"]').forEach(i => i.checked = true);
+    document.querySelectorAll('input[name="type"]').forEach(i => i.checked = true);
+    document.querySelectorAll('input[name="vendor"]').forEach(i => i.checked = true);
+    document.querySelectorAll('input[name="role"]').forEach(i => i.checked = true);
+    leftSearch.value = '';
+    priceRange.value = 2500;
+    priceLabel.textContent = '$2,500';
+    sortSelect.value = 'default';
+    sortDefault();
+    applyFilters();
+  });
+
+  applyFilters();
+
+  // ===== Registration Modal + Redirect to Payment =====
+  const modal = document.getElementById('registrationModal');
+  const backdrop = document.getElementById('registrationBackdrop');
+  const closeBtn = document.getElementById('closeRegistrationModal');
+  const selectedCourse = document.getElementById('selectedCourse');
+  const selectedDetails = document.getElementById('selectedDetails');
+  const formCourse = document.getElementById('formCourse');
+  const formSessionDetails = document.getElementById('formSessionDetails');
+  const formPaymentLink = document.getElementById('formPaymentLink');
+  const trainingRegistrationForm = document.getElementById('trainingRegistrationForm');
+  const submitRegistrationBtn = document.getElementById('submitRegistrationBtn');
+  const formStatus = document.getElementById('formStatus');
+
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  function openRegistrationModal(payload) {
+    const details = `${payload.dates} • ${payload.time} • ${payload.format}`;
+    selectedCourse.textContent = payload.course;
+    selectedDetails.textContent = details;
+    formCourse.value = payload.course;
+    formSessionDetails.value = details;
+    formPaymentLink.value = payload.payment;
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeRegistrationModal() {
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+    formStatus.classList.add('hidden');
+    formStatus.textContent = '';
+    trainingRegistrationForm.reset();
+  }
+
+  document.querySelectorAll('.js-open-registration').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openRegistrationModal({
+        course: btn.dataset.course || '',
+        dates: btn.dataset.dates || '',
+        time: btn.dataset.time || '',
+        format: btn.dataset.format || '',
+        payment: btn.dataset.payment || ''
+      });
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeRegistrationModal);
+  backdrop?.addEventListener('click', closeRegistrationModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeRegistrationModal();
+    }
+  });
+
+  trainingRegistrationForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById('full_name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const organization = document.getElementById('organization').value.trim();
+
+    if (!fullName || !email || !phone) {
+      formStatus.classList.remove('hidden');
+      formStatus.className = 'text-sm text-red-600';
+      formStatus.textContent = 'Please complete Full Name, Email, and Phone Number.';
+      return;
+    }
+
+    submitRegistrationBtn.disabled = true;
+    submitRegistrationBtn.textContent = 'Submitting...';
+    formStatus.classList.remove('hidden');
+    formStatus.className = 'text-sm text-slate-600';
+    formStatus.textContent = 'Submitting your registration...';
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'Training Registration - Nasru Technologies',
+          full_name: fullName,
+          email: email,
+          phone: phone,
+          organization: organization,
+          course: formCourse.value,
+          session_details: formSessionDetails.value
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed.');
+      }
+
+      formStatus.className = 'text-sm text-emerald-600';
+      formStatus.textContent = 'Registration submitted. Redirecting to payment...';
+
+      setTimeout(() => {
+        window.location.href = formPaymentLink.value;
+      }, 900);
+
+    } catch (err) {
+      formStatus.className = 'text-sm text-red-600';
+      formStatus.textContent = 'Something went wrong while submitting. Please try again.';
+      submitRegistrationBtn.disabled = false;
+      submitRegistrationBtn.textContent = 'Submit Registration & Continue to Payment';
+    }
+  });
 })();
 </script>
 
