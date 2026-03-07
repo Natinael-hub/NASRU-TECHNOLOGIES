@@ -7,7 +7,7 @@
   <title>Careers - Nasru Technologies</title>
   <link rel="canonical" href="https://nasrutechnologies.com/careers.html">
 
-  <meta name="description" content="Explore careers at Nasru Technologies. Submit a simple application and attach your resume. We review applications on a rolling basis." />
+  <meta name="description" content="Explore careers at Nasru Technologies. Search open roles by department and employment type, review responsibilities and qualifications, and submit your application." />
   <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
   <!-- Tailwind -->
@@ -38,16 +38,51 @@
     .input { background: rgba(255,255,255,0.03); border: 1px solid rgba(148,163,184,0.22); }
     .input:focus { outline: none; border-color: rgba(103,232,249,0.55); box-shadow: 0 0 0 3px rgba(103,232,249,0.14); }
     .muted { color: rgba(148,163,184,0.95); }
+
+    .section-white {
+      background: #ffffff;
+      color: #0f172a;
+    }
+    .section-white .heading {
+      color: #0f172a;
+    }
+    .section-white .muted {
+      color: #475569;
+    }
+    .section-white .card {
+      background: #ffffff;
+      border: 1px solid rgba(226,232,240,1);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+    }
+    .section-white .card:hover {
+      box-shadow: 0 0 0 1px rgba(34,211,238,0.16), 0 18px 40px rgba(15,23,42,0.10);
+    }
+    .section-white .input {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid rgba(203,213,225,1);
+    }
+    .section-white .input::placeholder {
+      color: #64748b;
+    }
+    .section-white .hairline {
+      border-color: rgba(226,232,240,1);
+    }
+
+    .job-row {
+      transition: box-shadow .2s ease, background-color .2s ease;
+    }
+    .job-row:hover {
+      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+    }
   </style>
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Careers — Nasru Technologies">
   <meta property="og:description" content="Join a multi-division tech company building secure, smart, and scalable solutions.">
   <meta property="og:url" content="https://nasrutechnologies.com/careers.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nasrutechnologies.com/assets/img/logo.png">
 
-  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -70,11 +105,9 @@
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
         <a href="index.html" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (kept as-is; relies on your existing divisionsPanel styles if you had them) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -83,7 +116,6 @@
             </svg>
           </button>
 
-          <!-- SIMPLE panel (corporate) -->
           <div id="divisionsPanel" class="absolute left-0 mt-3 w-[520px] rounded-2xl overflow-hidden hidden card"
                role="menu" aria-labelledby="divisionsBtn">
             <div class="px-5 py-4 border-b hairline">
@@ -137,7 +169,6 @@
         <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white"
               aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -147,7 +178,6 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
       <a href="index.html" class="block py-2">Home</a>
@@ -162,7 +192,6 @@
   </div>
 </header>
 
-<!-- Hero -->
 <section class="relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18">
     <div class="grid gap-10 md:grid-cols-12 items-center">
@@ -172,53 +201,53 @@
           Hiring pipeline open — rolling review
         </div>
         <h1 class="heading mt-4 text-4xl md:text-6xl font-bold leading-tight">
-          Careers at <span class="text-brand">Nasru</span>
+          Build your career with <span class="text-brand">Nasru</span>
         </h1>
         <p class="mt-4 text-lg text-slate-300">
-          Join a multi-division team delivering secure technology, smart infrastructure, and scalable software.
+          Join a growing technology company working across business development, enterprise sales, software, and cybersecurity. We hire people who communicate well, move with ownership, and deliver with professionalism.
         </p>
 
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#apply" class="rounded-xl bg-brand px-5 py-2 font-semibold text-slate-900 hover:opacity-90">Apply Now</a>
-          <a href="#roles" class="rounded-xl border hairline bg-white/5 px-5 py-2 font-semibold hover:bg-white/10">View Roles</a>
+          <a href="#roles" class="rounded-xl bg-brand px-5 py-2 font-semibold text-slate-900 hover:opacity-90">Explore Open Roles</a>
+          <a href="#apply" class="rounded-xl border hairline bg-white/5 px-5 py-2 font-semibold hover:bg-white/10">Apply Now</a>
         </div>
 
         <div class="mt-8 grid grid-cols-3 gap-4 text-sm text-slate-300/90">
           <div class="card p-4">
-            <div class="heading font-semibold">Professional</div>
-            <div class="mt-1 muted">Clear process & expectations</div>
+            <div class="heading font-semibold">Corporate</div>
+            <div class="mt-1 muted">Professional hiring process</div>
           </div>
           <div class="card p-4">
-            <div class="heading font-semibold">Secure</div>
-            <div class="mt-1 muted">Security-first delivery</div>
+            <div class="heading font-semibold">Growth</div>
+            <div class="mt-1 muted">Cross-functional opportunities</div>
           </div>
           <div class="card p-4">
-            <div class="heading font-semibold">Global</div>
-            <div class="mt-1 muted">U.S. + Ethiopia + beyond</div>
+            <div class="heading font-semibold">Mission</div>
+            <div class="mt-1 muted">Technology that scales</div>
           </div>
         </div>
       </div>
 
       <div class="md:col-span-5">
         <div class="card p-6">
-          <div class="heading text-xl font-semibold">What we look for</div>
+          <div class="heading text-xl font-semibold">Why work with us</div>
           <ul class="mt-4 space-y-3 text-slate-300">
             <li class="flex gap-3">
               <span class="mt-2 h-2 w-2 rounded-full bg-brand"></span>
-              Strong ownership and client-first communication
+              Exposure to multiple service lines and industries
             </li>
             <li class="flex gap-3">
               <span class="mt-2 h-2 w-2 rounded-full bg-brand"></span>
-              Security mindset, documentation, and quality delivery
+              High standards for communication, quality, and security
             </li>
             <li class="flex gap-3">
               <span class="mt-2 h-2 w-2 rounded-full bg-brand"></span>
-              Willingness to learn across divisions
+              Opportunity to contribute to a fast-growing brand
             </li>
           </ul>
 
           <div class="mt-5 rounded-xl border hairline bg-white/5 p-4 text-sm muted">
-            Tip: A short portfolio / LinkedIn helps us review faster.
+            Tip: A polished resume and strong LinkedIn profile help us review applications faster.
           </div>
         </div>
       </div>
@@ -226,54 +255,385 @@
   </div>
 </section>
 
-<!-- Roles -->
-<section id="roles" class="py-10">
+<section id="roles" class="py-12 section-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-6">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
       <div>
-        <h2 class="heading text-2xl md:text-3xl font-semibold">Open roles</h2>
-        <p class="mt-2 muted">If you don’t see the exact role, apply anyway — we hire for capability.</p>
+        <div class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
+          Career Opportunities
+        </div>
+        <h2 class="heading text-2xl md:text-3xl font-semibold mt-3">Open roles</h2>
+        <p class="mt-2 muted max-w-3xl">
+          Search by title or keyword, filter by department and employment type, then click any role to view responsibilities, qualifications, and role details.
+        </p>
       </div>
-      <a href="#apply" class="hidden sm:inline-flex rounded-xl border hairline bg-white/5 px-4 py-2 font-semibold hover:bg-white/10">Apply →</a>
+      <a href="#apply" class="hidden sm:inline-flex rounded-xl border border-slate-200 bg-white px-4 py-2 font-semibold text-slate-900 hover:bg-slate-50">
+        Go to Application →
+      </a>
     </div>
 
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      <div class="card p-6">
-        <h3 class="heading text-xl font-semibold">Security Systems Engineer</h3>
-        <p class="text-slate-300/90 text-sm mt-2">CCTV, access control, VMS design and deployment.</p>
-        <div class="mt-4 text-xs muted">Full-time / Contract • Field + Remote</div>
+    <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="grid gap-4 md:grid-cols-3">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Search by keyword</label>
+          <input
+            id="jobSearch"
+            type="text"
+            placeholder="Business, sales, developer, cybersecurity..."
+            class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Department</label>
+          <select id="jobDepartmentFilter" class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-brand">
+            <option value="all">All departments</option>
+            <option value="Business">Business</option>
+            <option value="Sales">Sales</option>
+            <option value="Software">Software</option>
+            <option value="Cybersecurity / IT">Cybersecurity / IT</option>
+            <option value="Operations">Operations</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Employment type</label>
+          <select id="jobTypeFilter" class="w-full rounded-xl border border-slate-300 px-3 py-3 text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-brand">
+            <option value="all">All types</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Contract">Contract</option>
+          </select>
+        </div>
       </div>
 
-      <div class="card p-6">
-        <h3 class="heading text-xl font-semibold">IoT / Automation Specialist</h3>
-        <p class="text-slate-300/90 text-sm mt-2">Integrate sensors, smart building systems, and automation.</p>
-        <div class="mt-4 text-xs muted">Full-time / Contract • Hybrid</div>
+      <div class="mt-4 flex flex-wrap items-center gap-3 text-sm">
+        <span class="text-slate-500">Popular departments:</span>
+        <button type="button" class="job-chip rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-medium text-slate-700 hover:bg-slate-100" data-dept-chip="Business">Business</button>
+        <button type="button" class="job-chip rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-medium text-slate-700 hover:bg-slate-100" data-dept-chip="Sales">Sales</button>
+        <button type="button" class="job-chip rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-medium text-slate-700 hover:bg-slate-100" data-dept-chip="Software">Software</button>
+        <button type="button" class="job-chip rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-medium text-slate-700 hover:bg-slate-100" data-dept-chip="Cybersecurity / IT">Cybersecurity / IT</button>
+        <button type="button" id="clearJobFilters" class="rounded-full border border-slate-200 bg-white px-3 py-1.5 font-medium text-slate-700 hover:bg-slate-50">
+          Clear filters
+        </button>
       </div>
+    </div>
 
-      <div class="card p-6">
-        <h3 class="heading text-xl font-semibold">Full-Stack Developer</h3>
-        <p class="text-slate-300/90 text-sm mt-2">Build platforms, portals, and internal tools (Next.js stack).</p>
-        <div class="mt-4 text-xs muted">Full-time / Contract • Remote</div>
-      </div>
+    <div class="mt-4 text-sm text-slate-500">
+      <span id="jobCount">4</span> role(s) found
+    </div>
+
+    <div id="jobBoard" class="mt-6 space-y-4">
+
+      <article
+        class="job-card job-row rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+        data-title="Business Development Manager"
+        data-department="Business"
+        data-type="Full-time"
+        data-keywords="business development partnerships growth strategy client acquisition sales pipeline"
+      >
+        <button type="button" class="job-toggle w-full text-left p-6 hover:bg-slate-50 transition">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">Business</span>
+                <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">Full-time</span>
+              </div>
+              <h3 class="heading text-xl font-semibold text-slate-900">Business Development Manager</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Lead growth initiatives, strategic partnerships, and pipeline development across Nasru Technologies services and training solutions.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3 lg:text-right">
+              <div class="text-sm text-slate-500">
+                <div>Department</div>
+                <div class="font-semibold text-slate-800">Business</div>
+              </div>
+              <svg class="job-chevron h-5 w-5 text-slate-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <div class="job-details hidden border-t border-slate-200 px-6 py-6 bg-slate-50/70">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Responsibilities</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Identify and pursue new client and partnership opportunities</li>
+                <li>• Build and manage qualified business pipeline</li>
+                <li>• Develop proposals, outreach plans, and presentations</li>
+                <li>• Coordinate with technical teams on solution positioning</li>
+                <li>• Support long-term account growth and expansion</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Requirements & Qualifications</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Experience in business development, partnerships, or account growth</li>
+                <li>• Strong communication, proposal, and negotiation skills</li>
+                <li>• Ability to work with technical and business stakeholders</li>
+                <li>• Technology, security, or services background preferred</li>
+                <li>• Organized, proactive, and target-oriented</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Role Overview</h4>
+              <div class="mt-3 space-y-3 text-sm text-slate-700">
+                <div><span class="font-semibold">Employment Type:</span> Full-time</div>
+                <div><span class="font-semibold">Department:</span> Business</div>
+                <div><span class="font-semibold">Work Model:</span> Hybrid / Client-facing</div>
+                <div><span class="font-semibold">Location:</span> U.S.-based preferred</div>
+              </div>
+
+              <a href="#apply" class="mt-5 inline-flex rounded-xl bg-brand px-5 py-2.5 font-semibold text-slate-900 hover:opacity-90">
+                Apply for this Role
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="job-card job-row rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+        data-title="Full-Stack Developer"
+        data-department="Software"
+        data-type="Full-time"
+        data-keywords="react nextjs full stack developer software portal dashboard web app api integration"
+      >
+        <button type="button" class="job-toggle w-full text-left p-6 hover:bg-slate-50 transition">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">Software</span>
+                <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">Full-time</span>
+              </div>
+              <h3 class="heading text-xl font-semibold text-slate-900">Full-Stack Developer</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Build internal platforms, dashboards, client portals, and modern web applications across Nasru Technologies products and services.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3 lg:text-right">
+              <div class="text-sm text-slate-500">
+                <div>Department</div>
+                <div class="font-semibold text-slate-800">Software</div>
+              </div>
+              <svg class="job-chevron h-5 w-5 text-slate-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <div class="job-details hidden border-t border-slate-200 px-6 py-6 bg-slate-50/70">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Responsibilities</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Build responsive web apps and internal software tools</li>
+                <li>• Develop frontend and backend features using modern frameworks</li>
+                <li>• Integrate APIs, user authentication, and business workflows</li>
+                <li>• Collaborate with business and technical stakeholders</li>
+                <li>• Maintain secure, documented, and scalable codebases</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Requirements & Qualifications</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Experience with React, Next.js, JavaScript/TypeScript</li>
+                <li>• Familiarity with databases, APIs, and deployment workflows</li>
+                <li>• Strong problem-solving and software design ability</li>
+                <li>• Secure coding awareness preferred</li>
+                <li>• GitHub, portfolio, or work samples encouraged</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Role Overview</h4>
+              <div class="mt-3 space-y-3 text-sm text-slate-700">
+                <div><span class="font-semibold">Employment Type:</span> Full-time</div>
+                <div><span class="font-semibold">Department:</span> Software</div>
+                <div><span class="font-semibold">Work Model:</span> Remote / Hybrid</div>
+                <div><span class="font-semibold">Location:</span> Flexible</div>
+              </div>
+
+              <a href="#apply" class="mt-5 inline-flex rounded-xl bg-brand px-5 py-2.5 font-semibold text-slate-900 hover:opacity-90">
+                Apply for this Role
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="job-card job-row rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+        data-title="Senior Sales Executive"
+        data-department="Sales"
+        data-type="Full-time"
+        data-keywords="sales executive senior sales business development account executive lead generation client relationship revenue"
+      >
+        <button type="button" class="job-toggle w-full text-left p-6 hover:bg-slate-50 transition">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">Sales</span>
+                <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">Full-time</span>
+              </div>
+              <h3 class="heading text-xl font-semibold text-slate-900">Senior Sales Executive</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Drive revenue across technology, training, and security solutions through consultative selling, pipeline management, and client development.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3 lg:text-right">
+              <div class="text-sm text-slate-500">
+                <div>Department</div>
+                <div class="font-semibold text-slate-800">Sales</div>
+              </div>
+              <svg class="job-chevron h-5 w-5 text-slate-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <div class="job-details hidden border-t border-slate-200 px-6 py-6 bg-slate-50/70">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Responsibilities</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Prospect, qualify, and close new business opportunities</li>
+                <li>• Build relationships with commercial and enterprise clients</li>
+                <li>• Present offerings and align solutions to client needs</li>
+                <li>• Maintain forecasting and sales pipeline discipline</li>
+                <li>• Coordinate proposals and follow-up with internal teams</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Requirements & Qualifications</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Proven experience in B2B sales or account management</li>
+                <li>• Strong communication and relationship-building ability</li>
+                <li>• Comfort with consultative and target-driven selling</li>
+                <li>• Technology, services, or security sales background preferred</li>
+                <li>• Professional follow-through and reporting discipline</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Role Overview</h4>
+              <div class="mt-3 space-y-3 text-sm text-slate-700">
+                <div><span class="font-semibold">Employment Type:</span> Full-time</div>
+                <div><span class="font-semibold">Department:</span> Sales</div>
+                <div><span class="font-semibold">Work Model:</span> Hybrid / Field</div>
+                <div><span class="font-semibold">Location:</span> U.S.-based preferred</div>
+              </div>
+
+              <a href="#apply" class="mt-5 inline-flex rounded-xl bg-brand px-5 py-2.5 font-semibold text-slate-900 hover:opacity-90">
+                Apply for this Role
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="job-card job-row rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+        data-title="Cybersecurity Analyst"
+        data-department="Cybersecurity / IT"
+        data-type="Contract"
+        data-keywords="cybersecurity analyst soc analyst security monitoring incident response vulnerability compliance it"
+      >
+        <button type="button" class="job-toggle w-full text-left p-6 hover:bg-slate-50 transition">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">Cybersecurity / IT</span>
+                <span class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700">Contract</span>
+              </div>
+              <h3 class="heading text-xl font-semibold text-slate-900">Cybersecurity Analyst</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Support assessments, monitoring, documentation, and compliance tasks across internal and client security environments.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3 lg:text-right">
+              <div class="text-sm text-slate-500">
+                <div>Department</div>
+                <div class="font-semibold text-slate-800">Cybersecurity / IT</div>
+              </div>
+              <svg class="job-chevron h-5 w-5 text-slate-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <div class="job-details hidden border-t border-slate-200 px-6 py-6 bg-slate-50/70">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Responsibilities</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Assist with monitoring, assessments, and remediation tracking</li>
+                <li>• Support policy, compliance, and documentation tasks</li>
+                <li>• Review logs, alerts, and incident workflow activities</li>
+                <li>• Help prepare findings and status reports</li>
+                <li>• Work across IT and security improvement projects</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Requirements & Qualifications</h4>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Background in cybersecurity, IT, or related discipline</li>
+                <li>• Familiarity with controls, security concepts, and documentation</li>
+                <li>• Strong analytical thinking and attention to detail</li>
+                <li>• Certifications or coursework are a plus</li>
+                <li>• Ability to communicate clearly and professionally</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="heading text-base font-semibold text-slate-900">Role Overview</h4>
+              <div class="mt-3 space-y-3 text-sm text-slate-700">
+                <div><span class="font-semibold">Employment Type:</span> Contract</div>
+                <div><span class="font-semibold">Department:</span> Cybersecurity / IT</div>
+                <div><span class="font-semibold">Work Model:</span> Remote / Project-based</div>
+                <div><span class="font-semibold">Location:</span> Flexible</div>
+              </div>
+
+              <a href="#apply" class="mt-5 inline-flex rounded-xl bg-brand px-5 py-2.5 font-semibold text-slate-900 hover:opacity-90">
+                Apply for this Role
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- Simple Application -->
-<section id="apply" class="py-14">
+<section id="apply" class="py-14 section-white">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="card p-7 md:p-8">
       <div class="flex items-start justify-between gap-6">
         <div>
           <h2 class="heading text-2xl font-semibold">Apply in one step</h2>
-          <p class="mt-2 muted text-sm">Your submission is emailed to <span class="text-slate-200">info@nasrutechnologies.com</span>.</p>
+          <p class="mt-2 muted text-sm">Your submission is emailed to <span class="text-slate-900 font-medium">info@nasrutechnologies.com</span>.</p>
         </div>
-        <div class="hidden sm:block rounded-xl border hairline bg-white/5 px-3 py-2 text-xs muted">
+        <div class="hidden sm:block rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
           Resume: PDF/DOC/DOCX • Max 10MB
         </div>
       </div>
 
-      <!-- Replace with your real Formspree endpoint -->
       <form id="applyForm"
             action="https://formspree.io/f/xykdqqgn"
             method="POST"
@@ -281,56 +641,55 @@
             class="mt-6 space-y-5"
             novalidate>
 
-        <!-- Anti-spam honeypot -->
         <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
 
         <div>
-          <label class="block text-sm mb-1">Full name *</label>
+          <label class="block text-sm mb-1 text-slate-700">Full name *</label>
           <input name="full_name" required class="input w-full rounded-xl px-3 py-2" placeholder="First Last">
         </div>
 
         <div class="grid md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm mb-1">Email *</label>
+            <label class="block text-sm mb-1 text-slate-700">Email *</label>
             <input type="email" name="email" required class="input w-full rounded-xl px-3 py-2" placeholder="you@domain.com">
           </div>
           <div>
-            <label class="block text-sm mb-1">Role *</label>
+            <label class="block text-sm mb-1 text-slate-700">Role *</label>
             <select name="role" required class="input w-full rounded-xl px-3 py-2">
               <option value="">Select a role</option>
-              <option>Security Systems Engineer</option>
-              <option>IoT / Automation Specialist</option>
+              <option>Business Development Manager</option>
               <option>Full-Stack Developer</option>
+              <option>Senior Sales Executive</option>
+              <option>Cybersecurity Analyst</option>
               <option>Other</option>
             </select>
           </div>
         </div>
 
         <div>
-          <label class="block text-sm mb-1">LinkedIn / Portfolio (optional)</label>
+          <label class="block text-sm mb-1 text-slate-700">LinkedIn / Portfolio (optional)</label>
           <input type="url" name="profile" class="input w-full rounded-xl px-3 py-2" placeholder="https://linkedin.com/in/username">
         </div>
 
         <div>
-          <label class="block text-sm mb-1">Message (optional)</label>
+          <label class="block text-sm mb-1 text-slate-700">Message (optional)</label>
           <textarea name="message" rows="5" class="input w-full rounded-xl px-3 py-2"
                     placeholder="A short note about your experience and what you’re applying for."></textarea>
         </div>
 
         <div>
-          <label class="block text-sm mb-1">Resume *</label>
+          <label class="block text-sm mb-1 text-slate-700">Resume *</label>
           <input type="file" name="resume" required accept=".pdf,.doc,.docx"
-                 class="input w-full rounded-xl px-3 py-2 file:mr-3 file:py-2 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-200">
-          <div class="mt-2 text-xs muted">Accepted: PDF, DOC, DOCX. Max 10MB.</div>
+                 class="input w-full rounded-xl px-3 py-2 file:mr-3 file:py-2 file:px-3 file:rounded-md file:border-0 file:bg-slate-100 file:text-slate-700">
+          <div class="mt-2 text-xs text-slate-500">Accepted: PDF, DOC, DOCX. Max 10MB.</div>
         </div>
 
-        <!-- Email metadata for form handlers that support these fields -->
         <input type="hidden" name="_subject" value="New Career Application — Nasru Technologies">
         <input type="hidden" name="_replyto" value="%email%">
 
         <div class="flex items-start gap-2">
           <input id="consent" name="consent" type="checkbox" required class="mt-1">
-          <label for="consent" class="text-sm text-slate-300/90">
+          <label for="consent" class="text-sm text-slate-700">
             I consent to Nasru Technologies processing my application data for recruitment purposes.
           </label>
         </div>
@@ -339,11 +698,11 @@
           <button id="submitBtn" class="rounded-xl bg-brand px-5 py-2 font-semibold text-slate-900 hover:opacity-90">
             Submit Application
           </button>
-          <span id="status" class="text-xs muted"></span>
+          <span id="status" class="text-xs text-slate-500"></span>
         </div>
       </form>
 
-      <div class="mt-6 rounded-xl border hairline bg-white/5 p-4 text-sm muted">
+      <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
         Prefer email? Send your resume to <a class="text-brand hover:underline" href="mailto:info@nasrutechnologies.com">info@nasrutechnologies.com</a>.
       </div>
     </div>
@@ -430,7 +789,7 @@
     if (wrap && panel && !wrap.contains(e.target)) panel.classList.add('hidden');
   });
 
-  // Mobile menu toggle
+  // Mobile menu
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   menuBtn?.addEventListener('click', ()=> mobileMenu?.classList.toggle('hidden'));
@@ -439,7 +798,85 @@
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Simple file validation UX
+  // Job board filters
+  const jobCards = Array.from(document.querySelectorAll('.job-card'));
+  const jobSearch = document.getElementById('jobSearch');
+  const jobDepartmentFilter = document.getElementById('jobDepartmentFilter');
+  const jobTypeFilter = document.getElementById('jobTypeFilter');
+  const jobCount = document.getElementById('jobCount');
+  const clearJobFilters = document.getElementById('clearJobFilters');
+  const deptChips = document.querySelectorAll('[data-dept-chip]');
+
+  function applyJobFilters() {
+    const q = (jobSearch?.value || '').trim().toLowerCase();
+    const dept = jobDepartmentFilter?.value || 'all';
+    const type = jobTypeFilter?.value || 'all';
+
+    let visibleCount = 0;
+
+    jobCards.forEach(card => {
+      const title = (card.dataset.title || '').toLowerCase();
+      const department = card.dataset.department || '';
+      const employmentType = card.dataset.type || '';
+      const keywords = (card.dataset.keywords || '').toLowerCase();
+
+      const matchesQuery = !q || title.includes(q) || keywords.includes(q) || department.toLowerCase().includes(q);
+      const matchesDept = dept === 'all' || department === dept;
+      const matchesType = type === 'all' || employmentType === type;
+
+      const showCard = matchesQuery && matchesDept && matchesType;
+      card.style.display = showCard ? '' : 'none';
+
+      if (showCard) visibleCount++;
+    });
+
+    if (jobCount) jobCount.textContent = visibleCount;
+  }
+
+  jobSearch?.addEventListener('input', applyJobFilters);
+  jobDepartmentFilter?.addEventListener('change', applyJobFilters);
+  jobTypeFilter?.addEventListener('change', applyJobFilters);
+
+  deptChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (jobDepartmentFilter) {
+        jobDepartmentFilter.value = chip.dataset.deptChip || 'all';
+        applyJobFilters();
+      }
+    });
+  });
+
+  clearJobFilters?.addEventListener('click', () => {
+    if (jobSearch) jobSearch.value = '';
+    if (jobDepartmentFilter) jobDepartmentFilter.value = 'all';
+    if (jobTypeFilter) jobTypeFilter.value = 'all';
+    applyJobFilters();
+  });
+
+  applyJobFilters();
+
+  // Job accordion
+  document.querySelectorAll('.job-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const card = toggle.closest('.job-card');
+      const details = card?.querySelector('.job-details');
+      const chevron = card?.querySelector('.job-chevron');
+
+      if (!details) return;
+
+      const isHidden = details.classList.contains('hidden');
+
+      document.querySelectorAll('.job-details').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.job-chevron').forEach(el => el.classList.remove('rotate-180'));
+
+      if (isHidden) {
+        details.classList.remove('hidden');
+        chevron?.classList.add('rotate-180');
+      }
+    });
+  });
+
+  // Resume validation
   const form = document.getElementById('applyForm');
   const submitBtn = document.getElementById('submitBtn');
   const statusEl = document.getElementById('status');
@@ -451,7 +888,7 @@
       'application/msword',
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     ];
-    const max = 10 * 1024 * 1024; // 10 MB
+    const max = 10 * 1024 * 1024;
 
     if (!resume) return "Resume is required.";
     if (!allowed.includes(resume.type)) return "Resume must be PDF/DOC/DOCX.";
@@ -464,13 +901,13 @@
     if (err) {
       e.preventDefault();
       statusEl.textContent = err;
-      statusEl.style.color = '#fca5a5';
+      statusEl.style.color = '#ef4444';
       return;
     }
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
     statusEl.textContent = 'Submitting your application...';
-    statusEl.style.color = '#94a3b8';
+    statusEl.style.color = '#64748b';
   });
 })();
 </script>
