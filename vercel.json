@@ -1,0 +1,22 @@
+{
+  "redirects": [
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/training.html", "destination": "/training", "permanent": true },
+    { "source": "/partners.html", "destination": "/partners", "permanent": true },
+    { "source": "/careers.html", "destination": "/careers", "permanent": true }
+    { "source": "/solutions.html", "destination": "/solutions", "permanent": true }
+    { "source": "/software.html", "destination": "/solutions", "software": true }
+    { "source": "/secure.html", "destination": "/solutions", "secure": true }
+  ],
+  "rewrites": [
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/training", "destination": "/training.html" },
+    { "source": "/partners", "destination": "/partners.html" },
+    { "source": "/careers", "destination": "/careers.html" }
+    { "source": "/solutions", "destination": "/solutions.html" }
+    { "source": "/software", "destination": "/software.html" }
+    { "source": "/secure", "destination": "/secure.html" }
+  ]
+}
