@@ -42,15 +42,14 @@
     body{ font-family: Inter, system-ui, sans-serif; background:#0b1222; }
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
 
-    /* Premium glass */
     .glass { background: rgba(10,18,35,0.62); backdrop-filter: blur(14px); }
     .hairline { border-color: rgba(148,163,184,0.18); }
 
-    /* Cards */
     .card {
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       border: 1px solid rgba(103,232,249,0.12);
       border-radius: 18px;
+      transition: .18s ease;
     }
     .card:hover {
       box-shadow:
@@ -58,16 +57,13 @@
         0 18px 60px rgba(0,0,0,0.55),
         0 0 38px rgba(103,232,249,0.10);
       transform: translateY(-1px);
-      transition: .18s ease;
     }
 
-    /* Subtle neon headline */
     .neon-text {
       text-shadow: 0 0 10px rgba(103,232,249,0.22), 0 0 28px rgba(103,232,249,0.14);
     }
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
 
-    /* Hero */
     .hero-scrim {
       background:
         radial-gradient(900px 420px at 35% 10%, rgba(103,232,249,0.18), transparent 60%),
@@ -75,7 +71,6 @@
         linear-gradient(180deg, rgba(2,6,23,0.20), rgba(2,6,23,0.70));
     }
 
-    /* Chips */
     .chip {
       display:inline-flex; align-items:center; gap:.35rem;
       padding:.14rem .6rem; border-radius:999px;
@@ -90,11 +85,9 @@
       color: rgba(224,251,255,0.92);
     }
 
-    /* Dropdown animation */
     .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
     @keyframes fadeIn { from { opacity:0; transform: translateY(6px);} to { opacity:1; transform: translateY(0);} }
 
-    /* Futuristic mega menu */
     .divisions-shell{
       background:
         radial-gradient(800px 240px at 18% 0%, rgba(103,232,249,0.18), transparent 55%),
@@ -131,46 +124,60 @@
       color: rgba(148,163,184,0.92);
     }
 
-    /* Section background accents */
     .section-glow{
       background:
         radial-gradient(700px 240px at 15% 0%, rgba(103,232,249,0.10), transparent 60%),
         radial-gradient(700px 240px at 85% 20%, rgba(34,211,238,0.08), transparent 60%);
     }
 
-    /* Small trust logos */
-    .trust-logo{
-      opacity: .9;
-      filter: grayscale(10%) contrast(105%);
+    /* continuous partner strip */
+    .logo-slider{
+      overflow:hidden;
+      position:relative;
+      width:100%;
+      mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
     }
-    .trust-logo:hover{ opacity: 1; }
-
-    /* Partner circle strip */
-    .partner-dot{
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(103,232,249,0.16);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
-      transition: .18s ease;
+    .logo-track{
+      display:flex;
+      align-items:center;
+      gap:4rem;
+      width:max-content;
+      animation: partnerScroll 26s linear infinite;
     }
-    .partner-dot:hover{
+    .logo-slider:hover .logo-track{
+      animation-play-state: paused;
+    }
+    .logo-item{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:160px;
+      padding: .25rem 0;
+    }
+    .logo-item img{
+      height:44px;
+      width:auto;
+      max-width:180px;
+      object-fit:contain;
+      opacity:.95;
+      filter: grayscale(0%) contrast(105%);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .logo-item img:hover{
+      opacity:1;
       transform: translateY(-1px);
-      border-color: rgba(103,232,249,0.30);
-      box-shadow:
-        0 0 0 1px rgba(103,232,249,0.10) inset,
-        0 18px 40px rgba(0,0,0,0.45);
     }
-    .partner-dot img{
-      max-height: 22px;
-      max-width: 34px;
-      width: auto;
-      height: auto;
-      opacity: .95;
+    @media (min-width: 768px){
+      .logo-item img{
+        height:56px;
+        max-width:220px;
+      }
+    }
+    @keyframes partnerScroll{
+      0%{ transform: translateX(0); }
+      100%{ transform: translateX(-50%); }
     }
   </style>
 
@@ -212,16 +219,14 @@
 <header class="sticky top-0 z-50 border-b hairline glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2">
         <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
-        <a href="index.html" class="hover:text-brand">Home</a>
+        <a href="/" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (futuristic mega menu) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
             Divisions
@@ -244,32 +249,32 @@
             </div>
 
             <div class="grid grid-cols-2">
-              <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/secure" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
                 <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
               </a>
 
-              <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/smart" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Hardware</div>
                 <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
               </a>
 
-              <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/software" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Software</div>
                 <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
               </a>
 
-              <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/global" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Global Solutions</div>
                 <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
               </a>
 
-              <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/training" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Training &amp; Certification</div>
                 <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
               </a>
 
-              <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+              <a href="/multimedia" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
                 <div>
                   <div class="font-semibold">Nasru Multimedia</div>
                   <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
@@ -277,7 +282,7 @@
                 <span class="chip chip-soon">Coming Soon</span>
               </a>
 
-              <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+              <a href="/lab" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
                 <div>
                   <div class="font-semibold">Nasru Lab</div>
                   <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
@@ -290,29 +295,25 @@
 
             <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
               <div class="text-xs text-slate-300/80">
-                Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
+                Not sure where to start? <a href="/contact" class="hover:underline text-brand">Talk to us</a>.
               </div>
-              <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
+              <a href="/solutions" class="text-sm hover:text-brand">View Solutions →</a>
             </div>
           </div>
         </div>
 
-        <a href="solutions.html" class="hover:text-brand">Solutions</a>
-
-        <!-- ✅ ADDED: Training nav item -->
-        <a href="training.html" class="hover:text-brand">Training</a>
-
-        <a href="partners.html" class="hover:text-brand">Partners</a>
-        <a href="about.html" class="hover:text-brand">About</a>
-        <a href="careers.html" class="hover:text-brand">Careers</a>
-        <a href="contact.html" class="hover:text-brand">Contact</a>
+        <a href="/solutions" class="hover:text-brand">Solutions</a>
+        <a href="/training" class="hover:text-brand">Training</a>
+        <a href="/partners" class="hover:text-brand">Partners</a>
+        <a href="/about" class="hover:text-brand">About</a>
+        <a href="/careers" class="hover:text-brand">Careers</a>
+        <a href="/contact" class="hover:text-brand">Contact</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+        <a href="/contact" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -321,38 +322,34 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
-      <a href="index.html" class="block py-2">Home</a>
+      <a href="/" class="block py-2">Home</a>
 
       <details class="group">
         <summary class="py-2 cursor-pointer">Divisions</summary>
         <div class="ml-3 mt-1 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
-          <a href="smart.html" class="block py-2">Nasru Hardware</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-          <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
-          <a href="multimedia.html" class="flex items-center justify-between py-2">
+          <a href="/secure" class="block py-2">Nasru IT &amp; Cybersecurity</a>
+          <a href="/smart" class="block py-2">Nasru Hardware</a>
+          <a href="/software" class="block py-2">Nasru Software</a>
+          <a href="/global" class="block py-2">Nasru Global Solutions</a>
+          <a href="/training" class="block py-2">Nasru Training &amp; Certification</a>
+          <a href="/multimedia" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
           </a>
-          <a href="lab.html" class="flex items-center justify-between py-2">
+          <a href="/lab" class="flex items-center justify-between py-2">
             <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
           </a>
         </div>
       </details>
 
-      <a href="solutions.html" class="block py-2">Solutions</a>
-
-      <!-- ✅ ADDED: Training nav item (mobile) -->
-      <a href="training.html" class="block py-2">Training</a>
-
-      <a href="partners.html" class="block py-2">Partners</a>
-      <a href="about.html" class="block py-2">About</a>
-      <a href="careers.html" class="block py-2">Careers</a>
-      <a href="contact.html" class="block py-2">Contact</a>
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+      <a href="/solutions" class="block py-2">Solutions</a>
+      <a href="/training" class="block py-2">Training</a>
+      <a href="/partners" class="block py-2">Partners</a>
+      <a href="/about" class="block py-2">About</a>
+      <a href="/careers" class="block py-2">Careers</a>
+      <a href="/contact" class="block py-2">Contact</a>
+      <a href="/contact" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
     </div>
   </div>
 </header>
@@ -380,9 +377,9 @@
     </p>
 
     <div class="mt-8 flex flex-wrap gap-3 justify-center">
-      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Get a Quote</a>
+      <a href="/contact" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Get a Quote</a>
       <a href="#capabilities" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-6 py-3 hover:opacity-95">Explore Capabilities</a>
-      <a href="training.html" class="rounded-xl border border-white/15 bg-white/5 px-6 py-3 hover:opacity-95">Training &amp; Certification</a>
+      <a href="/training" class="rounded-xl border border-white/15 bg-white/5 px-6 py-3 hover:opacity-95">Training &amp; Certification</a>
     </div>
 
     <div class="mt-10 grid gap-4 md:grid-cols-3 text-left">
@@ -402,47 +399,6 @@
   </div>
 </section>
 
-<!-- TRUST STRIP (updated to include PECB) -->
-<section class="section-glow border-y hairline">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-sm text-slate-300/90">
-        <span class="font-semibold text-slate-100">Built on partnerships.</span>
-        Our vendor ecosystem and training alliances strengthen delivery across cybersecurity, infrastructure, and workforce development.
-      </div>
-
-      <div class="flex flex-wrap items-center gap-6 opacity-90 justify-center md:justify-end">
-        <img src="assets/img/partners/pecb.png" class="h-6 w-auto trust-logo" alt="PECB">
-        <img src="assets/img/partners/cyberzeb.png" class="h-6 w-auto trust-logo" alt="Cyber-Zeb">
-        <img src="assets/img/partners/ec-council-partner.png" class="h-6 w-auto trust-logo" alt="EC-Council">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEW: PARTNER LOGO STRIP (circles only) -->
-<section class="border-b hairline bg-slate-950/35">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <div class="flex flex-wrap items-center justify-center gap-4 md:gap-5">
-      <a href="https://pecb.com/" target="_blank" rel="noopener" class="partner-dot" aria-label="PECB">
-        <img src="assets/img/partners/pecb.png" alt="PECB">
-      </a>
-
-      <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="partner-dot" aria-label="Cyber-Zeb">
-        <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb">
-      </a>
-
-      <a href="https://eccouncil.org/" target="_blank" rel="noopener" class="partner-dot" aria-label="EC-Council">
-        <img src="assets/img/partners/ec-council-partner.png" alt="PECB">
-      </a>
-
-      <a href="partners.html" class="partner-dot" aria-label="View all partners">
-        <span class="text-slate-200/90 text-xs font-semibold">+</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- CAPABILITIES -->
 <section id="capabilities" class="py-16 section-glow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -454,25 +410,25 @@
     </div>
 
     <div class="mt-10 grid gap-6 md:grid-cols-4">
-      <a href="smart.html" class="card p-6 block">
+      <a href="/smart" class="card p-6 block">
         <div class="text-sm text-slate-300/90">Devices &amp; Hardware</div>
         <h3 class="heading mt-2 text-lg font-semibold">Nasru Hardware</h3>
         <p class="mt-2 text-slate-300/80 text-sm">POS/ATM, endpoints, networking, cabling, accessories — sourced via trusted partners.</p>
       </a>
 
-      <a href="secure.html" class="card p-6 block">
+      <a href="/secure" class="card p-6 block">
         <div class="text-sm text-slate-300/90">Security &amp; IT</div>
         <h3 class="heading mt-2 text-lg font-semibold">Nasru IT &amp; Cybersecurity</h3>
         <p class="mt-2 text-slate-300/80 text-sm">Security engineering, managed IT, assessments, hardening, monitoring.</p>
       </a>
 
-      <a href="software.html" class="card p-6 block">
+      <a href="/software" class="card p-6 block">
         <div class="text-sm text-slate-300/90">Engineering</div>
         <h3 class="heading mt-2 text-lg font-semibold">Nasru Software</h3>
         <p class="mt-2 text-slate-300/80 text-sm">Custom applications, portals, automation, integrations and workflows.</p>
       </a>
 
-      <a href="training.html" class="card p-6 block">
+      <a href="/training" class="card p-6 block">
         <div class="text-sm text-slate-300/90">Learning</div>
         <h3 class="heading mt-2 text-lg font-semibold">Training &amp; Certification</h3>
         <p class="mt-2 text-slate-300/80 text-sm">Corporate training programs, instructor-led sessions, and exam voucher support.</p>
@@ -481,8 +437,37 @@
   </div>
 </section>
 
-<!-- DELIVERY MODEL -->
+<!-- INDUSTRIES -->
 <section class="py-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="heading text-2xl md:text-4xl font-semibold">Industries we support</h2>
+      <p class="mt-3 text-slate-300/90">Solutions aligned to operations, compliance, and security needs.</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-4">
+      <div class="card p-6">
+        <div class="font-semibold">Financial services</div>
+        <div class="mt-2 text-sm text-slate-300/90">POS/ATM deployments, secure networking, endpoint controls.</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-semibold">Real estate &amp; facilities</div>
+        <div class="mt-2 text-sm text-slate-300/90">Installations, device rollout, managed IT and security hardening.</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-semibold">SMB &amp; enterprise IT</div>
+        <div class="mt-2 text-sm text-slate-300/90">Security posture uplift, support models, modernization.</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-semibold">Training &amp; workforce</div>
+        <div class="mt-2 text-sm text-slate-300/90">Corporate upskilling, instructor-led programs, exam readiness.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY MODEL -->
+<section class="py-14 section-glow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid gap-10 lg:grid-cols-2 items-start">
       <div>
@@ -521,9 +506,9 @@
         </p>
 
         <div class="mt-6 grid gap-3">
-          <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 text-center hover:opacity-95">Get a Quote</a>
-          <a href="partners.html" class="rounded-xl border border-neon bg-white/5 px-5 py-3 font-semibold text-center hover:opacity-95">Work with our partners</a>
-          <a href="training.html" class="rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-center hover:opacity-95">Explore training programs</a>
+          <a href="/contact" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 text-center hover:opacity-95">Get a Quote</a>
+          <a href="/partners" class="rounded-xl border border-neon bg-white/5 px-5 py-3 font-semibold text-center hover:opacity-95">Work with our partners</a>
+          <a href="/training" class="rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-center hover:opacity-95">Explore training programs</a>
         </div>
 
         <div class="mt-6 text-xs text-slate-400">
@@ -534,30 +519,80 @@
   </div>
 </section>
 
-<!-- INDUSTRIES -->
-<section class="py-14 section-glow">
+<!-- WHY NASRU -->
+<section class="py-14">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="heading text-2xl md:text-4xl font-semibold">Industries we support</h2>
-      <p class="mt-3 text-slate-300/90">Solutions aligned to operations, compliance, and security needs.</p>
+      <h2 class="heading text-2xl md:text-4xl font-semibold">Why Nasru Technologies</h2>
+      <p class="mt-3 text-slate-300/90">
+        A partner-driven, execution-focused model built for organizations that expect reliability, clarity, and security.
+      </p>
     </div>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-4">
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
       <div class="card p-6">
-        <div class="font-semibold">Financial services</div>
-        <div class="mt-2 text-sm text-slate-300/90">POS/ATM deployments, secure networking, endpoint controls.</div>
+        <div class="font-semibold">Enterprise approach</div>
+        <div class="mt-2 text-sm text-slate-300/90">
+          Structured delivery, documented workflows, and operational accountability from discovery to support.
+        </div>
       </div>
       <div class="card p-6">
-        <div class="font-semibold">Real estate &amp; facilities</div>
-        <div class="mt-2 text-sm text-slate-300/90">Installations, device rollout, managed IT and security hardening.</div>
+        <div class="font-semibold">Trusted partnerships</div>
+        <div class="mt-2 text-sm text-slate-300/90">
+          Strong vendor and training alliances that expand capability across hardware, cybersecurity, and workforce development.
+        </div>
       </div>
       <div class="card p-6">
-        <div class="font-semibold">SMB &amp; enterprise IT</div>
-        <div class="mt-2 text-sm text-slate-300/90">Security posture uplift, support models, modernization.</div>
+        <div class="font-semibold">End-to-end solutions</div>
+        <div class="mt-2 text-sm text-slate-300/90">
+          Hardware, software, IT services, cybersecurity, and training delivered under one coordinated technology partner.
+        </div>
       </div>
-      <div class="card p-6">
-        <div class="font-semibold">Training &amp; workforce</div>
-        <div class="mt-2 text-sm text-slate-300/90">Corporate upskilling, instructor-led programs, exam readiness.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER STRIP -->
+<section class="border-y hairline bg-slate-950/40 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-6">
+      <div class="max-w-3xl">
+        <div class="heading text-xl md:text-2xl font-semibold">Our partners &amp; alliances</div>
+        <p class="mt-2 text-sm md:text-base text-slate-300/90">
+          Our vendor ecosystem and training alliances strengthen delivery across cybersecurity, infrastructure, devices, and workforce development.
+        </p>
+      </div>
+      <a href="/partners" class="text-sm font-medium text-brand hover:opacity-90">View all partners →</a>
+    </div>
+
+    <div class="logo-slider">
+      <div class="logo-track">
+        <a href="https://pecb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="PECB">
+          <img src="assets/img/partners/pecb.png" alt="PECB">
+        </a>
+        <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="Cyber-Zeb">
+          <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb">
+        </a>
+        <a href="https://www.eccouncil.org/" target="_blank" rel="noopener" class="logo-item" aria-label="EC-Council">
+          <img src="assets/img/partners/ec-council-partner.png" alt="EC-Council">
+        </a>
+        <a href="https://www.tdsynnex.com/" target="_blank" rel="noopener" class="logo-item" aria-label="TD SYNNEX">
+          <img src="assets/img/partners/td-synnex.png" alt="TD SYNNEX">
+        </a>
+
+        <!-- duplicate for seamless loop -->
+        <a href="https://pecb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="PECB">
+          <img src="assets/img/partners/pecb.png" alt="PECB">
+        </a>
+        <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="Cyber-Zeb">
+          <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb">
+        </a>
+        <a href="https://www.eccouncil.org/" target="_blank" rel="noopener" class="logo-item" aria-label="EC-Council">
+          <img src="assets/img/partners/ec-council-partner.png" alt="EC-Council">
+        </a>
+        <a href="https://www.tdsynnex.com/" target="_blank" rel="noopener" class="logo-item" aria-label="TD SYNNEX">
+          <img src="assets/img/partners/td-synnex.png" alt="TD SYNNEX">
+        </a>
       </div>
     </div>
   </div>
@@ -574,8 +609,8 @@
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Get a Quote</a>
-        <a href="solutions.html" class="rounded-xl border border-neon bg-white/5 px-6 py-3 font-semibold hover:opacity-95">Explore Solutions</a>
+        <a href="/contact" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Get a Quote</a>
+        <a href="/solutions" class="rounded-xl border border-neon bg-white/5 px-6 py-3 font-semibold hover:opacity-95">Explore Solutions</a>
       </div>
     </div>
   </div>
@@ -586,7 +621,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
       <div>
-        <a href="index.html" class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
           <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
           <span class="heading text-lg font-semibold">Nasru Technologies</span>
         </a>
@@ -598,30 +633,30 @@
       <div>
         <h4 class="heading font-semibold mb-3">Company</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="about.html">About</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Careers</a></li>
-          <li><a class="hover:text-brand" href="partners.html">Partners</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-brand" href="/about">About</a></li>
+          <li><a class="hover:text-brand" href="/careers">Careers</a></li>
+          <li><a class="hover:text-brand" href="/partners">Partners</a></li>
+          <li><a class="hover:text-brand" href="/contact">Contact</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="heading font-semibold mb-3">Capabilities</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">Cybersecurity &amp; IT</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Hardware &amp; Devices</a></li>
-          <li><a class="hover:text-brand" href="software.html">Software Engineering</a></li>
-          <li><a class="hover:text-brand" href="training.html">Training &amp; Certification</a></li>
-          <li><a class="hover:text-brand" href="global.html">Global Solutions</a></li>
+          <li><a class="hover:text-brand" href="/secure">Cybersecurity &amp; IT</a></li>
+          <li><a class="hover:text-brand" href="/smart">Hardware &amp; Devices</a></li>
+          <li><a class="hover:text-brand" href="/software">Software Engineering</a></li>
+          <li><a class="hover:text-brand" href="/training">Training &amp; Certification</a></li>
+          <li><a class="hover:text-brand" href="/global">Global Solutions</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="heading font-semibold mb-3">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors &amp; Alliances</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Open Roles</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Support</a></li>
+          <li><a class="hover:text-brand" href="/partners">Vendors &amp; Alliances</a></li>
+          <li><a class="hover:text-brand" href="/careers">Open Roles</a></li>
+          <li><a class="hover:text-brand" href="/contact">Support</a></li>
         </ul>
       </div>
     </div>
@@ -631,7 +666,7 @@
       <div class="flex gap-4">
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
         <a href="https://www.instagram.com/nasru_technologies/" target="_blank" rel="noopener" class="hover:text-brand">Instagram</a>
-        <a href="https://www.facebook.com/nasru_technologies" target="_blank" rel="noopener" class="hover:text-brand">facebook</a>
+        <a href="https://www.facebook.com/nasru_technologies" target="_blank" rel="noopener" class="hover:text-brand">Facebook</a>
       </div>
     </div>
   </div>
@@ -639,18 +674,15 @@
 
 <script>
 (() => {
-  // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (menuBtn && mobileMenu){
     menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
   }
 
-  // Footer year
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // Dropdown open/close with close delay
   const wrap = document.getElementById('divisionsMenu');
   const btn = document.getElementById('divisionsBtn');
   const panel = document.getElementById('divisionsPanel');
