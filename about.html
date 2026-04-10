@@ -26,7 +26,14 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { brand: '#22D3EE', neon: '#67e8f9' }
+          colors: {
+            brand: '#22D3EE',
+            tealx: '#14B8A6',
+            indigox: '#6366F1',
+            violetx: '#8B5CF6',
+            amberx: '#F59E0B',
+            neon: '#67e8f9'
+          }
         }
       }
     }
@@ -38,26 +45,87 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    :root{ color-scheme: dark; }
-    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
+    :root{
+      color-scheme: dark;
+      --bg-main:#0d1424;
+      --bg-soft:#111a2e;
+      --text-main:#e7eef9;
+      --text-soft:#94a3b8;
+      --brand:#22D3EE;
+      --teal:#14B8A6;
+      --indigo:#6366F1;
+      --violet:#8B5CF6;
+      --amber:#F59E0B;
+    }
+
+    body{
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 12% 0%, rgba(34,211,238,0.06), transparent 60%),
+        radial-gradient(800px 400px at 88% 0%, rgba(99,102,241,0.07), transparent 60%),
+        linear-gradient(180deg, #0d1424 0%, #0c1322 100%);
+      color: var(--text-main);
+    }
+
     .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
-    .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; transition:.18s ease; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
+
+    .glass {
+      background:
+        linear-gradient(180deg, rgba(20,28,48,0.72), rgba(20,28,48,0.45));
+      backdrop-filter: blur(12px);
+    }
+
+    .card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+        radial-gradient(circle at top left, rgba(34,211,238,0.08), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(99,102,241,0.08), transparent 36%);
+      border: 1px solid rgba(148,163,184,0.14);
+      border-radius: 16px;
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      box-shadow:
+        0 0 0 1px rgba(34,211,238,0.18),
+        0 14px 40px -12px rgba(0,0,0,0.58),
+        0 0 30px rgba(99,102,241,0.10);
+      transform: translateY(-2px);
+    }
+
+    .neon-text {
+      text-shadow:
+        0 0 10px rgba(34,211,238,0.24),
+        0 0 28px rgba(99,102,241,0.14);
+    }
+
     .border-neon { border-color: rgba(103,232,249,0.45) !important; }
 
-    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
-    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      padding:.12rem .55rem;
+      border-radius:999px;
+      font-size:.72rem;
+      line-height:1.2;
+      font-weight:600;
+    }
+
+    .chip-soon {
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.28);
+      color: rgba(254,240,138,0.95);
+    }
 
     .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
     @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
 
     .divisions-shell{
       background:
-        radial-gradient(800px 240px at 18% 0%, rgba(103,232,249,0.18), transparent 55%),
-        radial-gradient(700px 240px at 86% 18%, rgba(34,211,238,0.14), transparent 60%),
-        linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.74));
+        radial-gradient(800px 240px at 18% 0%, rgba(34,211,238,0.18), transparent 55%),
+        radial-gradient(700px 240px at 86% 18%, rgba(99,102,241,0.16), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.94), rgba(2,6,23,0.78));
       border: 1px solid rgba(103,232,249,0.20);
       box-shadow:
         0 0 0 1px rgba(103,232,249,0.08) inset,
@@ -65,13 +133,16 @@
         0 0 40px rgba(103,232,249,0.08);
       backdrop-filter: blur(14px);
     }
+
     .divisions-item{
       position: relative;
       border-bottom: 1px solid rgba(148,163,184,0.09);
     }
+
     .divisions-item:hover{
-      background: linear-gradient(90deg, rgba(103,232,249,0.12), rgba(103,232,249,0.02));
+      background: linear-gradient(90deg, rgba(34,211,238,0.12), rgba(99,102,241,0.08));
     }
+
     .divisions-item::before{
       content:"";
       position:absolute;
@@ -80,10 +151,12 @@
       background: rgba(34,211,238,0.0);
       transition: background .15s ease;
     }
+
     .divisions-item:hover::before{
       background: rgba(34,211,238,0.85);
       box-shadow: 0 0 16px rgba(34,211,238,0.55);
     }
+
     .divisions-kicker{
       font-size: .72rem;
       color: rgba(148,163,184,0.92);
@@ -91,27 +164,47 @@
 
     .about-hero {
       background:
-        radial-gradient(900px 400px at 20% 10%, rgba(103,232,249,0.18), transparent 60%),
-        radial-gradient(700px 350px at 90% 0%, rgba(34,211,238,0.16), transparent 55%),
-        linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.65));
+        radial-gradient(900px 420px at 20% 10%, rgba(34,211,238,0.18), transparent 60%),
+        radial-gradient(760px 360px at 88% 5%, rgba(99,102,241,0.18), transparent 55%),
+        radial-gradient(520px 240px at 58% 85%, rgba(245,158,11,0.08), transparent 55%),
+        linear-gradient(to bottom, rgba(15,23,42,0.18), rgba(15,23,42,0.68));
     }
 
     .logo-pill {
-      background: rgba(255,255,255,0.04);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        radial-gradient(circle at top left, rgba(34,211,238,0.05), transparent 35%);
       border: 1px solid rgba(103,232,249,0.14);
       border-radius: 14px;
       transition:.18s ease;
     }
+
     .logo-pill:hover {
-      box-shadow: 0 0 0 1px rgba(103,232,249,0.25);
+      box-shadow:
+        0 0 0 1px rgba(34,211,238,0.18),
+        0 10px 28px -10px rgba(0,0,0,0.45);
       transform: translateY(-1px);
     }
-    .logo-img { opacity: .96; object-fit: contain; }
 
-    .section-glow{
+    .logo-img {
+      opacity: .96;
+      object-fit: contain;
+    }
+
+    .section-glow-cyan{
       background:
-        radial-gradient(700px 240px at 15% 0%, rgba(103,232,249,0.08), transparent 60%),
-        radial-gradient(700px 240px at 85% 20%, rgba(34,211,238,0.06), transparent 60%);
+        radial-gradient(700px 240px at 15% 0%, rgba(34,211,238,0.08), transparent 60%);
+    }
+
+    .section-glow-indigo{
+      background:
+        radial-gradient(700px 240px at 85% 10%, rgba(99,102,241,0.08), transparent 60%);
+    }
+
+    .btn-secondary{
+      background: linear-gradient(135deg, rgba(99,102,241,0.18), rgba(139,92,246,0.18));
+      border: 1px solid rgba(139,92,246,0.28);
+      color: #E5EEF8;
     }
   </style>
 
@@ -307,7 +400,7 @@
 </section>
 
 <!-- OVERVIEW -->
-<section class="py-14 md:py-16 section-glow">
+<section class="py-14 md:py-16 section-glow-cyan">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid gap-6 lg:grid-cols-3">
       <div class="card p-6">
@@ -333,7 +426,7 @@
 </section>
 
 <!-- CORE AREAS -->
-<section class="py-14">
+<section class="py-14 section-glow-indigo">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl">
       <h2 class="heading text-2xl md:text-3xl font-semibold">Core areas of focus</h2>
@@ -427,7 +520,7 @@
 </section>
 
 <!-- PARTNERSHIPS -->
-<section class="py-14 section-glow">
+<section class="py-14 section-glow-cyan">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
       <div>
@@ -436,7 +529,7 @@
           Our ecosystem of distributors, certification bodies, and strategic collaborators helps us extend value across technology delivery, workforce development, and cybersecurity.
         </p>
       </div>
-      <a href="/partners" class="rounded-xl border border-neon px-5 py-3">View Partners</a>
+      <a href="/partners" class="rounded-xl btn-secondary px-5 py-3">View Partners</a>
     </div>
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
@@ -460,7 +553,7 @@
 </section>
 
 <!-- CAPABILITIES -->
-<section class="py-14">
+<section class="py-14 section-glow-indigo">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl">
       <h2 class="heading text-2xl md:text-3xl font-semibold">Capabilities</h2>
@@ -515,7 +608,7 @@
       </div>
       <div class="flex flex-wrap gap-3">
         <a href="/contact" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Contact Us</a>
-        <a href="/solutions" class="rounded-xl border border-neon bg-white/5 px-6 py-3 font-semibold hover:opacity-95">Explore Solutions</a>
+        <a href="/solutions" class="rounded-xl btn-secondary px-6 py-3 font-semibold">Explore Solutions</a>
       </div>
     </div>
   </div>
