@@ -4,407 +4,616 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nasru Hardware | Nasru Technologies</title>
-  <meta name="description" content="Nasru Hardware — ATM & POS devices, peripherals, networking, wiring, and enterprise hardware sourced directly from trusted partners. Quotes and sourcing support available." />
+  <meta
+    name="description"
+    content="Nasru Hardware provides business and enterprise device sourcing including laptops, desktops, workstations, servers, monitors, accessories, and networking hardware for corporate and commercial environments."
+  />
 
   <link rel="icon" href="assets/img/logo.png" type="image/png">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#2563eb',
+            brandDark: '#1e3a8a',
+            accent: '#0f172a',
+            slateSoft: '#94a3b8',
+            line: 'rgba(148,163,184,.16)'
+          },
+          boxShadow: {
+            soft: '0 10px 35px rgba(2,6,23,.10)',
+            card: '0 14px 40px rgba(15,23,42,.10)'
+          }
+        }
+      }
+    }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{ color-scheme: dark; }
-    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
-    .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
-    .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
-    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-
-    /* Optional image frame look (works even if you haven’t added images yet) */
-    .thumb {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(103,232,249,0.14);
-      border-radius: 14px;
-      overflow: hidden;
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(148,163,184,.10), transparent 22%),
+        linear-gradient(180deg, #0b1220 0%, #0f172a 45%, #111827 100%);
     }
-    .thumb img { width: 100%; height: 170px; object-fit: cover; display:block; opacity: 0.95; }
+
+    .glass {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-panel {
+      background:
+        linear-gradient(135deg, rgba(30,41,59,.92), rgba(15,23,42,.88)),
+        radial-gradient(circle at top right, rgba(37,99,235,.22), transparent 28%);
+      border: 1px solid rgba(148,163,184,.14);
+      box-shadow: 0 20px 60px rgba(2,6,23,.25);
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      border: 1px solid rgba(148,163,184,.14);
+      border-radius: 20px;
+      box-shadow: 0 14px 40px rgba(2,6,23,.14);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96,165,250,.34);
+      box-shadow: 0 20px 45px rgba(2,6,23,.18);
+    }
+
+    .soft-border {
+      border: 1px solid rgba(148,163,184,.16);
+    }
+
+    .badge {
+      background: rgba(37,99,235,.12);
+      color: #bfdbfe;
+      border: 1px solid rgba(96,165,250,.20);
+    }
+
+    .manufacturer-chip {
+      border: 1px solid rgba(148,163,184,.16);
+      background: rgba(255,255,255,.03);
+      transition: all .2s ease;
+    }
+
+    .manufacturer-chip:hover {
+      border-color: rgba(96,165,250,.40);
+      background: rgba(37,99,235,.10);
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      letter-spacing: -0.02em;
+    }
+
+    .nav-link:hover,
+    .footer-link:hover {
+      color: #93c5fd;
+    }
+
+    .manufacturer-target {
+      scroll-margin-top: 110px;
+    }
   </style>
 </head>
 
 <body class="text-slate-100 antialiased">
 
-<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
-        <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
-      </a>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/img/logo.png" class="h-9 w-9" alt="Nasru logo">
+          <span class="text-lg font-semibold tracking-tight">Nasru Technologies</span>
+        </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
-        <a href="index.html" class="hover:text-brand">Home</a>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm text-slate-200/90">
+          <a href="index.html" class="nav-link transition-colors">Home</a>
 
-        <div class="relative group" id="divisionsMenu">
-          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
-            </svg>
-          </button>
+          <div class="relative group">
+            <button class="inline-flex items-center gap-1 nav-link transition-colors" aria-haspopup="true" aria-expanded="false" type="button">
+              Divisions
+              <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+              </svg>
+            </button>
 
-          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl overflow-hidden" role="menu">
-            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
-            <a href="hardware.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Hardware</a>
-            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-            <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
+            <div class="absolute hidden group-hover:block mt-3 w-72 rounded-2xl border border-white/10 bg-slate-950/95 shadow-2xl overflow-hidden">
+              <a href="secure.html" class="block px-4 py-3 hover:bg-white/5">Nasru IT &amp; Cybersecurity</a>
+              <a href="hardware.html" class="block px-4 py-3 hover:bg-white/5">Nasru Hardware</a>
+              <a href="software.html" class="block px-4 py-3 hover:bg-white/5">Nasru Software</a>
+              <a href="global.html" class="block px-4 py-3 hover:bg-white/5">Nasru Global Solutions</a>
+            </div>
+          </div>
+
+          <a href="solutions.html" class="nav-link transition-colors">Solutions</a>
+          <a href="about.html" class="nav-link transition-colors">About</a>
+          <a href="careers.html" class="nav-link transition-colors">Careers</a>
+          <a href="contact.html" class="nav-link transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden md:block">
+          <a href="contact.html" class="inline-flex items-center rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-blue-500 transition-colors">
+            Request a Quote
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false" type="button">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-slate-950/95">
+      <div class="px-4 py-3 space-y-2">
+        <a href="index.html" class="block py-2">Home</a>
+
+        <details class="group">
+          <summary class="py-2 cursor-pointer">Divisions</summary>
+          <div class="ml-3 space-y-1">
+            <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
+            <a href="hardware.html" class="block py-2">Nasru Hardware</a>
+            <a href="software.html" class="block py-2">Nasru Software</a>
+            <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+          </div>
+        </details>
+
+        <a href="solutions.html" class="block py-2">Solutions</a>
+        <a href="about.html" class="block py-2">About</a>
+        <a href="careers.html" class="block py-2">Careers</a>
+        <a href="contact.html" class="block py-2">Contact</a>
+        <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2.5 font-semibold text-white">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="hero-panel rounded-3xl p-8 md:p-12">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center rounded-full badge px-3 py-1 text-xs font-semibold tracking-wide uppercase">
+            Nasru Hardware
+          </div>
+
+          <h1 class="mt-5 text-4xl md:text-6xl font-semibold leading-tight section-title">
+            Corporate Hardware Procurement for Modern Business Environments
+          </h1>
+
+          <p class="mt-5 text-base md:text-lg text-slate-300 max-w-3xl leading-8">
+            Nasru Technologies helps organizations source business-class devices and enterprise hardware for users, teams, and infrastructure.
+            Through our partner ecosystem, including TD SYNNEX, we support procurement for laptops, desktops, workstations, servers,
+            monitors, accessories, and networking hardware tailored for commercial and corporate needs.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#manufacturers" class="rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-blue-500 transition-colors">
+              Browse manufacturers
+            </a>
+            <a href="#catalog" class="rounded-xl border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-100 hover:bg-white/10 transition-colors">
+              View hardware categories
+            </a>
+            <a href="#quote" class="rounded-xl border border-white/10 bg-transparent px-5 py-3 font-semibold text-slate-100 hover:bg-white/5 transition-colors">
+              Request a quote
+            </a>
           </div>
         </div>
 
-        <a href="solutions.html" class="hover:text-brand">Solutions</a>
-        <a href="about.html" class="hover:text-brand">About</a>
-        <a href="careers.html" class="hover:text-brand">Careers</a>
-        <a href="contact.html" class="hover:text-brand">Contact</a>
-      </nav>
-
-      <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
-      </div>
-
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false" type="button">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
-    <div class="px-4 py-3 space-y-2">
-      <a href="index.html" class="block py-2">Home</a>
-
-      <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
-          <a href="hardware.html" class="block py-2">Nasru Hardware</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
+        <div class="mt-10 grid gap-4 md:grid-cols-3">
+          <div class="card p-5">
+            <div class="text-sm font-semibold text-white">Business-class sourcing</div>
+            <div class="mt-2 text-sm text-slate-300">Devices and hardware selected for reliability, lifecycle management, and workplace deployment.</div>
+          </div>
+          <div class="card p-5">
+            <div class="text-sm font-semibold text-white">Partner-backed procurement</div>
+            <div class="mt-2 text-sm text-slate-300">Access to major manufacturers and distributor-backed availability through our supply ecosystem.</div>
+          </div>
+          <div class="card p-5">
+            <div class="text-sm font-semibold text-white">Configuration support</div>
+            <div class="mt-2 text-sm text-slate-300">We help align specifications, quantities, and hardware recommendations to your business use case.</div>
+          </div>
         </div>
-      </details>
-
-      <a href="solutions.html" class="block py-2">Solutions</a>
-      <a href="about.html" class="block py-2">About</a>
-      <a href="careers.html" class="block py-2">Careers</a>
-      <a href="contact.html" class="block py-2">Contact</a>
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
-    </div>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="relative py-16 border-b border-slate-700/60">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="heading text-3xl md:text-5xl font-semibold neon-text">Nasru Hardware</h1>
-    <p class="mt-3 text-slate-300 max-w-3xl">
-      ATM &amp; POS devices, peripherals, enterprise hardware, networking, and wiring categories — sourced directly from our trusted partners.
-      We help you select, procure, and deliver the right equipment, plus provide guidance for installation and support.
-    </p>
-
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a href="#catalog" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Browse categories</a>
-      <a href="#quote" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:bg-white/10">Request a quote</a>
-    </div>
-
-    <div class="mt-8 grid gap-4 md:grid-cols-3">
-      <div class="card p-5">
-        <div class="font-semibold">Trusted sourcing</div>
-        <div class="mt-1 text-sm text-slate-300/80">We source devices and components through vetted distributors and partner networks.</div>
-      </div>
-      <div class="card p-5">
-        <div class="font-semibold">Enterprise-ready</div>
-        <div class="mt-1 text-sm text-slate-300/80">Banking-grade, retail-ready, and commercial-grade options available.</div>
-      </div>
-      <div class="card p-5">
-        <div class="font-semibold">Quotes &amp; logistics</div>
-        <div class="mt-1 text-sm text-slate-300/80">Fast quotes, configuration guidance, and delivery coordination.</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CATEGORY CARDS -->
-<section id="catalog" class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-4">
-      <div>
-        <h2 class="heading text-2xl md:text-4xl font-semibold">Hardware Categories</h2>
-        <p class="mt-3 text-slate-300 max-w-3xl">
-          Click a category to view examples, options, and how to request a quote.
-        </p>
-      </div>
-      <a href="#quote" class="hidden md:inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a quote</a>
-    </div>
-
-    <div class="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3">
-      <!-- ATM -->
-      <a href="#atm" class="card p-6 block hover:opacity-95">
-        <div class="thumb mb-4">
-          <!-- Replace image path when ready -->
-          <img src="assets/img/hardware-atm.jpg" alt="ATM devices (placeholder)" onerror="this.style.display='none'">
-          <div class="p-4 text-sm text-slate-300/80" style="display:none;"></div>
+  <!-- Manufacturer Selector -->
+  <section id="manufacturers" class="pb-8 manufacturer-target">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-blue-300/80">Manufacturer Access</p>
+          <h2 class="mt-2 text-2xl md:text-4xl font-semibold section-title">Browse by Preferred Manufacturer</h2>
+          <p class="mt-3 text-slate-300 max-w-3xl">
+            Select a manufacturer category to jump directly to the relevant section. This is ideal for organizations standardizing on specific device ecosystems.
+          </p>
         </div>
-        <h3 class="heading text-lg font-semibold">ATM Devices</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">New / refurbished units, components, and deployment-ready options.</p>
-      </a>
-
-      <!-- POS -->
-      <a href="#pos" class="card p-6 block hover:opacity-95">
-        <div class="thumb mb-4">
-          <img src="assets/img/hardware-pos.jpg" alt="POS devices (placeholder)" onerror="this.style.display='none'">
-        </div>
-        <h3 class="heading text-lg font-semibold">POS Systems</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Terminals, receipt printers, scanners, accessories, and bundles.</p>
-      </a>
-
-      <!-- Peripherals -->
-      <a href="#peripherals" class="card p-6 block hover:opacity-95">
-        <div class="thumb mb-4">
-          <img src="assets/img/hardware-peripherals.jpg" alt="Peripherals (placeholder)" onerror="this.style.display='none'">
-        </div>
-        <h3 class="heading text-lg font-semibold">Peripherals &amp; Accessories</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Scanners, card readers, PIN pads, printers, UPS, and more.</p>
-      </a>
-
-      <!-- Networking -->
-      <a href="#networking" class="card p-6 block hover:opacity-95">
-        <div class="thumb mb-4">
-          <img src="assets/img/hardware-networking.jpg" alt="Networking (placeholder)" onerror="this.style.display='none'">
-        </div>
-        <h3 class="heading text-lg font-semibold">Networking Hardware</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Switches, routers, firewalls, Wi-Fi, racks, patch panels.</p>
-      </a>
-
-      <!-- Wiring -->
-      <a href="#wiring" class="card p-6 block hover:opacity-95">
-        <div class="thumb mb-4">
-          <img src="assets/img/hardware-wiring.jpg" alt="Cabling & wiring (placeholder)" onerror="this.style.display='none'">
-        </div>
-        <h3 class="heading text-lg font-semibold">Wiring &amp; Cabling</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">CAT5e/CAT6/CAT6A, fiber, connectors, keystones, tools, labeling.</p>
-      </a>
-
-      <!-- Enterprise Devices -->
-      <a href="#enterprise" class="card p-6 block hover:opacity-95">
-        <div class="thumb mb-4">
-          <img src="assets/img/hardware-enterprise.jpg" alt="Enterprise devices (placeholder)" onerror="this.style.display='none'">
-        </div>
-        <h3 class="heading text-lg font-semibold">Enterprise Devices</h3>
-        <p class="mt-2 text-slate-300/80 text-sm">Desktops, laptops, servers, storage, monitors, docking stations.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- DETAILS SECTIONS -->
-<section class="py-6">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-
-    <div id="atm" class="card p-7 scroll-mt-24">
-      <h3 class="heading text-xl font-semibold">ATM Devices</h3>
-      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
-        We source ATM devices and supporting components through trusted suppliers. Tell us your required deployment environment, volume, and timeline, and we’ll provide options and pricing.
-      </p>
-      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
-        <li>• New / refurbished ATM units (subject to availability)</li>
-        <li>• Components &amp; replacement parts</li>
-        <li>• Deployment guidance &amp; logistics support</li>
-        <li>• Warranty / vendor support options (when applicable)</li>
-      </ul>
-      <div class="mt-5">
-        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request ATM quote</a>
-      </div>
-    </div>
-
-    <div id="pos" class="card p-7 scroll-mt-24">
-      <h3 class="heading text-xl font-semibold">POS Systems</h3>
-      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
-        POS bundles, terminals, and retail hardware. We help match your needs (store type, volume, peripherals) to the right options.
-      </p>
-      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
-        <li>• POS terminals &amp; stands</li>
-        <li>• Receipt printers &amp; label printers</li>
-        <li>• Barcode scanners</li>
-        <li>• Accessories &amp; cables</li>
-      </ul>
-      <div class="mt-5">
-        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request POS quote</a>
-      </div>
-    </div>
-
-    <div id="peripherals" class="card p-7 scroll-mt-24">
-      <h3 class="heading text-xl font-semibold">Peripherals &amp; Accessories</h3>
-      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
-        We supply supporting accessories for deployments: printers, scanners, power, mounting, and other essentials.
-      </p>
-      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
-        <li>• Printers, scanners, card readers</li>
-        <li>• PIN pads &amp; payment accessories</li>
-        <li>• UPS / power protection</li>
-        <li>• Mounts, enclosures, stands</li>
-      </ul>
-      <div class="mt-5">
-        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request quote</a>
-      </div>
-    </div>
-
-    <div id="networking" class="card p-7 scroll-mt-24">
-      <h3 class="heading text-xl font-semibold">Networking Hardware</h3>
-      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
-        Switches, routers, wireless, security appliances, and infrastructure accessories—sourced through trusted partners.
-      </p>
-      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
-        <li>• Switches, routers, Wi-Fi APs</li>
-        <li>• Firewalls &amp; security appliances</li>
-        <li>• Racks, patch panels, UPS</li>
-        <li>• Deployment kits &amp; accessories</li>
-      </ul>
-      <div class="mt-5">
-        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request networking quote</a>
-      </div>
-    </div>
-
-    <div id="wiring" class="card p-7 scroll-mt-24">
-      <h3 class="heading text-xl font-semibold">Wiring &amp; Cabling</h3>
-      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
-        Structured cabling categories for commercial deployments, including copper and fiber options.
-      </p>
-      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
-        <li>• CAT5e / CAT6 / CAT6A</li>
-        <li>• Fiber cables &amp; modules</li>
-        <li>• Patch cords, connectors, keystones</li>
-        <li>• Tools, testers, labeling</li>
-      </ul>
-      <div class="mt-5">
-        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request cabling quote</a>
-      </div>
-    </div>
-
-    <div id="enterprise" class="card p-7 scroll-mt-24">
-      <h3 class="heading text-xl font-semibold">Enterprise Devices</h3>
-      <p class="mt-2 text-slate-300/90 text-sm max-w-4xl">
-        Business desktops, laptops, servers, and related equipment—configured and quoted based on your needs.
-      </p>
-      <ul class="mt-4 grid gap-2 md:grid-cols-2 text-sm text-slate-300/85">
-        <li>• Laptops, desktops, monitors</li>
-        <li>• Servers, storage, accessories</li>
-        <li>• Imaging / provisioning guidance</li>
-        <li>• Delivery coordination</li>
-      </ul>
-      <div class="mt-5">
-        <a class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90 inline-block" href="#quote">Request enterprise quote</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- QUOTE / CONTACT -->
-<section id="quote" class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="card p-8 md:p-10">
-      <h2 class="heading text-2xl md:text-4xl font-semibold">Request a Quote</h2>
-      <p class="mt-3 text-slate-300 max-w-3xl">
-        Tell us what you need (category, quantity, preferred brands/models if any, location, and timeline). We’ll respond with options and pricing.
-      </p>
-
-      <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90 text-center">Contact Nasru</a>
-        <a href="mailto:info@nasrutechnologies.com" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:bg-white/10 text-center">Email: info@nasrutechnologies.com</a>
-        <a href="contact.html" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3 hover:bg-white/10 text-center">Get device recommendations</a>
       </div>
 
-      <div class="mt-6 text-sm text-slate-300/80">
-        Tip: If you share your use-case and budget range, we can recommend the best-fit options faster.
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="mt-24 border-t border-slate-700/60">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-8 md:grid-cols-4">
-      <div>
-        <a href="index.html" class="flex items-center gap-2">
-          <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
-          <span class="heading text-lg font-semibold">Nasru Technologies</span>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <a href="#dell" class="manufacturer-chip rounded-2xl p-5">
+          <div class="text-lg font-semibold">Dell</div>
+          <div class="mt-2 text-sm text-slate-300">Latitude, OptiPlex, Precision, PowerEdge, monitors, docks</div>
         </a>
-        <p class="mt-3 text-slate-400 text-sm">
-          Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.
+
+        <a href="#hp" class="manufacturer-chip rounded-2xl p-5">
+          <div class="text-lg font-semibold">HP</div>
+          <div class="mt-2 text-sm text-slate-300">EliteBook, ProBook, ProDesk, Z series, business displays</div>
+        </a>
+
+        <a href="#microsoft" class="manufacturer-chip rounded-2xl p-5">
+          <div class="text-lg font-semibold">Microsoft</div>
+          <div class="mt-2 text-sm text-slate-300">Surface devices and productivity-centric business endpoints</div>
+        </a>
+
+        <a href="#apple" class="manufacturer-chip rounded-2xl p-5">
+          <div class="text-lg font-semibold">Apple</div>
+          <div class="mt-2 text-sm text-slate-300">MacBook, iMac, accessories, and Apple workplace deployments</div>
+        </a>
+
+        <a href="#lenovo" class="manufacturer-chip rounded-2xl p-5">
+          <div class="text-lg font-semibold">Lenovo</div>
+          <div class="mt-2 text-sm text-slate-300">ThinkPad, ThinkCentre, ThinkStation, monitors, accessories</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Categories -->
+  <section id="catalog" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-blue-300/80">Categories</p>
+          <h2 class="mt-2 text-2xl md:text-4xl font-semibold section-title">Hardware Categories We Resell</h2>
+          <p class="mt-3 text-slate-300 max-w-3xl">
+            Designed for corporate, commercial, and institutional environments with procurement support for single-location and multi-site requirements.
+          </p>
+        </div>
+        <a href="#quote" class="hidden md:inline-flex rounded-xl bg-brand px-4 py-2.5 font-semibold text-white hover:bg-blue-500 transition-colors">
+          Talk to Sales
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <a href="#end-user-devices" class="card p-6 block">
+          <div class="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200">Devices</div>
+          <h3 class="mt-4 text-xl font-semibold">Laptops &amp; Desktops</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-7">
+            Business laptops, desktop systems, all-in-one devices, and performance workstations for standard office and advanced workloads.
+          </p>
+        </a>
+
+        <a href="#servers-storage" class="card p-6 block">
+          <div class="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200">Infrastructure</div>
+          <h3 class="mt-4 text-xl font-semibold">Servers &amp; Storage</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-7">
+            Rack, tower, and scalable server platforms with storage solutions for compute, backup, virtualization, and business continuity environments.
+          </p>
+        </a>
+
+        <a href="#monitors-accessories" class="card p-6 block">
+          <div class="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200">Workplace</div>
+          <h3 class="mt-4 text-xl font-semibold">Monitors &amp; Accessories</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-7">
+            Displays, docks, keyboards, mice, headsets, webcams, adapters, and endpoint accessories for productive office setups.
+          </p>
+        </a>
+
+        <a href="#networking" class="card p-6 block">
+          <div class="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200">Connectivity</div>
+          <h3 class="mt-4 text-xl font-semibold">Networking Hardware</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-7">
+            Switches, routers, wireless solutions, and supporting network hardware for office infrastructure and distributed business environments.
+          </p>
+        </a>
+
+        <a href="#deployment" class="card p-6 block">
+          <div class="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200">Services</div>
+          <h3 class="mt-4 text-xl font-semibold">Procurement Support</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-7">
+            Assistance with hardware selection, quoting, model alignment, and ordering support based on your operational and technical requirements.
+          </p>
+        </a>
+
+        <a href="#quote" class="card p-6 block">
+          <div class="inline-flex rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200">Business Inquiry</div>
+          <h3 class="mt-4 text-xl font-semibold">Volume &amp; Corporate Orders</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-7">
+            For team refreshes, new office setups, and larger device rollouts, request a tailored quote with brand and configuration guidance.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Sections -->
+  <section class="pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+      <div id="end-user-devices" class="card p-7 md:p-8">
+        <h3 class="text-2xl font-semibold">Laptops, Desktops &amp; Workstations</h3>
+        <p class="mt-3 text-slate-300 max-w-4xl leading-8">
+          We support device procurement for modern workplaces, executive teams, hybrid users, technical staff, and specialized business functions.
+          Whether you need standard business laptops or performance workstations, we help align the right hardware with your operational needs.
+        </p>
+        <div class="mt-5 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+          <div>• Business laptops for everyday productivity and mobile workforces</div>
+          <div>• Desktop systems for office, administrative, and front-desk environments</div>
+          <div>• Performance workstations for design, engineering, and demanding workloads</div>
+          <div>• All-in-one systems for clean, space-efficient deployments</div>
+          <div>• Docking stations and workspace peripherals</div>
+          <div>• Deployment planning for small teams to larger refresh cycles</div>
+        </div>
+      </div>
+
+      <div id="servers-storage" class="card p-7 md:p-8">
+        <h3 class="text-2xl font-semibold">Servers &amp; Storage</h3>
+        <p class="mt-3 text-slate-300 max-w-4xl leading-8">
+          Nasru Hardware supports organizations that require infrastructure for on-premises workloads, branch environments, file storage,
+          virtualization, and core business applications. We help customers identify business-appropriate server and storage options.
+        </p>
+        <div class="mt-5 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+          <div>• Tower and rack server platforms</div>
+          <div>• Storage systems for backup, shared data, and business continuity</div>
+          <div>• Expansion options for memory, storage, and compute requirements</div>
+          <div>• Hardware alignment for performance, redundancy, and growth planning</div>
+          <div>• Accessories, rails, and supporting hardware where applicable</div>
+          <div>• Configuration guidance based on workload and business use case</div>
+        </div>
+      </div>
+
+      <div id="monitors-accessories" class="card p-7 md:p-8">
+        <h3 class="text-2xl font-semibold">Monitors &amp; Accessories</h3>
+        <p class="mt-3 text-slate-300 max-w-4xl leading-8">
+          We help complete the endpoint experience with the accessories and workplace hardware needed to support productivity, collaboration,
+          and consistent user deployments across departments.
+        </p>
+        <div class="mt-5 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+          <div>• Business monitors and multi-display workspace setups</div>
+          <div>• Keyboards, mice, webcams, and conferencing accessories</div>
+          <div>• Docking stations, adapters, cables, and chargers</div>
+          <div>• Headsets and collaboration accessories for hybrid teams</div>
+          <div>• Standardized accessories for employee onboarding and refreshes</div>
+          <div>• Optional bundles to simplify procurement</div>
+        </div>
+      </div>
+
+      <div id="networking" class="card p-7 md:p-8">
+        <h3 class="text-2xl font-semibold">Networking Hardware</h3>
+        <p class="mt-3 text-slate-300 max-w-4xl leading-8">
+          In addition to endpoint and infrastructure devices, we support procurement of business networking hardware for office connectivity,
+          branch deployments, and internal infrastructure upgrades.
+        </p>
+        <div class="mt-5 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+          <div>• Switches and routing platforms</div>
+          <div>• Wireless access points and connectivity hardware</div>
+          <div>• Network accessories and supporting infrastructure components</div>
+          <div>• Hardware recommendations for office and commercial environments</div>
+          <div>• Multi-site and branch rollout support</div>
+          <div>• Coordination based on technical and procurement requirements</div>
+        </div>
+      </div>
+
+      <div id="deployment" class="card p-7 md:p-8">
+        <h3 class="text-2xl font-semibold">Procurement &amp; Hardware Selection Support</h3>
+        <p class="mt-3 text-slate-300 max-w-4xl leading-8">
+          We do more than pass along part numbers. Nasru helps customers narrow down the right models, standardize their hardware approach,
+          and prepare for efficient purchasing. For organizations without a finalized bill of materials, we can help shape the starting point.
+        </p>
+        <div class="mt-5 grid gap-3 md:grid-cols-2 text-sm text-slate-300">
+          <div>• Brand and model guidance based on business use case</div>
+          <div>• Recommendations for standard office and power-user environments</div>
+          <div>• Support for office setups, team expansions, and refresh projects</div>
+          <div>• Quantity planning and quote request preparation</div>
+          <div>• Hardware alignment with budgets and business priorities</div>
+          <div>• Structured quote intake for faster response</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Manufacturer Sections -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div>
+        <p class="text-sm uppercase tracking-[0.2em] text-blue-300/80">Manufacturer Focus</p>
+        <h2 class="mt-2 text-2xl md:text-4xl font-semibold section-title">Preferred Manufacturer Paths</h2>
+        <p class="mt-3 text-slate-300 max-w-3xl">
+          These sections make it easier for customers with established platform standards or brand preferences to request the right hardware family faster.
         </p>
       </div>
 
-      <div>
-        <h4 class="heading font-semibold mb-3">Company</h4>
-        <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="about.html">About</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Careers</a></li>
-          <li><a class="hover:text-brand" href="partners.html">Partners</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <div class="mt-10 space-y-6">
+        <div id="dell" class="card p-7 manufacturer-target">
+          <h3 class="text-xl font-semibold">Dell Business Solutions</h3>
+          <p class="mt-2 text-slate-300 leading-8">
+            Ideal for organizations looking for Dell-based workplace and infrastructure hardware, including business laptops, desktops, workstations,
+            servers, displays, and accessories.
+          </p>
+        </div>
 
-      <div>
-        <h4 class="heading font-semibold mb-3">Services</h4>
-        <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">Security Technologies</a></li>
-          <li><a class="hover:text-brand" href="hardware.html">Nasru Hardware</a></li>
-          <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
-          <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
-        </ul>
-      </div>
+        <div id="hp" class="card p-7 manufacturer-target">
+          <h3 class="text-xl font-semibold">HP Business Solutions</h3>
+          <p class="mt-2 text-slate-300 leading-8">
+            Appropriate for companies standardizing around HP business endpoints, performance systems, displays, and workplace accessories.
+          </p>
+        </div>
 
-      <div>
-        <h4 class="heading font-semibold mb-3">Resources</h4>
-        <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors &amp; Alliances</a></li>
-          <li><a class="hover:text-brand" href="jobs.html">Open Roles</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Apply Now</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Support</a></li>
-        </ul>
+        <div id="microsoft" class="card p-7 manufacturer-target">
+          <h3 class="text-xl font-semibold">Microsoft Surface for Business</h3>
+          <p class="mt-2 text-slate-300 leading-8">
+            For teams seeking premium Microsoft-native device experiences across executive, professional, and mobile productivity environments.
+          </p>
+        </div>
+
+        <div id="apple" class="card p-7 manufacturer-target">
+          <h3 class="text-xl font-semibold">Apple for Business</h3>
+          <p class="mt-2 text-slate-300 leading-8">
+            Suitable for organizations supporting Apple-based workflows, creative teams, executive users, or cross-platform business environments.
+          </p>
+        </div>
+
+        <div id="lenovo" class="card p-7 manufacturer-target">
+          <h3 class="text-xl font-semibold">Lenovo Business Solutions</h3>
+          <p class="mt-2 text-slate-300 leading-8">
+            Strong for standardized enterprise endpoint programs, including ThinkPad, ThinkCentre, ThinkStation, and related business accessories.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
-      <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
-      <div class="flex gap-4">
-        <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
-        <a href="#" class="hover:text-brand">Twitter</a>
-        <a href="#" class="hover:text-brand">YouTube</a>
+  <!-- Why Nasru -->
+  <section class="py-16 border-y border-white/10 bg-black/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-blue-300/80">Why Nasru</p>
+          <h2 class="mt-2 text-2xl md:text-4xl font-semibold section-title">A More Business-Focused Procurement Experience</h2>
+          <p class="mt-4 text-slate-300 leading-8">
+            Nasru Technologies works with organizations that need practical sourcing support, business-ready hardware options, and a more consultative buying process.
+            We focus on helping customers identify the right hardware path for commercial use rather than presenting a consumer-style shopping experience.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="card p-5">
+            <div class="font-semibold">Corporate buying focus</div>
+            <div class="mt-2 text-sm text-slate-300">Built for business users, teams, departments, and growing organizations.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold">Manufacturer flexibility</div>
+            <div class="mt-2 text-sm text-slate-300">Support for multiple leading hardware brands based on your standards.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold">Quote-based approach</div>
+            <div class="mt-2 text-sm text-slate-300">Structured requests help us recommend better-fit device and hardware options.</div>
+          </div>
+          <div class="card p-5">
+            <div class="font-semibold">Commercial alignment</div>
+            <div class="mt-2 text-sm text-slate-300">Designed around office, enterprise, institutional, and professional environments.</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-(() => {
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu){
-    menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-  }
+  <!-- Quote Section -->
+  <section id="quote" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card p-8 md:p-10">
+        <div class="max-w-3xl">
+          <p class="text-sm uppercase tracking-[0.2em] text-blue-300/80">Request a Quote</p>
+          <h2 class="mt-2 text-2xl md:text-4xl font-semibold section-title">Tell Us What Hardware You Need</h2>
+          <p class="mt-4 text-slate-300 leading-8">
+            Share your preferred manufacturer, device type, quantity, technical requirements, deployment location, and timeline.
+            The more detail you provide, the faster we can help with a focused quote request.
+          </p>
+        </div>
 
-  // Footer year
-  const y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-})();
-</script>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-blue-500 transition-colors text-center">
+            Contact Nasru
+          </a>
+          <a href="mailto:contact@nasrutechnologies.com" class="rounded-xl border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-100 hover:bg-white/10 transition-colors text-center">
+            contact@nasrutechnologies.com
+          </a>
+          <a href="contact.html" class="rounded-xl border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-100 hover:bg-white/10 transition-colors text-center">
+            Start a hardware inquiry
+          </a>
+        </div>
 
+        <div class="mt-6 text-sm text-slate-400">
+          Helpful details: manufacturer preference, quantity, employee use case, performance needs, accessories required, and delivery timeline.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 md:grid-cols-4">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="assets/img/logo.png" class="h-9 w-9" alt="Nasru logo">
+            <span class="text-lg font-semibold">Nasru Technologies</span>
+          </a>
+          <p class="mt-3 text-slate-400 text-sm leading-7">
+            Secure. Smart. Scalable. Business technology, hardware sourcing, software solutions, and IT support for modern organizations.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Company</h4>
+          <ul class="space-y-2 text-slate-300/90 text-sm">
+            <li><a class="footer-link transition-colors" href="about.html">About</a></li>
+            <li><a class="footer-link transition-colors" href="careers.html">Careers</a></li>
+            <li><a class="footer-link transition-colors" href="partners.html">Partners</a></li>
+            <li><a class="footer-link transition-colors" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Divisions</h4>
+          <ul class="space-y-2 text-slate-300/90 text-sm">
+            <li><a class="footer-link transition-colors" href="secure.html">Nasru IT &amp; Cybersecurity</a></li>
+            <li><a class="footer-link transition-colors" href="hardware.html">Nasru Hardware</a></li>
+            <li><a class="footer-link transition-colors" href="software.html">Nasru Software</a></li>
+            <li><a class="footer-link transition-colors" href="global.html">Nasru Global Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Resources</h4>
+          <ul class="space-y-2 text-slate-300/90 text-sm">
+            <li><a class="footer-link transition-colors" href="solutions.html">Solutions</a></li>
+            <li><a class="footer-link transition-colors" href="contact.html">Support</a></li>
+            <li><a class="footer-link transition-colors" href="partners.html">Vendor Access</a></li>
+            <li><a class="footer-link transition-colors" href="contact.html">Quote Request</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+        <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
+        <div class="flex gap-4">
+          <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="footer-link transition-colors">LinkedIn</a>
+          <a href="#" class="footer-link transition-colors">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      }
+
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
