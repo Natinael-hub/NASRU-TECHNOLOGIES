@@ -48,22 +48,20 @@
 <body class="text-slate-100 antialiased">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+<header class="sticky top-0 z-50 border-b hairline glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2">
         <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
         <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
-        <a href="index.html" class="hover:text-brand">Home</a>
+        <a href="/" class="hover:text-brand">Home</a>
 
-        <!-- Divisions dropdown (futuristic mega menu) -->
         <div class="relative" id="divisionsMenu">
           <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
-            Divisions
+            Solutions
             <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
               <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
             </svg>
@@ -75,7 +73,7 @@
             <div class="px-5 py-4 border-b border-white/10">
               <div class="flex items-center justify-between gap-4">
                 <div>
-                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Divisions</div>
+                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Solutions</div>
                   <div class="divisions-kicker mt-1">Built for enterprise delivery — secure, smart, scalable.</div>
                 </div>
                 <span class="chip chip-soon">Roadmap active</span>
@@ -83,32 +81,32 @@
             </div>
 
             <div class="grid grid-cols-2">
-              <a href="secure.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/secure" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru IT &amp; Cybersecurity</div>
                 <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
               </a>
 
-              <a href="smart.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/smart" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Hardware</div>
-                <div class="divisions-kicker mt-1">POS/ATM, devices, networking, cabling — via trusted partners.</div>
+                <div class="divisions-kicker mt-1">Devices, hardware, networking, cabling — via trusted partners.</div>
               </a>
 
-              <a href="software.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/software" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Software</div>
                 <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
               </a>
 
-              <a href="global.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/global" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Global Solutions</div>
                 <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
               </a>
 
-              <a href="training.html" class="divisions-item block px-5 py-4" role="menuitem">
+              <a href="/training" class="divisions-item block px-5 py-4" role="menuitem">
                 <div class="font-semibold">Nasru Training &amp; Certification</div>
                 <div class="divisions-kicker mt-1">Corporate cybersecurity training, instructor-led sessions, vouchers.</div>
               </a>
 
-              <a href="multimedia.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+              <a href="/multimedia" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
                 <div>
                   <div class="font-semibold">Nasru Multimedia</div>
                   <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
@@ -116,7 +114,7 @@
                 <span class="chip chip-soon">Coming Soon</span>
               </a>
 
-              <a href="lab.html" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+              <a href="/lab" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
                 <div>
                   <div class="font-semibold">Nasru Lab</div>
                   <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
@@ -129,29 +127,24 @@
 
             <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
               <div class="text-xs text-slate-300/80">
-                Not sure where to start? <a href="contact.html" class="hover:underline text-brand">Talk to us</a>.
+                Not sure where to start? <a href="/contact" class="hover:underline text-brand">Talk to us</a>.
               </div>
-              <a href="solutions.html" class="text-sm hover:text-brand">View Solutions →</a>
+              <a href="/contact" class="text-sm hover:text-brand">Request a Quote →</a>
             </div>
           </div>
         </div>
 
-        <a href="solutions.html" class="hover:text-brand">Solutions</a>
-
-        <!-- ✅ ADDED: Training nav item -->
-        <a href="training.html" class="hover:text-brand">Training</a>
-
-        <a href="partners.html" class="hover:text-brand">Partners</a>
-        <a href="about.html" class="hover:text-brand">About</a>
-        <a href="careers.html" class="hover:text-brand">Careers</a>
-        <a href="contact.html" class="hover:text-brand">Contact</a>
+        <a href="/training" class="hover:text-brand">Training</a>
+        <a href="/partners" class="hover:text-brand">Partners</a>
+        <a href="/about" class="hover:text-brand">About</a>
+        <a href="/careers" class="hover:text-brand">Careers</a>
+        <a href="/contact" class="hover:text-brand">Contact</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+        <a href="/contact" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -160,38 +153,33 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/92">
     <div class="px-4 py-3 space-y-2">
-      <a href="index.html" class="block py-2">Home</a>
+      <a href="/" class="block py-2">Home</a>
 
       <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
+        <summary class="py-2 cursor-pointer">Solutions</summary>
         <div class="ml-3 mt-1 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
-          <a href="smart.html" class="block py-2">Nasru Hardware</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-          <a href="training.html" class="block py-2">Nasru Training &amp; Certification</a>
-          <a href="multimedia.html" class="flex items-center justify-between py-2">
+          <a href="/secure" class="block py-2">Nasru IT &amp; Cybersecurity</a>
+          <a href="/smart" class="block py-2">Nasru Hardware</a>
+          <a href="/software" class="block py-2">Nasru Software</a>
+          <a href="/global" class="block py-2">Nasru Global Solutions</a>
+          <a href="/training" class="block py-2">Nasru Training &amp; Certification</a>
+          <a href="/multimedia" class="flex items-center justify-between py-2">
             <span>Nasru Multimedia</span><span class="chip chip-soon">Coming Soon</span>
           </a>
-          <a href="lab.html" class="flex items-center justify-between py-2">
+          <a href="/lab" class="flex items-center justify-between py-2">
             <span>Nasru Lab</span><span class="chip chip-soon">Coming Soon</span>
           </a>
         </div>
       </details>
 
-      <a href="solutions.html" class="block py-2">Solutions</a>
-
-      <!-- ✅ ADDED: Training nav item (mobile) -->
-      <a href="training.html" class="block py-2">Training</a>
-
-      <a href="partners.html" class="block py-2">Partners</a>
-      <a href="about.html" class="block py-2">About</a>
-      <a href="careers.html" class="block py-2">Careers</a>
-      <a href="contact.html" class="block py-2">Contact</a>
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+      <a href="/training" class="block py-2">Training</a>
+      <a href="/partners" class="block py-2">Partners</a>
+      <a href="/about" class="block py-2">About</a>
+      <a href="/careers" class="block py-2">Careers</a>
+      <a href="/contact" class="block py-2">Contact</a>
+      <a href="/contact" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
     </div>
   </div>
 </header>
