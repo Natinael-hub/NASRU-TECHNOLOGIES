@@ -1,338 +1,462 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="canonical" href="https://nasrutechnologies.com/secure.html" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nasru IT &amp; Cybersecurity - Nasru Technologies</title>
-  <meta name="description" content="Nasru IT & Cybersecurity — managed IT, co-managed IT, cloud, networking, and cybersecurity consulting, risk, compliance, and protection services." />
-  <link rel="canonical" href="https://nasrutechnologies.com/secure.html" />
-  <link rel="icon" href="assets/img/logo.png" type="image/png">
+
+  <title>Nasru IT & Cybersecurity | Nasru Technologies</title>
+  <meta name="description" content="Nasru IT & Cybersecurity provides managed IT, co-managed IT, cloud, networking, cybersecurity consulting, GRC, risk assessments, and security program support for modern organizations." />
+  <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: '#22D3EE', neon: '#67e8f9' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#22D3EE',
+            neon: '#67e8f9'
+          }
+        }
+      }
+    }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{ color-scheme: dark; }
-    body{ font-family: Inter, system-ui, sans-serif; background:#0e1526; }
-    .heading{ font-family: Poppins, Inter, system-ui, sans-serif; }
-    .glass { background: rgba(20,28,48,0.45); backdrop-filter: blur(12px); }
-    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(103,232,249,0.14); border-radius: 16px; }
-    .card:hover { box-shadow: 0 0 0 1px rgba(103,232,249,0.35), 0 10px 40px -10px rgba(103,232,249,0.25); }
-    .neon-text { text-shadow: 0 0 10px rgba(103,232,249,0.35), 0 0 30px rgba(103,232,249,0.25); }
-    .border-neon { border-color: rgba(103,232,249,0.45) !important; }
-    .hero-fallback { background-image: url('assets/img/hero_poster.png'); background-size: cover; background-position: center; }
 
-    /* Badge (ONLY used for the two new divisions) */
-    .chip { display:inline-flex; align-items:center; gap:.35rem; padding:.12rem .55rem; border-radius:999px; font-size:.72rem; line-height:1.2; font-weight:600; }
-    .chip-soon { background: rgba(103,232,249,0.12); border: 1px solid rgba(103,232,249,0.28); color: rgba(224,251,255,0.95); }
+    body{
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(800px 360px at 15% 0%, rgba(34,211,238,.13), transparent 60%),
+        radial-gradient(700px 360px at 90% 10%, rgba(96,165,250,.10), transparent 60%),
+        linear-gradient(180deg, #0b1222 0%, #0f172a 48%, #111827 100%);
+      color:#e5eefb;
+    }
 
-    /* ✅ Hover reliability helpers */
-    .dropdown-hitbox { padding-bottom: 14px; } /* invisible buffer so cursor can move down */
-    .dropdown-panel { animation: fadeIn .12s ease-out; transform-origin: top left; }
-    @keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
+    .heading{ font-family:Poppins, Inter, system-ui, sans-serif; }
+    .glass{ background:rgba(10,18,35,.72); backdrop-filter:blur(14px); }
+    .hairline{ border-color:rgba(148,163,184,.18); }
+
+    .hero-shell{
+      background:
+        radial-gradient(800px 300px at 12% 0%, rgba(103,232,249,.16), transparent 58%),
+        linear-gradient(135deg, rgba(15,23,42,.94), rgba(2,6,23,.88));
+      border:1px solid rgba(103,232,249,.16);
+      box-shadow:0 25px 70px rgba(2,6,23,.45);
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(103,232,249,.12);
+      border-radius:18px;
+      transition:.18s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(103,232,249,.30);
+      box-shadow:0 18px 55px rgba(0,0,0,.32);
+    }
+
+    .light-card{
+      background:linear-gradient(145deg, rgba(255,255,255,.98), rgba(248,250,252,.96));
+      border:1px solid rgba(226,232,240,.92);
+      border-radius:18px;
+      color:#0f172a;
+      box-shadow:0 10px 30px rgba(15,23,42,.10);
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      padding:.18rem .65rem;
+      border-radius:999px;
+      font-size:.72rem;
+      font-weight:700;
+      border:1px solid rgba(103,232,249,.24);
+      background:rgba(103,232,249,.10);
+      color:rgba(224,251,255,.96);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:.45rem .8rem;
+      font-size:.78rem;
+      font-weight:700;
+      color:#cffafe;
+      background:rgba(34,211,238,.10);
+      border:1px solid rgba(34,211,238,.22);
+    }
+
+    .dropdown-panel{ animation:fadeIn .12s ease-out; transform-origin:top left; }
+    @keyframes fadeIn{ from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+    .divisions-shell{
+      background:linear-gradient(180deg, rgba(2,6,23,.96), rgba(15,23,42,.94));
+      border:1px solid rgba(103,232,249,.20);
+      box-shadow:0 18px 60px rgba(0,0,0,.60);
+      backdrop-filter:blur(14px);
+    }
+
+    .divisions-item{ position:relative; border-bottom:1px solid rgba(148,163,184,.09); }
+    .divisions-item:hover{ background:linear-gradient(90deg, rgba(103,232,249,.12), rgba(103,232,249,.02)); }
+    .divisions-kicker{ font-size:.72rem; color:rgba(203,213,225,.85); }
+
+    .section-glow{
+      background:
+        radial-gradient(700px 260px at 15% 0%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(700px 260px at 85% 20%, rgba(96,165,250,.08), transparent 60%);
+    }
   </style>
 </head>
 
-<body class="text-slate-100 antialiased">
+<body class="antialiased">
 
-<header class="sticky top-0 z-50 border-b border-slate-700/60 glass">
+<header class="sticky top-0 z-50 border-b hairline glass">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2">
         <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
-        <span class="heading text-lg font-semibold tracking-wide">Nasru Technologies</span>
+        <span class="heading text-lg font-semibold tracking-wide text-white">Nasru Technologies</span>
       </a>
 
-      <!-- Desktop Nav (uses site.js if present) -->
-      <nav class="hidden md:flex items-center gap-6 text-slate-100/90">
-        <a href="index.html" class="hover:text-brand">Home</a>
+      <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-slate-100/90">
+        <a href="/" class="hover:text-brand">Home</a>
 
-        <div class="relative group" id="divisionsMenu">
-          <button class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
-            Divisions
-            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+        <div class="relative" id="divisionsMenu">
+          <button id="divisionsBtn" class="inline-flex items-center gap-1 hover:text-brand" aria-haspopup="true" aria-expanded="false" type="button">
+            Solutions
+            <svg class="w-4 h-4 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/>
+            </svg>
           </button>
 
-          <!-- Keep simple dropdown here (your index/multimedia page has the 2-column version).
-               If you want, paste the same 2-column dropdown markup from multimedia.html into this file too. -->
-          <div class="absolute hidden group-hover:block mt-3 w-72 rounded-xl border border-slate-700/70 bg-slate-900/95 shadow-2xl" role="menu">
-            <a href="secure.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru IT &amp; Cybersecurity</a>
-            <a href="smart.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Smart</a>
-            <a href="software.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Software</a>
-            <a href="global.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Global Solutions</a>
-            <a href="multimedia.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Multimedia</a>
-            <a href="lab.html" class="block px-4 py-3 hover:bg-slate-800/60" role="menuitem">Nasru Lab</a>
+          <div id="divisionsPanel" class="dropdown-panel absolute left-0 mt-3 w-[680px] rounded-2xl overflow-hidden hidden divisions-shell" role="menu" aria-labelledby="divisionsBtn">
+            <div class="px-5 py-4 border-b border-white/10">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="heading text-sm tracking-widest text-white/80 uppercase">Nasru Solutions</div>
+                  <div class="divisions-kicker mt-1">Built for enterprise delivery — secure, smart, scalable.</div>
+                </div>
+                <span class="chip">Roadmap active</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2">
+              <a href="/secure" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold text-white">Nasru IT &amp; Cybersecurity</div>
+                <div class="divisions-kicker mt-1">Security engineering, managed IT, assessments, hardening.</div>
+              </a>
+
+              <a href="/smart" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold text-white">Nasru Hardware</div>
+                <div class="divisions-kicker mt-1">Devices, hardware, networking, and business technology sourcing.</div>
+              </a>
+
+              <a href="/software" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold text-white">Nasru Software</div>
+                <div class="divisions-kicker mt-1">Custom apps, portals, automation, integrations.</div>
+              </a>
+
+              <a href="/global" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold text-white">Nasru Global Solutions</div>
+                <div class="divisions-kicker mt-1">Sourcing, logistics, delivery coordination, support.</div>
+              </a>
+
+              <a href="/training" class="divisions-item block px-5 py-4" role="menuitem">
+                <div class="font-semibold text-white">Nasru Training &amp; Certification</div>
+                <div class="divisions-kicker mt-1">Corporate cybersecurity training and certification programs.</div>
+              </a>
+
+              <a href="/multimedia" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+                <div>
+                  <div class="font-semibold text-white">Nasru Multimedia</div>
+                  <div class="divisions-kicker mt-1">Brand media, storytelling, production.</div>
+                </div>
+                <span class="chip">Coming Soon</span>
+              </a>
+
+              <a href="/lab" class="divisions-item flex items-center justify-between gap-3 px-5 py-4" role="menuitem">
+                <div>
+                  <div class="font-semibold text-white">Nasru Lab</div>
+                  <div class="divisions-kicker mt-1">R&amp;D, demos, security labs, prototypes.</div>
+                </div>
+                <span class="chip">Coming Soon</span>
+              </a>
+
+              <div class="hidden md:block"></div>
+            </div>
+
+            <div class="px-5 py-4 border-t border-white/10 flex items-center justify-between">
+              <div class="text-xs text-slate-300/80">
+                Not sure where to start? <a href="/contact" class="hover:underline text-brand">Talk to us</a>.
+              </div>
+              <a href="/contact" class="text-sm text-white hover:text-brand">Request a Quote →</a>
+            </div>
           </div>
         </div>
 
-        <a href="solutions.html" class="hover:text-brand">Solutions</a>
-        <a href="about.html" class="hover:text-brand">About</a>
-        <a href="careers.html" class="hover:text-brand">Careers</a>
-        <a href="contact.html" class="hover:text-brand">Contact</a>
+        <a href="/training" class="hover:text-brand">Training</a>
+        <a href="/partners" class="hover:text-brand">Partners</a>
+        <a href="/about" class="hover:text-brand">About</a>
+        <a href="/careers" class="hover:text-brand">Careers</a>
+        <a href="/contact" class="hover:text-brand">Contact</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="contact.html" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
+        <a href="/contact" class="rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900 hover:opacity-90">Get a Quote</a>
       </div>
 
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-600/80 p-2 text-slate-100/90" aria-controls="mobileMenu" aria-expanded="false">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/30 p-2 text-white" aria-controls="mobileMenu" aria-expanded="false" type="button">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700/70 bg-slate-950/92">
-    <div class="px-4 py-3 space-y-2">
-      <a href="index.html" class="block py-2">Home</a>
+  <div id="mobileMenu" class="md:hidden hidden border-t hairline bg-slate-950/95">
+    <div class="px-4 py-3 space-y-2 text-white/90">
+      <a href="/" class="block py-2">Home</a>
+
       <details class="group">
-        <summary class="py-2 cursor-pointer">Divisions</summary>
-        <div class="ml-3 space-y-1">
-          <a href="secure.html" class="block py-2">Nasru IT &amp; Cybersecurity</a>
-          <a href="smart.html" class="block py-2">Nasru Smart</a>
-          <a href="software.html" class="block py-2">Nasru Software</a>
-          <a href="global.html" class="block py-2">Nasru Global Solutions</a>
-          <a href="multimedia.html" class="block py-2">Nasru Multimedia</a>
-          <a href="lab.html" class="block py-2">Nasru Lab</a>
+        <summary class="py-2 cursor-pointer">Solutions</summary>
+        <div class="ml-3 mt-1 space-y-1">
+          <a href="/secure" class="block py-2">Nasru IT &amp; Cybersecurity</a>
+          <a href="/smart" class="block py-2">Nasru Hardware</a>
+          <a href="/software" class="block py-2">Nasru Software</a>
+          <a href="/global" class="block py-2">Nasru Global Solutions</a>
+          <a href="/training" class="block py-2">Nasru Training &amp; Certification</a>
+          <a href="/multimedia" class="flex items-center justify-between py-2">
+            <span>Nasru Multimedia</span><span class="chip">Coming Soon</span>
+          </a>
+          <a href="/lab" class="flex items-center justify-between py-2">
+            <span>Nasru Lab</span><span class="chip">Coming Soon</span>
+          </a>
         </div>
       </details>
-      <a href="solutions.html" class="block py-2">Solutions</a>
-      <a href="about.html" class="block py-2">About</a>
-      <a href="careers.html" class="block py-2">Careers</a>
-      <a href="contact.html" class="block py-2">Contact</a>
-      <a href="contact.html" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
+
+      <a href="/training" class="block py-2">Training</a>
+      <a href="/partners" class="block py-2">Partners</a>
+      <a href="/about" class="block py-2">About</a>
+      <a href="/careers" class="block py-2">Careers</a>
+      <a href="/contact" class="block py-2">Contact</a>
+      <a href="/contact" class="mt-2 inline-block rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900">Get a Quote</a>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="relative py-14 md:py-16">
+<section class="py-16 md:py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-      <span class="pill">Managed IT</span>
-      <span class="pill">Co-Managed IT</span>
-      <span class="pill">Cybersecurity</span>
-      <span class="pill">GRC</span>
-      <span class="pill">Cloud &amp; Network</span>
-    </div>
+    <div class="hero-shell rounded-3xl p-8 md:p-12">
+      <div class="max-w-4xl">
+        <div class="flex flex-wrap gap-2">
+          <span class="pill">Managed IT</span>
+          <span class="pill">Cybersecurity</span>
+          <span class="pill">GRC</span>
+          <span class="pill">Cloud &amp; Network</span>
+          <span class="pill">Security Program Support</span>
+        </div>
 
-    <h1 class="mt-5 heading text-3xl md:text-5xl font-semibold neon-text">Nasru IT &amp; Cybersecurity</h1>
-    <p class="mt-3 text-slate-300 max-w-3xl">
-      Modern IT operations and cybersecurity services for growing teams — from help desk and cloud management
-      to risk assessments, compliance (GRC), and security programs that scale with your business.
-    </p>
+        <h1 class="heading mt-6 text-4xl md:text-6xl font-bold text-white leading-tight">
+          IT Operations and Cybersecurity Built for Modern Organizations
+        </h1>
 
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a href="contact.html" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-900 hover:opacity-90">Request a Consultation</a>
-      <a href="#packages" class="rounded-xl border border-neon bg-white/5 backdrop-blur px-5 py-3">View Packages</a>
-    </div>
-  </div>
-</section>
+        <p class="mt-5 text-lg text-slate-300 leading-8 max-w-3xl">
+          Nasru IT &amp; Cybersecurity helps organizations strengthen technology operations, reduce security risk, improve compliance readiness, and build scalable IT environments.
+        </p>
 
-<!-- IT SERVICES -->
-<section class="py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-4 flex-wrap">
-      <div>
-        <h2 class="heading text-2xl md:text-3xl font-semibold">IT Services</h2>
-        <p class="mt-2 text-slate-300 max-w-2xl">Operational coverage for endpoints, networks, cloud, and users — delivered as managed or co-managed.</p>
-      </div>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-3 mt-8">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Managed IT</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Full-service IT operations: proactive monitoring, patching, support, and vendor coordination.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Help desk (remote/on-site options)</li>
-          <li>• Endpoint management &amp; patching</li>
-          <li>• Asset inventory &amp; lifecycle</li>
-          <li>• Backups &amp; recovery coordination</li>
-        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/contact" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-90">Request a Consultation</a>
+          <a href="#services" class="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10">Explore Services</a>
+          <a href="#packages" class="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10">View Packages</a>
+        </div>
       </div>
 
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Co-Managed IT</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">We strengthen your internal IT team with tooling, escalation coverage, and specialized expertise.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Escalation + overflow help desk</li>
-          <li>• Monitoring + alert response</li>
-          <li>• Project support (migrations, rollouts)</li>
-          <li>• Documentation + standardization</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Cloud &amp; Infrastructure</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Secure cloud and infrastructure operations across Microsoft 365, Google Workspace, and hybrid environments.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Microsoft 365 / Google Workspace admin</li>
-          <li>• Identity, SSO/MFA, access policies</li>
-          <li>• Network design &amp; segmentation</li>
-          <li>• VPN / remote access configuration</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-3 mt-6">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Networking</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Reliable, secure networking built for performance and visibility.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Firewall &amp; router configuration</li>
-          <li>• VLANs, segmentation, Wi-Fi</li>
-          <li>• Switch configuration &amp; hardening</li>
-          <li>• Monitoring + baselining</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Endpoint &amp; Device Security</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Operational security for laptops, servers, and mobile devices.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• EDR onboarding &amp; tuning</li>
-          <li>• Device encryption policies</li>
-          <li>• Hardening baselines</li>
-          <li>• Patch compliance reporting</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Projects &amp; Modernization</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Planned upgrades and migrations with clear timelines and documentation.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Cloud migrations</li>
-          <li>• Email/domain transitions</li>
-          <li>• Device rollouts</li>
-          <li>• SOPs + runbooks</li>
-        </ul>
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <div class="card p-5">
+          <div class="font-semibold text-white">Operational Support</div>
+          <p class="mt-2 text-sm text-slate-300">Managed and co-managed IT support for users, endpoints, networks, cloud, and daily technology operations.</p>
+        </div>
+        <div class="card p-5">
+          <div class="font-semibold text-white">Security Maturity</div>
+          <p class="mt-2 text-sm text-slate-300">Risk assessments, hardening, policies, incident response planning, and security roadmap development.</p>
+        </div>
+        <div class="card p-5">
+          <div class="font-semibold text-white">Compliance Readiness</div>
+          <p class="mt-2 text-sm text-slate-300">GRC support aligned to frameworks such as ISO, NIST, CIS, and business security requirements.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CYBERSECURITY SERVICES -->
-<section class="py-12 bg-slate-900/40">
+<section id="services" class="py-16 section-glow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="heading text-2xl md:text-3xl font-semibold">Cybersecurity Services</h2>
-    <p class="mt-2 text-slate-300 max-w-3xl">
-      Practical security built around risk reduction, compliance, and operational resilience — aligned to your industry and maturity.
-    </p>
-
-    <div class="grid gap-6 md:grid-cols-3 mt-8">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Risk Assessments</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Understand your exposure and prioritize fixes with an actionable roadmap.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Business risk + threat modeling</li>
-          <li>• Asset &amp; data classification review</li>
-          <li>• Vulnerability review (tool-assisted)</li>
-          <li>• Remediation plan &amp; timeline</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">GRC &amp; Compliance</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Build governance and audit readiness using frameworks and GRC tooling.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Policies, standards, and procedures</li>
-          <li>• Framework alignment (NIST/ISO/CIS)</li>
-          <li>• Risk register + controls mapping</li>
-          <li>• Vendor/security questionnaires</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Security Program Buildout</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Set up the core security program functions that scale with your team.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Security strategy &amp; roadmap</li>
-          <li>• Metrics (KPIs) + reporting</li>
-          <li>• Incident response plan &amp; playbooks</li>
-          <li>• Awareness &amp; training guidance</li>
-        </ul>
-      </div>
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="chip">Core Services</div>
+      <h2 class="heading mt-5 text-3xl md:text-4xl font-semibold text-white">Technology and Security Services</h2>
+      <p class="mt-3 text-slate-400">
+        Flexible service coverage for organizations that need reliable IT operations, stronger cybersecurity, and practical compliance support.
+      </p>
     </div>
 
-    <div class="grid gap-6 md:grid-cols-3 mt-6">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Security Hardening</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Close common gaps across identity, endpoints, and network controls.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• MFA/SSO and conditional access</li>
-          <li>• Least privilege &amp; access reviews</li>
-          <li>• Baselines for endpoints/servers</li>
+    <div class="grid gap-6 md:grid-cols-3 mt-12">
+      <div class="card p-7">
+        <h3 class="heading text-xl font-semibold text-white">Managed IT</h3>
+        <p class="mt-3 text-sm text-slate-300 leading-6">End-to-end IT support for users, devices, cloud platforms, business applications, vendors, and daily operations.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-300">
+          <li>• Help desk support</li>
+          <li>• Endpoint management</li>
+          <li>• Patch management</li>
+          <li>• Backup and recovery coordination</li>
+        </ul>
+      </div>
+
+      <div class="card p-7">
+        <h3 class="heading text-xl font-semibold text-white">Co-Managed IT</h3>
+        <p class="mt-3 text-sm text-slate-300 leading-6">Support for internal IT teams that need escalation coverage, project support, monitoring, or specialized expertise.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-300">
+          <li>• Overflow support</li>
+          <li>• Monitoring and alert response</li>
+          <li>• Documentation and standardization</li>
+          <li>• Migration and rollout assistance</li>
+        </ul>
+      </div>
+
+      <div class="card p-7">
+        <h3 class="heading text-xl font-semibold text-white">Cloud &amp; Infrastructure</h3>
+        <p class="mt-3 text-sm text-slate-300 leading-6">Secure administration and optimization for Microsoft 365, Google Workspace, identity, access, and infrastructure environments.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-300">
+          <li>• Microsoft 365 administration</li>
+          <li>• MFA and access policies</li>
+          <li>• Network segmentation</li>
+          <li>• VPN and remote access support</li>
+        </ul>
+      </div>
+
+      <div class="card p-7">
+        <h3 class="heading text-xl font-semibold text-white">Cybersecurity Consulting</h3>
+        <p class="mt-3 text-sm text-slate-300 leading-6">Advisory support for leadership, IT teams, security decisions, risk reduction, and security program planning.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-300">
+          <li>• Security roadmap development</li>
+          <li>• Architecture reviews</li>
+          <li>• Executive reporting</li>
+          <li>• Security decision support</li>
+        </ul>
+      </div>
+
+      <div class="card p-7">
+        <h3 class="heading text-xl font-semibold text-white">GRC &amp; Compliance</h3>
+        <p class="mt-3 text-sm text-slate-300 leading-6">Governance, risk, and compliance support to help organizations document controls and prepare for audits or client requirements.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-300">
+          <li>• Policy and procedure development</li>
+          <li>• Risk register support</li>
+          <li>• ISO, NIST, CIS alignment</li>
+          <li>• Vendor security questionnaires</li>
+        </ul>
+      </div>
+
+      <div class="card p-7">
+        <h3 class="heading text-xl font-semibold text-white">Security Hardening</h3>
+        <p class="mt-3 text-sm text-slate-300 leading-6">Practical security improvements across identity, endpoints, networks, email, and cloud services.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-300">
+          <li>• MFA and conditional access</li>
+          <li>• Endpoint hardening</li>
           <li>• Email security improvements</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Monitoring &amp; Response Support</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Help setting up alerting, triage workflows, and response readiness.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Logging strategy (SIEM-ready)</li>
-          <li>• Alert triage + escalation</li>
-          <li>• Incident tabletop exercises</li>
-          <li>• Post-incident improvements</li>
-        </ul>
-      </div>
-
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Cybersecurity Consulting</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Advisory support for leadership, IT teams, and security decision-making.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Fractional security leadership support</li>
-          <li>• Architecture/security reviews</li>
-          <li>• Project security guidance</li>
-          <li>• Executive-ready reporting</li>
+          <li>• Least privilege reviews</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PACKAGES -->
-<section id="packages" class="py-12">
+<section class="py-16 bg-slate-950/35 border-y hairline">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="heading text-2xl md:text-3xl font-semibold text-center">Service Packages</h2>
-    <p class="mt-2 text-slate-300 text-center max-w-3xl mx-auto">
-      Choose a starting point and we’ll tailor it to your environment. These packages can stand alone or bundle together.
-    </p>
+    <div class="grid gap-10 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-4">
+        <div class="chip">Security Approach</div>
+        <h2 class="heading mt-5 text-3xl md:text-4xl font-semibold text-white">
+          Practical cybersecurity aligned to your business risk
+        </h2>
+        <p class="mt-4 text-slate-400 leading-7">
+          We focus on security improvements that make sense for your organization’s size, industry, compliance needs, and technology maturity.
+        </p>
+      </div>
 
-    <div class="grid gap-6 md:grid-cols-3 mt-8">
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Foundation</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">Best for small teams getting organized and secured.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• IT baseline review + documentation</li>
-          <li>• Risk assessment (light) + priorities</li>
-          <li>• Core policies starter set</li>
+      <div class="lg:col-span-8 grid gap-6 md:grid-cols-2">
+        <div class="card p-6">
+          <h3 class="heading text-xl font-semibold text-white">Assess</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-6">Review systems, users, controls, risks, policies, access, and security posture.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="heading text-xl font-semibold text-white">Prioritize</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-6">Turn findings into a clear roadmap based on business risk and operational urgency.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="heading text-xl font-semibold text-white">Implement</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-6">Deploy controls, policies, hardening steps, monitoring, and response workflows.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="heading text-xl font-semibold text-white">Improve</h3>
+          <p class="mt-3 text-sm text-slate-300 leading-6">Support continuous improvement through reporting, reviews, testing, and training.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="chip">Service Packages</div>
+      <h2 class="heading mt-5 text-3xl md:text-4xl font-semibold text-white">Choose a Starting Point</h2>
+      <p class="mt-3 text-slate-400">
+        These packages can stand alone or be combined depending on your operational needs, security maturity, and compliance goals.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-12">
+      <div class="light-card p-7">
+        <div class="chip !text-slate-700 !bg-slate-100 !border-slate-200">Foundation</div>
+        <h3 class="heading mt-4 text-xl font-semibold text-slate-900">IT &amp; Security Baseline</h3>
+        <p class="mt-3 text-sm text-slate-600 leading-6">Best for small teams that need visibility, documentation, and basic security improvements.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-600">
+          <li>• IT baseline review</li>
           <li>• Security quick wins checklist</li>
+          <li>• Core policies starter set</li>
+          <li>• Risk priorities report</li>
         </ul>
       </div>
 
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Growth</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">For growing organizations needing structure and repeatable controls.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Co-managed IT + monitoring</li>
-          <li>• GRC tools setup (risk register + controls)</li>
-          <li>• Incident response plan + playbooks</li>
-          <li>• Quarterly security reporting</li>
+      <div class="light-card p-7">
+        <div class="chip !text-slate-700 !bg-slate-100 !border-slate-200">Growth</div>
+        <h3 class="heading mt-4 text-xl font-semibold text-slate-900">Managed Security Support</h3>
+        <p class="mt-3 text-sm text-slate-600 leading-6">Best for growing organizations that need structure, reporting, monitoring, and repeatable controls.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-600">
+          <li>• Co-managed IT support</li>
+          <li>• Risk register and control mapping</li>
+          <li>• Incident response plan</li>
+          <li>• Quarterly reporting</li>
         </ul>
       </div>
 
-      <div class="card p-6">
-        <h3 class="heading text-lg font-semibold">Advanced</h3>
-        <p class="mt-2 text-slate-300/85 text-sm">For mature environments requiring deeper security operations and readiness.</p>
-        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
-          <li>• Program roadmap + metrics</li>
-          <li>• Hardening + identity improvements</li>
+      <div class="light-card p-7">
+        <div class="chip !text-slate-700 !bg-slate-100 !border-slate-200">Advanced</div>
+        <h3 class="heading mt-4 text-xl font-semibold text-slate-900">Security Program Buildout</h3>
+        <p class="mt-3 text-sm text-slate-600 leading-6">Best for mature environments requiring deeper security operations, readiness, and executive visibility.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-600">
+          <li>• Program roadmap</li>
+          <li>• Hardening and identity improvements</li>
           <li>• Vendor risk reviews</li>
           <li>• Incident response exercises</li>
         </ul>
@@ -340,64 +464,178 @@
     </div>
 
     <div class="mt-10 text-center">
-      <a href="contact.html" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-90">Talk to Nasru Secure</a>
+      <a href="/contact" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-90">Talk to Nasru IT &amp; Cybersecurity</a>
     </div>
   </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-700/60">
+<section class="py-16 bg-slate-950/35 border-y hairline">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-2 items-center">
+      <div>
+        <div class="chip">Why Nasru</div>
+        <h2 class="heading mt-5 text-3xl md:text-4xl font-semibold text-white">A business-first approach to IT and cybersecurity</h2>
+        <p class="mt-4 text-slate-400 leading-7">
+          Nasru Technologies combines IT operations, cybersecurity, compliance, training, and hardware sourcing to help organizations build a stronger technology foundation.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="card p-6">
+          <div class="font-semibold text-white">Security-first mindset</div>
+          <p class="mt-2 text-sm text-slate-300">We treat cybersecurity as part of technology operations, not a separate afterthought.</p>
+        </div>
+        <div class="card p-6">
+          <div class="font-semibold text-white">Clear documentation</div>
+          <p class="mt-2 text-sm text-slate-300">Policies, procedures, reports, and roadmaps designed for business decision-making.</p>
+        </div>
+        <div class="card p-6">
+          <div class="font-semibold text-white">Flexible support</div>
+          <p class="mt-2 text-sm text-slate-300">Support options for small teams, growing companies, and organizations with internal IT staff.</p>
+        </div>
+        <div class="card p-6">
+          <div class="font-semibold text-white">Scalable delivery</div>
+          <p class="mt-2 text-sm text-slate-300">Services built to grow with your people, systems, locations, and compliance obligations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="card p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="heading text-2xl font-semibold text-white">Ready to strengthen your IT and security posture?</h3>
+        <p class="mt-2 text-slate-300 text-sm max-w-2xl">
+          Tell us about your environment, users, systems, and security priorities. We’ll help define the right starting point.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/contact" class="rounded-xl bg-brand px-6 py-3 font-semibold text-slate-900 hover:opacity-95">Request a Consultation</a>
+        <a href="/training" class="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10">Explore Training</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-10 border-t hairline">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 md:grid-cols-4">
       <div>
-        <a href="index.html" class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
           <img src="assets/img/logo.png" class="h-8 w-8" alt="Nasru logo">
-          <span class="heading text-lg font-semibold">Nasru Technologies</span>
+          <span class="heading text-lg font-semibold text-white">Nasru Technologies</span>
         </a>
         <p class="mt-3 text-slate-400 text-sm">
-          Secure. Smart. Scalable. Devices, software, installations, and cybersecurity/IT services.
+          Secure. Smart. Scalable. Devices, software, IT services, cybersecurity, and training.
         </p>
       </div>
 
       <div>
-        <h4 class="heading font-semibold mb-3">Company</h4>
+        <h4 class="heading font-semibold mb-3 text-white">Company</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="about.html">About</a></li>
-          <li><a class="hover:text-brand" href="careers.html">Careers</a></li>
-          <li><a class="hover:text-brand" href="partners.html">Partners</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-brand" href="/about">About</a></li>
+          <li><a class="hover:text-brand" href="/careers">Careers</a></li>
+          <li><a class="hover:text-brand" href="/partners">Partners</a></li>
+          <li><a class="hover:text-brand" href="/contact">Contact</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="heading font-semibold mb-3">Services</h4>
+        <h4 class="heading font-semibold mb-3 text-white">Capabilities</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="secure.html">IT &amp; Cybersecurity</a></li>
-          <li><a class="hover:text-brand" href="smart.html">Smart Integrations</a></li>
-          <li><a class="hover:text-brand" href="software.html">Software Development</a></li>
-          <li><a class="hover:text-brand" href="solutions.html">Global Solutions</a></li>
+          <li><a class="hover:text-brand" href="/secure">Cybersecurity &amp; IT</a></li>
+          <li><a class="hover:text-brand" href="/smart">Hardware &amp; Devices</a></li>
+          <li><a class="hover:text-brand" href="/software">Software Engineering</a></li>
+          <li><a class="hover:text-brand" href="/training">Training &amp; Certification</a></li>
+          <li><a class="hover:text-brand" href="/global">Global Solutions</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="heading font-semibold mb-3">Resources</h4>
+        <h4 class="heading font-semibold mb-3 text-white">Resources</h4>
         <ul class="space-y-2 text-slate-300/90 text-sm">
-          <li><a class="hover:text-brand" href="partners.html">Vendors &amp; Alliances</a></li>
-          <li><a class="hover:text-brand" href="contact.html">Support</a></li>
+          <li><a class="hover:text-brand" href="/partners">Vendors &amp; Alliances</a></li>
+          <li><a class="hover:text-brand" href="/careers">Open Roles</a></li>
+          <li><a class="hover:text-brand" href="/contact">Support</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+    <div class="mt-10 pt-6 border-t hairline flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
       <div>© <span id="year"></span> Nasru Technologies. All rights reserved.</div>
       <div class="flex gap-4">
         <a href="https://linkedin.com/company/nasru-technologies" target="_blank" rel="noopener" class="hover:text-brand">LinkedIn</a>
-        <a href="#" class="hover:text-brand">Twitter</a>
-        <a href="#" class="hover:text-brand">YouTube</a>
+        <a href="https://www.instagram.com/nasru_technologies/" target="_blank" rel="noopener" class="hover:text-brand">Instagram</a>
+        <a href="https://www.facebook.com/nasru_technologies" target="_blank" rel="noopener" class="hover:text-brand">Facebook</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="assets/site.js"></script>
+<script>
+(() => {
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  }
+
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  const wrap = document.getElementById('divisionsMenu');
+  const btn = document.getElementById('divisionsBtn');
+  const panel = document.getElementById('divisionsPanel');
+
+  if (wrap && btn && panel) {
+    let closeTimer;
+
+    const open = () => {
+      clearTimeout(closeTimer);
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+
+    const close = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }, 220);
+    };
+
+    wrap.addEventListener('mouseenter', open);
+    wrap.addEventListener('mouseleave', close);
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = !panel.classList.contains('hidden');
+      if (isOpen) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        open();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
