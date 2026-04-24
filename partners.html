@@ -109,6 +109,62 @@
       box-shadow:0 0 0 3px rgba(34,211,238,.14);
     }
     .label{ font-size:.85rem; color:#334155; font-weight:600; }
+
+    .logo-slider{
+  overflow:hidden;
+  position:relative;
+  width:100%;
+  mask-image:linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+}
+
+.logo-track{
+  display:flex;
+  align-items:center;
+  gap:4.5rem;
+  width:max-content;
+  animation:partnerScroll 26s linear infinite;
+}
+
+.logo-slider:hover .logo-track{
+  animation-play-state:paused;
+}
+
+.logo-item{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:180px;
+  padding:.5rem 0;
+}
+
+.logo-item img{
+  height:48px;
+  width:auto;
+  max-width:220px;
+  object-fit:contain;
+  opacity:.96;
+  filter:grayscale(0%) contrast(105%);
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.logo-item img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+@media (min-width:768px){
+  .logo-item img{
+    height:58px;
+    max-width:240px;
+  }
+}
+
+@keyframes partnerScroll{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
   </style>
 
   <meta property="og:title" content="Partners | Nasru Technologies">
@@ -292,38 +348,43 @@
       </p>
     </div>
 
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
-      <a href="https://www.tdsynnex.com/" target="_blank" rel="noopener" class="light-card p-6 block">
-        <img src="assets/img/partners/td-synnex.png" alt="TD SYNNEX logo" class="h-10 w-auto mb-5">
-        <h3 class="heading text-xl font-semibold">TD SYNNEX</h3>
-        <p class="mt-3 text-sm text-slate-600 leading-6">
-          Distribution and technology sourcing partner supporting business hardware, devices, infrastructure, and IT product availability.
-        </p>
-      </a>
+    <div class="mt-12 rounded-3xl border border-white/10 bg-slate-950/45 px-6 py-10 overflow-hidden">
+      <div class="logo-slider">
+        <div class="logo-track">
+          <a href="https://www.tdsynnex.com/" target="_blank" rel="noopener" class="logo-item" aria-label="TD SYNNEX">
+            <img src="assets/img/partners/td-synnex.png" alt="TD SYNNEX">
+          </a>
 
-      <a href="https://pecb.com/" target="_blank" rel="noopener" class="light-card p-6 block">
-        <img src="assets/img/partners/pecb.png" alt="PECB logo" class="h-10 w-auto mb-5">
-        <h3 class="heading text-xl font-semibold">PECB</h3>
-        <p class="mt-3 text-sm text-slate-600 leading-6">
-          Training and certification partnership for cybersecurity, governance, risk, privacy, compliance, and digital trust programs.
-        </p>
-      </a>
+          <a href="https://pecb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="PECB">
+            <img src="assets/img/partners/pecb.png" alt="PECB">
+          </a>
 
-      <a href="https://www.eccouncil.org/" target="_blank" rel="noopener" class="light-card p-6 block">
-        <img src="assets/img/partners/ec-council-partner.png" alt="EC-Council logo" class="h-10 w-auto mb-5">
-        <h3 class="heading text-xl font-semibold">EC-Council</h3>
-        <p class="mt-3 text-sm text-slate-600 leading-6">
-          Cybersecurity certification ecosystem supporting technical training, workforce development, and professional advancement.
-        </p>
-      </a>
+          <a href="https://www.eccouncil.org/" target="_blank" rel="noopener" class="logo-item" aria-label="EC-Council">
+            <img src="assets/img/partners/ec-council-partner.png" alt="EC-Council">
+          </a>
 
-      <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="light-card p-6 block">
-        <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb logo" class="h-10 w-auto mb-5">
-        <h3 class="heading text-xl font-semibold">Cyber-Zeb</h3>
-        <p class="mt-3 text-sm text-slate-600 leading-6">
-          Strategic cybersecurity and technology partner supporting advisory, implementation, and collaborative service opportunities.
-        </p>
-      </a>
+          <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="Cyber-Zeb">
+            <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb">
+          </a>
+
+          <!-- duplicate for seamless loop -->
+          <a href="https://www.tdsynnex.com/" target="_blank" rel="noopener" class="logo-item" aria-label="TD SYNNEX">
+            <img src="assets/img/partners/td-synnex.png" alt="TD SYNNEX">
+          </a>
+
+          <a href="https://pecb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="PECB">
+            <img src="assets/img/partners/pecb.png" alt="PECB">
+          </a>
+
+          <a href="https://www.eccouncil.org/" target="_blank" rel="noopener" class="logo-item" aria-label="EC-Council">
+            <img src="assets/img/partners/ec-council-partner.png" alt="EC-Council">
+          </a>
+
+          <a href="https://www.cyberzeb.com/" target="_blank" rel="noopener" class="logo-item" aria-label="Cyber-Zeb">
+            <img src="assets/img/partners/cyberzeb.png" alt="Cyber-Zeb">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
