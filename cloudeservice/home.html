@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://nasrutechnologies.com/cloudservice.html" />
+  <link rel="canonical" href="https://nasrutechnologies.com/cloudservice/home" />
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Cloud Services - Nasru Technologies</title>
   <meta name="description" content="Nasru Technologies provides cloud solutions including Microsoft 365, CrowdStrike, AWS, and Google Cloud Platform for secure, scalable business operations." />
-  <link rel="icon" href="../assets/img/logo.png?v=2" type="image/png">
+
+  <link rel="icon" href="/assets/img/logo.png?v=2" type="image/png">
 
   <style>
     :root {
@@ -177,11 +178,6 @@
       border: 1px solid var(--border);
     }
 
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-    }
-
     .hero-panel {
       background: rgba(255, 255, 255, 0.72);
       border: 1px solid rgba(255, 255, 255, 0.9);
@@ -209,22 +205,11 @@
       width: 48px;
       height: 48px;
       border-radius: 16px;
-      background: linear-gradient(135deg, rgba(11, 92, 255, 0.12), rgba(11, 92, 255, 0.02));
+      background: rgba(11, 92, 255, 0.12);
       display: grid;
       place-items: center;
       color: var(--nasru-blue);
       font-weight: 900;
-    }
-
-    .stack-item h3 {
-      font-size: 1rem;
-      margin-bottom: 2px;
-    }
-
-    .stack-item p {
-      margin: 0;
-      font-size: 0.91rem;
-      color: var(--nasru-muted);
     }
 
     section {
@@ -270,7 +255,6 @@
     .provider-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow);
-      border-color: rgba(11, 92, 255, 0.28);
     }
 
     .logo-placeholder {
@@ -291,7 +275,6 @@
     .provider-card h3 {
       font-size: 1.25rem;
       margin-bottom: 10px;
-      letter-spacing: -0.02em;
     }
 
     .provider-card p {
@@ -316,7 +299,7 @@
       margin-right: 8px;
     }
 
-    .provider-card .explore {
+    .explore {
       margin-top: auto;
       display: inline-flex;
       align-items: center;
@@ -327,11 +310,6 @@
       background: var(--nasru-dark);
       color: var(--white);
       font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .provider-card .explore:hover {
-      background: var(--nasru-blue);
     }
 
     .support-section {
@@ -353,13 +331,11 @@
     }
 
     .support-card h3 {
-      font-size: 1.16rem;
       margin-bottom: 10px;
     }
 
     .support-card p {
       color: var(--nasru-muted);
-      font-size: 0.96rem;
     }
 
     .cta {
@@ -372,25 +348,6 @@
       gap: 24px;
       align-items: center;
       box-shadow: var(--shadow);
-    }
-
-    .cta h2 {
-      font-size: clamp(1.9rem, 3vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      color: rgba(255, 255, 255, 0.74);
-      max-width: 680px;
-    }
-
-    .cta .btn-primary {
-      background: var(--white);
-      color: var(--nasru-dark);
-      box-shadow: none;
-      white-space: nowrap;
     }
 
     footer {
@@ -423,195 +380,247 @@
     }
 
     @media (max-width: 760px) {
-      .nav {
-        height: auto;
-        padding: 18px 0;
-        align-items: flex-start;
-      }
-
       .nav-links {
         display: none;
-      }
-
-      .hero {
-        padding: 68px 0 54px;
       }
 
       .provider-grid {
         grid-template-columns: 1fr;
       }
-
-      .cta {
-        padding: 34px 24px;
-      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="../index.html" aria-label="Nasru Technologies Home">
-        <img src="../assets/img/logo.png" alt="Nasru Technologies logo">
-        <span>Nasru Technologies</span>
-      </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About</a>
-        <a href="../solutions.html">Solutions</a>
-        <a href="../partners.html">Partners</a>
-        <a href="../contact.html">Contact</a>
-        <a class="nav-cta" href="../contact.html">Request Consultation</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="Nasru Technologies Home">
+      <img src="/assets/img/logo.png" alt="Nasru Technologies logo">
+      <span>Nasru Technologies</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/partners">Partners</a>
+      <a href="/contact">Contact</a>
+      <a class="nav-cta" href="/contact">Request Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">Nasru Cloud Services</div>
+
+      <h1>Secure, scalable cloud solutions for modern businesses.</h1>
+
+      <p>
+        Nasru Technologies helps businesses adopt, manage, and secure cloud platforms across productivity, cybersecurity, infrastructure, and collaboration.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cloud-providers">Explore Cloud Providers</a>
+        <a class="btn-secondary" href="/contact">Talk to Nasru</a>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Nasru Cloud Services</div>
-          <h1>Secure, scalable cloud solutions for modern businesses.</h1>
-          <p>
-            Nasru Technologies helps small and mid-sized businesses adopt, manage, and secure cloud platforms across productivity, cybersecurity, infrastructure, and collaboration.
-          </p>
-          <div class="hero-actions">
-            <a class="btn-primary" href="#cloud-providers">Explore Cloud Providers</a>
-            <a class="btn-secondary" href="../contact.html">Talk to Nasru</a>
-          </div>
-        </div>
+    <div class="hero-panel">
+      <div class="cloud-stack">
 
-        <div class="hero-panel" aria-label="Cloud service highlights">
-          <div class="cloud-stack">
-            <div class="stack-item">
-              <div class="stack-icon">01</div>
-              <div>
-                <h3>Cloud Licensing</h3>
-                <p>Business software licensing, subscription guidance, and account setup.</p>
-              </div>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon">02</div>
-              <div>
-                <h3>Cloud Security</h3>
-                <p>Endpoint protection, identity security, and managed cloud protection.</p>
-              </div>
-            </div>
-            <div class="stack-item">
-              <div class="stack-icon">03</div>
-              <div>
-                <h3>Cloud Infrastructure</h3>
-                <p>Scalable AWS and Google Cloud support for business workloads.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cloud-providers">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Cloud platforms and solutions we support</h2>
-          <p>
-            Choose from leading cloud providers and business platforms. Each solution page can be expanded with products, pricing, service details, and request forms.
-          </p>
-        </div>
-
-        <div class="provider-grid">
-          <article class="provider-card">
-            <div class="logo-placeholder">Microsoft logo placeholder</div>
-            <h3>Microsoft Cloud</h3>
-            <p>Productivity, collaboration, email, endpoint management, and business security solutions.</p>
-            <ul>
-              <li>Microsoft 365 Business Premium</li>
-              <li>Exchange, Teams, SharePoint, OneDrive</li>
-              <li>Intune and identity security</li>
-            </ul>
-            <a class="explore" href="microsoft.com">Explore Microsoft</a>
-          </article>
-
-          <article class="provider-card">
-            <div class="logo-placeholder">CrowdStrike logo placeholder</div>
-            <h3>CrowdStrike</h3>
-            <p>Endpoint protection and cloud-native cybersecurity solutions for businesses.</p>
-            <ul>
-              <li>Endpoint detection and response</li>
-              <li>Threat intelligence</li>
-              <li>Managed protection support</li>
-            </ul>
-            <a class="explore" href="crowdstrike.com">Explore CrowdStrike</a>
-          </article>
-
-          <article class="provider-card">
-            <div class="logo-placeholder">AWS logo placeholder</div>
-            <h3>Amazon Web Services</h3>
-            <p>Cloud infrastructure, hosting, storage, compute, and scalable business workloads.</p>
-            <ul>
-              <li>Cloud hosting and migration</li>
-              <li>Storage and backup planning</li>
-              <li>Infrastructure support</li>
-            </ul>
-            <a class="explore" href="aws.com">Explore AWS</a>
-          </article>
-
-          <article class="provider-card">
-            <div class="logo-placeholder">Google Cloud logo placeholder</div>
-            <h3>Google Cloud Platform</h3>
-            <p>Cloud computing, collaboration, data, and infrastructure solutions for growing teams.</p>
-            <ul>
-              <li>Google Cloud infrastructure</li>
-              <li>Workspace and collaboration</li>
-              <li>Cloud migration support</li>
-            </ul>
-            <a class="explore" href="googlecloud.com">Explore Google Cloud</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="support-section">
-      <div class="container">
-        <div class="section-heading">
-          <h2>How Nasru supports your cloud journey</h2>
-          <p>We help businesses select the right platform, deploy it correctly, and keep it secure as they grow.</p>
-        </div>
-
-        <div class="support-grid">
-          <div class="support-card">
-            <h3>Consultation & Planning</h3>
-            <p>We review your business needs, user count, security requirements, and current IT environment before recommending a solution.</p>
-          </div>
-          <div class="support-card">
-            <h3>Deployment & Configuration</h3>
-            <p>We assist with setup, licensing, account configuration, migration planning, and user onboarding for cloud platforms.</p>
-          </div>
-          <div class="support-card">
-            <h3>Security & Ongoing Support</h3>
-            <p>We help secure users, devices, identities, and cloud workloads with practical support and cybersecurity-focused guidance.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta">
+        <div class="stack-item">
+          <div class="stack-icon">01</div>
           <div>
-            <h2>Ready to modernize your cloud environment?</h2>
-            <p>Nasru Technologies can help your business choose, deploy, and manage cloud solutions that support productivity, security, and growth.</p>
+            <h3>Cloud Licensing</h3>
+            <p>Business software licensing and account setup.</p>
           </div>
-          <a class="btn-primary" href="../contact.html">Get Started</a>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Nasru Technologies. All rights reserved.</span>
-      <span>Secure. Smart. Scalable.</span>
+        <div class="stack-item">
+          <div class="stack-icon">02</div>
+          <div>
+            <h3>Cloud Security</h3>
+            <p>Identity security and endpoint protection.</p>
+          </div>
+        </div>
+
+        <div class="stack-item">
+          <div class="stack-icon">03</div>
+          <div>
+            <h3>Cloud Infrastructure</h3>
+            <p>AWS and Google Cloud support for business workloads.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<section id="cloud-providers">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Cloud platforms and solutions we support</h2>
+
+      <p>
+        Explore leading cloud providers and business platforms supported by Nasru Technologies.
+      </p>
+    </div>
+
+    <div class="provider-grid">
+
+      <article class="provider-card">
+        <div class="logo-placeholder">Microsoft logo placeholder</div>
+
+        <h3>Microsoft Cloud</h3>
+
+        <p>
+          Productivity, collaboration, endpoint management, and business security solutions.
+        </p>
+
+        <ul>
+          <li>Microsoft 365 Business Premium</li>
+          <li>Exchange, Teams, SharePoint</li>
+          <li>Intune and identity security</li>
+        </ul>
+
+        <a class="explore" href="/cloudservice/microsoft">
+          Explore Microsoft
+        </a>
+      </article>
+
+      <article class="provider-card">
+        <div class="logo-placeholder">CrowdStrike logo placeholder</div>
+
+        <h3>CrowdStrike</h3>
+
+        <p>
+          Cloud-native endpoint security and managed protection solutions.
+        </p>
+
+        <ul>
+          <li>Endpoint protection</li>
+          <li>Threat intelligence</li>
+          <li>Managed detection support</li>
+        </ul>
+
+        <a class="explore" href="#">
+          Explore CrowdStrike
+        </a>
+      </article>
+
+      <article class="provider-card">
+        <div class="logo-placeholder">AWS logo placeholder</div>
+
+        <h3>Amazon Web Services</h3>
+
+        <p>
+          Scalable cloud infrastructure, hosting, and storage solutions.
+        </p>
+
+        <ul>
+          <li>Cloud hosting</li>
+          <li>Storage and backup</li>
+          <li>Infrastructure support</li>
+        </ul>
+
+        <a class="explore" href="#">
+          Explore AWS
+        </a>
+      </article>
+
+      <article class="provider-card">
+        <div class="logo-placeholder">Google Cloud logo placeholder</div>
+
+        <h3>Google Cloud Platform</h3>
+
+        <p>
+          Cloud infrastructure and collaboration tools for growing teams.
+        </p>
+
+        <ul>
+          <li>Google Cloud infrastructure</li>
+          <li>Workspace collaboration</li>
+          <li>Cloud migration support</li>
+        </ul>
+
+        <a class="explore" href="#">
+          Explore Google Cloud
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="support-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>How Nasru supports your cloud journey</h2>
+
+      <p>
+        We help businesses deploy, secure, and manage modern cloud environments.
+      </p>
+    </div>
+
+    <div class="support-grid">
+
+      <div class="support-card">
+        <h3>Consultation & Planning</h3>
+        <p>Cloud strategy and business solution planning.</p>
+      </div>
+
+      <div class="support-card">
+        <h3>Deployment & Configuration</h3>
+        <p>Setup, migration, onboarding, and configuration assistance.</p>
+      </div>
+
+      <div class="support-card">
+        <h3>Security & Ongoing Support</h3>
+        <p>Cloud security hardening and operational support.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="cta">
+      <div>
+        <h2>Ready to modernize your cloud environment?</h2>
+
+        <p>
+          Nasru Technologies can help your business deploy and manage secure cloud solutions.
+        </p>
+      </div>
+
+      <a class="btn-primary" href="/contact">
+        Get Started
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Nasru Technologies. All rights reserved.</span>
+    <span>Secure. Smart. Scalable.</span>
+  </div>
+</footer>
+
 </body>
 </html>
