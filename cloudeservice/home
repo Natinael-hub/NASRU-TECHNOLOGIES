@@ -1,1 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="canonical" href="https://nasrutechnologies.com/cloudservice" />
 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Cloud Services - Nasru Technologies</title>
+  <meta name="description" content="Nasru Technologies provides cloud solutions including Microsoft 365, CrowdStrike, AWS, and Google Cloud Platform for secure, scalable business operations." />
+  <link rel="icon" href="../assets/img/logo.png?v=2" type="image/png">
+
+  <style>
+    :root {
+      --nasru-blue: #0b5cff;
+      --nasru-dark: #07111f;
+      --nasru-navy: #0d1b2f;
+      --nasru-light: #f5f8ff;
+      --nasru-muted: #667085;
+      --white: #ffffff;
+      --border: rgba(15, 23, 42, 0.12);
+      --shadow: 0 18px 45px rgba(7, 17, 31, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--nasru-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand span {
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #344054;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--nasru-blue);
+    }
+
+    .nav-cta {
+      background: var(--nasru-blue);
+      color: var(--white);
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 12px 24px rgba(11, 92, 255, 0.24);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(11, 92, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 50%, #edf4ff 100%);
+      padding: 96px 0 78px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid rgba(11, 92, 255, 0.2);
+      background: rgba(11, 92, 255, 0.08);
+      color: var(--nasru-blue);
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.8rem);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.13rem;
+      color: var(--nasru-muted);
+      max-width: 640px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--nasru-blue);
+      color: var(--white);
+      box-shadow: 0 14px 28px rgba(11, 92, 255, 0.25);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--nasru-dark);
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .cloud-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stack-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+    }
+
+    .stack-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(11, 92, 255, 0.12), rgba(11, 92, 255, 0.02));
+      display: grid;
+      place-items: center;
+      color: var(--nasru-blue);
+      font-weight: 900;
+    }
+
+    .stack-item h3 {
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .stack-item p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: var(--nasru-muted);
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 46px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--nasru-muted);
+      font-size: 1.05rem;
+    }
+
+    .provider-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .provider-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(7, 17, 31, 0.06);
+      transition: 0.24s ease;
+    }
+
+    .provider-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(11, 92, 255, 0.28);
+    }
+
+    .logo-placeholder {
+      height: 86px;
+      border-radius: 22px;
+      border: 1px dashed rgba(11, 92, 255, 0.35);
+      background: #f8fbff;
+      display: grid;
+      place-items: center;
+      color: var(--nasru-muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 22px;
+      padding: 14px;
+    }
+
+    .provider-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .provider-card p {
+      color: var(--nasru-muted);
+      font-size: 0.96rem;
+      margin-bottom: 18px;
+    }
+
+    .provider-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-bottom: 24px;
+      color: #344054;
+      font-size: 0.92rem;
+    }
+
+    .provider-card li::before {
+      content: "✓";
+      color: var(--nasru-blue);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .provider-card .explore {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--nasru-dark);
+      color: var(--white);
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .provider-card .explore:hover {
+      background: var(--nasru-blue);
+    }
+
+    .support-section {
+      background: var(--nasru-light);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .support-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(7, 17, 31, 0.05);
+    }
+
+    .support-card h3 {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+    }
+
+    .support-card p {
+      color: var(--nasru-muted);
+      font-size: 0.96rem;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--nasru-dark), var(--nasru-navy));
+      color: var(--white);
+      border-radius: 36px;
+      padding: 54px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.74);
+      max-width: 680px;
+    }
+
+    .cta .btn-primary {
+      background: var(--white);
+      color: var(--nasru-dark);
+      box-shadow: none;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      color: var(--nasru-muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .provider-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 68px 0 54px;
+      }
+
+      .provider-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        padding: 34px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Nasru Technologies Home">
+        <img src="../assets/img/logo.png" alt="Nasru Technologies logo">
+        <span>Nasru Technologies</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../solutions.html">Solutions</a>
+        <a href="../partners.html">Partners</a>
+        <a href="../contact.html">Contact</a>
+        <a class="nav-cta" href="../contact.html">Request Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Nasru Cloud Services</div>
+          <h1>Secure, scalable cloud solutions for modern businesses.</h1>
+          <p>
+            Nasru Technologies helps small and mid-sized businesses adopt, manage, and secure cloud platforms across productivity, cybersecurity, infrastructure, and collaboration.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#cloud-providers">Explore Cloud Providers</a>
+            <a class="btn-secondary" href="../contact.html">Talk to Nasru</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Cloud service highlights">
+          <div class="cloud-stack">
+            <div class="stack-item">
+              <div class="stack-icon">01</div>
+              <div>
+                <h3>Cloud Licensing</h3>
+                <p>Business software licensing, subscription guidance, and account setup.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-icon">02</div>
+              <div>
+                <h3>Cloud Security</h3>
+                <p>Endpoint protection, identity security, and managed cloud protection.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-icon">03</div>
+              <div>
+                <h3>Cloud Infrastructure</h3>
+                <p>Scalable AWS and Google Cloud support for business workloads.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cloud-providers">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Cloud platforms and solutions we support</h2>
+          <p>
+            Choose from leading cloud providers and business platforms. Each solution page can be expanded with products, pricing, service details, and request forms.
+          </p>
+        </div>
+
+        <div class="provider-grid">
+          <article class="provider-card">
+            <div class="logo-placeholder">Microsoft logo placeholder</div>
+            <h3>Microsoft Cloud</h3>
+            <p>Productivity, collaboration, email, endpoint management, and business security solutions.</p>
+            <ul>
+              <li>Microsoft 365 Business Premium</li>
+              <li>Exchange, Teams, SharePoint, OneDrive</li>
+              <li>Intune and identity security</li>
+            </ul>
+            <a class="explore" href="microsoft.com">Explore Microsoft</a>
+          </article>
+
+          <article class="provider-card">
+            <div class="logo-placeholder">CrowdStrike logo placeholder</div>
+            <h3>CrowdStrike</h3>
+            <p>Endpoint protection and cloud-native cybersecurity solutions for businesses.</p>
+            <ul>
+              <li>Endpoint detection and response</li>
+              <li>Threat intelligence</li>
+              <li>Managed protection support</li>
+            </ul>
+            <a class="explore" href="crowdstrike.com">Explore CrowdStrike</a>
+          </article>
+
+          <article class="provider-card">
+            <div class="logo-placeholder">AWS logo placeholder</div>
+            <h3>Amazon Web Services</h3>
+            <p>Cloud infrastructure, hosting, storage, compute, and scalable business workloads.</p>
+            <ul>
+              <li>Cloud hosting and migration</li>
+              <li>Storage and backup planning</li>
+              <li>Infrastructure support</li>
+            </ul>
+            <a class="explore" href="aws.com">Explore AWS</a>
+          </article>
+
+          <article class="provider-card">
+            <div class="logo-placeholder">Google Cloud logo placeholder</div>
+            <h3>Google Cloud Platform</h3>
+            <p>Cloud computing, collaboration, data, and infrastructure solutions for growing teams.</p>
+            <ul>
+              <li>Google Cloud infrastructure</li>
+              <li>Workspace and collaboration</li>
+              <li>Cloud migration support</li>
+            </ul>
+            <a class="explore" href="googlecloud.com">Explore Google Cloud</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="support-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How Nasru supports your cloud journey</h2>
+          <p>We help businesses select the right platform, deploy it correctly, and keep it secure as they grow.</p>
+        </div>
+
+        <div class="support-grid">
+          <div class="support-card">
+            <h3>Consultation & Planning</h3>
+            <p>We review your business needs, user count, security requirements, and current IT environment before recommending a solution.</p>
+          </div>
+          <div class="support-card">
+            <h3>Deployment & Configuration</h3>
+            <p>We assist with setup, licensing, account configuration, migration planning, and user onboarding for cloud platforms.</p>
+          </div>
+          <div class="support-card">
+            <h3>Security & Ongoing Support</h3>
+            <p>We help secure users, devices, identities, and cloud workloads with practical support and cybersecurity-focused guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Ready to modernize your cloud environment?</h2>
+            <p>Nasru Technologies can help your business choose, deploy, and manage cloud solutions that support productivity, security, and growth.</p>
+          </div>
+          <a class="btn-primary" href="../contact.html">Get Started</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Nasru Technologies. All rights reserved.</span>
+      <span>Secure. Smart. Scalable.</span>
+    </div>
+  </footer>
+</body>
+</html>
