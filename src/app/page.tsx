@@ -1,3 +1,4 @@
+import { UpcomingTrainingEvents } from "@/components/upcoming-training-events";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BadgeCheck, Boxes, BriefcaseBusiness, Cloud, Cpu, GraduationCap, LockKeyhole, ShieldCheck, Workflow } from "lucide-react";
 
@@ -35,6 +36,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    <UpcomingTrainingEvents/>
     <section className="container-nasru py-20 sm:py-24" aria-labelledby="services-heading">
       <div className="max-w-2xl"><p className="eyebrow">What we do</p><h2 id="services-heading" className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">One partner. Connected capabilities.</h2><p className="mt-5 text-base leading-8 text-muted">From planning and procurement to implementation and enablement, explore solutions designed around business outcomes.</p></div>
       <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">{services.map(({icon:Icon,label,description,href}) => <Link href={href} key={href} className="group surface flex min-h-[245px] flex-col p-7 transition hover:-translate-y-1 hover:border-cyan/40 hover:bg-cyan/[.055]"><div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/10"><Icon size={24} className="text-cyan"/></div><h3 className="text-xl font-bold text-white">{label}</h3><p className="mt-3 flex-1 text-sm leading-7 text-muted">{description}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan">Learn more <ArrowUpRight size={16} className="transition group-hover:translate-x-1"/></span></Link>)}</div>
