@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getSupabaseBrowserClient } from "@/lib/supabase-browser";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
@@ -19,14 +20,24 @@ export function TrainingInquiryForm() {
     setStatus("sending");setError("");
     const data=new FormData(form);
     try {
-      const response=await fetch("https://formspree.io/f/xykdqqgn",{
-        method:"POST",body:data,headers:{Accept:"application/json"}
+      const supabase=getSupabaseBrowserClient();
+      if(!supabase) throw new Error("Service unavailable");
+      const participants=String(data.get("participants")||"").trim();
+      const {error:submitError}=await supabase.rpc("submit_training_inquiry",{
+        p_course:String(data.get("course")||""),
+        p_name:String(data.get("full_name")||""),
+        p_email:String(data.get("email")||""),
+        p_phone:String(data.get("phone")||""),
+        p_organization:String(data.get("organization")||""),
+        p_format:String(data.get("preferred_format")||""),
+        p_participants:participants?Number(participants):null,
+        p_message:String(data.get("message")||"")
       });
-      if(!response.ok) throw new Error("The inquiry could not be delivered.");
+      if(submitError) throw submitError;
       form.reset();
       setStatus("success");
     } catch {
-      setError("We couldn't confirm delivery. Please try again, or email info@nasrutechnologies.com.");
+      setError("We couldn't confirm delivery. Please try again, or email contact@nasrutechnologies.com.");
       setStatus("error");
     }
   }
