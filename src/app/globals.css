@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { background: #07111f; color: #e6f9ff; }
+::selection { background: #22d3ee; color: #07111f; }
+:focus-visible { outline: 2px solid #67e8f9; outline-offset: 4px; }
+.container-nasru { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
+.surface { @apply rounded-2xl border border-white/10 bg-white/[.035]; }
+.eyebrow { @apply text-xs font-semibold uppercase tracking-[.24em] text-cyan; }
+.button-primary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-cyan px-6 py-3 font-semibold text-midnight transition hover:bg-[#67e8f9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan; }
+.button-secondary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-ice transition hover:border-cyan/60 hover:bg-white/10; }
+.hero-glow { background: radial-gradient(ellipse at 72% 28%, rgba(34,211,238,.18), transparent 45%), radial-gradient(ellipse at 5% 0%, rgba(36,81,151,.24), transparent 50%); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
