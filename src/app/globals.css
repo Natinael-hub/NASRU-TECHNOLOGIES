@@ -14,3 +14,33 @@ body { background: #07111f; color: #e6f9ff; }
 .button-secondary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-ice transition hover:border-cyan/60 hover:bg-white/10; }
 .hero-glow { background: radial-gradient(ellipse at 72% 28%, rgba(34,211,238,.18), transparent 45%), radial-gradient(ellipse at 5% 0%, rgba(36,81,151,.24), transparent 50%); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+
+/* Hybrid theme: dark hero/header/footer with light content sections. */
+:root { color-scheme: light; }
+body { background: #f6f9fc; color: #172c44; }
+header, footer, .hero-glow { color-scheme: dark; }
+.hero-glow { background-color: #07111f; }
+main > section:not(.hero-glow) { background-color: #f6f9fc; color: #172c44; }
+main > section:not(.hero-glow) .surface { background: #fff; border-color: #dce6ef; box-shadow: 0 12px 35px rgba(20,53,86,.055); }
+main > section:not(.hero-glow) .surface:hover { border-color: #77cad8; }
+main > section:not(.hero-glow) .text-white { color: #14283f; }
+main > section:not(.hero-glow) .text-muted,
+main > section:not(.hero-glow) .text-slate-300 { color: #51667b; }
+main > section:not(.hero-glow) .text-cyan,
+main > section:not(.hero-glow) .eyebrow { color: #087e99; }
+main > section:not(.hero-glow) .bg-white\/5 { background: #fff; }
+main > section:not(.hero-glow) .bg-cyan\/10 { background: #e8f8fb; }
+main > section:not(.hero-glow) .button-primary { background: #087e99; color: #fff; }
+main > section:not(.hero-glow) .button-primary:hover { background: #075d73; }
+main > section:not(.hero-glow) .button-secondary { background: #fff; border-color: #cad8e4; color: #14283f; }
+main > section:not(.hero-glow) .bg-gradient-to-r { color: #fff; }
+main > section:not(.hero-glow) .bg-gradient-to-r .text-white { color: #fff; }
+main > section:not(.hero-glow) .bg-gradient-to-r .text-slate-300 { color: #d4e6f1; }
+main > section:not(.hero-glow) .bg-gradient-to-r .eyebrow { color: #67e8f9; }
+main > section:not(.hero-glow) .bg-gradient-to-r .button-primary { background: #22d3ee; color: #07111f; }
+main > section:not(.hero-glow) input,
+main > section:not(.hero-glow) select,
+main > section:not(.hero-glow) textarea { background: #fff; color: #14283f; border-color: #cbd8e5; }
+main > section:not(.hero-glow) input::placeholder,
+main > section:not(.hero-glow) textarea::placeholder { color: #71869a; }
