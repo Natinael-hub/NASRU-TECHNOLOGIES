@@ -28,3 +28,6 @@ Visit http://localhost:3000.
 
 ## Next
 Migrate existing pages and forms, audit assets, implement server-side data operations and secure admin access, then test in a separate Vercel preview project before any production cutover.
+
+
+Admin preview: configure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY on the isolated Vercel preview project, then rebuild so the client-side bundle receives the settings.
