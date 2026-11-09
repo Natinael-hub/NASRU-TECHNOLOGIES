@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+export type Offering = {title:string;description:string;bullets?:string[];href?:string};
+export function ServiceGrid({items}:{items:Offering[]}) {return <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{items.map(item=><article key={item.title} className="surface flex flex-col p-7"><div className="mb-5 h-1 w-12 rounded bg-cyan"/><h3 className="text-xl font-bold text-white">{item.title}</h3><p className="mt-3 leading-7 text-muted">{item.description}</p>{item.bullets&&<ul className="mt-5 space-y-3">{item.bullets.map(b=><li key={b} className="flex gap-3 text-sm text-slate-300"><CheckCircle2 size={17} className="mt-0.5 shrink-0 text-cyan"/>{b}</li>)}</ul>}{item.href&&<Link href={item.href} className="mt-auto inline-flex min-h-12 items-center gap-2 pt-5 font-semibold text-cyan hover:text-white">Explore <ArrowUpRight size={17}/></Link>}</article>)}</div>}
