@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Enterprise technology solutions, IT and cybersecurity, hardware procurement, software, and professional training.",
   alternates: { canonical: "/" },
   applicationName: "Nasru Technologies",
-  robots: process.env.NASRU_ENABLE_INDEXING === "true" ? { index: true, follow: true } : { index: false, follow: false },
+  robots: process.env.VERCEL_ENV === "production" ? { index: true, follow: true } : { index: false, follow: false },
   icons: { icon: "/assets/img/logo.png" },
   openGraph: { type: "website", siteName: "Nasru Technologies", title: "Nasru Technologies | Secure. Smart. Scalable.", description: "Enterprise technology solutions built for modern organizations.", url: "/" }
 };
