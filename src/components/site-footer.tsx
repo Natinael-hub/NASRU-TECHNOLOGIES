@@ -8,7 +8,7 @@ export function SiteFooter() {
   return <footer className="border-t border-white/10 bg-[#060E1A]">
     <div className="container-nasru grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-4">
       <div className="lg:col-span-2">
-        <Link href="/" className="inline-flex items-center gap-3 text-lg font-extrabold tracking-widest text-white"><img src="https://nasrutechnologies.com/assets/img/logo.png" alt="" width={42} height={42} className="h-10 w-10 object-contain" />NASRU <span className="text-cyan">TECHNOLOGIES</span></Link>
+        <Link href="/" className="inline-flex items-center gap-3 text-lg font-extrabold tracking-widest text-white"><img src="/assets/img/logo.png" alt="" width={42} height={42} className="h-10 w-10 object-contain" />NASRU <span className="text-cyan">TECHNOLOGIES</span></Link>
         <p className="mt-4 max-w-sm text-sm leading-7 text-muted">Secure. Smart. Scalable. Enterprise technology delivery, cybersecurity, software, hardware, and professional training.</p>
         <Link href="/contact" className="mt-5 inline-flex min-h-11 items-center gap-2 font-semibold text-cyan hover:text-white">Start a conversation <ArrowUpRight size={16}/></Link>
       </div>
