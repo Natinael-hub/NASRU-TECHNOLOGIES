@@ -37,7 +37,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-midnight/95 backdrop-blur-xl">
       <div className="container-nasru flex min-h-[76px] items-center justify-between gap-4">
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Nasru Technologies home">
-          <img src="https://nasrutechnologies.com/assets/img/logo.png" alt="" width={44} height={44} className="h-11 w-11 shrink-0 object-contain" />
+          <img src="/assets/img/logo.png" alt="" width={44} height={44} className="h-11 w-11 shrink-0 object-contain" />
           <span className="text-sm font-bold tracking-[.12em] text-white sm:text-base">NASRU <span className="text-cyan">TECHNOLOGIES</span></span>
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-5 xl:flex">
