@@ -44,3 +44,11 @@ main > section:not(.hero-glow) select,
 main > section:not(.hero-glow) textarea { background: #fff; color: #14283f; border-color: #cbd8e5; }
 main > section:not(.hero-glow) input::placeholder,
 main > section:not(.hero-glow) textarea::placeholder { color: #71869a; }
+
+/* Continuous, clickable partner logos under the homepage hero */
+main > section.partner-marquee-section { background: #07111f; color: #fff; color-scheme: dark; }
+.partner-marquee { mask-image: linear-gradient(to right,transparent,black 8%,black 92%,transparent); -webkit-mask-image: linear-gradient(to right,transparent,black 8%,black 92%,transparent); }
+.partner-marquee-track { animation: partner-logo-scroll 32s linear infinite; }
+.partner-marquee:hover .partner-marquee-track, .partner-marquee:focus-within .partner-marquee-track { animation-play-state: paused; }
+@keyframes partner-logo-scroll { to { transform: translateX(-25%); } }
+@media (prefers-reduced-motion: reduce) { .partner-marquee-track { animation: none; } .partner-marquee { overflow-x: auto; } }
