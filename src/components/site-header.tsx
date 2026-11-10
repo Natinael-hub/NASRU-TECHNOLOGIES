@@ -10,7 +10,8 @@ const links = [
   { label: "Cybersecurity", href: "/secure" },
   { label: "Hardware", href: "/smart" },
   { label: "Training", href: "/training" },
-  { label: "About", href: "/about" }
+  { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" }
 ];
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
