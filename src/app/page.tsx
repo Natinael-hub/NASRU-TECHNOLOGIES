@@ -20,9 +20,9 @@ export default function Home() {
   return <main id="main-content">
     <section className="hero-glow relative isolate overflow-hidden border-b border-white/10 bg-[#07111f]">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage:"url('https://nasrutechnologies.com/assets/img/hero_poster.png')"}}/>
-        <video className="nasru-hero-video absolute inset-0 h-full w-full object-cover opacity-70" autoPlay muted loop playsInline preload="metadata" poster="https://nasrutechnologies.com/assets/img/hero_poster.png" aria-hidden="true" tabIndex={-1}>
-          <source src="https://nasrutechnologies.com/assets/video/hero.mp4" type="video/mp4"/>
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage:"url('/assets/img/hero_poster.png')"}}/>
+        <video className="nasru-hero-video absolute inset-0 h-full w-full object-cover opacity-70" autoPlay muted loop playsInline preload="metadata" poster="/assets/img/hero_poster.png" aria-hidden="true" tabIndex={-1}>
+          <source src="/assets/video/hero.mp4" type="video/mp4"/>
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#06101f]/95 via-[#06101f]/80 to-[#06101f]/35"/>
         <div className="absolute inset-0 bg-gradient-to-t from-[#06101f]/80 via-transparent to-[#06101f]/25"/>
