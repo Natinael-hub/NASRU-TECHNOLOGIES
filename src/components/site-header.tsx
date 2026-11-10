@@ -11,6 +11,7 @@ const links = [
   { label: "Hardware", href: "/smart" },
   { label: "Training", href: "/training" },
   { label: "About", href: "/about" },
+  { label: "Partners", href: "/partners" },
   { label: "Careers", href: "/careers" }
 ];
 export function SiteHeader() {
