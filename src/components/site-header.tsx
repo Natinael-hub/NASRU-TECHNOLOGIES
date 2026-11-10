@@ -16,7 +16,9 @@ const solutions = [
   { label: "Cybersecurity", href: "/secure" },
   { label: "Hardware", href: "/smart" },
   { label: "Software & Cloud", href: "/software" },
-  { label: "Global Solutions", href: "/global" }
+  { label: "Global Solutions", href: "/global" },
+  { label: "Multimedia (Coming Soon)", href: "/multimedia" },
+  { label: "Nasru Lab (Coming Soon)", href: "/lab" }
 ];
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
