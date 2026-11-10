@@ -1,3 +1,4 @@
+import { PartnerLogoMarquee } from "@/components/partner-logo-marquee";
 import { UpcomingTrainingEvents } from "@/components/upcoming-training-events";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BadgeCheck, Boxes, BriefcaseBusiness, Cloud, Cpu, GraduationCap, LockKeyhole, ShieldCheck, Workflow } from "lucide-react";
@@ -36,6 +37,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    <PartnerLogoMarquee/>
     <UpcomingTrainingEvents/>
     <section className="container-nasru py-20 sm:py-24" aria-labelledby="services-heading">
       <div className="max-w-2xl"><p className="eyebrow">What we do</p><h2 id="services-heading" className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">One partner. Connected capabilities.</h2><p className="mt-5 text-base leading-8 text-muted">From planning and procurement to implementation and enablement, explore solutions designed around business outcomes.</p></div>
