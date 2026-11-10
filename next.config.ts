@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async headers() {
+    return process.env.NASRU_ENABLE_INDEXING === "true" ? [] : [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }] }];
+  },
   async redirects() {
     return [
       { source: "/index.html", destination: "/", permanent: true },
