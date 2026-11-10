@@ -1,7 +1,7 @@
 import { PartnerLogoMarquee } from "@/components/partner-logo-marquee";
 import { UpcomingTrainingEvents } from "@/components/upcoming-training-events";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, BadgeCheck, Boxes, BriefcaseBusiness, Cloud, Cpu, GraduationCap, LockKeyhole, ShieldCheck, Workflow } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BadgeCheck, Boxes, BriefcaseBusiness, Cloud, Cpu, GraduationCap, ShieldCheck, Workflow } from "lucide-react";
 
 const services = [
   { icon: ShieldCheck, label: "IT & Cybersecurity", description: "Strengthen operations with practical security, infrastructure, and risk-focused technology services.", href: "/secure" },
@@ -18,22 +18,22 @@ const steps = [
 ];
 export default function Home() {
   return <main id="main-content">
-    <section className="hero-glow relative overflow-hidden border-b border-white/10">
-      <div className="container-nasru relative grid gap-14 pb-20 pt-20 sm:pt-24 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:pb-28 lg:pt-32">
-        <div className="max-w-2xl">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/10 px-4 py-2 text-xs font-semibold tracking-wide text-cyan"><span className="h-2 w-2 rounded-full bg-cyan"/> ENTERPRISE TECHNOLOGY SOLUTIONS</div>
+    <section className="hero-glow relative isolate overflow-hidden border-b border-white/10 bg-[#07111f]">
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage:"url('https://nasrutechnologies.com/assets/img/hero_poster.png')"}}/>
+        <video className="nasru-hero-video absolute inset-0 h-full w-full object-cover opacity-70" autoPlay muted loop playsInline preload="metadata" poster="https://nasrutechnologies.com/assets/img/hero_poster.png" aria-hidden="true" tabIndex={-1}>
+          <source src="https://nasrutechnologies.com/assets/video/hero.mp4" type="video/mp4"/>
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06101f]/95 via-[#06101f]/80 to-[#06101f]/35"/>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06101f]/80 via-transparent to-[#06101f]/25"/>
+      </div>
+      <div className="container-nasru relative z-10 flex min-h-[630px] flex-col justify-center py-24 sm:min-h-[690px] lg:min-h-[760px]">
+        <div className="max-w-3xl">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan/35 bg-[#07111f]/65 px-4 py-2 text-xs font-semibold tracking-wide text-cyan backdrop-blur-sm"><span className="h-2 w-2 rounded-full bg-cyan"/> ENTERPRISE TECHNOLOGY SOLUTIONS</div>
           <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">Secure.<br/><span className="text-cyan">Smart.</span><br/>Scalable.</h1>
-          <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">Technology that moves your business forward. From cybersecurity and IT services to hardware, software, and professional training, Nasru connects strategy with practical delivery.</p>
+          <p className="mt-7 max-w-xl text-base leading-8 text-slate-100 sm:text-lg">Technology that moves your business forward. From cybersecurity and IT services to hardware, software, and professional training, Nasru connects strategy with practical delivery.</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row"><Link href="/contact" className="button-primary">Request a Proposal <ArrowUpRight size={18}/></Link><Link href="/solutions" className="button-secondary">Explore Solutions <ArrowRight size={18}/></Link></div>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300"><span className="flex items-center gap-2"><BadgeCheck size={17} className="text-cyan"/> Business-first approach</span><span className="flex items-center gap-2"><BadgeCheck size={17} className="text-cyan"/> Integrated capabilities</span></div>
-        </div>
-        <div className="relative mx-auto w-full max-w-lg" aria-label="Technology solutions overview">
-          <div className="absolute -inset-4 rounded-[2rem] bg-cyan/10 blur-3xl"/>
-          <div className="relative overflow-hidden rounded-[2rem] border border-cyan/20 bg-gradient-to-br from-[#173A59] via-navy to-midnight p-6 shadow-glow sm:p-8">
-            <div className="flex items-center justify-between border-b border-white/10 pb-5"><span className="eyebrow">Built for what's next</span><LockKeyhole size={22} className="text-cyan"/></div>
-            <div className="my-10 flex items-center justify-center"><div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-cyan/20 bg-cyan/5 sm:h-52 sm:w-52"><div className="absolute inset-4 rounded-full border border-dashed border-cyan/35"/><ShieldCheck size={90} strokeWidth={1.1} className="text-cyan"/></div></div>
-            <div className="grid grid-cols-2 gap-3"><div className="rounded-xl border border-white/10 bg-white/5 p-4"><Cpu size={23} className="text-cyan"/><p className="mt-3 text-sm font-semibold">Technology</p><p className="mt-1 text-xs text-muted">Built to perform</p></div><div className="rounded-xl border border-white/10 bg-white/5 p-4"><ShieldCheck size={23} className="text-cyan"/><p className="mt-3 text-sm font-semibold">Security</p><p className="mt-1 text-xs text-muted">Designed for trust</p></div></div>
-          </div>
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-200"><span className="flex items-center gap-2"><BadgeCheck size={17} className="text-cyan"/> Business-first approach</span><span className="flex items-center gap-2"><BadgeCheck size={17} className="text-cyan"/> Integrated capabilities</span></div>
         </div>
       </div>
     </section>
