@@ -1,7 +1,7 @@
 const partners = [
-  { name: "PECB", href: "https://pecb.com", logo: "https://nasrutechnologies.com/assets/img/partners/pecb.png" },
-  { name: "EC-Council", href: "https://www.eccouncil.org", logo: "https://nasrutechnologies.com/assets/img/partners/ec-council-partner.png" },
-  { name: "TD SYNNEX", href: "https://www.tdsynnex.com", logo: "https://nasrutechnologies.com/assets/img/partners/td-synnex.png" }
+  { name: "PECB", href: "https://pecb.com", logo: "/assets/img/partners/pecb.png" },
+  { name: "EC-Council", href: "https://www.eccouncil.org", logo: "/assets/img/partners/ec-council-partner.png" },
+  { name: "TD SYNNEX", href: "https://www.tdsynnex.com", logo: "/assets/img/partners/td-synnex.png" }
 ];
 export function PartnerLogoMarquee() {
   return <section className="partner-marquee-section border-y border-white/10" aria-label="Technology and training partners">
