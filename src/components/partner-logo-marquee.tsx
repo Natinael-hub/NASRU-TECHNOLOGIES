@@ -1,19 +1,10 @@
-const partners = [
-  { name: "PECB", href: "https://pecb.com", logo: "/assets/img/partners/pecb.png" },
-  { name: "EC-Council", href: "https://www.eccouncil.org", logo: "/assets/img/partners/ec-council-partner.png" },
-  { name: "TD SYNNEX", href: "https://www.tdsynnex.com", logo: "/assets/img/partners/td-synnex.png" }
-];
-export function PartnerLogoMarquee() {
-  return <section className="partner-marquee-section border-y border-white/10" aria-label="Technology and training partners">
-    <div className="container-nasru py-9">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3"><h2 className="text-sm font-semibold uppercase tracking-[.18em] text-slate-200">Our technology & training partners</h2><a href="/partners" className="text-sm font-semibold text-cyan-300 hover:underline">Explore our partners →</a></div>
-      <div className="partner-marquee relative overflow-hidden" aria-label="Partner logos">
-        <div className="partner-marquee-track flex w-max items-center gap-12 sm:gap-20">
-          {[0,1,2,3].map(copy => <div key={copy} className="flex shrink-0 items-center gap-12 sm:gap-20" aria-hidden={copy > 0 ? true : undefined}>
-            {partners.map(partner => <a key={partner.name} href={partner.href} target="_blank" rel="noopener noreferrer" tabIndex={copy > 0 ? -1 : undefined} aria-label={copy === 0 ? `Visit ${partner.name} website` : undefined} className="flex h-20 w-44 shrink-0 items-center justify-center rounded-xl bg-white px-5 py-3 transition hover:-translate-y-1 hover:shadow-lg sm:w-52"><img src={partner.logo} alt={copy === 0 ? partner.name : ""} loading="lazy" className="max-h-14 max-w-full object-contain" /></a>)}
-          </div>)}
-        </div>
-      </div>
-    </div>
-  </section>;
+"use client";
+import { useEffect, useState } from "react";
+import { getSupabaseBrowserClient } from "@/lib/supabase-browser";
+type Partner={id:string;name:string;website_url:string;logo_url:string};
+export function PartnerLogoMarquee(){
+ const [partners,setPartners]=useState<Partner[]>([]);
+ useEffect(()=>{let active=true;const s=getSupabaseBrowserClient();if(!s)return;void s.from("site_partners").select("id,name,website_url,logo_url").eq("is_visible",true).order("sort_order").then(({data})=>{if(active)setPartners(data||[]);});return()=>{active=false;};},[]);
+ if(!partners.length)return null;
+ return <section className="partner-marquee-section border-y border-white/10" aria-label="Technology and training partners"><div className="container-nasru py-9"><div className="mb-6 flex flex-wrap items-center justify-between gap-3"><h2 className="text-sm font-semibold uppercase tracking-[.18em] text-slate-200">Our technology & training partners</h2><a href="/partners" className="text-sm font-semibold text-cyan-300 hover:underline">Explore our partners →</a></div><div className="partner-marquee relative overflow-hidden"><div className="partner-marquee-track flex w-max items-center gap-12 sm:gap-20">{[0,1,2,3].map(copy=><div key={copy} className="flex shrink-0 items-center gap-12 sm:gap-20" aria-hidden={copy>0?true:undefined}>{partners.map(p=><a key={p.id} href={p.website_url||"/partners"} target={p.website_url?"_blank":undefined} rel={p.website_url?"noopener noreferrer":undefined} tabIndex={copy>0?-1:undefined} className="flex h-20 w-44 shrink-0 items-center justify-center rounded-xl bg-white px-5 py-3 transition hover:-translate-y-1 hover:shadow-lg sm:w-52">{p.logo_url?<img src={p.logo_url} alt={copy===0?p.name:""} loading="lazy" className="max-h-14 max-w-full object-contain"/>:<span className="font-bold text-slate-900">{p.name}</span>}</a>)}</div>)}</div></div></div></section>;
 }
