@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Boxes, Cloud, Code2, DatabaseZap, Gauge, LockKeyhole, Workflow, CheckCircle2 } from "lucide-react";
-export const metadata:Metadata={title:"Software & Cloud Solutions",description:"Custom business software, workflow automation, integrations, cloud productivity and software licensing support from Nasru Technologies.",alternates:{canonical:"/software"}};
+export const metadata:Metadata={title:"Custom Software Development & Cloud Solutions",description:"Explore custom web applications, business portals, workflow automation, software integrations, and Microsoft 365 solutions from Nasru Technologies.",alternates:{canonical:"/software"}};
 const offerings=[
 {icon:Code2,title:"Custom Applications",description:"Web portals, internal tools, and business applications tailored to your team's workflow.",points:["Customer and employee portals","Dashboards and reporting","Business-focused web applications"]},
 {icon:Workflow,title:"Automation & Integration",description:"Connect systems and simplify repetitive processes with carefully planned automation.",points:["API and system integrations","Approval and notification workflows","Operational process automation"]},
