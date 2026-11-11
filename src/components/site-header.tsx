@@ -40,9 +40,10 @@ export function SiteHeader() {
     return () => window.removeEventListener("keydown", onEscape);
   }, [open, solutionsOpen]);
   const activeSolution = solutions.some(item => item.href === pathname);
-  const transparent = pathname === "/" && !scrolled && !open;
+  const overlayHeader = !pathname.startsWith("/admin");
+  const transparent = overlayHeader && !scrolled && !open;
   return (
-    <header className={`${pathname === "/" ? "fixed inset-x-0 top-0 z-50" : "sticky top-0 z-50"} transition-[background-color,box-shadow,backdrop-filter,border-color] duration-300 ease-out ${transparent ? "border-b border-transparent bg-transparent shadow-none" : "border-b border-white/10 bg-midnight/95 shadow-lg shadow-black/15 backdrop-blur-xl"}`}>
+    <header className={`${overlayHeader ? "nasru-overlay-header fixed inset-x-0 top-0 z-50" : "sticky top-0 z-50"} transition-[background-color,box-shadow,backdrop-filter,border-color] duration-300 ease-out ${transparent ? "border-b border-transparent bg-transparent shadow-none" : "border-b border-white/10 bg-midnight/95 shadow-lg shadow-black/15 backdrop-blur-xl"}`}>
       <div className="container-nasru flex min-h-[76px] items-center justify-between gap-4">
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Nasru Technologies home">
           <img src="/assets/img/logo.png" alt="" width={44} height={44} className="h-11 w-11 shrink-0 object-contain" />
