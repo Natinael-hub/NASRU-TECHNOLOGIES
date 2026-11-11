@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 const groups = [
-  { title: "Explore", links: [["Solutions","/solutions"],["Cybersecurity","/secure"],["Hardware","/smart"],["Software","/software"],["Training","/training"]] },
-  { title: "Company", links: [["About","/about"],["Partners","/partners"],["Global Solutions","/global"],["Careers","/careers"],["Contact","/contact"]] }
+  { title: "Services", links: [["IT & Cybersecurity","/secure"],["Training & Certification","/training"],["Hardware Procurement","/smart"],["Software & Cloud","/software"],["All Solutions","/solutions"]] },
+  { title: "Company", links: [["About Nasru","/about"],["Contact Us","/contact"],["Partners","/partners"],["Global Solutions","/global"],["Careers","/careers"]] }
 ];
 export function SiteFooter() {
   return <footer className="border-t border-white/10 bg-[#060E1A]">
