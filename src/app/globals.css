@@ -55,3 +55,6 @@ main > section.partner-marquee-section { background: #07111f; color: #fff; color
 
 /* Keep the original hero poster still for visitors who prefer reduced motion. */
 @media (prefers-reduced-motion: reduce) { .nasru-hero-video { display: none; } }
+
+/* Allow public page hero backgrounds to sit behind the fixed transparent navigation. */
+body:has(.nasru-overlay-header) main > section:first-child { padding-top: 76px; }
