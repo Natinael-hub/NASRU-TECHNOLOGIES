@@ -1,0 +1,10 @@
+"use client";
+import { useEffect,useState } from "react";
+import { getSupabaseBrowserClient } from "@/lib/supabase-browser";
+import { ArrowUpRight,ShieldCheck,CheckCircle2 } from "lucide-react";
+type Partner={id:string;name:string;category:string;relationship:string;description:string;focus:string[];logo_url:string;website_url:string};
+export function PartnersDirectory(){
+ const [partners,setPartners]=useState<Partner[]>([]);
+ useEffect(()=>{let active=true;const s=getSupabaseBrowserClient();if(!s)return;void s.from("site_partners").select("*").eq("is_visible",true).order("sort_order").then(({data})=>{if(active)setPartners(data||[]);});return()=>{active=false;};},[]);
+ return <div className="grid gap-6 lg:grid-cols-3">{partners.map(p=><article key={p.id} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"><div className="flex h-20 items-center justify-start">{p.logo_url?<img src={p.logo_url} alt={p.name+" logo"} className="max-h-16 max-w-[220px] object-contain" loading="lazy"/>:<span className="text-xl font-bold text-slate-900">{p.name}</span>}</div><p className="mt-6 text-xs font-bold uppercase tracking-widest text-cyan-700">{p.category}</p><h3 className="mt-2 text-3xl font-bold text-slate-900">{p.name}</h3>{p.relationship&&<p className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-slate-700"><ShieldCheck size={17} className="text-cyan-700"/>{p.relationship}</p>}<p className="mt-5 leading-7 text-slate-600">{p.description}</p><ul className="mt-6 flex-1 space-y-3">{(p.focus||[]).map(x=><li key={x} className="flex gap-3 text-sm text-slate-700"><CheckCircle2 size={18} className="mt-0.5 shrink-0 text-cyan-700"/>{x}</li>)}</ul>{p.website_url&&<a href={p.website_url} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 font-semibold text-cyan-800 hover:underline">Visit {p.name} <ArrowUpRight size={17}/></a>}</article>)}</div>;
+}
