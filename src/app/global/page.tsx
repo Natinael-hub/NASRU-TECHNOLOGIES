@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Globe2, Laptop, Network, PackageCheck, SearchCheck, ShieldCheck, Truck, FileCheck2, CheckCircle2 } from "lucide-react";
-export const metadata:Metadata={title:"Global Technology Sourcing & Procurement",description:"Nasru Global Solutions helps organizations explore IT sourcing, procurement coordination and cross-border technology project requirements.",alternates:{canonical:"/global"}};
+export const metadata:Metadata={title:"Global IT Sourcing & Technology Procurement",description:"Explore international IT hardware sourcing, technology procurement coordination, infrastructure equipment, and cross-border project planning with Nasru Technologies.",alternates:{canonical:"/global"}};
 const capabilities=[
 {icon:Laptop,title:"Business Technology Sourcing",text:"Discuss requirements for business-class laptops, desktops, peripherals and other IT equipment."},
 {icon:Network,title:"Infrastructure & Networking",text:"Explore procurement options for networking, servers, storage and related infrastructure."},
